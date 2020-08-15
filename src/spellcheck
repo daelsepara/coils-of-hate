@@ -1,0 +1,2 @@
+#!/bin/bash
+spell -n story.zil -b | grep -v -Ev "DESC|LIGHTBIT|CRLF|HLIGHT|FCLEAR|COND|LTABLE|PRECHOICE|FSET|PUTP|WORNBIT|WEARBIT|SETG|AUX|GETP|ALLMONEY|RTRUE|RFALSE|EMPHASIZE|READLINE|LEXBUF|GETB|CONTBIT|OPENBIT|NARTICLEBIT|PLURALBIT|PERSONBIT|TOUCHBIT|PRINTN|GIVEBAG|SATORI|: CT$|OBJ$" | grep -i -v -Ev "cesspit|rulership|dozily|guildmaster" | grep -i -v -Ev ": gleenars$|: judain$|: godorno$|: sycaari$|: talmai$|: talmai's$|: marmeluke$|: ginath$|: ginath's$|: skakshi$|: melmelo$|: melmelo's$" |uniq

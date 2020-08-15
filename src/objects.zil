@@ -1,0 +1,47 @@
+; "Objects for Coils of Hate"
+
+; Weapons
+
+<OBJECT KNIFE
+    (DESC "knife")
+    (SYNONYM KNIFE)
+    (REQUIRES SKILL-THROWING)
+    (FLAGS TAKEBIT)>
+
+<OBJECT MAGIC-AMULET
+    (DESC "magic amulet")
+    (SYNONYM AMULET)
+    (ADJECTIVE MAGIC)
+    (REQUIRES SKILL-CHARMS)
+    (FLAGS TAKEBIT)>
+
+<OBJECT MAGIC-WAND
+    (DESC "magic wand")
+    (SYNONYM WAND)
+    (ADJECTIVE MAGIC)
+    (REQUIRES SKILL-SPELLS)
+    (FLAGS TAKEBIT)>
+
+<OBJECT SWORD
+    (DESC "sword")
+    (SYNONYM SWORD)
+    (REQUIRES SKILL-SWORDPLAY)
+    (FLAGS TAKEBIT)>
+
+; Objects
+
+<OBJECT HEALING-SALVE
+    (DESC "healing salve")
+    (SYNONYM SALVE)
+    (ADJECTIVE HEALING)
+    (FLAGS TAKEBIT)>
+
+<OBJECT IVORY-POMEGRANATE
+    (DESC "ivory pomegranate")
+    (SYNONYM POMEGRANATE)
+    (ADJECTIVE IVORY)
+    (FLAGS TAKEBIT)>
+
+; Vehicles
+
+;Retroviruses

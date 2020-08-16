@@ -1,5 +1,17 @@
 ; "Codewords for Coils of Hate"
 
+<OBJECT CODEWORD-ARMED
+    (DESC "Armed")
+    (SYNONYM ARMED)>
+
+<OBJECT CODEWORD-HECATOMB
+    (DESC "Hecatomb")
+    (SYNONYM HECATOMB)>
+
+<OBJECT CODEWORD-JADE
+    (DESC "Jade")
+    (SYNONYM JADE)>
+
 <OBJECT CODEWORD-LARCENY
     (DESC "Larceny")
     (SYNONYM LARCENY)>

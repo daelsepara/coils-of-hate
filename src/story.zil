@@ -10,6 +10,8 @@
 <OBJECT VEHICLE (DESC "none")>
 
 <ROUTINE RESET-OBJECTS ()
+	<PUTP ,KNIFE ,P?QUANTITY 1>
+	<PUTP ,IVORY-POMEGRANATE ,P?USED-UP F>
 	<RETURN>>
 
 <ROUTINE RESET-STORY ()
@@ -25,6 +27,7 @@
 	<PUTP ,STORY021 ,P?DEATH T>
 	<PUTP ,STORY023 ,P?DEATH T>
 	<PUTP ,STORY050 ,P?DEATH T>
+	<PUTP ,STORY071 ,P?DEATH T>
 	<RETURN>>
 
 <CONSTANT DIED-IN-COMBAT "You died in combat">
@@ -42,6 +45,8 @@
 
 <CONSTANT HEALING-KEY-CAPS !\U>
 <CONSTANT HEALING-KEY !\u>
+<CONSTANT POMEGRANATE-KEY-CAPS !\P>
+<CONSTANT POMEGRANATE-KEY !\p>
 
 <ROUTINE SPECIAL-INTERRUPT-ROUTINE (KEY)
 	<COND (<AND <EQUAL? .KEY ,HEALING-KEY-CAPS ,HEALING-KEY> <CHECK-ITEM ,HEALING-SALVE> <L? ,LIFE-POINTS ,MAX-LIFE-POINTS>>
@@ -52,6 +57,13 @@
 			<LOSE-ITEM ,HEALING-SALVE>
 		)>
 		<RTRUE>
+	)(<AND <EQUAL? .KEY ,POMEGRANATE-KEY-CAPS POMEGRANATE-KEY> <CHECK-ITEM ,IVORY-POMEGRANATE> <L? ,LIFE-POINTS ,MAX-LIFE-POINTS> <NOT <GETP ,IVORY-POMEGRANATE ,P?USED-UP>>>
+		<CRLF>
+		<TELL CR "Use " T ,IVORY-POMEGRANATE " to restore all life points lost?">
+		<COND (<YES?>
+			<SETG LIFE-POINTS ,MAX-LIFE-POINTS>
+			<PUTP ,IVORY-POMEGRANATE ,P?USED-UP T>
+		)>
 	)>
 	<RFALSE>>
 
@@ -147,23 +159,26 @@
 <ROUTINE ADD-FOOD ("OPT" AMOUNT)
 	<ADD-QUANTITY ,FOOD .AMOUNT ,PLAYER>>
 
-<ROUTINE BUY-FOOD (PRICE "AUX" QUANTITIES)
+<ROUTINE BUY-FOOD (PRICE)
+	<BUY-STUFF ,FOOD "food supplies" .PRICE>>
+
+<ROUTINE BUY-STUFF (ITEM PLURAL PRICE "OPT" LIMIT "AUX" QUANTITIES)
+	<COND (<NOT .LIMIT> <SET LIMIT 8>)>
 	<COND (<G=? ,MONEY .PRICE>
 		<CRLF>
-		<TELL "Buy food for " N .PRICE " " D ,CURRENCY " each?">
+		<TELL "Buy " D .ITEM " for " N .PRICE " " D ,CURRENCY " each?">
 		<COND (<YES?>
 			<REPEAT ()
-				<SET QUANTITIES <GET-NUMBER "How many food supplies will you buy" 0 8>>
+				<SET QUANTITIES <GET-NUMBER "How many will you buy" 0 .LIMIT>>
 				<COND (<G? .QUANTITIES 0>
 					<COND (<L=? <* .QUANTITIES .PRICE> ,MONEY>
 						<CRLF>
 						<HLIGHT ,H-BOLD>
-						<TELL "You purchased " N .QUANTITIES>
-						<TELL D ,FOOD " suppl">
-						<COND (<G? .QUANTITIES 1> <TELL "ies">)(ELSE <TELL "y">)>
+						<TELL "You purchased " N .QUANTITIES " ">
+						<COND (<G? .QUANTITIES 1> <TELL .PLURAL>)(ELSE <TELL D .ITEM>)>
 						<TELL ,PERIOD-CR>
 						<CHARGE-MONEY <* .QUANTITIES .PRICE>>
-						<ADD-FOOD .QUANTITIES>
+						<ADD-QUANTITY .ITEM .QUANTITIES>
 						<COND (<L? ,MONEY .PRICE> <RETURN>)>
 					)(ELSE
 						<EMPHASIZE "You can't afford that!">
@@ -175,46 +190,48 @@
 		)>
 	)>>
 
-<ROUTINE SELL-FOOD (PRICE "AUX" (FOOD-SOLD 0) (QUANTITY 0))
+<ROUTINE SELL-STUFF (ITEM PLURAL PRICE "AUX" (ITEMS-SOLD 0) (QUANTITY 0))
 	<COND (<HAS-FOOD>
-		<SET QUANTITY <GETP ,FOOD ,P?QUANTITY>>
+		<SET QUANTITY <GETP .ITEM ,P?QUANTITY>>
 		<CRLF>
-		<TELL "Sell food supplies at " N .PRICE " " D ,CURRENCY " each?">
+		<TELL "Sell " D .ITEM " at " N .PRICE " " D ,CURRENCY " each?">
 		<COND (<YES?>
-			<SET FOOD-SOLD <GET-NUMBER "How many food supplies will you sell" 0 .QUANTITY>>
-			<COND (<G? .FOOD-SOLD 0>
-				<SETG ,MONEY <+ ,MONEY <* .FOOD-SOLD .PRICE>>>
-				<SET .QUANTITY <- .QUANTITY .FOOD-SOLD>>
+			<SET ITEMS-SOLD <GET-NUMBER "How many will you sell" 0 .QUANTITY>>
+			<COND (<G? .ITEMS-SOLD 0>
+				<SETG ,MONEY <+ ,MONEY <* .ITEMS-SOLD .PRICE>>>
+				<SET .QUANTITY <- .QUANTITY .ITEMS-SOLD>>
 				<CRLF>
-				<TELL "You sold ">
+				<TELL "You sold " N .ITEMS-SOLD " ">
 				<HLIGHT ,H-BOLD>
-				<TELL N .FOOD-SOLD " food suppl">
-				<COND (<G? .FOOD-SOLD 1> <TELL "ies">)(ELSE <TELL "y">)>
+				<COND (<G? .ITEMS-SOLD 1> <TELL .PLURAL>)(ELSE <TELL D .ITEM>)>
 				<HLIGHT 0>
 				<TELL ,PERIOD-CR>
 				<COND (<G? .QUANTITY 0>
-					<PUTP ,FOOD ,P?QUANTITY .QUANTITY>
+					<PUTP .ITEM ,P?QUANTITY .QUANTITY>
 				)(ELSE
-					<PUTP ,FOOD ,P?QUANTITY 1>
-					<REMOVE ,FOOD>
+					<PUTP .ITEM ,P?QUANTITY 1>
+					<REMOVE .ITEM>
 				)>
 			)>
 		)>
 	)>>
 
-<ROUTINE TAKE-FOOD ("OPT" AMOUNT "AUX" SUPPLIES)
+<ROUTINE TAKE-FOOD ("OPT" AMOUNT)
+	<RETURN <TAKE-STUFF ,FOOD "food supplies" .AMOUNT>>>
+
+<ROUTINE TAKE-STUFF (ITEM PLURAL "OPT" AMOUNT "AUX" TAKEN)
 	<COND (<NOT .AMOUNT> <SET .AMOUNT 1>)>
 	<CRLF>
-	<TELL "Take " T ,FOOD " suppl">
-	<COND (<G? .AMOUNT 1> <TELL "ies">)(ELSE <TELL "y">)>
+	<TELL "Take the ">
+	<COND (<G? .AMOUNT 1> <TELL .PLURAL>)(<TELL D .ITEM>)>
 	<TELL "?">
 	<COND (<YES?>
 		<COND (<G? .AMOUNT 1>
-			<SET SUPPLIES <GET-NUMBER "How many food supplies will you take" 0 .AMOUNT>>
-			<ADD-FOOD .SUPPLIES>
-			<RETURN .SUPPLIES>
+			<SET TAKEN <GET-NUMBER "How many will you take" 0 .AMOUNT>>
+			<ADD-QUANTITY .ITEM .AMOUNT ,PLAYER>
+			<RETURN .TAKEN>
 		)(ELSE
-			<TAKE-ITEM ,FOOD>
+			<TAKE-ITEM .ITEM>
 			<RETURN 1>
 		)>
 	)>
@@ -289,7 +306,8 @@
 		)>
 		<RESET-POSSESSIONS>
 	)>
-	<MERCHANT <LTABLE KNIFE SWORD MAGIC-AMULET HEALING-SALVE MAGIC-WAND> <LTABLE 5 15 15 20 30>>
+	<BUY-STUFF ,KNIFE "knives" 5>
+	<MERCHANT <LTABLE SWORD MAGIC-AMULET HEALING-SALVE MAGIC-WAND> <LTABLE 15 15 20 30>>
 	<COND (<CHECK-ITEM ,HEALING-SALVE>
 		<TELL CR "A healing salve can be used only once to restore 1 Life point then it is lost. Press 'U' any time to use it" ,PERIOD-CR>
 	)>
@@ -633,7 +651,7 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY027-PRECHOICE ()
-	<LOSE-ITEM ,IVORY-POMEGRANATE>
+	<COND (,RUN-ONCE <LOSE-ITEM ,IVORY-POMEGRANATE>)>
 	<CRLF>
 	<TELL ,TEXT027-CONTINUED>
 	<TELL ,PERIOD-CR>>
@@ -1112,175 +1130,168 @@ You say as you put the coins on the table.||\"Fine, you go and talk to him then.
 	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT071 "You throw your second knife. This one strikes another guard in the neck. He falls into the street, red blood gushing out of his wound and mixing with the brown muck covering the cobbles. The third guard is now upon you. You will have to fight him in close quarters.">
+
 <ROOM STORY071
 	(DESC "071")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT071)
+	(PRECHOICE STORY071-PRECHOICE)
+	(CONTINUE STORY417)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY071-PRECHOICE ("AUX" (SWORDPLAY F) (DAMAGE 2))
+	<COND (<CHECK-SKILL ,SKILL-SWORDPLAY>
+		<PREVENT-DEATH ,STORY071>
+		<SET SWORDPLAY T>
+	)(<CHECK-SKILL ,SKILL-UNARMED-COMBAT>
+		<SET DAMAGE 1>
+	)>
+	<COND (<NOT .SWORDPLAY>
+		<LOSE-LIFE .DAMAGE ,DIED-IN-COMBAT ,STORY071>
+	)>
+	<COND (<IS-ALIVE>
+		<EMPHASIZE "You have prevailed.">
+		<TAKE-STUFF ,KNIFE "knives" 2>
+		<KEEP-ITEM ,SWORD>
+		<TELL CR "You then help the man" ,PERIOD-CR>
+	)>>
+
+<CONSTANT TEXT072 "One of the swords has a halo which shines brighter than the others. You steal up behind the Jade Warrior and throw yourself against its sword arm, wrenching the blade from its grasp.||\"Obey me, Jade Warriors,\" you cry out on impulse. To your relief and amazement they line up before you and stand to attention. The warrior from whom you took the sword picks up another from behind an awning. The warriors are ready to do your bidding.||You know that the Jade Warriors cannot go far from the jade ring that the emperor wore, so you search the chamber until you find it. You can lead them anywhere. You decide against taking them above ground as the entire army of the Overlord would descend on you. Even with these mighty guardians, you would not prevail. However, they can still be useful to you under the city.||You lead them through the sewers until you come across a large circular room that looks like a junction of several tunnels. Purple slime lines the wall and floor, indicating that the blobs of Hate regularly pass this way. You drop the ring on the floor and leave the Jade Warriors to their duty. You then head back to the burial chamber.">
 
 <ROOM STORY072
 	(DESC "072")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT072)
+	(CONTINUE STORY354)
+	(ITEM JADE-WARRIORS-SWORD)
+	(CODEWORD CODEWORD-HECATOMB)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT073 "On your travels, you come across a small hillock which raises your suspicions. There's something wrong with it, but you can't quite put your finger on it. Then it hits you it has a very unnatural shape. You have seen something like this before. Ancient structures become overgrown forming strange landmarks in the terrain. After some digging, you find an opening into the structure.||You enter it to find the remains of Judain shrine. Marble arches stand in it covered in moss and mud. This holy place has not been visited for many a year. However, as you stand in it, you feel a sense of peace and serenity wash over you. Then you feel something roll against your foot. You look down to see a beautiful ivory pomegranate inscribed with Judain prayers. Such an item would have adorned a high priest's sceptre. When you pick it up, you feel a tingle of power. This object contains divine essence.||You may use the ivory pomegranate once to restore all lost Life Points (this does not destroy it, however). The pomegranate may have other uses. Press 'P' to use this.||Eventually, you leave the shrine.">
 
 <ROOM STORY073
 	(DESC "073")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT073)
+	(CONTINUE STORY142)
+	(ITEM IVORY-POMEGRANATE)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT074 "You sneak through the streets until you come to Tagil's house in the Old Quarter. You can tell where he lives as he has put the armour and helmets of several of the Overlord's men outside his house. None dare challenge him now. When you knock on the door. After a while, your start to hear the noise of several bolts being pulled back. The door opens to reveal Tagil. Despite being in his mid-fifties, he still sports a muscular frame and from the stories you have heard, he has lost none of his skill with age. He greets you and ushers you inside hastily. Once in the house, he serves you the last food he has half a stale loaf and some cheese. He eats the other half. As you eat you talk \"It's lucky you came to see me today, young one. I'm leaving today.\"||\"Why? You can handle yourself against the Overlord's men.\" Tagil spits on the floor \"Those amateurs? I could last against them for an eternity. It's just that they're not the worst thing in this city any more. I've seen huge purple blobs, trapping people like flies in syrup. I can't fight this thing. If you have any sense, you would leave to. Come with me.\"||\"I have to stay and save my people.\" you reply \"I won't argue. You've always been stubborn. I'll help you if you stay. I have been thinking of how to destroy this huge creature. You would need a weapon of magic and power. Then I remembered the Jade Warriors. These artificial creatures protect the Megiddo dynasty and carry swords sharper than any steel sword could be. I remember the legend that one of the swords was able to control these creatures.\"||Tagil tells you the legend of the Jade Warriors and how to control them.||Tagil also offers you a sword and a knife. You may take one or both of these.">
+<CONSTANT TEXT074-CONTINUED "You bid your mentor a fond farewell and decide to head back to Bumble Row">
 
 <ROOM STORY074
 	(DESC "074")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT074)
+	(PRECHOICE STORY074-PRECHOICE)
+	(CONTINUE STORY339)
+	(CODEWORD CODEWORD-JADE)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY074-PRECHOICE ()
+	<TAKE-STUFF ,KNIFE "knives" 1>
+	<KEEP-ITEM ,SWORD>
+	<CRLF>
+	<TELL ,TEXT074-CONTINUED>
+	<TELL ,PERIOD-CR>>
+
+<CONSTANT TEXT075 "You ponder the landlord's words. Harakadnezzar created a mighty empire, but at the cost of tens of thousands of lives. The man slaughtered countless people in his quest for power before being assassinated by one of his closest advisors. If he has returned, then he could make the whole city suffer. Hate could also level the city. You have heard that in places of great decadence, Hate will be given form and grow into a huge unstoppable monster that will destroy everything in its path. This was the fate of the city of Kush. If Hate is growing under Godorno, then the whole city might be destroyed. Either of these creatures would be a grave threat to the city. How could you overcome them, you think? Lost in your thoughts, you reach for your mug of ale.">
+<CONSTANT CHOICES075 <LTABLE "rely on" "use a magic amulet" "otherwise">>
 
 <ROOM STORY075
 	(DESC "075")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT075)
+	(CHOICES CHOICES075)
+	(DESTINATIONS <LTABLE STORY324 STORY373 STORY116>)
+	(REQUIREMENTS <LTABLE SKILL-ROGUERY SKILL-CHARMS NONE>)
+	(TYPES <LTABLE R-SKILL R-SKILL R-NONE>)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT076 "\"Thank you. I don't have anything to my name, but you have given me some hope. Good luck. I hope to see you again.\"||And with that, the man carries on up the road. You continue to Godorno">
+<CONSTANT TEXT076-CRUSHED "You have nothing to give so you continue on to Godorno. All his remaining hopes were utterly crushed">
 
 <ROOM STORY076
 	(DESC "076")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(PRECHOICE STORY076-PRECHOICE)
+	(CONTINUE STORY269)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY076-PRECHOICE ("AUX" (FOOD-GIVEN 0) (MONEY-GIVEN 0))
+	<COND (<OR <HAS-FOOD> <G? ,MONEY 0>>
+		<COND (<HAS-FOOD>
+			<SET FOOD-GIVEN <GET-NUMBER "How many food supplies will you give?" 0 <GETP ,FOOD ,P?QUANTITY>>>
+			<COND (<G? .FOOD-GIVEN 0>
+				<DO (I 1 .FOOD-GIVEN)
+					<GIVE-ITEM ,FOOD>
+				>
+			)>
+		)>
+		<COND (<G? ,MONEY 0>
+			<SET MONEY-GIVEN <GET-NUMBER "How much of your gleenars will you give?" 0 ,MONEY>>
+			<COND (<G? .MONEY-GIVEN 0>
+				<SETG MONEY <- ,MONEY .MONEY-GIVEN>>
+			)>
+		)>
+	)>
+	<CRLF>
+	<COND (<OR <G? .FOOD-GIVEN 0> <G? .MONEY-GIVEN 0>>
+		<TELL ,TEXT076>
+	)(ELSE
+		<TELL ,TEXT076-CRUSHED>
+	)>
+	<TELL ,PERIOD-CR>>
+
+<CONSTANT TEXT077 "You watch as Tormil is dragged towards the blob. At first he screams for help. As he starts to be absorbed by the blob, he breaks down in tears. Sobbing, he begs you to free him from the deathly mass, but you do nothing but watch as he is drawn to his doom. Eventually, he is submerged beneath the purple slime, his anguished face still visible beneath the surface of the slime. Terror draws bile into your throat and you cannot help giving a small cry of horror. Averting your face, you leave the grisly scene behind. You are ashamed to think that you let anyone be condemned to such a fate, even a cur like Tormil.||Now what will you do?">
+<CONSTANT CHOICES077 <LTABLE "attack this mass of Hate" "flee">>
 
 <ROOM STORY077
 	(DESC "077")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT077)
+	(PRECHOICE STORY077-PRECHOICE)
+	(CHOICES CHOICES077)
+	(DESTINATIONS <LTABLE STORY542 STORY275>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY077-PRECHOICE ()
+	<COND (<CHECK-CODEWORD ,CODEWORD-SATORI>
+		<DELETE-CODEWORD ,CODEWORD-SATORI>
+	)(ELSE
+		<GAIN-CODEWORD ,CODEWORD-VENEFIX>
+	)>>
+
+<CONSTANT TEXT078 "As soon as the tentacle wraps around you, you feel a debilitating pain inside you and you feel your whole body go numb. There is nothing you can do to stop Hate dragging you towards its massive purple body where it will absorb yours. Soon you will join thousands others in an orgy of despair where you will languish in agony for eternity.">
 
 <ROOM STORY078
 	(DESC "078")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT078)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT079 "You go back to your shelter for the night.">
 
 <ROOM STORY079
 	(DESC "079")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT079)
+	(PRECHOICE STORY079-PRECHOICE)
+	(CONTINUE STORY147)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY079-PRECHOICE ()
+	<CODEWORD-JUMP ,CODEWORD-LEVAD ,STORY547>>
+
+<CONSTANT TEXT080 "The warehouse door has a padlock on it, but it is easily smashed open. Inside you grab as many weapons as you can carry and head back to the building. You risk making another two runs before Talmai decides that you have enough weapons. You look at the pile of weapons in the middle of the floor there are many swords, axes, knives, bows, arrows, crossbows, bolts and maces. You will definitely be well equipped for the battle.||You return to Bumble Row to get some sleep with what little time you have left.">
 
 <ROOM STORY080
 	(DESC "080")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT080)
+	(PRECHOICE STORY080-PRECHOICE)
+	(CONTINUE STORY178)
+	(CODEWORD CODEWORD-ARMED)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY080-PRECHOICE ()
+	<DELETE-CODEWORD ,CODEWORD-MAZEL>
+	<KEEP-ITEM ,SWORD>>
 
 <ROOM STORY081
 	(DESC "081")

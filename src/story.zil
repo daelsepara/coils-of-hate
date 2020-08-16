@@ -774,175 +774,122 @@
 <ROUTINE STORY040-PRECHOICE ()
 	<SKILL-JUMP ,SKILL-THROWING ,STORY008>>
 
+<CONSTANT TEXT041 "The inner ring has a large hall where all the prisoners eat, whilst being watched by guards. Its design is called the Panopticon and it allows the prisoners to be watched from all places. In the centre of the hall is a giant blob of purple flesh and tentacles, pulsating slowly, as if it is resting. A score of guards can be seen partly submerged in the flesh. Upon seeing you, they give low moans of despair. This has been the work of but a single night for Hate, and what is worse, is that the blobs seem to be getting bigger.||Most of the men have only been sucked in as far as both elbows, or knees, but they are all exhausted by their fruitless struggle to break free. Unable any longer to resist the pull of Hate they are being submerged in the purple morass inch by inch.||Most of the men are wailing out repentance for the atrocities they have committed on the poor prisoners of Grond.">
+<CONSTANT CHOICES041 <LTABLE "set them free" "eave them to their harsh but deserved fate and go on to free the Judain">>
+
 <ROOM STORY041
 	(DESC "041")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT041)
+	(CHOICES CHOICES041)
+	(DESTINATIONS <LTABLE STORY177 STORY376>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT042 "It is time for you to leave the city. Godorno has become too dangerous for you now. However, you are near the shop of your friend Tarkamandir. Tarkamandir is a sage who is able to get hold of many useful items. You have known him for a long time and he has always made sure that you have access to his finest goods. You could stay a little longer and visit him, or you could try to escape straight away.">
+<CONSTANT CHOICES042 <LTABLE "visit Tarkamandir" "leave via the main gate" "stow away on a barge">>
 
 <ROOM STORY042
 	(DESC "042")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT042)
+	(CHOICES CHOICES042)
+	(DESTINATIONS <LTABLE STORY453 STORY344 STORY522>)
+	(TYPES THREE-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT043 "You speak the word of power that evokes the potent spell of Visceral Pang. Skakshi is seized by a palsy and he collapses to the sawdust covered floor, writhing and frothing at the mouth.||\"You, Skakshi, will take me to meet with your guildmaster, Melmelo. I have a proposition to put to him for his ears only.\"||\"I'll do anything, Judain. Anything! Just release me from this wracking spell.\"||You take pity on the miserable wretch and banish the spell with a thought. Skakshi rises slowly to his feet and says he will take you to Melmelo's stronghold, claiming that only he knows the password.||Skakshi fears that you are going to kill him.">
 
 <ROOM STORY043
 	(DESC "043")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT043)
+	(CONTINUE STORY214)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT044 "You gather the girl in your arms. She is as light as a feather pillow and quite limp. Her face is untouched by the blemishes which mar her body and she is quite beautiful, as you would expect of the Overlord's concubine. You then think about how to get both her and yourself across the carpet without stepping on it. You wrap her in the silk bedspread and decide to drag her from the bed after leaping clear.||You jump to safety, holding one corner of the bedspread, then tug it hard so that the girl slips from the bed and is dragged across the carpet. As soon as the swaddled form touches the filigreed carpet, the wires spring forth to entangle themselves in the counterpane. Try as you might, you cannot drag her any further.||A large black form, like a manta ray or a vampire's cloak, detaches itself from the underside of the canopy of the Overlord's bed and drifts down through the air towards your head.">
+<CONSTANT CHOICES044 <LTABLE "make a run for it and leave the girl" "go back onto the carpet to cut the concubine free">>
 
 <ROOM STORY044
 	(DESC "044")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT044)
+	(CHOICES CHOICES044)
+	(DESTINATIONS <LTABLE STORY519 STORY070>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT045 "Huge chunks of purple flesh are strewn about the plaza. You start to advance to finish Hate off, but before you do, you head a voice in your head. It is Lucie's.||\"Please stop. You are hurting me!\" You hear her melodious voice say. An image flashes in your mind. She is trapped in Hate, suffering because of the pain you brought upon the beast.">
+<CONSTANT CHOICES045 <LTABLE "stop" "destroy Hate, whatever the cost">>
 
 <ROOM STORY045
 	(DESC "045")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT045)
+	(CHOICES CHOICES045)
+	(DESTINATIONS <LTABLE STORY164 STORY509>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT046 "Your senses have been honed razor-keen by your many escapades on the hazy edge of the law. When a thief treads lightly on the steps leading down to your cellar hideout, you are instantly awake and on your feet. A figure stands in its shadows. Seeing that you are awake, the intruder turns and bolts away. You chase him up the street, but he is already out of sight. Your only impression was of a small build and very quick reflexes. You must be on the look-out for such a person.||You go back to your lair and spend the rest of the night undisturbed.">
 
 <ROOM STORY046
 	(DESC "046")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT046)
+	(CONTINUE STORY502)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT047 "Hate turns its head and roars at you. You smell the fetid breath of the creature as it squirms towards you, eager to absorb you into its being.">
+<CONSTANT CHOICES047 <LTABLE "step into Hate's maw" "hesitate">>
 
 <ROOM STORY047
 	(DESC "047")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT047)
+	(CHOICES CHOICES047)
+	(DESTINATIONS <LTABLE STORY528 STORY554>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT048 "You did not obtain the Jewel of Sunset Fire, but you have the Jade Warrior's sword. You wrack your brains, trying to think of anything else that could be used to fight Hate, but you cannot. You only hope that the sword will be enough.||You decide that it is time to face Hate.">
 
 <ROOM STORY048
 	(DESC "048")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT048)
+	(CONTINUE STORY283)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT049 "You may have the barricade and you may have the advantage of numbers, but the Overlord's men are still trained soldiers. The first sign of attack is a cry of pain from one of the archers on a nearby roof. Then you see all your archers fall. The Overlord's men must have broken in through the backs of the houses or climbed on the roofs. Then you see why a dozen black clad guards are now on the floors pointing crossbows at your group. From where they are, hitting the defenders is like shooting fish in a barrel. The first volley fells six Judain. The survivors attempt to throw their missiles at the Overlord's men, but they are out of range. Then come the squad of guards, charging down the street at the barricade, wielding axes and swords. Some have grappling hooks. Another volley of crossbow bolts rains down on the defenders and some of them flee in panic, but their escape is blocked by a squad of guards that snuck around the barrier. They are quickly put to the sword. The ones that stay fight bravely, but they are no match for the heavily armed and armoured soldiers.||The next day, Ahab will admit that he made a mistake, but it will do little good for your corpse as it rots in the streets of Godorno.">
 
 <ROOM STORY049
 	(DESC "049")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT049)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT050 "You greet the men's attack. Your sword will help, but you may not know how to use it.">
+<CONSTANT TEXT050-SWORDPLAY "You wield your sword well.">
+<CONSTANT TEXT050-CONTINUED "Eventually, badly cut and beaten, the two men flee, the youth dropping his knife.||You head towards Greenbark Plaza">
 
 <ROOM STORY050
 	(DESC "050")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT050)
+	(PRECHOICE STORY050-PRECHOICE)
+	(CONTINUE STORY415)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY050-PRECHOICE ("AUX" (SWORDPLAY F) (DAMAGE 3))
+	<COND (<CHECK-SKILL ,SKILL-SWORDPLAY>
+		<SET SWORDPLAY T>
+		<PREVENT-DEATH ,STORY050>
+		<EMPHASIZE ,TEXT050-SWORDPLAY>
+	)(<CHECK-SKILL ,SKILL-UNARMED-COMBAT>
+		<SET DAMAGE 1>
+	)>
+	<COND (<NOT .SWORDPLAY>
+		<LOSE-LIFE .DAMAGE ,DIED-IN-COMBAT ,STORY050>
+	)>
+	<COND (<IS-ALIVE>
+		<CRLF>
+		<TELL ,TEXT050-CONTINUED>
+		<TELL ,PERIOD-CR>
+		<KEEP-ITEM ,KNIFE>
+	)>>
 
 <ROOM STORY051
 	(DESC "051")

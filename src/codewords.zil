@@ -4,3 +4,6 @@
     (DESC "Satori")
     (SYNONYM SATORI)>
 
+<OBJECT CODEWORD-LEVAD
+    (DESC "Levad")
+    (SYNONYM LEVAD)>

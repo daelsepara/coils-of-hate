@@ -30,6 +30,12 @@
 
 ; Objects
 
+<OBJECT FOOD
+    (DESC "food")
+    (SYNONYM FOOD)
+    (QUANTITY 1)
+    (FLAGS TAKEBIT)>
+
 <OBJECT HEALING-SALVE
     (DESC "healing salve")
     (SYNONYM SALVE)

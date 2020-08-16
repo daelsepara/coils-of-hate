@@ -18,6 +18,10 @@
 	<RESET-CONTAINER ,LOST-SKILLS>
 	<PUTP ,STORY002 ,P?DEATH T>
 	<PUTP ,STORY006 ,P?DEATH T>
+	<PUTP ,STORY013 ,P?DEATH T>
+	<PUTP ,STORY015 ,P?DEATH T>
+	<PUTP ,STORY017 ,P?DEATH T>
+	<PUTP ,STORY018 ,P?DEATH T>
 	<RETURN>>
 
 <CONSTANT DIED-IN-COMBAT "You died in combat">
@@ -33,7 +37,19 @@
 	(ADJECTIVE LOST)
 	(FLAGS CONTBIT OPENBIT)>
 
+<CONSTANT HEALING-KEY-CAPS !\U>
+<CONSTANT HEALING-KEY !\u>
+
 <ROUTINE SPECIAL-INTERRUPT-ROUTINE (KEY)
+	<COND (<AND <EQUAL? .KEY ,HEALING-KEY-CAPS ,HEALING-KEY> <CHECK-ITEM ,HEALING-SALVE> <L? ,LIFE-POINTS ,MAX-LIFE-POINTS>>
+		<CRLF>
+		<TELL CR "Use " T ,HEALING-SALVE " to restore 1 life point?">
+		<COND (<YES?>
+			<GAIN-LIFE 1>
+			<LOSE-ITEM ,HEALING-SALVE>
+		)>
+		<RTRUE>
+	)>
 	<RFALSE>>
 
 <ROUTINE PREVENT-DEATH ("OPT" STORY)
@@ -94,11 +110,6 @@
 		<PUTP .OBJECT ,P?QUANTITY .QUANTITY>
 	)>>
 
-<ROUTINE TAKE-QUANTITIES (OBJECT PLURAL MESSAGE "OPT" AMOUNT)
-	<CRLF>
-	<TELL "Take the " .PLURAL "?">
-	<COND (<YES?> <ADD-QUANTITY .OBJECT <GET-NUMBER .MESSAGE 0 .AMOUNT> ,PLAYER>)>>
-
 <ROUTINE CHECK-VEHICLE (RIDE)
 	<COND (<OR <IN? .RIDE ,VEHICLES> <AND ,CURRENT-VEHICLE <EQUAL? ,CURRENT-VEHICLE .RIDE>>> <RTRUE>)>
 	<RFALSE>>
@@ -130,6 +141,128 @@
 		<MOVE .SKILL ,LOST-SKILLS>
 	)>>
 
+<ROUTINE ADD-FOOD ("OPT" AMOUNT)
+	<ADD-QUANTITY ,FOOD .AMOUNT ,PLAYER>>
+
+<ROUTINE BUY-FOOD (PRICE "AUX" QUANTITIES)
+	<COND (<G=? ,MONEY .PRICE>
+		<CRLF>
+		<TELL "Buy food for " N .PRICE " " D ,CURRENCY " each?">
+		<COND (<YES?>
+			<REPEAT ()
+				<SET QUANTITIES <GET-NUMBER "How many food supplies will you buy" 0 8>>
+				<COND (<G? .QUANTITIES 0>
+					<COND (<L=? <* .QUANTITIES .PRICE> ,MONEY>
+						<CRLF>
+						<HLIGHT ,H-BOLD>
+						<TELL "You purchased " N .QUANTITIES>
+						<TELL D ,FOOD " suppl">
+						<COND (<G? .QUANTITIES 1> <TELL "ies">)(ELSE <TELL "y">)>
+						<TELL ,PERIOD-CR>
+						<CHARGE-MONEY <* .QUANTITIES .PRICE>>
+						<ADD-FOOD .QUANTITIES>
+						<COND (<L? ,MONEY .PRICE> <RETURN>)>
+					)(ELSE
+						<EMPHASIZE "You can't afford that!">
+					)>
+				)(ELSE
+					<RETURN>
+				)>
+			>
+		)>
+	)>>
+
+<ROUTINE SELL-FOOD (PRICE "AUX" (FOOD-SOLD 0) (QUANTITY 0))
+	<COND (<HAS-FOOD>
+		<SET QUANTITY <GETP ,FOOD ,P?QUANTITY>>
+		<CRLF>
+		<TELL "Sell food supplies at " N .PRICE " " D ,CURRENCY " each?">
+		<COND (<YES?>
+			<SET FOOD-SOLD <GET-NUMBER "How many food supplies will you sell" 0 .QUANTITY>>
+			<COND (<G? .FOOD-SOLD 0>
+				<SETG ,MONEY <+ ,MONEY <* .FOOD-SOLD .PRICE>>>
+				<SET .QUANTITY <- .QUANTITY .FOOD-SOLD>>
+				<CRLF>
+				<TELL "You sold ">
+				<HLIGHT ,H-BOLD>
+				<TELL N .FOOD-SOLD " food suppl">
+				<COND (<G? .FOOD-SOLD 1> <TELL "ies">)(ELSE <TELL "y">)>
+				<HLIGHT 0>
+				<TELL ,PERIOD-CR>
+				<COND (<G? .QUANTITY 0>
+					<PUTP ,FOOD ,P?QUANTITY .QUANTITY>
+				)(ELSE
+					<PUTP ,FOOD ,P?QUANTITY 1>
+					<REMOVE ,FOOD>
+				)>
+			)>
+		)>
+	)>>
+
+<ROUTINE TAKE-FOOD ("OPT" AMOUNT "AUX" SUPPLIES)
+	<COND (<NOT .AMOUNT> <SET .AMOUNT 1>)>
+	<CRLF>
+	<TELL "Take " T ,FOOD " suppl">
+	<COND (<G? .AMOUNT 1> <TELL "ies">)(ELSE <TELL "y">)>
+	<TELL "?">
+	<COND (<YES?>
+		<COND (<G? .AMOUNT 1>
+			<SET SUPPLIES <GET-NUMBER "How many food supplies will you take" 0 .AMOUNT>>
+			<ADD-FOOD .SUPPLIES>
+			<RETURN .SUPPLIES>
+		)(ELSE
+			<TAKE-ITEM ,FOOD>
+			<RETURN 1>
+		)>
+	)>
+	<RETURN 0>>
+
+<ROUTINE CONSUME-FOOD ("OPT" AMOUNT JUMP "AUX" QUANTITY (RETURN-VALUE F))
+	<COND (<NOT .AMOUNT> <SET AMOUNT 1>)>
+	<COND (<CHECK-ITEM ,FOOD>
+		<SET QUANTITY <GETP ,FOOD ,P?QUANTITY>>
+		<COND (<G=? .QUANTITY .AMOUNT>
+			<SET QUANTITY <- .QUANTITY .AMOUNT>>
+			<PUTP ,FOOD ,P?QUANTITY .QUANTITY>
+			<COND (<G=? .QUANTITY 1>
+				<CRLF>
+				<HLIGHT ,H-BOLD>
+				<TELL "[Your supply of food decreased by " N .AMOUNT "]" CR>
+				<HLIGHT 0>
+			)(ELSE
+				<EMPHASIZE "[You've exhausted your food supplies]">
+			)>
+			<COND (.JUMP <STORY-JUMP .JUMP>)>
+			<SET RETURN-VALUE T>
+		)>
+		<COND (<L? .QUANTITY 1>
+			<PUTP ,FOOD ,P?QUANTITY 1>
+			<REMOVE ,FOOD>
+		)>
+	)>
+	<RETURN .RETURN-VALUE>>
+
+<ROUTINE HAS-FOOD ("OPT" (THRESHOLD 0) "AUX" (QUANTITY 0))
+	<COND (<CHECK-ITEM ,FOOD>
+		<SET QUANTITY <GETP ,FOOD ,P?QUANTITY>>
+		<COND (<G? .QUANTITY .THRESHOLD> <RTRUE>)>
+	)>
+	<RFALSE>>
+
+<ROUTINE TAKE-QUANTITIES (OBJECT PLURAL MESSAGE "OPT" AMOUNT)
+	<CRLF>
+	<TELL "Take the " .PLURAL "?">
+	<COND (<YES?> <ADD-QUANTITY .OBJECT <GET-NUMBER .MESSAGE 0 .AMOUNT> ,PLAYER>)>>
+
+<ROUTINE SKILL-JUMP (SKILL STORY)
+	<COND (<CHECK-SKILL .SKILL> <STORY-JUMP .STORY>)>>
+
+<ROUTINE ITEM-JUMP (ITEM STORY)
+	<COND (<CHECK-ITEM .ITEM> <STORY-JUMP .STORY>)>>
+
+<ROUTINE CODEWORD-JUMP (CODEWORD STORY)
+	<COND (<CHECK-CODEWORD .CODEWORD> <STORY-JUMP .STORY>)>>
+
 <CONSTANT TEXT "This story has not been written yet.">
 
 <CONSTANT PROLOGUE-TEXT "You are down on your luck, but you will not swallow your pride and look for a job. Every day a throng of hopefuls gathers outside the rich palazzi of the riverfront. Others seek to join a trader\"s caravan as a guide or guard. The caravan lines are swelled by tall proud Judain slaves with their glittering black eyes, backs bent under casks of jewels, spices and silks. Those turned away from the caravans will drift at last to the seaweed-stinking waterfront to become rowers in the fleet and begin a life no better than slavery.||In your heart, you know that your destiny, the destiny of a Judain is greater than this. You knew this ever since the rabbi Caiaphas recognised the potential in you as a child and sent you to be instructed by the best the Judain could offer. He knew that you would accomplish great things. Now you are without peer among your people. One thing only you lack: a sense of purpose, a quest to show your greatness and put your skills to the test.||The city of Godorno is a stinking cesspit. You find it hard to believe that once it was called \"The Jewel of the East\". In the past two centuries Godorno has become a byword for decadence, luxury and idle pleasure. Everywhere you look you see the insignia of the winged lion, once the proud standard of the city\"s legions. Now it stands as the very symbol of corruption and evil. Your people are rich, but the non-Judain of Godorno covet those riches \"Usurers, thieves,\" they cry as your people walk the streets going about their daily business.||The Overlord stokes the fires of discontent. When those who speak out against his cruel reign disappear, never to be seen again, he blames the Judain. When people starve because he sells the harvest to the westerners for jewels, spices and silks, his minions say it is the Judain who profit from his peoples\" wretchedness. Some Judain have retaliated. A group called the Sycaari has formed which inflicts acts of revenge upon the Overlord\"s followers. However, Caiaphas, your mentor is against this \"No good will come from meeting hatred with hatred,\" you once heard him tell you \"We must show our enemies how to live before the drag us all down into the depths of hate.\"||Caiaphas has always urged the Judain to resolve things peacefully and to make connections with the non-Judain of the city, but the Overlord\"s insidious messages are too far reaching. Now the people hate you and all your kind. Soon it will not be safe to walk the streets.">
@@ -155,7 +288,7 @@
 	)>
 	<MERCHANT <LTABLE KNIFE SWORD MAGIC-AMULET HEALING-SALVE MAGIC-WAND> <LTABLE 5 15 15 20 30>>
 	<COND (<CHECK-ITEM ,HEALING-SALVE>
-		<TELL CR "A healing salve can be used only once to restore 1 Life point then it is lost. Press 'U' any time" ,PERIOD-CR>
+		<TELL CR "A healing salve can be used only once to restore 1 Life point then it is lost. Press 'U' any time to use it" ,PERIOD-CR>
 	)>
 	<UPDATE-STATUS-LINE>>
 
@@ -189,7 +322,7 @@
 		<CRLF>
 		<TELL ,TEXT002-CONTINUED>
 		<CRLF>
-		<COND (<CHECK-ITEM ,IVORY-POMEGRANATE> <STORY-JUMP ,STORY268>)>
+		<ITEM-JUMP ,IVORY-POMEGRANATE ,STORY268>
 	)>>
 
 <CONSTANT TEXT003 "Rulership would be a good choice here. You speak the words of the spell and point your wand at one of the soldiers. \"Get away from him!\" you hear him yell \"The reward for this one is all mine!\" he shouts as he draws his sword. The other two also draw swords. The soldier you are controlling swings at one of the others who defends himself and soon a three way brawl erupts. The Judain slinks away, forgotten in the midst of the fighting.||He heads towards you.">
@@ -272,174 +405,144 @@
 	(CONTINUE STORY384)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT011 "\"Look, we're no trouble. We just stayed out late. We're just heading back to our houses. Why don't we forget this ever happened?\" you say, taking the money out of your purse. The guard's eyes light up \"I'm going to patrol the docks. You've got ten minutes.\" he says as he stuffs the coins into his pocket. He then walks off down the docks.||You run aboard the boat, grab as much food as you can and take it back to Ginath's house.">
+
 <ROOM STORY011
 	(DESC "011")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT011)
+	(PRECHOICE STORY011-PRECHOICE)
+	(CONTINUE STORY270)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY011-PRECHOICE ()
+	<TAKE-FOOD 8>>
+
+<CONSTANT TEXT012 "The knife is perfect for the job. You send it into the bloated gasbag of a body which is punctured. Black ichor sprays all over the room.">
 
 <ROOM STORY012
 	(DESC "012")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT012)
+	(PRECHOICE STORY012-PRECHOICE)
+	(CONTINUE STORY109)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY012-PRECHOICE ()
+	<SKILL-JUMP ,SKILL-THROWING ,STORY158>>
+
+<CONSTANT TEXT013 "The tentacles try to wrap themselves around your limbs, but almost as soon as they touch you, they withdraw quickly. However, they start to lash out at you, striking you in the face, arms and torso. The blob still advances upon you, eager to engulf you in its gelatinous purple flesh.">
+<CONSTANT TEXT013-CONTINUED "You flee the blob before you become another lost soul.">
 
 <ROOM STORY013
 	(DESC "013")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT013)
+	(PRECHOICE STORY013-PRECHOICE)
+	(CONTINUE STORY342)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY013-PRECHOICE ()
+	<LOSE-LIFE 2 ,DIED-FROM-INJURIES ,STORY013>
+	<IF-ALIVE ,TEXT013-CONTINUED>>
+
+<CONSTANT TEXT014 "You slink through the alleyways, dodging shadows and waiting patiently when you hear people walk by. You don't know if these people are the Overlord's soldiers, thieves or Sycaari, but you figure that at this time at night that you don't want to meet anyone in the streets. Eventually, you get to the guard's house. Before you approach it, you stake it out. The house has been neglected the wood is rotting and the door is open ajar. You cannot see any lights. This seems easy. You make sure that the coast is clear before approaching the door.">
 
 <ROOM STORY014
 	(DESC "014")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT014)
+	(PRECHOICE STORY014-PRECHOICE)
+	(CONTINUE STORY235)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY014-PRECHOICE ()
+	<ITEM-JUMP ,IVORY-POMEGRANATE ,STORY472>>
+
+<CONSTANT TEXT015 "You scream in agony as the light seeps into your flesh. A moment later, you are horrified to feel something sprouting from your chest. Hate has awakened the evil in your own heart, forming a cancer that gnaws at you from within.">
+<CONSTANT TEXT015-CONTINUED "You join the charge on Hate.">
 
 <ROOM STORY015
 	(DESC "015")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT015)
+	(PRECHOICE STORY015-PRECHOICE)
+	(CONTINUE STORY002)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY015-PRECHOICE ()
+	<LOSE-LIFE 5 ,DIED-FROM-INJURIES ,STORY015>
+	<IF-ALIVE ,TEXT015-CONTINUED>>
+
+<CONSTANT TEXT016 "You decide to return to safety.">
 
 <ROOM STORY016
 	(DESC "016")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT016)
+	(PRECHOICE STORY016-PRECHOICE)
+	(CONTINUE STORY436)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY016-PRECHOICE ()
+	<CODEWORD-JUMP ,CODEWORD-LEVAD ,STORY192>>
+
+<CONSTANT TEXT017 "You charge at the guards and strike one before they know what is happening. He falls down without a sound. You charge at another one who spots you and is ready for you. This will be a tough battle, but if you fight hard enough, the guards will flee, looking for easier pickings.">
+<CONSTANT TEXT017-CONTINUE "Eventually, the remaining guards flee, leaving you and the remaining citizens to recover from your ordeal.||Talmai approaches you.">
 
 <ROOM STORY017
 	(DESC "017")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT017)
+	(PRECHOICE STORY017-PRECHOICE)
+	(CONTINUE STORY425)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY017-PRECHOICE ("AUX" (DAMAGE 5))
+	<COND (<CHECK-SKILL ,SKILL-SWORDPLAY>
+		<SET DAMAGE 2>
+	)(<CHECK-SKILL ,SKILL-UNARMED-COMBAT>
+		<SET DAMAGE 3>
+	)(<CHECK-ITEM ,SWORD>
+		<SET DAMAGE 4>
+	)>
+	<LOSE-LIFE .DAMAGE ,DIED-IN-COMBAT ,STORY017>
+	<IF-ALIVE ,TEXT017-CONTINUE>>
+
+<CONSTANT TEXT018 "Your band battle on, but Hate, despite being wounded is not finished yet.">
+<CONSTANT TEXT018-CONTINUED "Hate is continuing to thrash and you see that the magical chains are starting to fade. Something needs to be done now">
 
 <ROOM STORY018
 	(DESC "018")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT018)
+	(PRECHOICE STORY018-PRECHOICE)
+	(CONTINUE STORY554)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY018-PRECHOICE ("AUX" (DAMAGE 7))
+	<COND (<CHECK-SKILL ,SKILL-SWORDPLAY> <SET DAMAGE 5>)>
+	<LOSE-LIFE .DAMAGE ,DIED-IN-COMBAT ,STORY018>
+	<COND (<IS-ALIVE>
+		<CRLF>
+		<TELL ,TEXT018-CONTINUED>
+		<TELL ,PERIOD-CR>
+		<CODEWORD-JUMP ,CODEWORD-SATORI ,STORY047>
+	)>>
+
+<CONSTANT TEXT019 "You return to the dank cellar with the maps. Ahab looks at them 'You have done well. You know what, I could do with someone like you. However, you did flee the city. You need to prove your worth some more. Our resistance needs funding. A few days ago, a Judain jeweller's assistant came to see us. His employer had fired him for being Judain and the man was not able to flee the city. He approached Captain Tormil who demanded all of his possessions. I'll have that cur's head one day. Anyway, his employer on Mire Street has obtained a large diamond, forcefully taken from a Judain owner he has been ordered by the Overlord to fashion it into a sceptre. If you can get the diamond and fence it, we can get some money and strike a blow against the Overlord.||Ahab gives you the address of the shop.||You set off on your mission.">
 
 <ROOM STORY019
 	(DESC "019")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT019)
+	(CONTINUE STORY292)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT020 "It is a difficult leap but you just make it, launching yourself high in the air from a short run up. You land beside the girl and the bodies on the bed rock as the bedsprings bounce. The Overlord twitches again but does not awaken, while the girl lies inert, her back still towards you.">
+<CONSTANT CHOICES020 <LTABLE "step over the girl to get to the Overlord" "carry the concubine off for questioning">>
 
 <ROOM STORY020
 	(DESC "020")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT020)
+	(CHOICES CHOICES020)
+	(DESTINATIONS <LTABLE STORY053 STORY044>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY021

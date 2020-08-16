@@ -1008,174 +1008,108 @@
 	<TAKE-ITEM ,DIAMOND>
 	<SELECT-FROM-LIST <LTABLE ROPE GRAPPLE> 2 2>>
 
+<CONSTANT TEXT061 "The city and all of its inhabitants are a lost cause. If they don't join the orgy of despair in Hate, they will be corpses soon. If everyone is so determined to spend their last days slaughtering each other for pointless causes, then so be it. You will start a new life elsewhere.">
+
 <ROOM STORY061
 	(DESC "061")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT061)
+	(PRECHOICE STORY061-PRECHOICE)
+	(CONTINUE STORY113)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY061-PRECHOICE ()
+	<CODEWORD-JUMP ,CODEWORD-MAZEL ,STORY311>>
+
+<CONSTANT TEXT062 "\"Look, I just want to have a little chat with Melmelo. He won't even know it was you who told me.\"
+You say as you put the coins on the table.||\"Fine, you go and talk to him then. He lives in a villa in the Foreigners' Quarter. It has an ornamental steam bath in the garden.\"">
+<CONSTANT CHOICES062 <LTABLE "order a drink from a bar" "join Lucie and the stranger">>
 
 <ROOM STORY062
 	(DESC "062")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT062)
+	(CHOICES CHOICES062)
+	(DESTINATIONS <LTABLE STORY306 STORY132>)
+	(TYPES TWO-NONES)
+	(CODEWORD CODEWORD-LARCENY)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT063 "Though your instinct is to trust Lucie who seems open and without guile, you know it makes no sense to agree to a meeting with a stranger, particularly in a city like Godorno where your people are the victims of genocide. You demand to be told who it is who can help you in your struggle to save your people.||\"He made me promise to keep his identity secret, until you meet. He said he could help you only if you are able to trust. So many good people have fallen into the clutches of the coils of Hate. Trust me.\"||\"Is he Judain?\"||\"No, not Judain. Come we are almost there.\"||\"No, I will not place myself in danger. I would be a fool to do so.\"||\"Don't you trust me?\"||Lucie looks shocked and hurt. \"I've been doing my best to help you and now you won't trust me.\"||\"Lucie...\" You reach out and touch her, but she spits at you and runs off.||Bewildered at her strange behaviour, you return to Bumble Row.">
 
 <ROOM STORY063
 	(DESC "063")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT063)
+	(CONTINUE STORY351)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT064 "Now that you know that the Overlord's reach extends beyond Godorno, you have a restless night. Your mind races with possibilities, plans and questions. Should you stay here and hope the situation dies down? Should you head further north, or hide out in the Great Forest? Should you return to Godorno to help your people?||Eventually, the sun shines in through your bedroom window and you get up and prepare for the day. You have a breakfast of eggs and bread and then leave the inn.||Your first port of call is a very interesting shop that stocks all kinds of useful goods. You enter it and begin to search through the myriad items to see if there is anything that you might find useful.">
 
 <ROOM STORY064
 	(DESC "064")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT064)
+	(PRECHOICE STORY064-PRECHOICE)
+	(CONTINUE STORY301)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY064-PRECHOICE ()
+	<SKILL-JUMP ,SKILL-FOLKLORE ,STORY248>>
+
+<CONSTANT TEXT065 "The only way you know of contacting Melmelo is by asking a thief. The only place you can be sure to find a thief when you want one is The Inner Temple, an inn in the middle of the oldest part of the city. The Oldest part of the city is an ever nighted labyrinth crawling with cutthroats and footpads. You decide to err on the side of caution and smuggle yourself in. You head to the mews of Slave Market Plaza and find an unattended slaver's cart. You get under it and cling to the axles of the cart and wait for it to move. The cart eventually starts to move along the cobbles. You have a bumpy ride for an hour until you let yourself fall, unnoticed to the cobbles as it turns a corner. Next you pick your way through a maze of old alleyways, built soon after this part of the city was razed to the ground in the Great Fire of a few years ago.||You are soon looking at the doors of the Inn of the Inner Temple.">
 
 <ROOM STORY065
 	(DESC "065")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT065)
+	(CONTINUE STORY303)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT066 "The guard's face is as purple as Hate as he exerts a great effort and you are dragged into the translucent flesh of the monster. You have joined the orgy of despair and the poor guard who dragged you in cannot escape. He is exhausted. You must lie together, like eggs in a basket, as Hate goes on devouring lost souls. There is no one left to save the Judain now. Hate will conquer all.">
 
 <ROOM STORY066
 	(DESC "066")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT066)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT067 "Without thinking, you run across the bar room, leap over the bar and dash out of the back door. You emerge into a narrow alley way, where you cast a spell of invisibility on yourself, thankful to the sorcerer who created it for making the casting time as short and as simple as possible. You then flee the area. As you do, you hear the angry shouts of the Overlord's men as they storm out into the alleyway and run off in different directions. However, you make sure that you are standing out of their way as they run past you.||With the danger passed, you breathe a sigh of relief. Godorno is far too dangerous for you to stay here. You're going to have to leave.">
+<CONSTANT CHOICES067 <LTABLE "leave via the main gate to the trade route" "stow away on a barge" "risk visiting one of your friends before you leave">>
 
 <ROOM STORY067
 	(DESC "067")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT067)
+	(CHOICES CHOICES067)
+	(DESTINATIONS <LTABLE STORY344 STORY522 STORY467>)
+	(TYPES THREE-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT068 "You carry on up the road until you come to a fork.">
+<CONSTANT CHOICES068 <LTABLE "head north to Bagoe" "west to Burg and the Great Forest">>
 
 <ROOM STORY068
 	(DESC "068")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT068)
+	(CHOICES CHOICES068)
+	(DESTINATIONS <LTABLE STORY496 STORY358>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT069 "Ahab explodes at this paltry sum.||\"A fool could get a better price for such a gem! I know what you've been up to, you thief. Well, I'll teach you to steal from the Sycaari!\"">
+<CONSTANT CHOICES069 <LTABLE "get out of this situation using" "or" "otherwise">>
 
 <ROOM STORY069
 	(DESC "069")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT069)
+	(CHOICES CHOICES069)
+	(DESTINATIONS <LTABLE STORY133 STORY133 STORY191>)
+	(REQUIREMENTS <LTABLE SKILL-CUNNING SKILL-STREETWISE NONE>)
+	(TYPES <LTABLE R-SKILL R-SKILL R-NONE>)
+	(COST 100)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT070 "As soon as you step onto the carpet the gold and silver filigree threads seem to bunch and tighten beneath the balls of your feet. Before you can try to set yourself free, the black shape settles heavily over your head. Its skin sports rows of barbed spines that inject poison into your bloodstream. Try as you might, you can't break free. The poison turns your blood to cloying syrup. You collapse onto the carpet, which garrottes you whilst the poison stops your heart. Hate will subdue all.">
 
 <ROOM STORY070
 	(DESC "070")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT070)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY071

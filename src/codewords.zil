@@ -1,8 +1,16 @@
 ; "Codewords for Coils of Hate"
 
+<OBJECT CODEWORD-LARCENY
+    (DESC "Larceny")
+    (SYNONYM LARCENY)>
+
 <OBJECT CODEWORD-LEVAD
     (DESC "Levad")
     (SYNONYM LEVAD)>
+
+<OBJECT CODEWORD-MAZEL
+    (DESC "Mazel")
+    (SYNONYM MAZEL)>
 
 <OBJECT CODEWORD-SATORI
     (DESC "Satori")

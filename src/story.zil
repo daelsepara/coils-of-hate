@@ -28,6 +28,8 @@
 	<PUTP ,STORY023 ,P?DEATH T>
 	<PUTP ,STORY050 ,P?DEATH T>
 	<PUTP ,STORY071 ,P?DEATH T>
+	<PUTP ,STORY084 ,P?DEATH T>
+	<PUTP ,STORY087 ,P?DEATH T>
 	<RETURN>>
 
 <CONSTANT DIED-IN-COMBAT "You died in combat">
@@ -1293,174 +1295,155 @@ You say as you put the coins on the table.||\"Fine, you go and talk to him then.
 	<DELETE-CODEWORD ,CODEWORD-MAZEL>
 	<KEEP-ITEM ,SWORD>>
 
+<CONSTANT TEXT081 "You hurl the pomegranate with force and accuracy and it shoots straight into Hate's mouth and down its throat. The beast starts to shudder and a look of fear appears on its face.">
+
 <ROOM STORY081
 	(DESC "081")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT081)
+	(PRECHOICE STORY081-PRECHOICE)
+	(CONTINUE STORY550)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY081-PRECHOICE ()
+	<CODEWORD-JUMP ,CODEWORD-HECATOMB ,STORY410>>
+
+<CONSTANT TEXT082 "Caiaphas looks disappointed. \"You have your reasons. Good luck.\"||You decide to leave immediately.">
+<CONSTANT CHOICES082 <LTABLE "head to the main gate in order to leave by the trade route" "stow away on a barge">>
 
 <ROOM STORY082
 	(DESC "082")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT082)
+	(CHOICES CHOICES082)
+	(DESTINATIONS <LTABLE STORY344 STORY522>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT083 "You flee out of the tomb and blunder through the tunnels and sewers until you find a ladder leading up to a manhole cover. You climb the ladder and emerge in a wide, empty street. You have escaped the Megiddo catacombs alive, but you have not obtained a weapon with which to combat Hate.">
 
 <ROOM STORY083
 	(DESC "083")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT083)
+	(PRECHOICE STORY083-PRECHOICE)
+	(CONTINUE STORY170)
+	(CODEWORD CODEWORD-THRUST)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY083-PRECHOICE ()
+	<COND (<CHECK-CODEWORD ,CODEWORD-TOWER>
+		<STORY-JUMP ,STORY059>
+	)(<CHECK-CODEWORD ,CODEWORD-JEWEL>
+		<STORY-JUMP ,STORY355>
+	)>>
+
+<CONSTANT TEXT084 "The parts of your body that were touching the purple slime itch. You climb out of the cellar and run to a barrel of rainwater in the street. You submerge your arm in it, pull it out and inspect it.||The skin that the slime touched is red and irritated.">
+<CONSTANT TEXT084-CONTINUED "You think about what has befallen the city persecution, plague and now this slime. You decide that you cannot survive alone and decide to contact with some friends in the city. You could look for your friend Ahab, member of the Sycaari or you visit Ruth, Caiaphas's widow, in order to offer your condolences and any help that she might want. She is with Caiaphas's child and this time must be very hard for her.">
+<CONSTANT CHOICES084 <LTABLE "visit Ahab" "Ruth">>
 
 <ROOM STORY084
 	(DESC "084")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT084)
+	(PRECHOICE STORY084-PRECHOICE)
+	(CHOICES CHOICES084)
+	(DESTINATIONS <LTABLE STORY420 STORY246>)
+	(TYPES TWO-NONES)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY084-PRECHOICE ()
+	<COND (<CHECK-ITEM ,IVORY-POMEGRANATE>
+		<PREVENT-DEATH ,STORY084>
+	)(ELSE
+		<LOSE-LIFE 1 ,DIED-FROM-INJURIES ,STORY084>
+	)>
+	<IF-ALIVE ,TEXT084-CONTINUED>>
+
+<CONSTANT TEXT085 "As the tentacles wrap around your wrists, you feel the pomegranate vibrate in your pocket. Almost immediately, they loosen their grip and the worm stops it advance. Not wishing to push your luck, you flee the square. As you do, you hear a squelching noise behind you and then you feel something warm, viscous and foul-smelling splash onto your back. However, as it does, the pomegranate vibrates again and you feel the slime evaporate.||You are glad to be alive.">
 
 <ROOM STORY085
 	(DESC "085")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT085)
+	(CONTINUE STORY108)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT086 "As you approach the copse, you hear a loud grunt and squeal. A huge boar bursts out from copse and charges at you. You have disturbed it and it sees you as a threat.">
 
 <ROOM STORY086
 	(DESC "086")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT086)
+	(PRECHOICE STORY086-PRECHOICE)
+	(CONTINUE STORY139)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY086-PRECHOICE ()
+	<SKILL-JUMP ,SKILL-THROWING ,STORY353>>
+
+<CONSTANT TEXT087 "You have to flee. The nearest Jade Warrior slashes at you as you do, inflicting a deep cut with its extremely sharp sword.">
+<CONSTANT TEXT087-FLEE "You flee for your life. ">
 
 <ROOM STORY087
 	(DESC "087")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT087)
+	(PRECHOICE STORY087-PRECHOICE)
+	(CONTINUE STORY083)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY087-PRECHOICE ()
+	<LOSE-LIFE 6 ,DIED-FROM-INJURIES ,STORY087>
+	<IF-ALIVE ,TEXT087-FLEE>>
+
+<CONSTANT TEXT088 "It seems that you are not safe even out of Godorno. With the speed of someone who has grown up in such a dangerous city, you leap out of bed and hurl yourself at the man in a desperate fight for your life. He is taken aback by such ferocity, but raises his sword.">
+<CONSTANT TEXT088-CONTINUED "You search the man, but he has nothing but his sword">
+<CONSTANT TEXT088-END "You tell the innkeeper of the attack, who summons the watch to dispose of the body. You move to another room">
 
 <ROOM STORY088
 	(DESC "088")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT088)
+	(PRECHOICE STORY088-PRECHOICE)
+	(CONTINUE STORY064)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY088-PRECHOICE ("AUX" (DAMAGE 4))
+	<COND (<CHECK-SKILL ,SKILL-SWORDPLAY>
+		<SET DAMAGE 1>
+	)(<CHECK-SKILL ,SKILL-UNARMED-COMBAT>
+		<SET DAMAGE 2>
+	)>
+	<LOSE-LIFE .DAMAGE ,DIED-IN-COMBAT ,STORY088>
+	<COND (<IS-ALIVE>
+		<CRLF>
+		<TELL ,TEXT088-CONTINUED>
+		<TELL ,PERIOD-CR>
+		<KEEP-ITEM ,SWORD>
+		<CRLF>
+		<TELL ,TEXT088-END>
+		<TELL ,PERIOD-CR>
+	)>>
+
+<CONSTANT TEXT089 "When you get to Tarkamandir's shop, you find him standing outside with a cart laden with goods. He is locking the door.||\"Shutting up for good?\" you ask.||Tarkamandir tells you that he has decided to quit the city. \"Matters have gone too far,\" he says \"each day I fear the guards will come and drag me off to Grond.\"||\"Why should you fear?\" you say with a trace of bitterness \"You are not Judain.\"||He gives a snort of ironic laughter. \"Do you think that what has been going on has been a simple matter of persecution? It goes deeper than that. The Overlord started his attacks on your people to distract attention from his disastrous policies, reasoning that once the populace had a scapegoat to blame they would be easier to control.\"||\"That strategy has worked well, then.\"||\"Now it is out of control! Hate is rife in the city. It extends its influence like a cancer. Today it is you Judain who are marched off to the prison. Tomorrow it may be the aged, or the infirm, or those who dare to speak out against the Overlord. That is why I am leaving.\" He takes a few more steps, the wheels of his cart sloshing through the rut of mire in the middle of the street, then pauses to look back.||\"As long as I am going, I suppose I ought to sell you some of my stock. Interested?\"||Tarkamandir has the following items:">
+<CONSTANT CHOICES089 <LTABLE "return to Ahab" "turn your back on the Sycaari and decide to survive on your own">>
 
 <ROOM STORY089
 	(DESC "089")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT089)
+	(PRECHOICE STORY089-PRECHOICE)
+	(CHOICES CHOICES089)
+	(DESTINATIONS <LTABLE STORY220 STORY173>)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY089-PRECHOICE ()
+	<BUY-STUFF ,KNIFE "knives" 10>
+	<MERCHANT <LTABLE HEALING-SALVE MAGIC-WAND FRAGRANT-INCENSE SILVER-MIRROR MAGIC-AMULET SWORD> <LTABLE 15 30 20 20 15 15>>
+	<CRLF>
+	<TELL "You bid Tarkamandir farewell and tell him that you hope it will not be the last you see of him. Then you decide your next move" ,PERIOD-CR>>
+
+<CONSTANT TEXT090 "You find Lucie loitering around the moored gondolas on Circle Canal. In better days she might have had rich pickings from dipping her hand into the purses of the wealthy. In these troubled times, few people dare venture into the streets with money in their pockets.||You explain that you want to get into Grond and free the prisoners there.||\"Help free those vermin?\" she says \"Why would I want to? Many are murderers, rapists and madmen!\"||\"Many are brave men and women whose only crime was to speak out against the Overlord. Others are even more blameless. My fellow Judain, for instance, declared criminal simply because of race and creed.\"||Lucie seems not even to have heard you. \"Those beasts in Grond they are animals! Let Hate take them!\" She looks at you as though you have lost your wits, her pretty face contorted with hatred. The glint in her green eyes is frightening. She looks mad.||You tell her off for her outburst. Lucie smirks coquettishly as you tell her off and says \"Well, it's true. Hate take them all and good riddance to bad rubbish.\"||You sigh, knowing you will never change her. You suspect that at least one of the criminal inmates of Grond must have done something dreadful to her before his imprisonment.||\"Surely there must be something you can do?\" you ask \"Don't you know any of the guards?\"||\"I suppose I do, one or two. There's Captain Khmer in the east tower. He oversees the towngate and the eastern courtyard. I could smuggle you in there.\"||You agree to this plan and follow Lucie to Grond. While she goes in search of Captain Khmer, you wait in the bakery adjacent to the prison. It is a long wait, but at least there is fresh bread to eat and the bakers and scullions will not give you away. They seem to be firm friends with Lucie. You have plenty of time to wonder how she binds people to her. These peasants are taking a terrible risk sheltering you under their roof.||At last Lucie comes back. She looks troubled but says \"I've arranged things for you. Walk up to the towngate in five minutes' time. They will open up and let you through. They won't harm you, but from then on you are on your own. I think something has gone terribly wrong in there. It wasn't easy to arrange. Don't waste my efforts in failure, Judain. I'm going to the Silver Eel. Come to me there and tell me how you fared.\" With that and a little squeeze of the shoulder, she is gone.||You approach the towngate.">
 
 <ROOM STORY090
 	(DESC "090")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT090)
+	(CONTINUE STORY153)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY091

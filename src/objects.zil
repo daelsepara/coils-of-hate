@@ -48,6 +48,18 @@
     (ADJECTIVE IVORY)
     (FLAGS TAKEBIT)>
 
+<OBJECT JEWEL-OF-SUNSET-FIRE
+    (DESC "Jewel of Sunset Fire")
+    (SYNONYM JEWEL)
+    (ADJECTIVE SUNSET FIRE)
+    (FLAGS TAKEBIT)>
+
+<OBJECT SMALL-LOCKED-CHEST
+    (DESC "small locked chest")
+    (SYNONYM CHEST)
+    (ADJECTIVE SMALL LOCKED)
+    (FLAGS TAKEBIT)>
+
 ; Vehicles
 
 ;Retroviruses

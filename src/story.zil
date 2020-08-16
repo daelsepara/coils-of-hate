@@ -22,6 +22,8 @@
 	<PUTP ,STORY015 ,P?DEATH T>
 	<PUTP ,STORY017 ,P?DEATH T>
 	<PUTP ,STORY018 ,P?DEATH T>
+	<PUTP ,STORY021 ,P?DEATH T>
+	<PUTP ,STORY023 ,P?DEATH T>
 	<RETURN>>
 
 <CONSTANT DIED-IN-COMBAT "You died in combat">
@@ -545,174 +547,125 @@
 	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT021 "There is nothing for it but to rush through the gates. You wait and watch the guards, picking your moment when they lose concentration. One of them goes to the guardhouse and the others sit on the bench. Eventually, the fourth guard comes out carrying a pot of tea. The other guards take a cup and start sipping it. Now! You rush to the gate. The guards leap up, but it is too late to close the gate on you. You are through. As you run, you hear the twangs of crossbows as they fire at you. One of the bolts hits you just before you round a corner.">
+<CONSTANT TEXT021-CONTINUED "You keep running, however until you are secure in the knowledge that the guards aren't following you. You hastily staunch your wound.||Now it is time to save your people.">
+
 <ROOM STORY021
 	(DESC "021")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT021)
+	(PRECHOICE STORY021-PRECHOICE)
+	(CONTINUE STORY232)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY021-PRECHOICE ()
+	<LOSE-LIFE 3 ,DIED-FROM-INJURIES ,STORY021>
+	<IF-ALIVE ,TEXT021-CONTINUED>>
+
+<CONSTANT TEXT022 "Of course you trust lovely little Lucie. She takes your hand and leads you into a quiet courtyard that gives out onto the upper end of Fortuny Street. You walk through an arboretum of magnolia trees and hanging baskets of weeping lilies and find yourself surrounded by the Overlord's men with crossbows pointed at your chest. Lucie smiles a wicked little smile.">
 
 <ROOM STORY022
 	(DESC "022")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT022)
+	(PRECHOICE STORY022-PRECHOICE)
+	(CONTINUE STORY026)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY022-PRECHOICE ()
+	<SKILL-JUMP ,SKILL-SPELLS ,STORY260>>
+
+<CONSTANT TEXT023 "You steal up behind one of the Jade Warriors and throw yourself against its word arm, wrenching the blade from its jade grasp.||\"Obey me, Jade Warriors of the Megiddo Dynasty!\" you cry on impulse.||Their only response is to swivel towards you ad advance with swords aloft. There seems to be no escape from their deadly flashing blades, and you cry out in agony as your stolen sword is dashed from your grip and you are cut to the bone.">
+<CONSTANT TEXT023-CONTINUED "You flee the tomb chamber.">
 
 <ROOM STORY023
 	(DESC "023")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT023)
+	(PRECHOICE STORY023-PRECHOICE)
+	(CONTINUE STORY083)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY023-PRECHOICE ()
+	<LOSE-LIFE 4 ,DIED-FROM-INJURIES ,STORY023>
+	<IF-ALIVE ,TEXT023-CONTINUED>>
+
+<CONSTANT TEXT024 "You draw your weapon and hack at the tentacles. The creature withdraws, but a tentacle lashes out and knocks your weapon from your hand. The blob then lurches forward, putting any thought of retrieving the weapon out of your mind.||You flee the blob before you become another lost soul.">
 
 <ROOM STORY024
 	(DESC "024")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT024)
+	(PRECHOICE STORY024-PRECHOICE)
+	(CONTINUE STORY342)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY024-PRECHOICE ()
+	<LOSE-ITEM ,SWORD>>
+
+<CONSTANT TEXT025 "The man is strong and fierce, but you can tell that he has never had any formal training with a sword. He raises his weapon to deliver a brutal swing, but you easily step backwards and avoid it. Before he can recover, you thrust forwards, wounding his arm and causing him to drop his sword with a yelp of pain. The other brigands cheer and jeer.||You have proved yourself.">
 
 <ROOM STORY025
 	(DESC "025")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT025)
+	(CONTINUE STORY405)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT026 "Lucie's green eyes sparkle with malice. \"This is the Judain who slew your captain. This guilty wretch deserves to die.\"||\"And die the poor wretch will, undoubtedly, after interrogation.\" Lucie's smile of triumph is dripping with hatred. Something must have happened to her mind, else why would she lie and betray you? She is not the same girl you met standing in the rain near the Palazzo del Megiddo. She isn't behaving as she would with the riff-raff she usually disports herself with. Hate has got to her, just as it is taking over the minds of all the wretches of Godorno.|| None the less, you are fated to die in the prison fortress of Grond. By tomorrow your body will be hanging in an iron cage outside the Overlord's palace. Hate will conquer all.">
 
 <ROOM STORY026
 	(DESC "026")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT026)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT027 "You throw the pomegranate with as much force as you can, but the creature turns its head at the last minute and it bounces harmlessly off its purple flesh. You won't be able to get it back now.">
+<CONSTANT TEXT027-CONTINUED "You no longer reduce damage caused by Hate.||You have to think of another way to defeat Hate">
+<CONSTANT CHOICES027 <LTABLE "leap back into the fray with the Jade Warrior's sword" "use the" "you wish to flee">>
 
 <ROOM STORY027
 	(DESC "027")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT027)
+	(PRECHOICE STORY027-PRECHOICE)
+	(CHOICES CHOICES027)
+	(DESTINATIONS <LTABLE STORY125 STORY218 STORY476>)
+	(REQUIREMENTS <LTABLE NONE JEWEL-OF-SUNSET-FIRE NONE>)
+	(TYPES <LTABLE R-NONE R-ITEM R-NONE>)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY027-PRECHOICE ()
+	<LOSE-ITEM ,IVORY-POMEGRANATE>
+	<CRLF>
+	<TELL ,TEXT027-CONTINUED>
+	<TELL ,PERIOD-CR>>
+
+<CONSTANT TEXT028 "\"I don't need a knife to kill this scumbag. Remember when I killed that guard with one punch to the nose?\"||You say to Ahab before you run across the square to Acennon.||You approach him and block his path. He looks at you in confusion.||\"When you wake up, get what belongings you have left and leave the city. People want you dead and they are watching us now. This is going to hurt you, but it's not going to kill you. I'm sorry.\"||You then deliver a brutal blow to the face, enough to knock him out, but you know you didn't strike him hard enough or precisely enough to kill him.||As he crumples to the ground, you see Ahab run over to the shop to loot it. A minute later, he runs out, holding silver objects and a box.||\"Good work. Let's get out of here.\"||You both run back to the cellar in Medallion Street where Ahab enthusiastically tells the others about your kill. You are given food, water and a share of the loot.">
+<CONSTANT TEXT028-CONTINUED "You decide that it's time to leave the city.">
 
 <ROOM STORY028
 	(DESC "028")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT028)
+	(PRECHOICE STORY028-PRECHOICE)
+	(CONTINUE STORY042)
+	(CODEWORD CODEWORD-SHANK)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY028-PRECHOICE ()
+	<GAIN-MONEY 100>>
+
+<CONSTANT TEXT029 "You arrive back at the jeweller's house later that night and stand surveying it in the moonlight. Your overwhelming impression is that this has all the hallmarks of a trap. The Overlord would hardly leave a priceless diamond unguarded and he must be aware that his security measures, while enough to deter the casual thieves of the town, are simply an enticement to the pride of any true professional. So without a doubt there will be soldiers stationed in the house.||Climbing up to the first floor, you prise open a window and tiptoe along the landing, listening at each door in turn. Sure enough, from behind one of the doors comes the rattle of gaming dice and the unmistakable banter of bored soldiers. You pause. This is where the diamond must be kept. Continuing along the landing to the next door, you hear the sound of thundering snores. The jeweller's bedroom. Quietly inching the door open, you go to a cupboard and extract a nightshirt and cap, which you put on over your clothes. Then, darting swiftly along the landing, you fling open the first door and cry: \"Thief! There's a thief downstairs!\"||The three soldiers leap up in amazement and grab their weapons, rushing past you along the landing with excited shouts. They are so intent on catching the thief and thereby earning a bonus that they don't even glance at your face.||You tear off the nightshirt and look around the room. A small locked chest catches your eye. Surely that is where the diamond is. The lock looks pretty secure, but you can break it at your leisure once you are safely away from here. Only when you have put a safe distance between you and Mire Street do you pause to inspect the diamond.||You leave at once with the chest.">
 
 <ROOM STORY029
 	(DESC "029")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT029)
+	(CONTINUE STORY384)
+	(ITEM SMALL-LOCKED-CHEST)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT030 "You cast a simple spell of befuddlement on the guard who leaves his post and wanders off down the street. With the guard dealt with, you head back to the boat.||You finish your delivery.">
 
 <ROOM STORY030
 	(DESC "030")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT030)
+	(CONTINUE STORY270)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY031

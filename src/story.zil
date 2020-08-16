@@ -4,7 +4,7 @@
 <GLOBAL STARTING-POINT PROLOGUE>
 
 <CONSTANT BAD-ENDING "Your adventure ends here.|">
-<CONSTANT GOOD-ENDING "Further adventure awaits.|">
+<CONSTANT GOOD-ENDING "You saved your people from annihilation.|">
 
 <OBJECT CURRENCY (DESC "gleenars")>
 <OBJECT VEHICLE (DESC "none")>
@@ -24,6 +24,7 @@
 	<PUTP ,STORY018 ,P?DEATH T>
 	<PUTP ,STORY021 ,P?DEATH T>
 	<PUTP ,STORY023 ,P?DEATH T>
+	<PUTP ,STORY050 ,P?DEATH T>
 	<RETURN>>
 
 <CONSTANT DIED-IN-COMBAT "You died in combat">
@@ -891,175 +892,121 @@
 		<KEEP-ITEM ,KNIFE>
 	)>>
 
+<CONSTANT TEXT051 "Astounded, you stagger back. You have destroyed Hate, a creature that would have destroyed your city. You sit down on the floor and rest. Then you hear a sound a murmuring from the catacombs: a sound that grows and swells from a hum to a roar. The lost souls are free once more and they climb into the streets to hail you as their saviour. You are a hero and you will be feted for a hundred days. Now is the time for the banquet at the Overlord's palace. Together you will rebuild Godorno and make it once more the jewel of the east. With your help, Judain and non-Judain will put aside all hostilities and learn to live and work together for the benefit of everyone. Eventually, you will rebuild the synagogue that you used to spend your youth and you will become a prominent and well respected citizen to both Judain and non-Judain. Caiaphas would have been proud of you.">
+
 <ROOM STORY051
 	(DESC "051")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT051)
+	(VICTORY T)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT052 "You run out of the shop and don't stop running until you are far away from it. What will you do now? Ahab is going to be angry about your failure and might suggest a severe punishment. Despite you two growing up together, he always seemed a bit distant and if he set his mind on a goal, he would try to accomplish it at all costs, not caring about what it did to those around him. You are sure that in his head, a failure is equal to a traitor. On the other hand, he is still the best one to provide you with shelter and protection. If you struck out on your own, you would have to survive in the ruins of houses, dodging both the militia and the Sycaari.">
+<CONSTANT CHOICES052 <LTABLE "return to Ahab" "decide to go it alone">>
 
 <ROOM STORY052
 	(DESC "052")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT052)
+	(CHOICES CHOICES052)
+	(DESTINATIONS <LTABLE STORY220 STORY173>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT053 "As you step over to the Overlord, you hear a faint whispering sound and a black shape settles heavily over you. Its skin sports rows of barbed spines that inject poison into your bloodstream. Try as you might, you can't break free. The poison turns your blood to cloying syrup and your heart stops beating. You have died when revenge for the Judain was almost within your grasp. Hate will subdue all.">
 
 <ROOM STORY053
 	(DESC "053")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT053)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT054 "You leap between the Judain and the guards \"Have mercy on these poor dogs,\" you say \"Do not fall to the depths of their depravity. Is it not the fate they have reserved for you? Are we not nobler than they? Let us show them our superiority by sparing them, that their very existence may be a testament to our nobility.\"||However, a large Judain carrying a poker and bearing all kinds of scars and wounds walks up to you and towers over you, his green eyes staring into yours. \"I suffered under these scumbags for weeks. Don't tell me to leave them alone, not until you have suffered as I have. Now get out of my way before I pummel you to.\"||The whole prison stares at you, watching what you do next.">
+<CONSTANT CHOICES054 <LTABLE "fight this large Judain to save the guards" "step aside and let the Judain avenge themselves">>
 
 <ROOM STORY054
 	(DESC "054")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT054)
+	(CHOICES CHOICES054)
+	(DESTINATIONS <LTABLE STORY378 STORY404>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT055 "You sneak through the streets until you eventually come to the nondescript cottage that Yadid lives in. You approach the door to find it hanging off its hinges. Cautiously, you enter. The furniture is broken and strewn all over the place. There is no sign of your friend. It seems that someone, or something got to him first. You have a quick search of his house.">
 
 <ROOM STORY055
 	(DESC "055")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT055)
+	(PRECHOICE STORY055-PRECHOICE)
+	(CONTINUE STORY295)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY055-PRECHOICE ()
+	<SKILL-JUMP ,SKILL-ROGUERY ,STORY207>>
+
+<CONSTANT TEXT056 "The sword leaves your hand like an arrow and buries itself into the bloated gasbag of a body, which is instantly ruptured. Black ichor sprays all over the room and the spider goes limp.">
+<CONSTANT TEXT056-LOST "is now out of reach">
+<CONSTANT TEXT056-CONTINUED "You step up to the frame and hold the jewel aloft in both hands.||You then leave through the door">
 
 <ROOM STORY056
 	(DESC "056")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT056)
+	(PRECHOICE STORY056-PRECHOICE)
+	(CONTINUE STORY223)
+	(ITEM JEWEL-OF-SUNSET-FIRE)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY056-PRECHOICE ()
+	<LOSE-ITEM ,JADE-WARRIORS-SWORD>
+	<TELL CR CT ,JADE-WARRIORS-SWORD " ">
+	<TELL ,TEXT056-LOST>
+	<TELL ,PERIOD-CR>
+	<CRLF>
+	<TELL TEXT056-CONTINUED>
+	<TELL ,PERIOD-CR>>
+
+<CONSTANT TEXT057 "As you approach the hut, the door is flung open to reveal an old woman dressed in a simple green tunic. She has a kindly expression on her face \"So lovely to see you. Do come in for some tea.\" You enter the hut to find it filled with plants of all kinds. The woman puts a kettle over a fireplace to make the tea. Soon, you are drinking a rich herbal liquid as you chat. It turns out that the old woman is a healer. She is very concerned to hear about the persecution of the Judain and offers her sympathy for your plight. Then her face lights up \"Could you help me, young one? There is a herb that grows a few miles towards the great forest. You would get it a lot faster than I could and I could make you a concoction to help you out.\"">
+<CONSTANT CHOICES057 <LTABLE "help her" "refuse and head towards the Great Forest">>
 
 <ROOM STORY057
 	(DESC "057")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT057)
+	(CHOICES CHOICES057)
+	(DESTINATIONS <LTABLE STORY513 STORY501>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT058 "The ivory pomegranate is one of the most holy artefacts in the Judain religion. Hate will find its touch poison. You decide that if you can get the pomegranate inside Hate then it might destroy it. Hate roars at you. It is your perfect opportunity.">
 
 <ROOM STORY058
 	(DESC "058")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT058)
+	(PRECHOICE STORY058-PRECHOICE)
+	(CONTINUE STORY357)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY058-PRECHOICE ()
+	<SKILL-JUMP ,SKILL-THROWING ,STORY081>>
+
+<CONSTANT TEXT059 "You have failed to obtain either the Jewel of Sunset Fire or a Jade Warrior's Sword. You wrack your brains, trying to think of some other way to defeat Hate, but you have no other idea on what to do. All you can think to do is flee Godorno before it is destroyed.||You head for the gates.">
 
 <ROOM STORY059
 	(DESC "059")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT059)
+	(CONTINUE STORY061)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT060 "Konstantin, is a very slippery character. He has a series of hideouts across the city almost impossible to find unless you know how to look for the discreet signs that he leaves around the place. The nearest one to you is a room that you can only access through the sewers. You approach the storm drain that you both used to access it. After checking that no one is around, you lift it up and then stop. There is something scratched into the wall, unnoticeable to anyone who doesn't understand its meaning, but it makes you stop dead. Two lines are scratched in the shape of a cross, indicating that the hideout has been compromised. Then the smell hits you. Instead of the smell of sewage, you smell camphor and honeysuckle. Then you realise what has happened. Hate has claimed the sewers for itself. You then head to another hideout. You eventually find Konstantin in the cellar of a fallen down hovel in the foreigner's quarter. He looks pleased to see you.||\"It is good to see you my friend. You have caught me preparing to elope this city as there is too much danger here now. Even if I weren't Judain, I would fear that my days are numbered.\"||\"It's Hate, isn't it?\"||\"If that's what you call the huge purple creatures that are assaulting our homes and our people, then yes. Those purple blobs are infesting every corner of Godorno. Even the sewers aren't safe any more. If I were you, I would leave as quickly as you can.\"||\"I can't. I have to save my people.\"||\"I thought you would say that. Caiaphas chose his pupils well, didn't he? Well, at least let me help you.\"||Konstantin pulls out a large diamond, the size of a walnut from his pocket and hands it to you
+\"This should set you up nicely for when you do escape the city. Sell it and live comfortably for many years.\"||You open your mouth to protest, but Konstantin raises his hand to stop you \"This is a mere trinket compared to what I've managed to amass over the years. I won't even notice it's gone.\"||Konstantin also offers you a rope and grapple which you may take.||Konstantin leaves the cellar in preparation to quit the city. You decide to head back to Bumble Row.">
 
 <ROOM STORY060
 	(DESC "060")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT060)
+	(PRECHOICE STORY060-PRECHOICE)
+	(CONTINUE STORY339)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY060-PRECHOICE ()
+	<TAKE-ITEM ,DIAMOND>
+	<SELECT-FROM-LIST <LTABLE ROPE GRAPPLE> 2 2>>
 
 <ROOM STORY061
 	(DESC "061")

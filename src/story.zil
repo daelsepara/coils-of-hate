@@ -668,175 +668,111 @@
 	(CONTINUE STORY270)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT031 "Your steady run keeps you out of their clutches but they are on horses which will not tire so easily. They do not seem like giving up. You run on desperately, hoping to find somewhere to evade them.">
+<CONSTANT CHOICES031 <LTABLE "change your mind about fleeing and offer to throw your lot in with them" "you keep running">>
+
 <ROOM STORY031
 	(DESC "031")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT031)
+	(CHOICES CHOICES031)
+	(DESTINATIONS <LTABLE STORY123 STORY338>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT032 "The spell of Visceral Pang should suffice to bring the landlord to his knees and force him to do your bidding. You mouth the arcane words and twirl your fingers in the patterns that bring magic to life. The spell catches and the landlord's face grows pale, then very flushed. He makes a rush for the latrines but the pain pulls him up short and he doubles over in agony.||\"You will serve a Judain, my good man, and be quick about it,\" you say, looking around to gauge the reaction of the other drinkers.||The two women are looking at you in a new light. The pipe smoker is tapping out his pipe. Lucie looks shocked. The eyes of the tall stranger transfix you with a piercing stare. The gang of four are all fingering hidden weapons and checking their escape routes.||\"A pot of your finest ale, barkeep,\" you say, letting the spell go. The landlord straightens up slowly, holding his stomach and reaches for an ale pot.">
+<CONSTANT CHOICES032 <LTABLE "ask the landlord about business" "about Lucie and the stranger">>
 
 <ROOM STORY032
 	(DESC "032")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT032)
+	(CHOICES CHOICES032)
+	(DESTINATIONS <LTABLE STORY466 STORY267>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT033 "\"I can find a place for them.\" she whispers, nodding in the direction of the lepers \"Follow me.\" You follow her and the lepers shuffle after you. Eventually, she comes to a warehouse that has had its doors kicked in. You go inside to find a dozen people sitting on crates, discussing the state of the city. You notice people from all strata of society. There is a Judain jeweller, a labourer, a scholar and even a member of the Overlord's guard sharing the same room in peace. They look alarmed to see you, but relax once the woman talks to them.||\"This one was leading some lepers to safety. Since we have more food here than we know what to do with, I'm sure no one minds them sheltering here.\" There is a murmur of agreement from the group. As the lepers file in, the woman directs them to a crate of ship's biscuits which the grateful lepers fall upon with fervour.||The woman turns to you.">
 
 <ROOM STORY033
 	(DESC "033")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT033)
+	(PRECHOICE STORY033-PRECHOICE)
+	(CONTINUE STORY279)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY033-PRECHOICE ()
+	<COND (<CHECK-CODEWORD ,CODEWORD-VENEFIX>
+		<DELETE-CODEWORD ,CODEWORD-VENEFIX>
+	)(ELSE
+		<GAIN-CODEWORD ,CODEWORD-SATORI>
+	)>>
+
+<CONSTANT TEXT034 "You also know that there are certain streets that Judain should never go and not just because of the Overlord's men. You come to a street where you can hear drunken singing and shouting and decide to take a detour as you realise that the revellers here would turn violent at the sight of a Judain.||Eventually, you make it to the ruins of the Synagogue.">
 
 <ROOM STORY034
 	(DESC "034")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT034)
+	(CONTINUE STORY175)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT035 "Your own opinion is that the myth of the return of Harakadnezzar is only a story invented to deter would-be grave robbers from rifling in the more recently consecrated tombs. The story of Hate, however, is well known to all folklorists. Hate rises up in the foundations of ancient and decadent cities, swallowing the proud, wicked and greedy into its ravening maw. This manifestation of the force of Hate was last heard of in the Old Empire city of Kush, a thousand years ago. There is nothing left of Kush now. The greatest and most powerful city the world has ever seen has become a giant dustbowl in the grasslands||You thank the landlord and leave him to join Lucie and the stranger.">
 
 <ROOM STORY035
 	(DESC "035")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT035)
+	(CONTINUE STORY132)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT036 "You fling your knife at the nearest guard. It strikes him in the shoulder. He yells in pain and drops his sword. One of the other guards spots you. 'Judain scum! Come here and take your punishment!' You dash off down the street with the guards in pursuit. They cannot keep up with you in their heavy armour and you soon lose them.||Doubling back, you meet up with Ruth and escort her back to her house.">
 
 <ROOM STORY036
 	(DESC "036")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT036)
+	(PRECHOICE STORY036-PRECHOICE)
+	(CONTINUE STORY411)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY036-PRECHOICE ()
+	<LOSE-ITEM ,KNIFE>>
+
+<CONSTANT TEXT037 "Your mighty struggles are in vain. You are not ready for this untimely death.||Memories of the times you have felt Hate smoulder in your breast come unbidden in your mind and the strength seems to drain out of your muscles. The warm embrace of Hate welcomes you and your body is slowly and inexorably drawn inch by inch into the seething mass of the monster. Soon your head too is being drawn in. Your arms and legs have gone numb and you start to fight for breath as your nostrils and lips are sealed over by the soft purple flesh of Hate. You drown in the body of Hate. Your tormented half-life has begun.">
 
 <ROOM STORY037
 	(DESC "037")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT037)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT038 "You walk out into the street 'Down with the Overlord!' You shout as you wave your arms and make hand gestures at the guards. They immediately stop tormenting the Judain and stare at you, their eyes brimming with hatred. Then they run at you. You are going to have to be quick to outrun them.">
+<CONSTANT CHOICES038 <LTABLE "use" "a magic amulet" "otherwise">>
 
 <ROOM STORY038
 	(DESC "038")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT038)
+	(CHOICES CHOICES038)
+	(DESTINATIONS <LTABLE STORY264 STORY298 STORY442>)
+	(REQUIREMENTS <LTABLE SKILL-AGILITY SKILL-CHARMS NONE>)
+	(TYPES <LTABLE R-SKILL R-SKILL R-NONE>)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT039 "The Overlord's men aren't expecting you, so no one notices when your first knife embeds itself into the back of one of the guards. He collapses to the ground with a scream. The guards turn around to face you. Some run at you, but Talmai picks up one of the dead guards' swords and rushes at her opponents, striking one in the back. Attacked on both sides, the remaining guards flee the scene rather than fight.||Talmai approaches you.">
 
 <ROOM STORY039
 	(DESC "039")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT039)
+	(CONTINUE STORY425)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT040 "The ivory pomegranate is one of the most holy artefacts in the Judain religion. Hate will find its touch poison. If you can get the pomegranate inside Hate's mouth, it might be enough to finish the creature off.">
 
 <ROOM STORY040
 	(DESC "040")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT040)
+	(PRECHOICE STORY040-PRECHOICE)
+	(CONTINUE STORY313)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY040-PRECHOICE ()
+	<SKILL-JUMP ,SKILL-THROWING ,STORY008>>
 
 <ROOM STORY041
 	(DESC "041")

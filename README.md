@@ -29,7 +29,7 @@ ISBN 0 7497 1486 7
 
 - No in-game illustrations or graphics (also excludes map from the book)
 - Character selection and inventory of items and codewords are implemented
-- Some changes to the text were made: spelling errors/consistency, some were rephrased to fit the "digital" format or the implemented mechanisms 
+- Some text were rephrased to fit the "digital" format or the implemented mechanisms 
 - Select an action by pressing the number keys that correspond to the option (**1** - **9**).
 - In some situations, if there are more than 9 options, items 10-15 map to the keys **A** (or **a**) - **F** (or **f**)
 - Press **q** or **Q** to quit or terminate the program

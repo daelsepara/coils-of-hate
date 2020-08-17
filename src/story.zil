@@ -18,6 +18,7 @@
 	<RESET-TEMP-LIST>
 	<RESET-GIVEBAG>
 	<RESET-CONTAINER ,LOST-SKILLS>
+	<SETG PROTECT-FROM-HATE F>
 	<PUTP ,STORY002 ,P?DEATH T>
 	<PUTP ,STORY006 ,P?DEATH T>
 	<PUTP ,STORY013 ,P?DEATH T>
@@ -30,6 +31,8 @@
 	<PUTP ,STORY071 ,P?DEATH T>
 	<PUTP ,STORY084 ,P?DEATH T>
 	<PUTP ,STORY087 ,P?DEATH T>
+	<PUTP ,STORY088 ,P?DEATH T>
+	<PUTP ,STORY091 ,P?DEATH T>
 	<RETURN>>
 
 <CONSTANT DIED-IN-COMBAT "You died in combat">
@@ -39,16 +42,18 @@
 <CONSTANT DIED-FROM-COLD "You eventually freeze to death">
 <CONSTANT NATURAL-HARDINESS "Your natural hardiness made you cope better with the situation">
 
+<CONSTANT HEALING-KEY-CAPS !\U>
+<CONSTANT HEALING-KEY !\u>
+<CONSTANT POMEGRANATE-KEY-CAPS !\P>
+<CONSTANT POMEGRANATE-KEY !\p>
+
+<GLOBAL PROTECT-FROM-HATE F>
+
 <OBJECT LOST-SKILLS
 	(DESC "skills lost")
 	(SYNONYM SKILLS)
 	(ADJECTIVE LOST)
 	(FLAGS CONTBIT OPENBIT)>
-
-<CONSTANT HEALING-KEY-CAPS !\U>
-<CONSTANT HEALING-KEY !\u>
-<CONSTANT POMEGRANATE-KEY-CAPS !\P>
-<CONSTANT POMEGRANATE-KEY !\p>
 
 <ROUTINE SPECIAL-INTERRUPT-ROUTINE (KEY)
 	<COND (<AND <EQUAL? .KEY ,HEALING-KEY-CAPS ,HEALING-KEY> <CHECK-ITEM ,HEALING-SALVE> <L? ,LIFE-POINTS ,MAX-LIFE-POINTS>>
@@ -68,6 +73,15 @@
 		)>
 	)>
 	<RFALSE>>
+
+<ROUTINE TEST-MORTALITY (DAMAGE MESSAGE "OPT" STORY (AGAINST-HATE F))
+	<COND (<NOT .STORY> <SET .STORY ,HERE>)>
+	<COND (<AND .AGAINST-HATE ,PROTECT-FROM-HATE> <DEC .DAMAGE>)>
+	<COND (<G? .DAMAGE 0>
+		<LOSE-LIFE .DAMAGE .MESSAGE .STORY>
+	)(ELSE
+		<PREVENT-DEATH .STORY>
+	)>>
 
 <ROUTINE PREVENT-DEATH ("OPT" STORY)
 	<COND (<NOT .STORY> <SET STORY ,HERE>)>
@@ -340,7 +354,7 @@
 
 <ROUTINE STORY002-PRECHOICE ("AUX" (DAMAGE 6))
 	<COND (<CHECK-SKILL ,SKILL-SWORDPLAY> <SET DAMAGE 4>)>
-	<LOSE-LIFE .DAMAGE ,DIED-IN-COMBAT ,STORY002>
+	<TEST-MORTALITY .DAMAGE ,DIED-IN-COMBAT ,STORY002 T>
 	<COND (<IS-ALIVE>
 		<CRLF>
 		<TELL ,TEXT002-CONTINUED>
@@ -393,7 +407,7 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY006-PRECHOICE ()
-	<LOSE-LIFE 2 ,DIED-GREW-WEAKER ,STORY006>
+	<TEST-MORTALITY 2 ,DIED-GREW-WEAKER ,STORY006>
 	<IF-ALIVE ,TEXT006-CONTINUED>>
 
 <CONSTANT TEXT007 "You hack wildly at the cloying purple flesh of Hate, opening up great gashes in its side which pour out vile yellow pus. As fast as you cut so the blob twitches, spasms and convulses, sucking the wretched guards into its soft embrace. You have to think of something else, so you try using the flat of your blade.||Bashing Hate with the flat of the sword reduces the viscous purple flesh of the monster to jelly. Several of the guards are now able to pull themselves out of the body of Hate as it recoils from your punishing blows. Those still trapped implore their comrades to stay and free them, but not one of those you have rescued is prepared to risk his life for his friends.||Eyes wide with terror, they bolt past you.">
@@ -464,7 +478,7 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY013-PRECHOICE ()
-	<LOSE-LIFE 2 ,DIED-FROM-INJURIES ,STORY013>
+	<TEST-MORTALITY 2 ,DIED-FROM-INJURIES ,STORY013 T>
 	<IF-ALIVE ,TEXT013-CONTINUED>>
 
 <CONSTANT TEXT014 "You slink through the alleyways, dodging shadows and waiting patiently when you hear people walk by. You don't know if these people are the Overlord's soldiers, thieves or Sycaari, but you figure that at this time at night that you don't want to meet anyone in the streets. Eventually, you get to the guard's house. Before you approach it, you stake it out. The house has been neglected the wood is rotting and the door is open ajar. You cannot see any lights. This seems easy. You make sure that the coast is clear before approaching the door.">
@@ -491,7 +505,7 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY015-PRECHOICE ()
-	<LOSE-LIFE 5 ,DIED-FROM-INJURIES ,STORY015>
+	<TEST-MORTALITY 5 ,DIED-FROM-INJURIES ,STORY015 T>
 	<IF-ALIVE ,TEXT015-CONTINUED>>
 
 <CONSTANT TEXT016 "You decide to return to safety.">
@@ -525,7 +539,7 @@
 	)(<CHECK-ITEM ,SWORD>
 		<SET DAMAGE 4>
 	)>
-	<LOSE-LIFE .DAMAGE ,DIED-IN-COMBAT ,STORY017>
+	<TEST-MORTALITY .DAMAGE ,DIED-IN-COMBAT ,STORY017>
 	<IF-ALIVE ,TEXT017-CONTINUE>>
 
 <CONSTANT TEXT018 "Your band battle on, but Hate, despite being wounded is not finished yet.">
@@ -541,7 +555,7 @@
 
 <ROUTINE STORY018-PRECHOICE ("AUX" (DAMAGE 7))
 	<COND (<CHECK-SKILL ,SKILL-SWORDPLAY> <SET DAMAGE 5>)>
-	<LOSE-LIFE .DAMAGE ,DIED-IN-COMBAT ,STORY018>
+	<TEST-MORTALITY .DAMAGE ,DIED-IN-COMBAT ,STORY018 T>
 	<COND (<IS-ALIVE>
 		<CRLF>
 		<TELL ,TEXT018-CONTINUED>
@@ -580,7 +594,7 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY021-PRECHOICE ()
-	<LOSE-LIFE 3 ,DIED-FROM-INJURIES ,STORY021>
+	<TEST-MORTALITY 3 ,DIED-FROM-INJURIES ,STORY021>
 	<IF-ALIVE ,TEXT021-CONTINUED>>
 
 <CONSTANT TEXT022 "Of course you trust lovely little Lucie. She takes your hand and leads you into a quiet courtyard that gives out onto the upper end of Fortuny Street. You walk through an arboretum of magnolia trees and hanging baskets of weeping lilies and find yourself surrounded by the Overlord's men with crossbows pointed at your chest. Lucie smiles a wicked little smile.">
@@ -607,7 +621,7 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY023-PRECHOICE ()
-	<LOSE-LIFE 4 ,DIED-FROM-INJURIES ,STORY023>
+	<TEST-MORTALITY 4 ,DIED-FROM-INJURIES ,STORY023>
 	<IF-ALIVE ,TEXT023-CONTINUED>>
 
 <CONSTANT TEXT024 "You draw your weapon and hack at the tentacles. The creature withdraws, but a tentacle lashes out and knocks your weapon from your hand. The blob then lurches forward, putting any thought of retrieving the weapon out of your mind.||You flee the blob before you become another lost soul.">
@@ -903,7 +917,7 @@
 		<SET DAMAGE 1>
 	)>
 	<COND (<NOT .SWORDPLAY>
-		<LOSE-LIFE .DAMAGE ,DIED-IN-COMBAT ,STORY050>
+		<TEST-MORTALITY .DAMAGE ,DIED-IN-COMBAT ,STORY050>
 	)>
 	<COND (<IS-ALIVE>
 		<CRLF>
@@ -1150,7 +1164,7 @@ You say as you put the coins on the table.||\"Fine, you go and talk to him then.
 		<SET DAMAGE 1>
 	)>
 	<COND (<NOT .SWORDPLAY>
-		<LOSE-LIFE .DAMAGE ,DIED-IN-COMBAT ,STORY071>
+		<TEST-MORTALITY .DAMAGE ,DIED-IN-COMBAT ,STORY071>
 	)>
 	<COND (<IS-ALIVE>
 		<EMPHASIZE "You have prevailed.">
@@ -1353,7 +1367,7 @@ You say as you put the coins on the table.||\"Fine, you go and talk to him then.
 	<COND (<CHECK-ITEM ,IVORY-POMEGRANATE>
 		<PREVENT-DEATH ,STORY084>
 	)(ELSE
-		<LOSE-LIFE 1 ,DIED-FROM-INJURIES ,STORY084>
+		<TEST-MORTALITY 1 ,DIED-FROM-INJURIES ,STORY084>
 	)>
 	<IF-ALIVE ,TEXT084-CONTINUED>>
 
@@ -1389,7 +1403,7 @@ You say as you put the coins on the table.||\"Fine, you go and talk to him then.
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY087-PRECHOICE ()
-	<LOSE-LIFE 6 ,DIED-FROM-INJURIES ,STORY087>
+	<TEST-MORTALITY 6 ,DIED-FROM-INJURIES ,STORY087>
 	<IF-ALIVE ,TEXT087-FLEE>>
 
 <CONSTANT TEXT088 "It seems that you are not safe even out of Godorno. With the speed of someone who has grown up in such a dangerous city, you leap out of bed and hurl yourself at the man in a desperate fight for your life. He is taken aback by such ferocity, but raises his sword.">
@@ -1410,7 +1424,7 @@ You say as you put the coins on the table.||\"Fine, you go and talk to him then.
 	)(<CHECK-SKILL ,SKILL-UNARMED-COMBAT>
 		<SET DAMAGE 2>
 	)>
-	<LOSE-LIFE .DAMAGE ,DIED-IN-COMBAT ,STORY088>
+	<TEST-MORTALITY .DAMAGE ,DIED-IN-COMBAT ,STORY088>
 	<COND (<IS-ALIVE>
 		<CRLF>
 		<TELL ,TEXT088-CONTINUED>
@@ -1446,175 +1460,131 @@ You say as you put the coins on the table.||\"Fine, you go and talk to him then.
 	(CONTINUE STORY153)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT091 "As you are bathed in the green light, you feel extremely hot and feel something crawl about inside you. The experience is painful, but it only lasts a moment before dying down. Hate has tried to find corruption in your heart and awaken it, but there is nothing there to find. However, you are still in pain.">
+<CONSTANT TEXT091-PROTECTION "(Your acts of goodness will provide some protection against Hate. In your combat with Hate, whenever you are told to lose Life Points, reduce that number is by 1)||You join the charge on Hate.">
+
 <ROOM STORY091
 	(DESC "091")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT091)
+	(PRECHOICE STORY091-PRECHOICE)
+	(CONTINUE STORY002)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY091-PRECHOICE ()
+	<TEST-MORTALITY 1 ,DIED-GREW-WEAKER ,STORY091>
+	<COND (<IS-ALIVE>
+		<CRLF>
+		<TELL ,TEXT091-PROTECTION>
+		<TELL ,PERIOD-CR>
+		<SETG PROTECT-FROM-HATE T>
+	)>>
+
+<CONSTANT TEXT092 "Your knowledge of fighting has taught you how to slip out of holds.||You manage to work your way out of the tentacles and flee before they can ensnare you again.">
 
 <ROOM STORY092
 	(DESC "092")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT092)
+	(CONTINUE STORY408)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT093 "The cloud of dust is coming closer and when it is no more than a quarter of a mile away you begin to make out the figures of several horsemen. They are moving at a fast trot, faster than merchants or most other travellers. They could be brigands.">
+<CONSTANT CHOICES093 <LTABLE "flee, hoping to elude them until nightfall" "stand your ground, greet them and offer to throw in your lot with them" "cast a powerful spell to try to stop the bandits and escape them. However, there are many of them and it might not work">>
 
 <ROOM STORY093
 	(DESC "093")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT093)
+	(CHOICES CHOICES093)
+	(DESTINATIONS <LTABLE STORY031 STORY123 STORY305>)
+	(REQUIREMENTS <LTABLE NONE NONE SKILL-SPELLS>)
+	(TYPES <LTABLE R-NONE R-NONE R-SKILL>)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT094 "You sprint for it, little caring that you will crush the poor snakes you tread on. They writhe underfoot and hiss balefully. You manage to make it across the room, but one of the snakes sinks its fangs into your ankle just as you step up on the block. You strangle it, but the poison is already working its way through your veins and it produces an agonizing burning sensation.">
+<CONSTANT TEXT094-CONTINUED "When the pain subsides, you open the door.">
 
 <ROOM STORY094
 	(DESC "094")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT094)
+	(PRECHOICE STORY094-PRECHOICE)
+	(CONTINUE STORY099)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY094-PRECHOICE ()
+	<TEST-MORTALITY 4 ,DIED-GREW-WEAKER ,STORY094>
+	<IF-ALIVE ,TEXT094-CONTINUED>>
+
+<CONSTANT TEXT095 "You think about how you will be able to defeat Hate. Then you remember the Jewel of Sunset Fire, held in the Tower of the Sentinel, surrounded by traps and monsters. The jewel apparently has great power to combat evil, but you have heard tales of many talented thieves trying to steal the jewel and never coming back alive. If you think getting the jewel is a lost cause, then you have no other ideas besides fleeing the city before it is destroyed.">
+<CONSTANT CHOICES095 <LTABLE "brave the Tower of the Sentinel" "flee the city">>
 
 <ROOM STORY095
 	(DESC "095")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT095)
+	(CHOICES CHOICES095)
+	(DESTINATIONS <LTABLE STORY387 STORY061>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT096 "You pole to the shore, disembark from your gondola and announce that you will take the lepers to safety. This motley crew would follow you anywhere. They shuffle along in your wake, calling out feebly for food and medicine, though there is no magic or medicine that can restore these disfigured unfortunates to health. You are not bothered by city guardsmen, nor thieves and cut-throats while surrounded by your crowd of lepers. The sweet putrefying smell that seeps from their bandages is an antidote to the stench of death that pervades the city. As you think about where you can take this motley band, you notice a woman gesture at you from an alleyway. She wears leather armour and fixes you with an intense stare.">
+<CONSTANT CHOICES096 <LTABLE "approach the woman" "ignore her and carry on">>
 
 <ROOM STORY096
 	(DESC "096")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT096)
+	(CHOICES CHOICES096)
+	(DESTINATIONS <LTABLE STORY033 STORY461>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT097 "The bandits eventually catch up with you, where they surround you with their horses. Grinning, they dismount and, at sword point, strip you of all of your possessions, leaving you with nothing before riding off back to their camp. There is much mirth at your plight.">
+<CONSTANT TEXT097-CONTINUED "It is obvious that these men will forget about you as soon as you are out of sight, just another victim on the road. At least they haven't harmed you.||In low spirits, you continue westwards to the Great Forest">
 
 <ROOM STORY097
 	(DESC "097")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT097)
+	(PRECHOICE STORY097-PRECHOICE)
+	(CONTINUE STORY501)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY097-PRECHOICE ()
+	<RESET-CONTAINER ,PLAYER>
+	<MOVE ,ALL-MONEY ,PLAYER>
+	<SETG MONEY 0>
+	<EMPHASIZE "You lost all your money and possessions.">
+	<CRLF>
+	<TELL ,TEXT097-CONTINUED>
+	<TELL ,PERIOD-CR>>
+
+<CONSTANT TEXT098 "Skakshi is holding his throwing knife, but you know you are quicker than him. You grab a knife from your belt and fling it at him, just as he throws his. There is a pause and then a clang as the two knives collide in mid-air. Before anyone else can react, you have already run across the room and grabbed him by the scruff of the neck.||\"Listen, worm. That knife didn't kill you because I didn't want it to kill you.\"||\"What do you want from me?\" squeals the thief.||\"Take me to Melmelo, the Guildmaster. I have something to say to him that is for his ears only.\"||\"I can do that just let me tend to this wound!\"||You let go of the thief, letting him crumple to the floor. Two of his friends rush to his side, carefully remove the knife and bandage his wound. You pick the knife up, clean it and replace it in your belt.||When Skakshi has recovered, he tells you to follow him.">
 
 <ROOM STORY098
 	(DESC "098")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT098)
+	(PRECHOICE STORY098)
+	(CONTINUE STORY214)
+	(ITEM KNIFE)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT099 "You climb some more stairs until you come to another door. Various cabbalistic signs like ancient cave paintings have been daubed on the outside of the topmost door in terracotta and charcoal. If your hopes are not disappointed the Jewel of Sunset Fire lies inside this topmost room.||At the top of the staircase is a series of frescoes showing the tower and depicting the grisly fates that befall those who try to climb it. To your absolute horror, the final fresco is a picture of you, squashed flat beneath a gigantic bloated black spider. Above the spider you can see the orb shining brightly in its frame.||You walk on up a narrower spiral of stairs and at last pause before the final door. Gingerly you push it open, wincing at the creak of its rusty hinges. There is a brooding presence of evil here.||Your heart hammers in your chest as you step forward.">
 
 <ROOM STORY099
 	(DESC "099")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT099)
+	(CONTINUE STORY505)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT100 "Most of the citizens flee, but Talmai and her band stand firm. They draw their weapons and charge at the beast. In response, Hate's eyes glow green and each of you is bathed in green light. You feel your skin go prickly and your body get hotter as it is assaulted by Hate's magic.">
 
 <ROOM STORY100
 	(DESC "100")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT100)
+	(PRECHOICE STORY100-PRECHOICE)
+	(CONTINUE STORY189)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY100-PRECHOICE ()
+	<ITEM-JUMP ,IVORY-POMEGRANATE ,STORY434>>
 
 <ROOM STORY101
 	(DESC "101")

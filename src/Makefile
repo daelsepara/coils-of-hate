@@ -7,6 +7,6 @@ all: clean
 test: clean
 	zilf -w coilshate.zil
 	zapf coilshate.zap
-	
+
 clean:
 	rm -f *.xzap *.zap *.z?

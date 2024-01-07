@@ -4,6 +4,10 @@
     (DESC "Armed")
     (SYNONYM ARMED)>
 
+<OBJECT CODEWORD-CODEX
+    (DESC "Codex")
+    (SYNONYM CODEX)>
+
 <OBJECT CODEWORD-HECATOMB
     (DESC "Hecatomb")
     (SYNONYM HECATOMB)>

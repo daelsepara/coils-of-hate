@@ -1394,7 +1394,7 @@
             <HLIGHT ,H-BOLD>
             <TELL "Q">
             <HLIGHT 0>
-            <TELL " - Exit the game" CR>
+            <TELL " - Quit the game" CR>
             <TELL "Select which character?">
             <REPEAT ()
                 <SET KEY <INPUT 1>>

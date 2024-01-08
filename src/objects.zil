@@ -42,17 +42,6 @@
     (QUANTITY 1)
     (FLAGS TAKEBIT)>
 
-<OBJECT FRAGRANT-INCENSE
-    (DESC "fragrant incense")
-    (SYNONYM INCENSE)
-    (ADJECTIVE FRAGRANT)
-    (FLAGS TAKEBIT)>
-
-<OBJECT GRAPPLE
-    (DESC "grapple")
-    (SYNONYM GRAPPLE)
-    (FLAGS TAKEBIT)>
-
 <OBJECT HEALING-SALVE
     (DESC "healing salve")
     (SYNONYM SALVE)
@@ -69,21 +58,4 @@
     (DESC "Jewel of Sunset Fire")
     (SYNONYM JEWEL)
     (ADJECTIVE SUNSET FIRE)
-    (FLAGS TAKEBIT)>
-
-<OBJECT ROPE
-    (DESC "rope")
-    (SYNONYM ROPE)
-    (FLAGS TAKEBIT)>
-
-<OBJECT SILVER-MIRROR
-    (DESC "silver mirror")
-    (SYNONYM MIRROR)
-    (ADJECTIVE SILVER)
-    (FLAGS TAKEBIT)>
-
-<OBJECT SMALL-LOCKED-CHEST
-    (DESC "small locked chest")
-    (SYNONYM CHEST)
-    (ADJECTIVE SMALL LOCKED)
     (FLAGS TAKEBIT)>

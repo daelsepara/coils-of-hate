@@ -33,6 +33,12 @@
 	<PUTP ,STORY087 ,P?DEATH T>
 	<PUTP ,STORY088 ,P?DEATH T>
 	<PUTP ,STORY091 ,P?DEATH T>
+	<PUTP ,STORY094 ,P?DEATH T>
+	<PUTP ,STORY106 ,P?DEATH T>
+	<PUTP ,STORY121 ,P?DEATH T>
+	<PUTP ,STORY123 ,P?DEATH T>
+	<PUTP ,STORY130 ,P?DEATH T>
+	<PUTP ,STORY135 ,P?DEATH T>
 	<RETURN>>
 
 <CONSTANT DIED-IN-COMBAT "You died in combat">
@@ -1621,7 +1627,7 @@ You say as you put the coins on the table.||\"Fine, you go and talk to him then.
 	(CONTINUE STORY038)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT105 "It looks like there is no back exit from this building, but you recall seeing a trap door in the alley running behind it. Dragging the frightened Ruth behind you, you descend to the cellar. Sure enough, there is a ramp for delivery of wine barrels. You make your escape, emerging in the alley at the back ofthe house while the soldiers are bursting in the front way.||Ruth cannot thank you enough. 'My baby will be born, thanks to you,' she sobs as you lead her back to Copper Street.||\"I hope to save many others,\" you tell her. \"All our people, in fact.\" Once she is safe with Caiaphas, you return to your own bolthole. ">
+<CONSTANT TEXT105 "It looks like there is no back exit from this building, but you recall seeing a trap door in the alley running behind it. Dragging the frightened Ruth behind you, you descend to the cellar. Sure enough, there is a ramp for delivery of wine barrels. You make your escape, emerging in the alley at the back of the house while the soldiers are bursting in the front way.||Ruth cannot thank you enough. 'My baby will be born, thanks to you,' she sobs as you lead her back to Copper Street.||\"I hope to save many others,\" you tell her. \"All our people, in fact.\" Once she is safe with Caiaphas, you return to your own bolthole. ">
 
 <ROOM STORY105
 	(DESC "105")
@@ -1673,7 +1679,7 @@ You say as you put the coins on the table.||\"Fine, you go and talk to him then.
 	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT110 "You slip into the great yellowstone library of Brunelesci unseen and take down what is a recent invention: the combined dictionary and bestiary. Crouching beneath a reading bench you are soon immersed in the cursive script. \"Hate, hatred, detestation,  abhorrence, abomination, malignity,\" and there are quotes from Senecio, one of the great playwrights of the age. \"Do all men kill the thing they do not love? Hates any man the thing he would not kill?\" and \"The monster that turneth man against his daughter and mother against her firstborn son, servitor of Death and handmaid to Destruction, maker of wars and inspiration of man's blackest deeds.\"||According to the scholar who compiled the lexicon and bestiary, \"Hate always shows its true face and so may be bested, \"Unfortunately he does not write how to overcome the monster. There is much written here, it is almost as if he was obsessed, \"In concert with Fear the most terrible of the Trinity of the Dark, Hate feeds on the bodies and souls ofthose who have given themselves up to the monster's embrace in despair, depravity and degradation.\"||You are still staring in fascination at the illuminated pages of the manuscript when the door opens and a soft-footed scholar librarian comes into the book-lined room. You have read enough and will learn nothing more here, so you creep out and return to Bumble Row, none the wiser but a little more oppressed of spirit.">
+<CONSTANT TEXT110 "You slip into the great yellowstone library of Brunelesci unseen and take down what is a recent invention: the combined dictionary and bestiary. Crouching beneath a reading bench you are soon immersed in the cursive script. \"Hate, hatred, detestation,  abhorrence, abomination, malignity,\" and there are quotes from Senecio, one of the great playwrights of the age. \"Do all men kill the thing they do not love? Hates any man the thing he would not kill?\" and \"The monster that turneth man against his daughter and mother against her firstborn son, servitor of Death and handmaid to Destruction, maker of wars and inspiration of man's blackest deeds.\"||According to the scholar who compiled the lexicon and bestiary, \"Hate always shows its true face and so may be bested, \"Unfortunately he does not write how to overcome the monster. There is much written here, it is almost as if he was obsessed, \"In concert with Fear the most terrible of the Trinity of the Dark, Hate feeds on the bodies and souls of those who have given themselves up to the monster's embrace in despair, depravity and degradation.\"||You are still staring in fascination at the illuminated pages of the manuscript when the door opens and a soft-footed scholar librarian comes into the book-lined room. You have read enough and will learn nothing more here, so you creep out and return to Bumble Row, none the wiser but a little more oppressed of spirit.">
 
 <ROOM STORY110
 	(DESC "110")
@@ -1898,7 +1904,7 @@ You say as you put the coins on the table.||\"Fine, you go and talk to him then.
 	<TELL ,TEXT128-CONTINUED>
 	<TELL ,PERIOD-CR>>
 
-<CONSTANT TEXT129 "The gold plume sways as theJade Warrior swivels its head to observe you closely, brandishing its sword as it does so. It clicks and whirrs ominously as it advances to do battle. You steal up behind the Jade Warrior and throw yourself against its sword arm, wrenching the blade from its grasp.||The other warriors close in around you and though you defend yourself ably with the Jade Warrior's sword you are no match for three magical bodyguards of the Megiddo dynasty vaults. You are slain and there is no one left who can save the Judain. Hate will conquer all.">
+<CONSTANT TEXT129 "The gold plume sways as the Jade Warrior swivels its head to observe you closely, brandishing its sword as it does so. It clicks and whirrs ominously as it advances to do battle. You steal up behind the Jade Warrior and throw yourself against its sword arm, wrenching the blade from its grasp.||The other warriors close in around you and though you defend yourself ably with the Jade Warrior's sword you are no match for three magical bodyguards of the Megiddo dynasty vaults. You are slain and there is no one left who can save the Judain. Hate will conquer all.">
 
 <ROOM STORY129
 	(DESC "129")
@@ -1935,174 +1941,128 @@ You say as you put the coins on the table.||\"Fine, you go and talk to him then.
 	)>
 	<IF-ALIVE ,TEXT130-CONTINUED>>
 
+<CONSTANT TEXT131 "The Judain have long had a system for moving gold around the city unseen. They now carry messages in the same way, using dives and back streets, safe houses, and, sometimes, even the catacombs. You can contact all the Judain through them, but their morale is low. So many of their kith and kin have been carried off to Grond.||\"Do not despair. Are we not a proud people?\" you say. \"We have many advantages. First, the Overlord fears us, or why else would he turn his guards against us? Second, we know the secret ways bentath the city and we can already pass messages without fear of interception. Third, we have a leader now: me.\"||Caiaphas protests, \"But what can we do? We are not armed. Each of us has already lost a loved one, swinging in an iron cage. We will all stiffer the same fate if we come out of hiding.\"||\"Then we will stay hidden, strike only at night, always in a different part of the city. Let us strike fear into the hearts of the good burghers of Godorno. Let no one say the Judain are cowards.\"||\"And we have money, stashed in the vaults under the warehouses in The Crescent Canal Avenue.\"||\"How much?\"||\"A talent. The weight of a man in gold.\" This is unlooked-for good news. The cunning Judain can do much with their money. Men can be bought as easily in the godforsaken city ofGodorno as anywhere.">
+<CONSTANT CHOICES131 <LTABLE "suggest holding a meeting in one of the old warehouses on Crescent Avenue" "give the word to stay hidden but organize into cells of five people each with a different target">>
+
 <ROOM STORY131
 	(DESC "131")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT131)
+	(CHOICES CHOICES131)
+	(DESTINATIONS <LTABLE STORY106 STORY175>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT132 "\"You want to ask Skakshi,\" says one of the four men. \"Where is he to be found?\"||They laugh mockingly at this. \"In the Inn of the Inner Temple, of course -- when he's not out jewelling, that is!\"||You will get no more out of them.">
+<CONSTANT CHOICES132 <LTABLE "order a drink from the bar now" "join Lucie and the tall stranger" "leave">>
 
 <ROOM STORY132
 	(DESC "132")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT132)
+	(CHOICES CHOICES132)
+	(DESTINATIONS <LTABLE STORY113 STORY227 STORY199>)
+	(TYPES THREE-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT133 "Each of the Jade Warriors has a vivid plume of feathers adorning his helmet. One is azure, another black, the third is viridian and the fourth old gold. You decide to try to take one of their swords, but which one will you take?">
+<CONSTANT CHOICES133 <LTABLE "take from the azure-plumed warrior" "the viridian warrior" "the black-plumed warrior" "the warrior decked in old gold">>
 
 <ROOM STORY133
 	(DESC "133")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT133)
+	(CHOICES CHOICES133)
+	(DESTINATIONS <LTABLE STORY182 STORY123 STORY011 STORY129>)
+	(TYPES FOUR-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT134 "Which barge will you stow away on? The first is a big barge which is little more than a wide raft. It has a huge pile of lime for cargo. The second has just been unloaded; it is an ordinary grain barge, and you can see rats scavenging the dropped grains of corn. The third is a smaller barge with a shallow draught. It is loaded with barrels under a tarpaulin.">
+<CONSTANT CHOICES134 <LTABLE "board the first barge" "the grain barge" "the smaller barge">>
 
 <ROOM STORY134
 	(DESC "134")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT134)
+	(CHOICES CHOICES134)
+	(DESTINATIONS <LTABLE STORY152 STORY166 STORY183>)
+	(TYPES THREE-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT135 "You grasp the amulet but it burns you. You must be in mortal peril for the stone to burn so fiercely. As it is, your hand is scorched.">
+<CONSTANT TEXT135-CONTINUED "The the odour of your own charred flesh is added to the pervading stench of corruption and decay that has settled over the city like a shroud. You have dropped the pendant and it is smouldering on the carpet, melting the filigree. It is too hot to pick up.">
+<CONSTANT CHOICES135 <LTABLE "jump onto the bed without stepping on the carpet" "look about to find where the danger lurks">>
 
 <ROOM STORY135
 	(DESC "135")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT135)
+	(PRECHOICE STORY135-PRECHOICE)
+	(CHOICES CHOICES135)
+	(DESTINATIONS <LTABLE STORY140 STORY062>)
+	(TYPES TWO-NONES)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY135-PRECHOICE ()
+	<TEST-MORTALITY 1 ,DIED-FROM-INJURIES ,STORY135>
+	<COND (<IS-ALIVE>
+		<CRLF>
+		<TELL ,TEXT135-CONTINUED>
+		<TELL ,PERIOD-CR>
+		<COND (,RUN-ONCE <LOSE-ITEM ,MAGIC-AMULET>)>
+		<COND (<CHECK-SKILL ,SKILL-AGILITY>
+			<SET-DESTINATION ,STORY135 1 ,STORY098>
+        )(ELSE
+			<SET-DESTINATION ,STORY135 1 ,STORY140>
+        )>
+	)>>
+
+<CONSTANT TEXT136 "With a word of power and a clap of your hands you bring forth a great fog of noxious gas. Mameluke succumbs immediately; when the fog clears you can see he has sunk completely under the purple shimmering translucent surface of the monster. Hate doesn't seem to have suffered any ill effects from the spell, though its body convulses as it throws out a purple coil to envelop you. You turn tail and flee back to Bumble Row as quickly as you can, mourning the loss ofa brave dear friend.">
 
 <ROOM STORY136
 	(DESC "136")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT136)
+	(CONTINUE STORY159)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT137 "Hate sends another barrage of baneful magic against you, but you walk forth without fear. The sky above turns from indigo to the deep grey of night. The monster looms ahead of you like a great crag in the darkness of the street. You begin to recite to yourself: \"Yea, though I walk in the valley of the shadow of death, I will fear no evil ...\"||A tentacle lashes out with the force of a steel cable, only to recoil in a hissing. Hate gives vent to a bellow of pain. It cannot abide to touch you, for your soul carries none of the taint on which it thrives.||You advance until you are right in front of the monster. Its maw gapes like a great cavern from which the fetid gusts of its breath waft dreadfully.">
+<CONSTANT CHOICES137 <LTABLE "step into Hate's maw" "look around for a weapon to use against it">>
 
 <ROOM STORY137
 	(DESC "137")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT137)
+	(CHOICES CHOICES137)
+	(DESTINATIONS <LTABLE STORY400 STORY295>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT138 "The knives are perfect for the job. You send them end over end in quick succession into the bloated gasbag of a body which is punctured. Black ichor sprays all over the room and the spider hunches up against the ceiling to die. The knives are now out of reach high in the dead spider's web.||You step up to the frame and hold the jewel aloft in both hands. The room is suffused with a glow of power. At last you have a weapon with which to combat Hate. Now all you have to do is bring it safely down from the tower.">
 
 <ROOM STORY138
 	(DESC "138")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT138)
+	(PRECHOICE STORY138-PRECHOICE)
+	(CONTINUE STORY308)
+	(ITEM JEWEL-OF-SUNSET-FIRE)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY138-PRECHOICE ()
+	<COND (,RUN-ONCE <LOSE-ITEM ,KNIFE>)>>
+
+<CONSTANT TEXT139 "It is no trick or trap which faces you now but the tramping feet of the Overlord's personal bodyguard which alert you to danger. It sounds as if a troop of twenty men or so is approaching down one of the corridors. You can hear barked orders, they know there is an intruder.">
+<CONSTANT CHOICES139 <LTABLE "stand your ground" "retreat into the catacombs">>
 
 <ROOM STORY139
 	(DESC "139")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT139)
+	(PRECHOICE STORY139)
+	(CHOICES CHOICES139)
+	(DESTINATIONS <LTABLE STORY350 STORY161>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT140 "The leap ·was further than you thought. As you take off, after a short run up, your foot slips and you sprawl forward onto the carpet. The silver and gold filigree springs out of the weave and binds itself around your limbs, tightening and cutting into your flesh. You are held fast.||Above you ablack shape detaches itself from the underside of the canopy of the Overlord's four-poster bed and settles heavily over you. Its skin sports rows of barbed spines that inject a poison into your bloodstream. Try as y_ou might, you can't break free. The poison turns your blood to cloying syrup and your heart stops beating. You have died with revenge for the Judain almost within your grasp. Hate will subdue all.">
 
 <ROOM STORY140
 	(DESC "140")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT140)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY141

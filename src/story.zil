@@ -1713,7 +1713,7 @@ You say as you put the coins on the table.||\"Fine, you go and talk to him then.
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT114 "Seeking out some of your unsavoury underworld contacts, you manage to get an offer of 900 gleenars for the diamond. You know it is worth much more than that. So does the fence, who says, \"You're lucky I deal with you at all these days. You know the trouble I could get into for talking to a Judain?\"||\"Not as much trouble as if that Judain told the Overlord's men about you handling the Overlord's own diamond,\" you say with an ingenuous smile.||He curses under his breath, but finally agrees to pay you 1,000 gleenars for the diamond.">
-<CONSTANT TEXT114-CONTINUED "On your way back to join the others, you pass a narrow shop. You recognize it as the shop of Tarkamandor the Sage, where you have occasionally bought interesting items in the past. A lamp is burning in the window. You creep up and peek through the shutters. Tarkamandor is alone, polishing a carved ebony staff at his work bench.">
+<CONSTANT TEXT114-CONTINUED "On your way back to join the others, you pass a narrow shop. You recognize it as the shop of Tarkamandor the Sage, where you have occasionally bought interesting items in the past. A lamp is burning in the window. You creep up and peek through the shutters. Tarkamandor is alone, polishing a carved ebony staff at his work bench">
 <CONSTANT CHOICES114 <LTABLE "knock at the door" "get back to Caiaphas and the others">>
 
 <ROOM STORY114
@@ -1734,7 +1734,7 @@ You say as you put the coins on the table.||\"Fine, you go and talk to him then.
 		)>
 	)>
 	<TELL ,TEXT114-CONTINUED>
-	<CRLF>>
+	<TELL ,PERIOD-CR>>
 
 <CONSTANT TEXT115 "You jump for the rope and clasp it tight, swinging out above the living carpet of serpents. You swing over one of the box platforms and towards another. The serpents' heads sway in time with you, their jaws wide to reveal dripping black venom.">
 <CONSTANT CHOICES115 <LTABLE "let the rope go and jump to the far platform" "content yourself with alighting on the middle platform beneath where the rope hangs from the ceiling">>
@@ -1796,175 +1796,144 @@ You say as you put the coins on the table.||\"Fine, you go and talk to him then.
 	(TYPES THREE-NONES)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT121 "You grow steadily weaker on the meagre diet of scraps.">
+<CONSTANT TEXT121-CONTINUED "Since it is too dangerous to risk lighting a fire, some of the others suggest catching rats and salting strips of their flesh to eat when the rations run out. The thought is as revolting to you as it is to Caiaphas the rabbi.||\"Is it our destiny to spend our last days like ravening beasts?\" he asks. \"No! We are the Chosen People -- let us go forth and die gloriously against the Overlord's men.\"||He snatches up his spear and climbs the steps to the trap door, but then you call out something that stops him in his tracks, and he and the other Judain all turn to look at you in a new light.||\"Die gloriously?\" you say. \"Why do that, when we can win?\"||For the first time in days, there is a look of hope in their eyes. They wait to hear your plan. You must not let them down.">
+
 <ROOM STORY121
 	(DESC "121")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT121)
+	(PRECHOICE STORY121-PRECHOICE)
+	(CONTINUE STORY131)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY121-PRECHOICE ()
+	<TEST-MORTALITY 2 ,DIED-GREW-WEAKER ,STORY121>
+	<IF-ALIVE ,TEXT121-CONTINUED>>
+
+<CONSTANT TEXT122 "The casting of the Rulership spell was most inadvisable. You are attacking the mind of a being that has already overcome and subdued those minds and bodies of millions before you. Do you think they were all feeble-minded dolts eager to share Hate's embrace? Hate's mind is like a god's, incomprehensible and unfathomably powerful. With a great cry of joy you throw wide your arms and plunge into the hot purple softness of Hate, to join the eternal orgy of despair. There is no one left to save the Judain now. Hate will conquer all.">
 
 <ROOM STORY122
 	(DESC "122")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT122)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT123 "You steal up behind one of the Jade Warriors and throw yourself against its sword arm, wrenching the blade from its grasp.||\"Obey me, Jade Warriors of the Megiddo dynasty!\" you cry on impulse.||Their only response is to whirr and swivel towards you and advance with swords aloft. There seems no escape from their deadly flashing blades, and you cry out in agony as your stolen sword is dashed from your grip and you are cut to the bone.">
+<CONSTANT TEXT123-CONTINUED "You flee from the tomb chamber">
 
 <ROOM STORY123
 	(DESC "123")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT123)
+	(PRECHOICE STORY123-PRECHOICE)
+	(CONTINUE STORY016)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY123-PRECHOICE ()
+	<TEST-MORTALITY 4 ,DIED-IN-COMBAT ,STORY123>
+	<IF-ALIVE ,TEXT123-CONTINUED>>
+
+<CONSTANT TEXT124 "You dart across the street and snatch up the sword before the dog-handler can stop you. The dog starts to run forward, but you prod it with the point of the sword and it goes skulking back to its master with its tail between its legs.||You look around for Lucie. She is heading towards the Old Quarter, probably to the Silver Eel tavern which is one of her haunts. You know it as a dubious drinking-house whose customers have a dangerous reputation.">
+<CONSTANT CHOICES124 <LTABLE "follow Lucie now" "return to Bumble Row for the time being and seek her out this afternoon">>
 
 <ROOM STORY124
 	(DESC "124")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT124)
+	(CHOICES CHOICES124)
+	(DESTINATIONS <LTABLE STORY261 STORY371>)
+	(TYPES TWO-NONES)
+	(ITEM SWORD)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT125 "You reach the safety of one of the buildings just as the horsemen reach the first farmstead and begin torching it. There are nearly thirty of them, cruel looking men and well armed -- clearly they are brigands who have donned the uniforms of the Overlord's men.||The peasants have fled to the hills; those who were too slow to make off with their most treasured possessions have to plead for their lives.">
+<CONSTANT CHOICES125 <LTABLE "rely on your magic and make yourself invisible" "throw in your lot with them, hoping they will let you join their band">>
 
 <ROOM STORY125
 	(DESC "125")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT125)
+	(CHOICES CHOICES125)
+	(DESTINATIONS <LTABLE STORY018 STORY064>)
+	(REQUIREMENTS <LTABLE SKILL-SPELLS NONE>)
+	(TYPES <LTABLE R-SKILL R-NONE>)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT126 "You grab Ruth by the shoulder and pull her into the cesspit at the back of the empty house. The smell is revolting, and you nearly throw up when you have to push your face down into the rancid ordure. The guards conduct a search of the vicinity and one of them pokes his head through the open doorway, but it does not occur to him that anyone could bring themselves to take cover where you have done. Indeed, the very art of concealment is to hide where your enemy does not think to look!||When they have gone, you help Ruth out into the street. \"We look like two escaped lunatics,\" she wails, wiping the greasy muck off her face.||\"It's nothing that a few pails of water won't cure,\" you assure her. \"I can't say we'd be as easy to set right after a spell in the prison.\" Bidding her goodday, you return to your hideout.">
 
 <ROOM STORY126
 	(DESC "126")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT126)
+	(CONTINUE STORY414)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT127 "Bracing yourself, you crouch with both hands holding your sword aloft. The monster wraps itself around the sword point, constricts and pierces itself. There is no blood but with one mighty rip you cleave the thing in twain. It flops on the floor, twitching slightly, then falls still. Only sorcery can create a beast without any lifeblood in it.">
+<CONSTANT CHOICES127 <LTABLE "stay here to see what new trick or trap will test you next" "retreat back into the catacombs">>
 
 <ROOM STORY127
 	(DESC "127")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT127)
+	(CHOICES CHOICES127)
+	(DESTINATIONS <LTABLE STORY139 STORY161>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT128 "You have no difficulty, even in these troubled times, finding a foreign merchant who will give you 600 gleenars for the diamond. You know it is worth much more than that, but the merchant shows you the gold in a sack. \"Others could promise more,\" he points out, \"but you might wait forever to get your hands on the gold. I offer an immediate exchange.\"">
+<CONSTANT TEXT128-CONTINUED "You return to your fellow Judain">
 
 <ROOM STORY128
 	(DESC "128")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT128)
+	(PRECHOICE STORY128-PRECHOICE)
+	(CONTINUE STORY190)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY128-PRECHOICE ()
+	<COND (<AND <CHECK-ITEM ,DIAMOND> ,RUN-ONCE>
+		<TELL CR "Sell him the diamond?">
+		<COND (<YES?>
+			<GAIN-MONEY 600>
+			<LOSE-ITEM ,DIAMOND>
+		)>
+	)>
+	<TELL ,TEXT128-CONTINUED>
+	<TELL ,PERIOD-CR>>
+
+<CONSTANT TEXT129 "The gold plume sways as theJade Warrior swivels its head to observe you closely, brandishing its sword as it does so. It clicks and whirrs ominously as it advances to do battle. You steal up behind the Jade Warrior and throw yourself against its sword arm, wrenching the blade from its grasp.||The other warriors close in around you and though you defend yourself ably with the Jade Warrior's sword you are no match for three magical bodyguards of the Megiddo dynasty vaults. You are slain and there is no one left who can save the Judain. Hate will conquer all.">
 
 <ROOM STORY129
 	(DESC "129")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT129)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT130 "The youth is quick and he moves to stab you in the back as you flee.">
+<CONSTANT TEXT130-AGILITY "But you are faster and soon leave him behind">
+<CONSTANT TEXT130-INJURED "You feel a sharp cold pain as the blade bites into sinew and muscle and rasps against your shoulderblade as blood stains your clothes dark red">
+<CONSTANT TEXT130-ALIVE "You are lucky it was not a killing blow. This guttersnipe is good with his knife.">
+<CONSTANT TEXT130-CONTINUED "\"I thought you Judain had black blood,\" he sneers as he lets you go.">
 
 <ROOM STORY130
 	(DESC "130")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT130)
+	(PRECHOICE STORY130-PRECHOICE)
+	(CONTINUE STORY201)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY130-PRECHOICE()
+	<COND (<CHECK-SKILL ,SKILL-AGILITY>
+		<CRLF>
+		<TELL ,TEXT130-AGILITY>
+		<TELL ,PERIOD-CR>
+		<PREVENT-DEATH ,STORY130>
+	)(ELSE
+		<CRLF>
+		<TELL ,TEXT130-INJURED>
+		<TELL ,PERIOD-CR>
+		<TEST-MORTALITY 1 ,DIED-FROM-INJURIES ,STORY131>
+		<IF-ALIVE ,TEXT130-ALIVE>
+	)>
+	<IF-ALIVE ,TEXT130-CONTINUED>>
 
 <ROOM STORY131
 	(DESC "131")

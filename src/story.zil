@@ -397,7 +397,7 @@
 	(CONTINUE STORY072)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT010 "You speak the word of power and throw your ha,nds wide in a dramatic gesture that releases the power of the planes beyond. There is a whoof and .a cloud of thick green fog fills the room. There are no windows and the door is shut behind you. There is no escape. The occult fog is killing the snakes but it is also causing you to retch with nausea and you fall onto the serpents which writhe beneath you and sink their envenomed fangs into your soft flesh. The poison of the garter snake is virulent indeed and you are soon dead. There is no one left to save theJudain now.">
+<CONSTANT TEXT010 "You speak the word of power and throw your ha,nds wide in a dramatic gesture that releases the power of the planes beyond. There is a whoof and a cloud of thick green fog fills the room. There are no windows and the door is shut behind you. There is no escape. The occult fog is killing the snakes but it is also causing you to retch with nausea and you fall onto the serpents which writhe beneath you and sink their envenomed fangs into your soft flesh. The poison of the garter snake is virulent indeed and you are soon dead. There is no one left to save theJudain now.">
 
 <ROOM STORY010
 	(DESC "010")

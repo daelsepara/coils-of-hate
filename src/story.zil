@@ -294,7 +294,7 @@
 	(CONTINUE STORY001)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT001 "Walk the streets you must, for there is no food and nothing to be gained from idling here in the hovel you call home. You push the rotten front door open gently. There is a wet cracking noise and it splinters, coming off its hinges. You jump past into Copper Street as it falls into the street and breaks. It is beyond repair.||Even before you turn the corner of the narrow mired street a prowling thief, a sewer rat escaped from the fleet, is going into your home. Let him. You are carrying everything you own. He will find nothing but tick-ridden blankets and a leaking earthenware pot or two.||As you turn your back on the grey stone shacks of Copper Street a youth, gangling and pasty-faced, spits in your eye and calls out 'Judain scum.' The boy is beneath not~ce. He sneers with his nose in the air, like the rich folk of the riverfront, but his sailcloth breeches are out at the knees. His father is probably a tanner or a tinker or some such.||Your time in Godorno has taught you to ignore such insults.">
+<CONSTANT TEXT001 "Walk the streets you must, for there is no food and nothing to be gained from idling here in the hovel you call home. You push the rotten front door open gently. There is a wet cracking noise and it splinters, coming off its hinges. You jump past into Copper Street as it falls into the street and breaks. It is beyond repair.||Even before you turn the corner of the narrow mired street a prowling thief, a sewer rat escaped from the fleet, is going into your home. Let him. You are carrying everything you own. He will find nothing but tick-ridden blankets and a leaking earthenware pot or two.||As you turn your back on the grey stone shacks of Copper Street a youth, gangling and pasty-faced, spits in your eye and calls out \"Judain scum.\" The boy is beneath not~ce. He sneers with his nose in the air, like the rich folk of the riverfront, but his sailcloth breeches are out at the knees. His father is probably a tanner or a tinker or some such.||Your time in Godorno has taught you to ignore such insults.">
 <CONSTANT CHOICES001 <LTABLE "round on him because you cannot stand this treatment any longer" "walk on, humbly wiping the spittle from your cheek">>
 
 <ROOM STORY001
@@ -326,7 +326,7 @@
 <ROUTINE STORY003-PRECHOICE ()
 	<TEST-MORTALITY ,DIED-GREW-WEAKER ,STORY003>>
 
-<CONSTANT TEXT004 "The road leading up to Greenbank Plaza has been renamed the Avenue of Skulls. At regular intervals posts have been erected from which iron cages swing. Inside the cages are executed Judain. Hundreds have been slain. The smell of rank corruption has drawn clouds of flies. Nearby you hear the clang of a bell and a dolorous voice calling, \"Bring  out your dead. Bring out your dead.\"||The plague has struck Godorno like a ravaging scourge. No respecter of a man's station, it has carried off nobleman and beggar alike. The streets have not been swept for what must have been weeks. Refuse is piling up in drifts in the wind. There is a blank look of despair on the faces of the people you pass and even the guards seem too preoccupied to notice a Judain. The sun is drawing the humours from the city like the fumes from a witch's kettle by the time you turn the corner into Copper Street.||You return to the hovel which you used to call home. You can use it as a base to see if you can contact some of your fellow Judain and learn what has taken place in the city. The old door has been broken up and used for firewood. There is nobody and nothing in the hovel -- but did you hear voices from beneath the trap door that leads to the hidden cellar?">
+<CONSTANT TEXT004 "The road leading up to Greenbank Plaza has been renamed the Avenue of Skulls. At regular intervals posts have been erected from which iron cages swing. Inside the cages are executed Judain. Hundreds have been slain. The smell of rank corruption has drawn clouds of flies. Nearby you hear the clang of a bell and a dolorous voice calling, \"Bring out your dead. Bring out your dead.\"||The plague has struck Godorno like a ravaging scourge. No respecter of a man's station, it has carried off nobleman and beggar alike. The streets have not been swept for what must have been weeks. Refuse is piling up in drifts in the wind. There is a blank look of despair on the faces of the people you pass and even the guards seem too preoccupied to notice a Judain. The sun is drawing the humours from the city like the fumes from a witch's kettle by the time you turn the corner into Copper Street.||You return to the hovel which you used to call home. You can use it as a base to see if you can contact some of your fellow Judain and learn what has taken place in the city. The old door has been broken up and used for firewood. There is nobody and nothing in the hovel -- but did you hear voices from beneath the trap door that leads to the hidden cellar?">
 <CONSTANT CHOICES004 <LTABLE "fling the trap door open" "knock first">>
 
 <ROOM STORY004
@@ -426,7 +426,7 @@
 		)>
 	)>>
 
-<CONSTANT TEXT012 "Melmelo has his majordomo, a tall, stooping man with a wooden leg, show you into his snug. Doubtless this man lost his leg doing a job for Melmelo and has been rewarded by the sinecure of becoming the guildmaster's senior servant. The snug is a comfortable little wood-panelled room lined with bookcases and trophies picked up from the villas ofthe nobility. It is one of the smallest rooms in what must be one of the grandest villas in the city. Melmelo is very rich.||He is a small shrewd-looking man, missing his left little finger and just beginning to lose his greying hair. He is dressed simply and you are reasonably sure he is not armed. You can hear the majordomo working in the garden; the stub of his wooden leg thumps on the flagstones of the garden path. He is too far away to help Melmelo should you attack him. Melmelo looks quite relaxed. He doesn't seem either prepared for or worried about trouble.">
+<CONSTANT TEXT012 "Melmelo has his majordomo, a tall, stooping man with a wooden leg, show you into his snug. Doubtless this man lost his leg doing a job for Melmelo and has been rewarded by the sinecure of becoming the guildmaster's senior servant. The snug is a comfortable little wood-panelled room lined with bookcases and trophies picked up from the villas of the nobility. It is one of the smallest rooms in what must be one of the grandest villas in the city. Melmelo is very rich.||He is a small shrewd-looking man, missing his left little finger and just beginning to lose his greying hair. He is dressed simply and you are reasonably sure he is not armed. You can hear the majordomo working in the garden; the stub of his wooden leg thumps on the flagstones of the garden path. He is too far away to help Melmelo should you attack him. Melmelo looks quite relaxed. He doesn't seem either prepared for or worried about trouble.">
 <CONSTANT CHOICES012 <LTABLE "take advantage of Melmelo's apparent helplessness and kill him" "ask him if he can think of a way of vanquishing Hate">>
 
 <ROOM STORY012
@@ -508,7 +508,7 @@
 		<TELL ,PERIOD-CR>
 	)>>
 
-<CONSTANT TEXT017 "At the last, you seem to hear a high-pitched uncanny whispering coming from Hate's black maw. As it shudders in its death throes and you sink into the oblivion of death, you imagine that you hear its words: \"To the last I grapple with thee, Judain. From hell's heart I stab at thee. For Hate's sake I spit my last breath at thee!\"||It pulls you close to its rancid maw as the two of you die. But you have died a true hero's death,  bringing salvation to the city of your birth. In days to come, when Godorno is rebuilt, a statue will be erected to honour your memory. You have triumphed.">
+<CONSTANT TEXT017 "At the last, you seem to hear a high-pitched uncanny whispering coming from Hate's black maw. As it shudders in its death throes and you sink into the oblivion of death, you imagine that you hear its words: \"To the last I grapple with thee, Judain. From hell's heart I stab at thee. For Hate's sake I spit my last breath at thee!\"||It pulls you close to its rancid maw as the two of you die. But you have died a true hero's death, bringing salvation to the city of your birth. In days to come, when Godorno is rebuilt, a statue will be erected to honour your memory. You have triumphed.">
 
 <ROOM STORY017
 	(DESC "017")
@@ -1927,7 +1927,7 @@
 	(CONTINUE STORY038)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT105 "It looks like there is no back exit from this building, but you recall seeing a trap door in the alley running behind it. Dragging the frightened Ruth behind you, you descend to the cellar. Sure enough, there is a ramp for delivery of wine barrels. You make your escape, emerging in the alley at the back of the house while the soldiers are bursting in the front way.||Ruth cannot thank you enough. 'My baby will be born, thanks to you,' she sobs as you lead her back to Copper Street.||\"I hope to save many others,\" you tell her. \"All our people, in fact.\" Once she is safe with Caiaphas, you return to your own bolthole. ">
+<CONSTANT TEXT105 "It looks like there is no back exit from this building, but you recall seeing a trap door in the alley running behind it. Dragging the frightened Ruth behind you, you descend to the cellar. Sure enough, there is a ramp for delivery of wine barrels. You make your escape, emerging in the alley at the back of the house while the soldiers are bursting in the front way.||Ruth cannot thank you enough. \"My baby will be born, thanks to you,\" she sobs as you lead her back to Copper Street.||\"I hope to save many others,\" you tell her. \"All our people, in fact.\" Once she is safe with Caiaphas, you return to your own bolthole. ">
 
 <ROOM STORY105
 	(DESC "105")
@@ -1936,7 +1936,7 @@
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT106 "The Overlord's men are tipped off by a mysterious informer. You are ambushed on your way to the meeting and have to fight to get away. As you run, a crossbow quarrel buries itself in your shoulder.">
-<CONSTANT TEXT106-CONTINUED "You return to Copper Street to hear the terrible news. Many other Judain were also  captured and are now swinging dead in gibbets beside the Avenue of Skulls. \"There is no trust in the hellpit this city has become,\" groans Caiaphas, himself bleeding from a deep gash across his forehead. He barely escaped from the meeting alive.||\"From now on, secrecy shall be our watchword,\" you agree. You find yourself a hideout on Medallion Street. Only a few handpicked comrades know where to find you. You are determined not to let the Overlord's men set another trap for you.">
+<CONSTANT TEXT106-CONTINUED "You return to Copper Street to hear the terrible news. Many other Judain were also captured and are now swinging dead in gibbets beside the Avenue of Skulls. \"There is no trust in the hellpit this city has become,\" groans Caiaphas, himself bleeding from a deep gash across his forehead. He barely escaped from the meeting alive.||\"From now on, secrecy shall be our watchword,\" you agree. You find yourself a hideout on Medallion Street. Only a few handpicked comrades know where to find you. You are determined not to let the Overlord's men set another trap for you.">
 
 <ROOM STORY106
 	(DESC "106")
@@ -1979,7 +1979,7 @@
 	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT110 "You slip into the great yellowstone library of Brunelesci unseen and take down what is a recent invention: the combined dictionary and bestiary. Crouching beneath a reading bench you are soon immersed in the cursive script. \"Hate, hatred, detestation,  abhorrence, abomination, malignity,\" and there are quotes from Senecio, one of the great playwrights of the age. \"Do all men kill the thing they do not love? Hates any man the thing he would not kill?\" and \"The monster that turneth man against his daughter and mother against her firstborn son, servitor of Death and handmaid to Destruction, maker of wars and inspiration of man's blackest deeds.\"||According to the scholar who compiled the lexicon and bestiary, \"Hate always shows its true face and so may be bested, \"Unfortunately he does not write how to overcome the monster. There is much written here, it is almost as if he was obsessed, \"In concert with Fear the most terrible of the Trinity of the Dark, Hate feeds on the bodies and souls of those who have given themselves up to the monster's embrace in despair, depravity and degradation.\"||You are still staring in fascination at the illuminated pages of the manuscript when the door opens and a soft-footed scholar librarian comes into the book-lined room. You have read enough and will learn nothing more here, so you creep out and return to Bumble Row, none the wiser but a little more oppressed of spirit.">
+<CONSTANT TEXT110 "You slip into the great yellowstone library of Brunelesci unseen and take down what is a recent invention: the combined dictionary and bestiary. Crouching beneath a reading bench you are soon immersed in the cursive script. \"Hate, hatred, detestation, abhorrence, abomination, malignity,\" and there are quotes from Senecio, one of the great playwrights of the age. \"Do all men kill the thing they do not love? Hates any man the thing he would not kill?\" and \"The monster that turneth man against his daughter and mother against her firstborn son, servitor of Death and handmaid to Destruction, maker of wars and inspiration of man's blackest deeds.\"||According to the scholar who compiled the lexicon and bestiary, \"Hate always shows its true face and so may be bested, \"Unfortunately he does not write how to overcome the monster. There is much written here, it is almost as if he was obsessed, \"In concert with Fear the most terrible of the Trinity of the Dark, Hate feeds on the bodies and souls of those who have given themselves up to the monster's embrace in despair, depravity and degradation.\"||You are still staring in fascination at the illuminated pages of the manuscript when the door opens and a soft-footed scholar librarian comes into the book-lined room. You have read enough and will learn nothing more here, so you creep out and return to Bumble Row, none the wiser but a little more oppressed of spirit.">
 
 <ROOM STORY110
 	(DESC "110")
@@ -2053,7 +2053,7 @@
 	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT116 "The late afternoon sun slants over the close-packed rooftops and through the open doorway of the hovel where you are hiding. You have an inspiration. Lifting your amulet, you tilt it so that the gem reflects the sunbeam out onto the wall on the opposite side of the street. The guards are standing waiting for the dogs to be brought, but one of them catches the flicker of reflected light out of the corner of his eye. He spins, looking along the street away from where you're hiding, and yells, \"Hey! I saw something dart down that alley over there. Come  on, lads!\"||While they race off chasing sunbeams, you help Ruth to the safety of the Copper Street hideaway. Then you slink back to your own bolthole.">
+<CONSTANT TEXT116 "The late afternoon sun slants over the close-packed rooftops and through the open doorway of the hovel where you are hiding. You have an inspiration. Lifting your amulet, you tilt it so that the gem reflects the sunbeam out onto the wall on the opposite side of the street. The guards are standing waiting for the dogs to be brought, but one of them catches the flicker of reflected light out of the corner of his eye. He spins, looking along the street away from where you're hiding, and yells, \"Hey! I saw something dart down that alley over there. Come on, lads!\"||While they race off chasing sunbeams, you help Ruth to the safety of the Copper Street hideaway. Then you slink back to your own bolthole.">
 
 <ROOM STORY116
 	(DESC "116")
@@ -2308,9 +2308,9 @@
 		<COND (,RUN-ONCE <LOSE-ITEM ,MAGIC-AMULET>)>
 		<COND (<CHECK-SKILL ,SKILL-AGILITY>
 			<SET-DESTINATION ,STORY135 1 ,STORY098>
-        )(ELSE
+		)(ELSE
 			<SET-DESTINATION ,STORY135 1 ,STORY140>
-        )>
+		)>
 	)>>
 
 <CONSTANT TEXT136 "With a word of power and a clap of your hands you bring forth a great fog of noxious gas. Mameluke succumbs immediately; when the fog clears you can see he has sunk completely under the purple shimmering translucent surface of the monster. Hate doesn't seem to have suffered any ill effects from the spell, though its body convulses as it throws out a purple coil to envelop you. You turn tail and flee back to Bumble Row as quickly as you can, mourning the loss of a brave dear friend.">
@@ -2357,7 +2357,7 @@
 	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT140 "The leap ·was further than you thought. As you take off, after a short run up, your foot slips and you sprawl forward onto the carpet. The silver and gold filigree springs out of the weave and binds itself around your limbs, tightening and cutting into your flesh. You are held fast.||Above you ablack shape detaches itself from the underside of the canopy of the Overlord's four-poster bed and settles heavily over you. Its skin sports rows of barbed spines that inject a poison into your bloodstream. Try as y_ou might, you can't break free. The poison turns your blood to cloying syrup and your heart stops beating. You have died with revenge for the Judain almost within your grasp. Hate will subdue all.">
+<CONSTANT TEXT140 "The leap was further than you thought. As you take off, after a short run up, your foot slips and you sprawl forward onto the carpet. The silver and gold filigree springs out of the weave and binds itself around your limbs, tightening and cutting into your flesh. You are held fast.||Above you a black shape detaches itself from the underside of the canopy of the Overlord's four-poster bed and settles heavily over you. Its skin sports rows of barbed spines that inject a poison into your bloodstream. Try as you might, you can't break free. The poison turns your blood to cloying syrup and your heart stops beating. You have died with revenge for the Judain almost within your grasp. Hate will subdue all.">
 
 <ROOM STORY140
 	(DESC "140")
@@ -2484,21 +2484,12 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT148 "What a noble deed you have just done. They let Mameluke go and grasp you instead. They have no regard for the Judain and beat you to a pulp in the street, where they leave you to die. You will perish here and there is no one left to save the Judain.">
+
 <ROOM STORY148
 	(DESC "148")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT148)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY149
@@ -2552,21 +2543,12 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT152 "There is nowhere to hide but inside the lime. There is lime dust everywhere, and wherever you go you leave a trail of chalky footsteps. You try to rub the footsteps away and burrow into the lime, leaving a small hole next to your nose to breathe through. As you lie there in the lime you daren't move in case someone sees you. But what if a small part of you is uncovered? Your dark clothes will be spotted against the white lime.||Your uncomfortable wait is ended when someone pokes a boathook into your side. The bargees clear the lime away from your head under the eyes of a group of the Overlord's soldiers.||\"It's a Judain,\" says one of the soldiers. Their captain orders them to knock you out and throw you in the river. Stuck inside the heavy mound of lime you are helpless as they cosh you over the head. You are food for the fishes.">
+
 <ROOM STORY152
 	(DESC "152")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT152)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY153
@@ -2756,21 +2738,12 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT164 "As you make a dash for the jewel the spider drops to flatten you. Its heavy bloated black sack of an abdo- men engulfs you and you are borne to the floor, where you begin to suffocate. Terror lends you the strength of seven men but even as you try to fight your way clear so the spider's venom does its deadly work. The likeness of you at the top of the stairs did indeed tell the story ofyour grisly and hopeless fate. The Jewel of Sunset Fire cannot so easily be stolen from the tower. There is no one left to save the Judain now. Hate will subdue all.">
+
 <ROOM STORY164
 	(DESC "164")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT164)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY165
@@ -3300,21 +3273,12 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT196 "Lucie's eyes sparkle with malice. \"This is the Judain who slew your captain, Overlord. This guilty wretch deserves to die.\"||\"And die the poor wretch will, undoubtedly, after interrogation.\" Lucie's smile of triumph is dripping with hatred. Something must have happened to her mind, else why would she lie and betray you. She is not the same girl you met standing in the rain near the Palazzo del Megiddo. She isn't behaving as she would with the riff-raff she usually disports herself with. Hate has got to her, just as it is taking over the minds of all the wretches of Godorno.||None the less you are fated to die in the prison fortress of Grond. By tomorrow your body will be hanging in an iron cage outside the Overlord's palace as a warning to the Judain to give up their futile struggle. There is no one left to save them now. Hate will conquer all.">
+
 <ROOM STORY196
 	(DESC "196")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT196)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY197
@@ -3334,21 +3298,12 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT198 "Tyutchev has led you into a trap. As a net is dropped from an archway above, entangling you, Tyutchev spins on his heel and slices yout head from your shoulders with a single blow of his sword. You took one chance too many. No one is left to save your people now.">
+
 <ROOM STORY198
 	(DESC "198")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT198)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY199
@@ -3368,21 +3323,12 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT200 "You take your usual care in the alleys and backways of the old city but this time your sixth sense has failed you. An assassin has you in the sights of his crossbow. A poisoned bolt catches you in the shoulder, spinning you round so that you fall in an ungainly heap on the cobblestones. Someone had marked you out, for what reason, you will never know. There is no one left to save the Judain now. Hate will conquer all.">
+
 <ROOM STORY200
 	(DESC "200")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT200)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY201
@@ -3419,21 +3365,12 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT203 "As you go to step on a piece of mosaic majolica, your foot feels no resistance. You have stepped off the side of the tower and with a dreadful heave of the stomach you realize you are falling two hundred feet to be smashed on the rocks of what was once the entrance to Old Godorno harbour. Who will save your people now? Not you, a shattered body at the base of the Tower of the Sentinel. ">
+
 <ROOM STORY203
 	(DESC "203")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT203)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY204
@@ -3589,21 +3526,12 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT213 "Your search for another amulet is interrupted by the venomed blade of Skakshi the master thief. He has crept up on you unseen and unheard as only a master rogue can. He turns the knife in your vitals and you die at his han<l;s. If only you hadn't lost your charm amulet it might have warned you of the danger. There is no one left to save the Judain now. Hate will subdue all.">
+
 <ROOM STORY213
 	(DESC "213")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT213)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY214
@@ -3708,21 +3636,12 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT220 "You throw yourselfdown on your bed in the row of crooked houses down Bumble Row and try to sleep. A taint in the air stops your slumber and there is a sound like wet kippers being thrown onto a marble slab. It is getting louder. You roll off your bed in time to see a purple veil close over the door. Hate has sealed you in. Its skin starts to swell into a great blister which slowly expands until it covers the whole room. You are caught up in the coils of Hate and have joined the eternal orgy of despair. You cannot even save yourself now, much less your oppressed people.">
+
 <ROOM STORY220
 	(DESC "220")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT220)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY221
@@ -4014,21 +3933,12 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT238 "You are soon trussed up, helpless, and frogmarched into the prison fortress of Grond to join hundreds more of your people. You will never see the light of day again. There is no one left to save your people now. They will all perish and be wiped from the face of the earth.">
+
 <ROOM STORY238
 	(DESC "238")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT238)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY239
@@ -4082,21 +3992,12 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT242 "It takes too long for you to concentrate your mind on the Rulership spell. You need to marshal every atom of your strength of will for this spell and your preparations are rudely and painfully interrupted by Skakshi's second stiletto dagger which buries its tip in your heart. You fall dead and there is no one left to save the wretched Judain from being wiped out for ever.">
+
 <ROOM STORY242
 	(DESC "242")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT242)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY243
@@ -4354,38 +4255,20 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT258 "Starting up suddenly from your chair you attempt to kill the Guildmaster of Thieves, but Melmelo is not one to be caught at a disadvantage. You encounter an invisible wall that stops you dead. It is coated in a transparent sticky slime and you are held fast. Defenceless, there is nothing you can do as Melmelo goes to work with his favourite knife. He takes no pleasure in killing you, he merely has the satisfaction that a dangerous enemy has been eliminated. There is no one left to save the Judain now. Hate will destroy everything.">
+
 <ROOM STORY258
 	(DESC "258")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT258)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT259 "They have only one reply to such a hideous threat. Even as you are calling the lepers forward, the guards shoot you with their crossbows from the arrow slits on either side and above the gates. You are peppered like a pincushion. As you die there is a low heartless cheer when the guards realize they have slaughtered yet another Judain. There is no one left now to save the Judain. Hate will subdue all.">
 
 <ROOM STORY259
 	(DESC "259")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT259)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY260
@@ -4507,21 +4390,12 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT267 "The honeyed ale slips down your gullet, filling your stomach with a heavy warm glow. The amber nectar is thick and almost sticky, yet strangely moreish. You finish the pot with relish, wipe your mouth backhanded and fall suddenly to the floor. The landlord has poisoned you in revenge for the pain you caused with your spell. You will not live to see this day out and there is no one who can save your people from extinction.">
+
 <ROOM STORY267
 	(DESC "267")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT267)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY268
@@ -4558,21 +4432,12 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT270 "The Overlord's soldiers close on you with drawn swords. You fight for your life valiantly, your blade thrumming through the air, but you can't keep them off for ever. There are too many foes and they cut you down, while the townsfolk howl with glee. Your dying thought is, \"How could I have been so foolish to think I could fight my way out of this?\"">
+
 <ROOM STORY270
 	(DESC "270")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT270)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY271
@@ -4796,21 +4661,12 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT284 "The Overlord's soldiers close in on you with drawn swords. You fight for your life valiantly. Your fists and feet are a blur, but you can't keep them off for ever. There are too many foes and they cut you down while the townsfolk howl with glee. Your dying thought is: \"How could I have been so foolish to think I could fight my way out ot this?\"">
+
 <ROOM STORY284
 	(DESC "284")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT284)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY285
@@ -4881,21 +4737,12 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT289 "Seizing the bridle you vault into the saddle. The chestnut horse bucks and then, arching its back, makes a series of straight-legged jumps that shake you from the saddle before you can settle. You fall to the cobbles, stunned, listening in a detached way as the hoofbeats of your pursuers come closer and stop. Your head is swimming as the soldiers dismount.||\"Judain scum,\" says one ofthem, plunging a sword in your back, killing you as if you were no more than a dog. \"That's one less to worry about,\" he says.">
+
 <ROOM STORY289
 	(DESC "289")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT289)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY290
@@ -4983,21 +4830,12 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT295 "Hate reaches for the crumbling building on either side of the street. Locking its tentacles around the famous Bridge of Sighs, it brings the whole structure <;rashing down on your head. You fall and are crushed under the rubble, while Hate goes lumbering past to bring about the final end of the cursed city of Godorno. You have failed.">
+
 <ROOM STORY295
 	(DESC "295")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT295)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY296
@@ -5153,21 +4991,12 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT305 "There is a faint whispering sound above and the black shape settles heavily over you. Its skin sports rows of barbed spines that inject a poison into your bloodstream. Try as you might, you can't break free. The poison turns your blood to cloying syrup and your heart stops beating. You have died when revenge for the Judain was almost within your grasp. Hate will subdue all.">
+
 <ROOM STORY305
 	(DESC "305")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT305)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY306
@@ -5272,21 +5101,12 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT312 "It takes too long for you to concentrate your mind to produce the magical effect of the Visceral Pang. Your preparations are rudely and painfully interrupted by Skakshi's second stiletto dagger which buries its tip in your heart. You fall dead and there is no one left to save the wretched Judain from being wiped out for ever.">
+
 <ROOM STORY312
 	(DESC "312")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT312)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY313
@@ -5493,21 +5313,12 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT325 "Hate has nourished itself on your evil thoughts of murder and revenge. You are ready now, a soul already lost. Tonight you will walk open-armed into the sickly embrace of Hate and give yourself up for ever, sucked into Hate's orgy of despair. There is no one left to save your fellow Judain. Hate will conquer all.">
+
 <ROOM STORY325
 	(DESC "325")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT325)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY326
@@ -5663,21 +5474,12 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT335 "Your mighty struggles are in vain. You are not ready for this untimely death. There is no one left now to save your people.||Memories of the times you have felt Hate smoulder in your breast come unbidden into your mind and the strength seems to drain out of your muscles. The warm wet embrace of Hate welcomes you and your body is slowly and inexorably drawn inch by inch into the seething mass of the monster. Soon your head too is being drawn in. Your arms and legs have gone numb and you start to fight for breath as your nostrils and lips are sealed over by the soft purple flesh of Hate. You drown in the body of Hate and the city has lost its only saviour. Your tormented half-life has begun.">
+
 <ROOM STORY335
 	(DESC "335")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT335)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY336
@@ -5765,38 +5567,20 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT341 "Did you think you could frighten five hundred guards inside a huge fortress with ten-foot thick walls that stand forty feet high into letting you in among them? They have only one reply to such a hideous apparition as you have conjured: they shoot you with their crossbows from the arrow slits on either side and above the gates. You are peppered like a pincushion. As you die and the magic fades there is a low heartless cheer as the guards realize they have slaughtered yet another Judain. There is no hero left now to save the city. Hate will subdue all.">
+
 <ROOM STORY341
 	(DESC "341")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT341)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT342 "You are taken under arrest to the prison fortress of Grond. The courtyard is thronged with captive Judain. More are being brought in all the time. Without a chance to say who you are, or to pretend loyalty to the Overlord, they force you into underground cellars where, in the cramped dark, you fight to breathe. When the air is gone the weight of dead people pressing on you cannot be borne. You have no choice but to give up your spirit as the rest of your people have already.">
 
 <ROOM STORY342
 	(DESC "342")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT342)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY343
@@ -5918,38 +5702,20 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT350 "You have dared to wait in the lion's den for too long. The Overlord's personal bodyguard are led by a magician who binds your feet to the spot as soon as he sets eyes on you. You are borne away to be tormented in the fortress of Grond. You will not survive. There is no one left now to save the Judain. Hate will conquer all.">
+
 <ROOM STORY350
 	(DESC "350")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT350)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT351 "Lucie watches as Tyutchev's blade chops into you as though you were already dead meat. It is indeed butchery and it takes Tyutchev only a few moments more to finish you off. He isn't even wounded. You have fought one of the greatest living swordsmen and you don't live to tell the tale. Now there is no one left to save the Judain.">
 
 <ROOM STORY351
 	(DESC "351")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT351)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY352
@@ -6292,21 +6058,12 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT372 "To your horror your spell backfires, singeing your eyebrows. Before you can recover the guards, who know better than to allow a magician time to cast a second spell, run you through with their rapiers, while the old woman screams with the shock of it. There is no one left alive to save the Judain now. They will all perish and be wiped from the face of the earth.">
+
 <ROOM STORY372
 	(DESC "372")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT372)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY373
@@ -6343,21 +6100,12 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT375 "You have the Jewel of Sunset Fire with which to focus the rays of the setting sun on the monster but you have no way of tethering Hate so that it must suffer the searing agony of the jewel until death wracks it. You stand alone upon the parapet of the Bargello, focusing the jewel, and Hate writhes in anguish. But the monster raises itself up, towering above you and then drops like an avalanche, crushing you into the midst of a mound of rubble that was once the strongest building in the city. The monster carries all before it. You lose the sword inside its flesh and soon you are all partners in the eternal orgy of despair. The city crumbles and is lost for ever beneath the waves. Hate has completed its work.">
+
 <ROOM STORY375
 	(DESC "375")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT375)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY376
@@ -6377,21 +6125,12 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT377 "You have taken the wrong course. You have never seen a man so skilled with a sword as the tall pale-faced Tyutchev. He is fast and strong too, and he cuts you down in a welter of blood and iron. Lucie looks on mournfully as he delivers the coup de grace, severing your head from your shoulders. There is no one left to save the Judain now. Hate will subdue all.">
+
 <ROOM STORY377
 	(DESC "377")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT377)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY378
@@ -6649,21 +6388,12 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT393 "If only you had taken the time to bandage your wound and staunch the flow of blood. The leg of your breeches is soaked and you are leaving red telltale footprints behind as you try to sidle past the line of guard. They could follow you as easily as if you had left chalk ar;rows on the ground. One of them sees the blood, shouts and points in your direction. They all fire their bows at you. It is a mercifully sudden death. There is no one left now to save the Judain. They will all perish and be wiped from the face of the earth.">
+
 <ROOM STORY393
 	(DESC "393")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT393)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY394
@@ -6700,21 +6430,12 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT396 "All you have in the way of weaponry to defeat Hate is the Jade Warrior's sword. It is a potent magical weapon but it is perhaps a forlorn hope that it will allow you to vanquish the monster. Still, it is all the hope you have. You lead your doomed people in a final stand against Hate. The monster carries all before it. You lose the sword inside its flesh and soon you are all partners in the eternal orgy of despair. The city crumbles and is lost for ever beneath the waves. Hate has completed its work.">
+
 <ROOM STORY396
 	(DESC "396")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT396)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY397
@@ -6734,21 +6455,12 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT398 "You offer one of the gate guards money, but he just says, \"It's more than my life's worth to open the gate when the bell tolls. You'd best come with me ...\"||He lays a calloused hand on your shoulder, then turns to call to his fellow guards: \"Got one here -- a Judain! Tried to bribe me.\"||He steps back as ifto let you go but it is only to move away from you, the target of the other guards' crossbows. Your body is peppered with crossbow bolts and you fall to the ground.||\"That's one less ofthose scum,\" says another guard as you die.">
+
 <ROOM STORY398
 	(DESC "398")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT398)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY399
@@ -6768,21 +6480,12 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT400 "You disappear through the jaws of Hate. As it absorbs you into its being, it begins to be wracked by spasms of pain. It cannot tolerate the presence of goodness within its very being. Shuddering, Hate tries to flee back to the sewers, but it is rotting away by the moment. The people come out of hiding to watch as it dwindles. They take up rocks and sticks and pelt the dying monster. The Overlord's men stand shoulder to shoulder with Judain resistance fighters, smiting their common enemy. At last Hate gives a forlorn screech and dies, turning to dust which is carried off by the wind.||You lost your life, but you died a martyr's death, bringing salvation to your people and your city.">
+
 <ROOM STORY400
 	(DESC "400")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT400)
+	(VICTORY T)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY401
@@ -6853,21 +6556,12 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT405 "There is no way out. The crossbows of the guards pepper your body with quarrels and you fall dead to the cobbled street in a pool of blood. The old egg-seller steals your purse and goes on her way. There is no one left now to save the Judain. Hate will subdue all.">
+
 <ROOM STORY405
 	(DESC "405")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT405)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY406
@@ -6904,21 +6598,12 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT408 "Your leadership has so inspired your people that they are prepared to man the barricade against Hate itself. They pelt it with missiles and arrows and hack at it with swords, cleavers and boathooks but all to no avail. Hate dines well today as it rolls over the barricade crushing everything there to a pulp. You could not desert your people now and you too are flattened and drawn in to the eternal orgy of despair. Hate will conquer all.">
+
 <ROOM STORY408
 	(DESC "408")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT408)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY409
@@ -7040,19 +6725,10 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT416 "Then there is a murmuring from the catacombs: a sound that grows and swells from a hum to a roar. The lost souls are free once more and they climb into the streets to hail you as their saviour. You are a hero and you will be feted for a hundred days. Now is the time for the banquet at the Overlord's palace that you have promised your people. Together you will rebuild Godorno and make it once more the jewel of the east. You are carried aloft to the palace and set on the throne despite all your protestations. The city is yours. At last the Judain need have no fear.">
+
 <ROOM STORY416
 	(DESC "416")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT416)
+	(VICTORY T)
 	(FLAGS LIGHTBIT)>

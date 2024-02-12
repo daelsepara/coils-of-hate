@@ -1892,6 +1892,23 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<ROOM STORY100
+	(DESC "100")
+	(STORY TEXT)
+	(EVENTS NONE)
+	(PRECHOICE NONE)
+	(CHOICES NONE)
+	(DESTINATIONS NONE)
+	(REQUIREMENTS NONE)
+	(TYPES NONE)
+	(CONTINUE NONE)
+	(ITEM NONE)
+	(CODEWORD NONE)
+	(COST 0)
+	(DEATH F)
+	(VICTORY F)
+	(FLAGS LIGHTBIT)>
+
 <CONSTANT TEXT101 "\"Your money or your life,\" comes the age-old cry from the leader. The horsemen are brigands, disguised as the Overlord\'s men!">
 <CONSTANT CHOICES101 <LTABLE "surrender everything you have to them" "ask to join their merry band and live the next chapter of your life as a brigand">>
 

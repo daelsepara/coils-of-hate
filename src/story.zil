@@ -549,7 +549,7 @@
 	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT021 "Your ploy works. The lasso catches Tormil's leg and with the help of some bystanders you are able to drag him free.||\"Why do we help him?\" asks one of the men as he releases the rope. \"The Overlord's men treat us like cattle!\"||\"True, he has earned our hatred,\" you say. \"But now, see, he deserves our pity.\"||Tormil weeps over the body ofhis daughter, past saving in the body of the monster. You creep away while he mourns.">
+<CONSTANT TEXT021 "Your ploy works. The lasso catches Tormil's leg and with the help of some bystanders you are able to drag him free.||\"Why do we help him?\" asks one of the men as he releases the rope. \"The Overlord's men treat us like cattle!\"||\"True, he has earned our hatred,\" you say. \"But now, see, he deserves our pity.\"||Tormil weeps over the body of his daughter, past saving in the body of the monster. You creep away while he mourns.">
 
 <ROOM STORY021
 	(DESC "021")
@@ -1075,7 +1075,7 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT060 "You sprint for it, little caring that you will crush the poor snakes you tread on. They writhe underfoot and hiss balefully. You are half-way across the room .when you slip as one of the serpents rolls under the ball of your foot. You fall face down in a sea of serpentine coils and the envenomed fangs of the snakes are soon piercing your soft flesh and injecting the deadly venom. The poison of the garter snake is virulent indeed and you are soon dead. There is no one left to save the Judain now.">
+<CONSTANT TEXT060 "You sprint for it, little caring that you will crush the poor snakes you tread on. They writhe underfoot and hiss balefully. You are half-way across the room when you slip as one of the serpents rolls under the ball of your foot. You fall face down in a sea of serpentine coils and the envenomed fangs of the snakes are soon piercing your soft flesh and injecting the deadly venom. The poison of the garter snake is virulent indeed and you are soon dead. There is no one left to save the Judain now.">
 
 <ROOM STORY060
 	(DESC "060")
@@ -1167,7 +1167,7 @@
 	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT067 "\"There's a price on your head, Skakshi, my friend. Melmelo wants you dead and he's hired Hammer, the assassin, to take care of you.\"||\"It isn't true!\" he scoffs. \"Why should Melmelo want me dead?\"||\"He is afraid. He fears you seek to supplant him as guildmaster ofthieves. He has grown fat and worried on the juicy sinecures of the guild.\"||\"I'm going to find Melmelo and have it out with him once and for all,\" Skakshi snarls at this. He stalks out of the inn. In his high dudgeon he fails to notice you follow him, slinking stealthily through the shadows. Shadowing men is something you have done many times before -- there isn't an urchin of the streets who could lose you in the byways and catacombs of Godorno.||Soon you are following Skakshi up the steps towards Melmelo's town stronghold. He walks past an ornamental steam bath that bubbles away in the garden. Melmelo's villa is built on the site of a thermal spring.">
+<CONSTANT TEXT067 "\"There's a price on your head, Skakshi, my friend. Melmelo wants you dead and he's hired Hammer, the assassin, to take care of you.\"||\"It isn't true!\" he scoffs. \"Why should Melmelo want me dead?\"||\"He is afraid. He fears you seek to supplant him as guildmaster of thieves. He has grown fat and worried on the juicy sinecures of the guild.\"||\"I'm going to find Melmelo and have it out with him once and for all,\" Skakshi snarls at this. He stalks out of the inn. In his high dudgeon he fails to notice you follow him, slinking stealthily through the shadows. Shadowing men is something you have done many times before -- there isn't an urchin of the streets who could lose you in the byways and catacombs of Godorno.||Soon you are following Skakshi up the steps towards Melmelo's town stronghold. He walks past an ornamental steam bath that bubbles away in the garden. Melmelo's villa is built on the site of a thermal spring.">
 
 <ROOM STORY067
 	(DESC "067")
@@ -1318,7 +1318,7 @@
 	(CONTINUE STORY416)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT078 "\"I have been giving that matter much thought. It's not good for business with Hate disrupting the life of the city.\" Melmelo had the larceny side of business in the city nicely sewn up until the monster emerged from the catacombs. \"I can only think of one thing which might be the key to the city's salvation.\"||\"What is that?\" you ask, avidly.||\"The Jewel of Sunset Fire.\"||\"Where is this jewel?\"||Melmelo seems certain that it lies at the top of the Tower of the Sentinel at the east end of Fortuny Street. \"I have coveted it all my life. It is said to give wondrous powers to its wielder. But though many of us have tried to scale the tower -- both within, using stealth and cunning, and without, clinging like flies to the stones -- none of us survived.\"||\"I will survive,\" you say determinedly. You can be reasonably sure Melmelo is telling you the truth for he wants to see Hate vanquished as much as any man does. He is already .on top of the pile, here in Godorno.">
+<CONSTANT TEXT078 "\"I have been giving that matter much thought. It's not good for business with Hate disrupting the life of the city.\" Melmelo had the larceny side of business in the city nicely sewn up until the monster emerged from the catacombs. \"I can only think of one thing which might be the key to the city's salvation.\"||\"What is that?\" you ask, avidly.||\"The Jewel of Sunset Fire.\"||\"Where is this jewel?\"||Melmelo seems certain that it lies at the top of the Tower of the Sentinel at the east end of Fortuny Street. \"I have coveted it all my life. It is said to give wondrous powers to its wielder. But though many of us have tried to scale the tower -- both within, using stealth and cunning, and without, clinging like flies to the stones -- none of us survived.\"||\"I will survive,\" you say determinedly. You can be reasonably sure Melmelo is telling you the truth for he wants to see Hate vanquished as much as any man does. He is already on top of the pile, here in Godorno.">
 
 <ROOM STORY078
 	(DESC "078")
@@ -1377,7 +1377,7 @@
 	(CONTINUE STORY171)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT083 "You hack wildly at the purple flesh of Hate to free Mameluke, who strains against the suffocating flesh. Your sword rips dark maroon welts in the flesh of Hate which puckers and drools a pale pink viscous mucus. After three minutes of wild work with the sword your arms are aching, but Mameluke is able to pull himself free with one last effort. Pausing to wipe some of the pink mucus offyour face, you clasp the Tartar's hand and tell him you are taking him home for a bath. Hate's coil is twitching and still bleeding the pink mucus. Your skin crawls where the sticky secretions landed on your bare face.">
+<CONSTANT TEXT083 "You hack wildly at the purple flesh of Hate to free Mameluke, who strains against the suffocating flesh. Your sword rips dark maroon welts in the flesh of Hate which puckers and drools a pale pink viscous mucus. After three minutes of wild work with the sword your arms are aching, but Mameluke is able to pull himself free with one last effort. Pausing to wipe some of the pink mucus off your face, you clasp the Tartar's hand and tell him you are taking him home for a bath. Hate's coil is twitching and still bleeding the pink mucus. Your skin crawls where the sticky secretions landed on your bare face.">
 
 <ROOM STORY083
 	(DESC "083")
@@ -1476,7 +1476,7 @@
 	(CONTINUE STORY159)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT092 "Your stiffened fingers lash out as fast as a striking cobra, jabbing into the cluster of nerves at the base ofhis palm. His fingers immediately go limp and he drops the knife without even feeling any pain. You snatch it up from the cobblestones before he can take stock of what has happened.||A moment later, he gives a sob of frustrated rage and launches a kick at your midriff. You easily catch his foot and draw it up, pulling him off-balance as you step closer to look him straight in the eye.||\"I wonder if you're also the sort who kicks dogs?\" you say softly, but with a hard look in your eye. \"Beware, if so. You'll find that we Judain are like wolfhounds. We bite back.\"||So saying, you give his leg a twist so that he is thrown over onto his back in the street. Pocketing his knife so that it cannot be used against another of your people, you saunter off in the direction of Greenbark Plaza.">
+<CONSTANT TEXT092 "Your stiffened fingers lash out as fast as a striking cobra, jabbing into the cluster of nerves at the base of his palm. His fingers immediately go limp and he drops the knife without even feeling any pain. You snatch it up from the cobblestones before he can take stock of what has happened.||A moment later, he gives a sob of frustrated rage and launches a kick at your midriff. You easily catch his foot and draw it up, pulling him off-balance as you step closer to look him straight in the eye.||\"I wonder if you're also the sort who kicks dogs?\" you say softly, but with a hard look in your eye. \"Beware, if so. You'll find that we Judain are like wolfhounds. We bite back.\"||So saying, you give his leg a twist so that he is thrown over onto his back in the street. Pocketing his knife so that it cannot be used against another of your people, you saunter off in the direction of Greenbark Plaza.">
 
 <ROOM STORY092
 	(DESC "092")
@@ -1510,7 +1510,7 @@
 	(CONTINUE STORY160)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT095 "Tormil's sword seems to stick fast in the body of the purple mass. The weapon is pulled from his grasp and then the whole bloated purple mass rolls .over, crushing Tormil beneath it. His flattened body is already being absorbed. Terror draws bile into your throat and you cannot help giving a small cry of horror. Averting your face, you leave the grisly scene behind. You are ashamed to think you could have led any foe into such a trap, even a cur like Tormil.">
+<CONSTANT TEXT095 "Tormil's sword seems to stick fast in the body of the purple mass. The weapon is pulled from his grasp and then the whole bloated purple mass rolls over, crushing Tormil beneath it. His flattened body is already being absorbed. Terror draws bile into your throat and you cannot help giving a small cry of horror. Averting your face, you leave the grisly scene behind. You are ashamed to think you could have led any foe into such a trap, even a cur like Tormil.">
 
 <ROOM STORY095
 	(DESC "095")
@@ -1548,7 +1548,7 @@
 	(CONTINUE STORY231)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT099 "Your confident look unnerves him. He expected fear or anger but you treat him as if he were a harmless stranger asking the way. You guess from the red dye which stains his wrists that he is a tanner's son. Judging by the state ofhis clothing his father is poor, probably in debt to a Judain, else why would the youth show such malice towards you? You decide to bluff him.||\"Be careful, young one,\" you say, \"you know what happens if we Judain withdraw a loan -- debtors' prison or debt slavery if you can't pay up. You have a strong resemblance to one of my clients, a tanner down on his luck. Your father, perhaps?\"||You are lucky, your hunch was right. His father must be in debt. The youth won't risk harming you in case of losing the roof over his head. He slinks away.">
+<CONSTANT TEXT099 "Your confident look unnerves him. He expected fear or anger but you treat him as if he were a harmless stranger asking the way. You guess from the red dye which stains his wrists that he is a tanner's son. Judging by the state of his clothing his father is poor, probably in debt to a Judain, else why would the youth show such malice towards you? You decide to bluff him.||\"Be careful, young one,\" you say, \"you know what happens if we Judain withdraw a loan -- debtors' prison or debt slavery if you can't pay up. You have a strong resemblance to one of my clients, a tanner down on his luck. Your father, perhaps?\"||You are lucky, your hunch was right. His father must be in debt. The youth won't risk harming you in case of losing the roof over his head. He slinks away.">
 
 <ROOM STORY099
 	(DESC "099")
@@ -2341,7 +2341,7 @@
 	(CONTINUE TEXT161)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT164 "As you make a dash for the jewel the spider drops to flatten you. Its heavy bloated black sack of an abdomen engulfs you and you are borne to the floor, where you begin to suffocate. Terror lends you the strength of seven men but even as you try to fight your way clear so the spider's venom does its deadly work. The likeness of you at the top of the stairs did indeed tell the story ofyour grisly and hopeless fate. The Jewel of Sunset Fire cannot so easily be stolen from the tower. There is no one left to save the Judain now. Hate will subdue all.">
+<CONSTANT TEXT164 "As you make a dash for the jewel the spider drops to flatten you. Its heavy bloated black sack of an abdomen engulfs you and you are borne to the floor, where you begin to suffocate. Terror lends you the strength of seven men but even as you try to fight your way clear so the spider's venom does its deadly work. The likeness of you at the top of the stairs did indeed tell the story of your grisly and hopeless fate. The Jewel of Sunset Fire cannot so easily be stolen from the tower. There is no one left to save the Judain now. Hate will subdue all.">
 
 <ROOM STORY164
 	(DESC "164")
@@ -2450,7 +2450,7 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT172 "At least this way you live to fight another day. You reach the bottom of the tower again safely and as you walk back out onto the path to the street the great bronze doors swing shut with a sound like the knell ofdoom. You try the gates but they are sealed shut. You needn't worry -- Melmelo, the guildmaster ofthieves, probablyjust wanted to get his own hands on the jewel. He can go to the trouble of finding it for himself. You slink back to Bumble Row.">
+<CONSTANT TEXT172 "At least this way you live to fight another day. You reach the bottom of the tower again safely and as you walk back out onto the path to the street the great bronze doors swing shut with a sound like the knell ofdoom. You try the gates but they are sealed shut. You needn't worry -- Melmelo, the guildmaster of thieves, probablyjust wanted to get his own hands on the jewel. He can go to the trouble of finding it for himself. You slink back to Bumble Row.">
 
 <ROOM STORY172
 	(DESC "172")
@@ -2466,7 +2466,7 @@
 	(CONTINUE STORY159)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT174 "Exploiting the rekindled morale of the Judain resistance and the other townsfolk who are rallying to your banner, you make your plans for the defence of the city. Ifyou construct barricades in certain sectors of the city you can challenge the Overlord's authority. If his men cannot capture the barricades all will know that the writing is on the wall; it will only be a matter of time before you are storming the palace.||The barricade is composed of flagstones and carts, doors stripped from nearby deserted houses, and even pews from the nearest temple. The carts have been laden with mud. Even an elephant could not break through. The blockage is ten feet high and in places a parapet has been built on the defender's side from which potshots can be taken at the Overlord's city guards as they advance. You have archers in the windows and on the roofs of the houses on either side of the barricade. Morale is high; the stories of your exploits have placed you high in the esteem of your people.||But you have not chosen the sites for your barricades well. The Overlord's guards are quick to exploit your mistake. They pour a rain of crossbow quarrels from the roof into the brave defenders, slaughtering many, before charging the barricade. The ensuing battle is a slaughter. The guards have roused themselves to one'last great effort to reclaim the streets of the city and they are putting the brave defenders to the sword. You decide discretion is the better part of valour and retreat to Bumble Row.">
+<CONSTANT TEXT174 "Exploiting the rekindled morale of the Judain resistance and the other townsfolk who are rallying to your banner, you make your plans for the defence of the city. If you construct barricades in certain sectors of the city you can challenge the Overlord's authority. If his men cannot capture the barricades all will know that the writing is on the wall; it will only be a matter of time before you are storming the palace.||The barricade is composed of flagstones and carts, doors stripped from nearby deserted houses, and even pews from the nearest temple. The carts have been laden with mud. Even an elephant could not break through. The blockage is ten feet high and in places a parapet has been built on the defender's side from which potshots can be taken at the Overlord's city guards as they advance. You have archers in the windows and on the roofs of the houses on either side of the barricade. Morale is high; the stories of your exploits have placed you high in the esteem of your people.||But you have not chosen the sites for your barricades well. The Overlord's guards are quick to exploit your mistake. They pour a rain of crossbow quarrels from the roof into the brave defenders, slaughtering many, before charging the barricade. The ensuing battle is a slaughter. The guards have roused themselves to one'last great effort to reclaim the streets of the city and they are putting the brave defenders to the sword. You decide discretion is the better part of valour and retreat to Bumble Row.">
 
 <ROOM STORY174
 	(DESC "174")
@@ -2523,7 +2523,7 @@
 	(CONTINUE STORY209)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT180 "Various cabbalistic signs like ancient cave paintings have been daubed on the outside ofthe topmost door in terracotta and charcoal. If your hopes are not disappointed the Jewel of Sunset Fire lies inside this topmost room||At the top of the staircase is a series of frescoes showing the tower and depicting the grisly fates that befall those who rashly try to climb it. To your absolute horror and consternation the final fresco is a picture of you, squashed flat beneath a gigantic bloated black spider. Above the spider you can see the orb shining brightly in its frame.||You walk on up a narrower spiral of stairs that lines the outer wall and at last pause before the final door. Gingerly you push it open, wincing at the creak of its rusty hinges. There is a brooding presence of evil here. Your heart hammers in your chest as you step forward.">
+<CONSTANT TEXT180 "Various cabbalistic signs like ancient cave paintings have been daubed on the outside of the topmost door in terracotta and charcoal. If your hopes are not disappointed the Jewel of Sunset Fire lies inside this topmost room||At the top of the staircase is a series of frescoes showing the tower and depicting the grisly fates that befall those who rashly try to climb it. To your absolute horror and consternation the final fresco is a picture of you, squashed flat beneath a gigantic bloated black spider. Above the spider you can see the orb shining brightly in its frame.||You walk on up a narrower spiral of stairs that lines the outer wall and at last pause before the final door. Gingerly you push it open, wincing at the creak of its rusty hinges. There is a brooding presence of evil here. Your heart hammers in your chest as you step forward.">
 
 <ROOM STORY180
 	(DESC "180")
@@ -2565,7 +2565,7 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT183 "An hour before dusk the members ofthe crew return from whichever wine cellar they have been squandering their money in and prepare to cast off. They look over their cargo briefly but do not notice you huddled under a pile of ropes. They sing as they pole the barge, a sombre song with a pounding beat about how a man may toil his whole life away and at the end have nothing to show for it but the clothes he will die in.||You guess from the movements of the barge it has turned up the Palayal river. You are being borne towards the Great Forest. You guess they are making for the town ofBagoe twenty miles upriver. You lie still, listening to the lapping ofwater at the bows and feeling the rhythmic surge as the crew drives the barge on, poling in time. After three hours of dirges the crew tie up for the rest of the night against the deserted riverbank. While they snore you leap from barge to shore and walk inland to the Bagoe road.">
+<CONSTANT TEXT183 "An hour before dusk the members of the crew return from whichever wine cellar they have been squandering their money in and prepare to cast off. They look over their cargo briefly but do not notice you huddled under a pile of ropes. They sing as they pole the barge, a sombre song with a pounding beat about how a man may toil his whole life away and at the end have nothing to show for it but the clothes he will die in.||You guess from the movements of the barge it has turned up the Palayal river. You are being borne towards the Great Forest. You guess they are making for the town ofBagoe twenty miles upriver. You lie still, listening to the lapping ofwater at the bows and feeling the rhythmic surge as the crew drives the barge on, poling in time. After three hours of dirges the crew tie up for the rest of the night against the deserted riverbank. While they snore you leap from barge to shore and walk inland to the Bagoe road.">
 
 <ROOM STORY183
 	(DESC "183")
@@ -2818,7 +2818,7 @@
 	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT201 "This street winds down towards the riverfront and the centre of the city. It is crossed by large avenues lined with tall straight cedars that lead up to the citadel. You hear the ringing ofthe town crier's bell. At the end of the street is Greenbark Plaza. Here a large walled flowerbed encircles a rare sight. It is a greenbark tree, eighty feet tall. The smooth bark is striped lime green and grey-green and the heart-shaped leaves are golden yellow. There is a shrine here to the tree spirit with a few offerings of potash and wine.||Next to the shrine is the town crier dressed in his traditional black and gold tabard. He unfurls a scroll and begins to declaim to the gathered crowd. He is flanked by a bodyguard of the Overlord's men armoured in black leather. You push forward to hear better.">
+<CONSTANT TEXT201 "This street winds down towards the riverfront and the centre of the city. It is crossed by large avenues lined with tall straight cedars that lead up to the citadel. You hear the ringing of the town crier's bell. At the end of the street is Greenbark Plaza. Here a large walled flowerbed encircles a rare sight. It is a greenbark tree, eighty feet tall. The smooth bark is striped lime green and grey-green and the heart-shaped leaves are golden yellow. There is a shrine here to the tree spirit with a few offerings of potash and wine.||Next to the shrine is the town crier dressed in his traditional black and gold tabard. He unfurls a scroll and begins to declaim to the gathered crowd. He is flanked by a bodyguard of the Overlord's men armoured in black leather. You push forward to hear better.">
 
 <ROOM STORY201
 	(DESC "201")
@@ -3505,7 +3505,7 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT250 "The guards here on the city gate look bored. You find a piece of straw in the road and walk up chewing this like a milch cow. In your best country yokel accent you ask them ifyou can try your hand at their job to see if you would like to join the city guard. They are taken in by your country bumpkin act and one of them is only too glad to give up his place on the gate to you so that he can begin the evening's drinking early.||You stay with the guards at the gate and learn much of what has passed since you fled the city. The Judain are hanging dead in iron cages by the hundred. A few managed to flee the city but most have gone to ground in what the guards call 'their lairs and slum pits'. Things have been very bad for your people. The Overlord is trying to wipe you Judain from the face of the earth - with a large measure of success, by the sound ofit. After three hours on the gate you manage to slink unseen into the city while the others are in the gatehouse, brewing a pot oftea.">
+<CONSTANT TEXT250 "The guards here on the city gate look bored. You find a piece of straw in the road and walk up chewing this like a milch cow. In your best country yokel accent you ask them if you can try your hand at their job to see if you would like to join the city guard. They are taken in by your country bumpkin act and one of them is only too glad to give up his place on the gate to you so that he can begin the evening's drinking early.||You stay with the guards at the gate and learn much of what has passed since you fled the city. The Judain are hanging dead in iron cages by the hundred. A few managed to flee the city but most have gone to ground in what the guards call 'their lairs and slum pits'. Things have been very bad for your people. The Overlord is trying to wipe you Judain from the face of the earth - with a large measure of success, by the sound ofit. After three hours on the gate you manage to slink unseen into the city while the others are in the gatehouse, brewing a pot oftea.">
 
 <ROOM STORY250
 	(DESC "250")
@@ -3513,7 +3513,7 @@
 	(CONTINUE STORY300)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT251 "You keep poling steadily along. The cresting wave smashes against the gondola and you are bumped by a large sea cow. It veers off and you pick yourself up from where you had fallen among the cushions and poll the boat further out. You call aloud but Hate has no ears with which to hear the pleas ofthe lost souls. Swanning around in a gondola is all very well but you haven't attracted the attentions of Hate. You pole back to the bank and return to your lair on Bumble Row. ">
+<CONSTANT TEXT251 "You keep poling steadily along. The cresting wave smashes against the gondola and you are bumped by a large sea cow. It veers off and you pick yourself up from where you had fallen among the cushions and poll the boat further out. You call aloud but Hate has no ears with which to hear the pleas of the lost souls. Swanning around in a gondola is all very well but you haven't attracted the attentions of Hate. You pole back to the bank and return to your lair on Bumble Row. ">
 
 <ROOM STORY251
 	(DESC "251")
@@ -3689,21 +3689,12 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT264 " You skulk in the shadows, then roll into the gutter where you play dead. This is an old thief's trick to avoid a hue and cry. The watchguards walk slowly past not giving yet another corpse in the plague-ridden city another glance and soon pass out of sight. Summoning all your strength you skulk through the shadows to the lighthouse-like garret, where Mameluke is warming some broth. ">
+
 <ROOM STORY264
 	(DESC "264")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT264)
+	(CONTINUE STORY316)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY265
@@ -3765,21 +3756,12 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT269 "Luckily it is enough that the Judain can see by the look in your eyes you would kill them to protect the wretched guards. They fall back.||\"Have mercy on these poor dogs,\" you say. \"Do not fall to the depths of their depravity. Is this not the fate they have reserved for you? Are we not more noble than they? Let us show them our superiority by sparing them, that their very existence may be a testament to our nobility.\"||Your exhortations have appealed to their sense of vanity. They will spare the guards. You wander through the dark bones of the castle foundations, freeing those who are still alive, before returning to your hideout.">
+
 <ROOM STORY269
 	(DESC "269")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT269)
+	(CONTINUE STORY159)
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT270 "The Overlord's soldiers close on you with drawn swords. You fight for your life valiantly, your blade thrumming through the air, but you can't keep them off for ever. There are too many foes and they cut you down, while the townsfolk howl with glee. Your dying thought is, \"How could I have been so foolish to think I could fight my way out of this?\"">
@@ -3858,21 +3840,12 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT275 "The old woman doesn't betray the least surprise at your revelation. \"Best lie low, these are bad times for Judain and no mistake. Good luck.\"||And with that she is off to find a place on the street to sell her meagre clutch ofeggs. You walk on into the once bustling city. ">
+
 <ROOM STORY275
 	(DESC "275")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT275)
+	(CONTINUE STORY300)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY276
@@ -3892,22 +3865,25 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT277 "The Jade Warriors' swords are the finest you have ever seen. One in particular seems almost to pulse with energy, catching light like droplets of honey along its sharp edge.||With such a sword you might conquer a kingdom. The lure of avarice is too great. Diving forward, you duck under the swipe of the nearest Jade Warrior and leap nimbly over the attack of the second. Jumping behind the Jade Warrior with the finest blade, you throw yourself against its sword arm, wrenching the blade from its strong grasp.||The others close in, and too late you realize your escape route is cut off. By reflex you raise the sword. \"Get away from me!\" you cry as menacingly as you can as they loom over you to slice your vitals.||To your relief and amazement they obey your command, lining up before you to stand at attention. They whirr and click as they follow you dutifully to the edge of the precincts of the burial chambers, and there they grind to a halt. There is nothing you can do to move them further. Although you cannot command the Jade Warriors to go forth and attack Hate, you tell them that they must attack Hate if it should loop its coils into the burial chambers of the Megiddo dynasty. You leave all doors and traps wide open in the hope that Hate will blunder in and get carved up.||Sure enough, when you return the next day the place shows the signs of an epic battle. Great gouts of translucent flesh hang from lintel and corners. There is a fine green powder in the air, like pulverized glass. The Jade Warriors have been ground to dust by Hate but, judging by the quantity of purple ichor smeared over the walls, they must have given the monster acute indigestion.">
+
 <ROOM STORY277
 	(DESC "277")
-	(STORY TEXT)
+	(STORY TEXT277)
 	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(PRECHOICE STORY277-PRECHOICE)
+	(CONTINUE STORY174)
+	(ITEM JADE-WARRIORS-SWORD)
+	(CODEWORD CODEWORD-HECATOMB)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY277-PRECHOICE ()
+	<COND (<NOT <CHECK-ITEM ,PLUMED-HELMET>>
+		<TELL CR "Take a plumed helmet?">
+		<COND (<YES?>
+			<TAKE-ITEM ,PLUMED-HELMET>
+		)>
+	)>>
 
 <ROOM STORY278
 	(DESC "278")
@@ -3926,21 +3902,12 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT279 "You are taking a terrible risk, stealing into the Overlord's palace. It is a dark night and you fight to control a blackness of heart which impels you to take revenge on the cruel tyrannical Overlord.||Emerging out of the catacombs beneath the palace stables you make your way in by the postern gate and steal along strangely deserted corridors towards where you guess the Overlord's suite must be.||There are few guards here, though you can hear the sounds of a drunken brawl in the guardhouse itself. How can the Overlord's security be so lax? Is he losing his grip?||After only five minutes inside the palace you are outside the Overlord's bedchamber. Holding your breath you push open the door and step through.">
+
 <ROOM STORY279
 	(DESC "279")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT279)
+	(CONTINUE STORY030)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY280
@@ -4053,21 +4020,12 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT287 "The amulet gives a flare of violet light in the flickering lamplight of the inn. You know that signal well. It is a warning of poison and deceit, visible only to your own eyes. You look with narrowed eyes at the landlord, then at the alepot on the bar. ">
+
 <ROOM STORY287
 	(DESC "287")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT287)
+	(CONTINUE STORY276)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY288
@@ -4095,38 +4053,21 @@
 	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT290 "A great crash echoes round the room and seems to shake the whole tower. It is followed by an explosion of spurting red flame which bathes the black spider in its punishing light. You feel giddy as the tower rocks. The spider recoils, its legs buckle under it and it struggles in vain to get up. The Jewel of Sunset Fire is yours for the taking. You make a dash for it before the gigantic spider, which is giving out a high keening hiss, can recover.">
+
 <ROOM STORY290
 	(DESC "290")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT290)
+	(CONTINUE STORY308)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT291 "Skakshi takes you by a devious route, perhaps hoping you will get lost in the foreigners' quarter, which you have been travelling through now for ten minutes.
+'What do you have in mind for Melmelo?' Skakshi is anxious to know whether you intend the Guild- master of Thieves any harm. There is naked ambition gleaming in his eyes; he is a truly nasty piece of work.||\"Wait and see,\" you tell him.||At last you stand before a white stuccoed villa with an ornamental steam bath bubbling in the garden.||\"This is Melmelo's place. The soft living here has made him unfit to lead our guild. There are many who are just waiting for something to happen.\"||\"Thank you, Skakshi, for guiding me here. What is the password? I don't want to be killed for calling without an invitation.\"||\"Just shout, 'enchantress' and they will let you in. If anything happens remember it was me, honest Skakshi, who brought you here. Don't tell Melmelo though.\" With that he is gone; he blends into the shadows like a ghost.||Walking up to the double doors of the villa you cry the password for all to hear.">
 
 <ROOM STORY291
 	(DESC "291")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT291)
+	(CONTINUE STORY012)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY292
@@ -4163,21 +4104,12 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT294 "The burial crypts of the Megiddo dynasty are reputed to be guarded by the Jade Warriors, four enchanted statues of their most trusted and able bodyguards. If you are forced to flee into those crypts you risk disturbing them. It is said they have killed even the most cunning and dangerous grave robbers and defilers of tombs over the centuries.||It is also said that the Jade Warriors. protect not only the ceremented mummies of the Megiddo dynasty but a vast panoply of war gear along with enough treasufe to maintain a large army indefinitely. The swords of the famed Megiddan Palace Guard are reputedly sharper than any ever made in the eastern world.">
+
 <ROOM STORY294
 	(DESC "294")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT294)
+	(CONTINUE STORY409)
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT295 "Hate reaches for the crumbling building on either side of the street. Locking its tentacles around the famous Bridge of Sighs, it brings the whole structure crashing down on your head. You fall and are crushed under the rubble, while Hate goes lumbering past to bring about the final end of the cursed city of Godorno. You have failed.">
@@ -4222,55 +4154,28 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT298 "It tears you apart to leave Lucie but she is already a lost soul, lost for ever in despair. With a heavy heart you set out towards your lair on Bumble Row once more to get ready to prepare the Judain for battle.">
+
 <ROOM STORY298
 	(DESC "298")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT298)
+	(CONTINUE STORY195)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT299 "The surviving Judain of the city all look to you for leadership now. They are ashamed at not having stood up to the Overlord, but your news of his suffering has cheered them. They feel as if God has not yet forsaken them.||You circle various safe areas on your map of the city and assign a cell offive operatives to each, giving them a list of the people they are to support with their foraging. The high death rate at least means less mouths to feed.||Each cell is also given a list of people to be assassinated. \"If you do your work well the Overlord will be forced to grant us pardon and we can begin life anew,\" you tell them to instil hope in their hearts. \"We will search for the Promised Land where there is only the one true God, Light of our Lives.\"||\"Our miserable lives,\" grumbles one of the grandmothers.||\"Enough,\" you say autocratically, beginning to revel in your leadership now, \"I want no dissent. You all know what you have to do. The heads of each resistance cell will meet at noon on the third day from now, underneath the Lord Mayor's house. I expect all of you to report success in your missions, and without loss. I'm relying on you. You know where to find me if you need me, now go, and keep your heads down.\"">
 
 <ROOM STORY299
 	(DESC "299")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT299)
+	(CONTINUE STORY006)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT300 "At last you face the noisome streets of the city once more. The facades of the palaces seem even more chipped and sullied than they were before you left. Several of the rows of grand villas along the riverfront and up the Grand Canal seem to have subsided several feet towards the waterline. Where once the roofline was an uninterrupted plane from one end of the canal to the other, now it is a crooked saw-toothed succession of pinnacles and collapsed roofs. Something has shaken the city to its foundations while you have been away.||Will you find a safe place to hide until the worst of the terror is over? Your old hovel on Copper Street is only a couple more miles' tramp from here. You decide to go back there to find old friends. ">
 
 <ROOM STORY300
 	(DESC "300")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT300)
+	(CONTINUE STORY004)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY301
@@ -5805,7 +5710,7 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT398 "You offer one of the gate guards money, but he just says, \"It's more than my life's worth to open the gate when the bell tolls. You'd best come with me ...\"||He lays a calloused hand on your shoulder, then turns to call to his fellow guards: \"Got one here -- a Judain! Tried to bribe me.\"||He steps back as ifto let you go but it is only to move away from you, the target of the other guards' crossbows. Your body is peppered with crossbow bolts and you fall to the ground.||\"That's one less ofthose scum,\" says another guard as you die.">
+<CONSTANT TEXT398 "You offer one of the gate guards money, but he just says, \"It's more than my life's worth to open the gate when the bell tolls. You'd best come with me ...\"||He lays a calloused hand on your shoulder, then turns to call to his fellow guards: \"Got one here -- a Judain! Tried to bribe me.\"||He steps back as if to let you go but it is only to move away from you, the target of the other guards' crossbows. Your body is peppered with crossbow bolts and you fall to the ground.||\"That's one less of those scum,\" says another guard as you die.">
 
 <ROOM STORY398
 	(DESC "398")

@@ -337,7 +337,7 @@
 	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT005 "Hate shrieks -- a cry of insensate fury as it sees you charging back to slice at it with your enchanted blade. In a welter of carnage, you and your mon- strous foe lock in mortal combat. The green-tinted metal of your blade chops deep into Hate's soft purulent flesh, while its tentacles slap into you with stunning force. Those baleful green eyes gleam with a new emotion now -- not hatred and unreasoning violence, but the liquid gleam of fear. Hate knows that it is going to die today. But it sells its life dearly.">
+<CONSTANT TEXT005 "Hate shrieks -- a cry of insensate fury as it sees you charging back to slice at it with your enchanted blade. In a welter of carnage, you and your monstrous foe lock in mortal combat. The green-tinted metal of your blade chops deep into Hate's soft purulent flesh, while its tentacles slap into you with stunning force. Those baleful green eyes gleam with a new emotion now -- not hatred and unreasoning violence, but the liquid gleam of fear. Hate knows that it is going to die today. But it sells its life dearly.">
 
 <ROOM STORY005
 	(DESC "005")
@@ -539,7 +539,7 @@
 	)>>
 
 <CONSTANT TEXT020 "You resolve to enter the prison fortress of Grond. Once there, you can free the captured Judain and other political prisoners detained to await the mercy of the Overlord's torturers. But you cannot succeed at such an ambitious mission alone, and you are unwilling to put your fellow Judain at further risk. They are brave enough, but to get inside the prison you will need the help ofan expert rogue.">
-<CONSTANT CHOICES020 <LTABLE "pay a visit to your mulatto friend, Mame- luke, who has been useful to you in the past" "call on the little gamine Lucie">>
+<CONSTANT CHOICES020 <LTABLE "pay a visit to your mulatto friend, Mameluke, who has been useful to you in the past" "call on the little gamine Lucie">>
 
 <ROOM STORY020
 	(DESC "020")
@@ -1167,7 +1167,7 @@
 	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT067 "\"There's a price on your head, Skakshi, my friend. Melmelo wants you dead and he's hired Hammer, the assassin, to take care of you.\"||\"It isn't true!\" he scoffs. \"Why should Melmelo want me dead?\"||\"He is afraid. He fears you seek to supplant him as guildmaster ofthieves. He has grown fat and worried on the juicy sinecures of the guild.\"||\"I'm going to find Melmelo and have it out with him once and for all,\" Skakshi snarls at this. He stalks out of the inn. In his high dudgeon he fails to notice you follow him, slinking stealthily through the shadows. Shadowing men is something you have done many times before -- there isn't an urchin of the streets who could lose you in the byways and cata- combs of Godorno.||Soon you are following Skakshi up the steps towards Melmelo's town stronghold. He walks past an ornamental steam bath that bubbles away in the garden. Melmelo's villa is built on the site of a thermal spring.">
+<CONSTANT TEXT067 "\"There's a price on your head, Skakshi, my friend. Melmelo wants you dead and he's hired Hammer, the assassin, to take care of you.\"||\"It isn't true!\" he scoffs. \"Why should Melmelo want me dead?\"||\"He is afraid. He fears you seek to supplant him as guildmaster ofthieves. He has grown fat and worried on the juicy sinecures of the guild.\"||\"I'm going to find Melmelo and have it out with him once and for all,\" Skakshi snarls at this. He stalks out of the inn. In his high dudgeon he fails to notice you follow him, slinking stealthily through the shadows. Shadowing men is something you have done many times before -- there isn't an urchin of the streets who could lose you in the byways and catacombs of Godorno.||Soon you are following Skakshi up the steps towards Melmelo's town stronghold. He walks past an ornamental steam bath that bubbles away in the garden. Melmelo's villa is built on the site of a thermal spring.">
 
 <ROOM STORY067
 	(DESC "067")
@@ -1652,7 +1652,7 @@
 	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT109 "Disturbed by your noise, the Overlord yawns, rubs sleep out of his eyes and looks about him. As he sees you his eyes widen with fear and.he reaches furtively beneath his pillow. He pulls out a small blowpipe and puffs out a tiny dart which bites into your neck like a hornet sting. It is tipped with curare, a very painful death. There is no one left now to save the Judain. Hate will subdue all.">
+<CONSTANT TEXT109 "Disturbed by your noise, the Overlord yawns, rubs sleep out of his eyes and looks about him. As he sees you his eyes widen with fear and he reaches furtively beneath his pillow. He pulls out a small blowpipe and puffs out a tiny dart which bites into your neck like a hornet sting. It is tipped with curare, a very painful death. There is no one left now to save the Judain. Hate will subdue all.">
 
 <ROOM STORY109
 	(DESC "109")
@@ -1688,7 +1688,7 @@
 	(CONTINUE STORY201)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT113 "The landlord is ignoring you, cleaning glasses that already sparkle in the sombre red light. The pipes- moker gives you a glance, then turns away. You can hear two women gossiping about the fate of some of their Judain acquaintances. \"It wouldn't do to call them friends in these times -- well, would it, darling?\"||At the far end of the tavern the tall stranger is staring morosely at his drink, while Lucie watches him fondly.">
+<CONSTANT TEXT113 "The landlord is ignoring you, cleaning glasses that already sparkle in the sombre red light. The pipesmoker gives you a glance, then turns away. You can hear two women gossiping about the fate of some of their Judain acquaintances. \"It wouldn't do to call them friends in these times -- well, would it, darling?\"||At the far end of the tavern the tall stranger is staring morosely at his drink, while Lucie watches him fondly.">
 <CONSTANT CHOICES113 <LTABLE "tolerate the landlord's rudeness" "force him to serve you">>
 
 <ROOM STORY113
@@ -3412,21 +3412,12 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT244 "This time you pick the charm oflnfernal Apparition, which causes you to resemble a nighted fiend from the pits of hell. You walk stiff-legged down the street towards them, screaming in the tongue of the fierce cannibals of the Isles of the Gaels. The troops pass you in two streams on either side of the cobbled street, making the sign of protection of the one god tolerated in Godorno, though you notice one or two fingering charms sacred to their old gods, behind their backs. It is tempting to cause trouble by denouncing them as heretics but you haven't the energy. The guards walk slowly past and out of sight.||Summoning all your strength you skulk through the shadows to the lighthouse garret, where Mameluke is warming some broth.">
+
 <ROOM STORY244
 	(DESC "244")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT244)
+	(CONTINUE STORY316)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY245
@@ -3514,55 +3505,28 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT250 "The guards here on the city gate look bored. You find a piece of straw in the road and walk up chewing this like a milch cow. In your best country yokel accent you ask them ifyou can try your hand at their job to see if you would like to join the city guard. They are taken in by your country bumpkin act and one of them is only too glad to give up his place on the gate to you so that he can begin the evening's drinking early.||You stay with the guards at the gate and learn much of what has passed since you fled the city. The Judain are hanging dead in iron cages by the hundred. A few managed to flee the city but most have gone to ground in what the guards call 'their lairs and slum pits'. Things have been very bad for your people. The Overlord is trying to wipe you Judain from the face of the earth - with a large measure of success, by the sound ofit. After three hours on the gate you manage to slink unseen into the city while the others are in the gatehouse, brewing a pot oftea.">
+
 <ROOM STORY250
 	(DESC "250")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT250)
+	(CONTINUE STORY300)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT251 "You keep poling steadily along. The cresting wave smashes against the gondola and you are bumped by a large sea cow. It veers off and you pick yourself up from where you had fallen among the cushions and poll the boat further out. You call aloud but Hate has no ears with which to hear the pleas ofthe lost souls. Swanning around in a gondola is all very well but you haven't attracted the attentions of Hate. You pole back to the bank and return to your lair on Bumble Row. ">
 
 <ROOM STORY251
 	(DESC "251")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT251)
+	(CONTINUE STORY020)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT252 "Two of the stanchions holding up the mound of rubble are cracked and buckling. It would be suicide to venture down there. If Lucie is buried down that hole she must be long since dead. There is nothing you can do to help her, only hope she spent the night in the arms of a lover and not in her own miserable little hovel. You return to your people to prepare them to face Hate.">
 
 <ROOM STORY252
 	(DESC "252")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT252)
+	(CONTINUE STORY195)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY253
@@ -3633,21 +3597,12 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT257 "You soon find Lucie, who is sprawled flat on her back in the road. She looks at you as though you have betrayed her and to your dismay you see she is going to cry. \"I only wanted to touch it, just for a moment,\" she cries, already in floods of tears.||\"It is magically attuned to me. Only I can use it,\" you say hurriedly. You retrieve your amulet from the dust, but as you reach out to help Lucie up she shrugs you away, evading your grasp.">
+
 <ROOM STORY257
 	(DESC "257")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT257)
+	(CONTINUE STORY261)
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT258 "Starting up suddenly from your chair you attempt to kill the Guildmaster of Thieves, but Melmelo is not one to be caught at a disadvantage. You encounter an invisible wall that stops you dead. It is coated in a transparent sticky slime and you are held fast. Defenceless, there is nothing you can do as Melmelo goes to work with his favourite knife. He takes no pleasure in killing you, he merely has the satisfaction that a dangerous enemy has been eliminated. There is no one left to save the Judain now. Hate will destroy everything.">

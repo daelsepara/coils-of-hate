@@ -944,55 +944,38 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT053 "You walk quickly along towards the main gate, hiding your face from strangers. After a time you realize you are being followed by a gang of young street urchins. You turn off the main thoroughfare and duck and dive down back alleys but these orphans seem to know this quarter of the city by heart. They must have explored every inch in their quest to stay alive.||Deciding to ignore them you return to the main street and toward the twin arches of the main gates. As you approach the campanile, its bell sounds a steady doleful ringing. There is a creak as the gate guards push the heavy gate back. There is no way out here for anyone. You will have to try to slip out of the city another way.||The walls are high and well patrolled.">
+<CONSTANT CHOICES053 <LTABLE "explore the river quay to see if you may escape upriver by stowing away on a barge" "try to bribe the guards">>
+
 <ROOM STORY053
 	(DESC "053")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT053)
+	(CHOICES CHOICES053)
+	(DESTINATIONS <LTABLE STORY070 STORY398>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT054 "You back away out of Hate's reach to recover your breath. The monster strains at the links binding it, but cannot break them. If you have a magical salve with which to heal your wounds, now is the time to use it.">
+<CONSTANT CHOICES054 <LTABLE "return to the fray" "use the">>
 
 <ROOM STORY054
 	(DESC "054")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT054)
+	(CHOICES CHOICES054)
+	(DESTINATIONS <LTABLE STORY005 STORY349>)
+	(REQUIREMENTS <LTABLE NONE JEWEL-OF-SUNSET-FIRE>)
+	(TYPES <LTABLE R-NONE R-ITEM>)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT055 "You walk on, unconcerned, until you see the people ahead of you leaving their work in the fields and returning hurriedly to their farmhouses. Looking back down the road you see the dust cloud is caused by a large group of horsemen clad in the Overlord's livery of purple and black. They have seen you and are calling to you to stop.">
+<CONSTANT CHOICES055 <LTABLE "do as they say" "try to hide in one of the farmhouses">>
 
 <ROOM STORY055
 	(DESC "055")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT055)
+	(CHOICES CHOICES055)
+	(DESTINATIONS <LTABLE STORY101 STORY125>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT056 "Your sword rasps from its sheath. The youth starts to retreat, throwing his knife away and yelling at the top of his voice: \"Help, murder! A Judain tried to kill me! Help me!\"||Before you can sheathe your sword the shutters in the houses overlooking the street are flung open and the cry is taken up. A group of cobblers come advancing on you wielding their little hammers. Pots and pans rain down on your head from the windows above. A steaming hot sago pudding lands on your head and oozes down underneath your jerkin as you jump nimbly aside to avoid the contents of a chamber pot. You have no choice but to flee before the mob overwhelms you.">
@@ -1019,21 +1002,15 @@
 	(CONTINUE STORY181)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT059 "You are thoroughly versed in the criminal haunts and goings-on of the city. You make your way along twisting alleys until you stand before an ornamental villa with a hot bubbling fountain in front of it. The grandeur of the house is at odds with the ramshackle district in which it is located. This is the home of Melmelo, head of what is jocularly known as the Thieves' Guild -- a loose alliance of crooks and shady merchants who between them have most crime in the city sewn up.| You pause before knocking at the door. You have always resisted getting drawn into Melmelo's organization, and he has let it be known that he is not pleased by your disdain .for his activities. On the other hand, he is a man who adheres to his own code of honour. You cannot imagine him stooping so low as handing you to the authorities for a reward.">
+<CONSTANT CHOICES059 <LTABLE "knock at the door" "retrace your steps, abandoning your plan to consult Melmelo">>
+
 <ROOM STORY059
 	(DESC "059")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT059)
+	(CHOICES CHOICES059)
+	(DESTINATIONS <LTABLE STORY012 STORY214>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT060 "You sprint for it, little caring that you will crush the poor snakes you tread on. They writhe underfoot and hiss balefully. You are half-way across the room when you slip as one of the serpents rolls under the ball of your foot. You fall face down in a sea of serpentine coils and the envenomed fangs of the snakes are soon piercing your soft flesh and injecting the deadly venom. The poison of the garter snake is virulent indeed and you are soon dead. There is no one left to save the Judain now.">
@@ -1061,38 +1038,27 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT062 "Your sixth sense has not failed you. Your instinct for danger leads you to look up into the canopy of the Overlord's four-poster bed, even as the filigree begins to tighten painfully around your ankle. Above you, what looks like a black blanket floats eerily down from beneath the canopy to engulf you.">
+<CONSTANT CHOICES062 <LTABLE "use" "use" "cry for help">>
+
 <ROOM STORY062
 	(DESC "062")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT062)
+	(CHOICES CHOICES062)
+	(DESTINATIONS <LTABLE STORY118 STORY084 STORY109>)
+	(REQUIREMENTS <LTABLE SKILL-AGILITY SKILL-SWORDPLAY NONE>)
+	(TYPES <LTABLE R-SKILL R-SKILL R-NONE>)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT063 "The Inn of the Inner Temple has fake columns along its front and amusing and irreverent cartoons of many gods and goddesses painted above its lintel. Inside it is no more than a low seedy hall divided into cubicles. The drinkers all have their backs to you. There is a board near the door to which several notices have been stuck. Some are reward posters, offering money in return for help arresting some of the inn's regulars. They have been defaced and scrawled on. One of the posters offers a reward of ten gleenars for any Judain, dead or alive. You tear it down as you walk past, dropping the crumpled paper into the spittoon beside the bar.||Most of those drinking in the cubicles would happily kill you for even a miserable sum like ten gleenars.">
+<CONSTANT CHOICES063 <LTABLE "talk to the people in the nearest cubicle" "leave the inn">>
 
 <ROOM STORY063
 	(DESC "063")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT063)
+	(CHOICES CHOICES063)
+	(DESTINATIONS <LTABLE STORY197 STORY214>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT064 "The brigands accept you into their band and though the life is hard you flourish. Within the year you lead your own band, preying on the rich and overlooking the psychopathic excesses of your men. You are a successful brigand leader, but the Judain perish in Godorno.||The next time you see the city it has sunk into the sea leaving only the tops of the fortresses and towers piercing the waves to show where the city that was once the jewel of the east now lies.">
@@ -1105,20 +1071,15 @@
 
 <ROOM STORY065
 	(DESC "065")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(EVENTS STORY065-EVENTS)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY065-EVENTS ()
+	<COND(<CHECK-CODEWORD ,CODEWORD-VENEFIX>
+		<RETURN ,STORY335>
+	)(ELSE
+		<RETURN ,STORY091>
+	)>>
 
 <CONSTANT TEXT066 "You summon up all your concentration and cast the puissant spell as the Jade Warriors lurch menacingly towards you. They are mere cyphers. There is no will within them to conquer. In vain you struggle to tamper with the circuits that set them in motion but it is quite beyond you. You are powerless as the Jade Warriors surround you and their razor-sharp swords slice into your vitals. You are slain and there is no one left to save the poor doomed Judain. Hate will conquer all.">
 
@@ -1136,56 +1097,42 @@
 	(CONTINUE STORY356)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT068 "A dog, however, is no match for a man with a sword -- all you have to do is prod it with the weapon and it goes yelping back to its master with its tail between its legs.||You look around for Lucie. She is heading towards the Old Quarter, probably to the Silver Eel tavern which is one of her haunts. You know it as a dubious drinking-house whose customers have a dangerous reputation.">
+<CONSTANT CHOICES068 <LTABLE "follow Lucie now" "return to Bumble Row for the time being and seek her out this afternoon">>
+
 <ROOM STORY068
 	(DESC "068")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT068)
+	(CHOICES CHOICES068)
+	(DESTINATIONS <LTABLE STORY261 STORY371>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT069 "You leave the road and walk across melon beds past a farmhouse safely out of sight of the riders, where a young woman greets you and offers you mash beer, while her father looks on warily. You accept their hospitality. They seem simple honest people. They ask who you are and where you come from. \"You are Judain, are you not? Tell me why are the Judain so proud? And are you all as rich as they say?\"||\"We are proud because we are the chosen ones,\" you explain. \"We have remained together, never marrying outside our kind through the difficulties of our troubled history. I wish we were all rich, but I, I must confess, am almost beggared.\"||\"Why did you leave the road?\" asks the girl.||\"The riders. They carry word to Bagoe that we Judain are outcast. They will put a price upon our heads.\"||\"We will hide you and smuggle you past the town by the back paths.\"||Although you are dogged by the Overlord's riders for more than a week, the farmers are as good as their word. They keep you well fed, allowing you to build up your strength for the day you must flee.">
 
 <ROOM STORY069
 	(DESC "069")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT069)
+	(PRECHOICE STORY069-PRECHOICE)
+	(CONTINUE STORY142)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY069-PRECHOICE ()
+	<COND(,RUN-ONCE
+		<GAIN-LIFE 3>
+	)>>
+
+<CONSTANT TEXT070 "You creep along side streets, hiding your face from strangers, as you head towards the riverfront. You are plagued by midges but that is the least of your troubles. You can hear shrieks and the cries of hysterical mobs behind you as they rampage back and forth across the city. Making your way carefully to the quay you can see a row of three river barges, two laden with goods and one which has just finished unloading.">
 
 <ROOM STORY070
 	(DESC "070")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT070)
+	(PRECHOICE STORY070-PRECHOICE)
+	(CONTINUE STORY134)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY070-PRECHOICE ()
+	<SKILL-JUMP ,SKILL-SEAFARING ,STORY120>>
 
 <CONSTANT TEXT071 "Caiaphas's story of what has been the fate of their many friends is chilling. As soon as you fled the city, the Overlord's guards -- along with foreign mercenaries who marched out of beyond -- started to round up all the Judain they could find. The executions have been carried out all day every day since then. A few, like you, escaped from the city; several thousand have gone to ground; but most of your folk have already perished. You vow then and there to avenge your fellow Judain.||\"It is worse even than I have said,\" continues Caiaphas. \"Some have reported seeing a loathsome monster dragging its bulk through the streets at night. None knows where it comes from, but by daybreak there are always fewer people in the city.\"||\"What is it?\" you ask, aghast.||\"Hate itself The embodiment of cruelty. It has been awakened and given living form by the Over lord's excesses. Now it stalks the streets beyond even his power to control, and it will not rest until our city has become a desolate ruin.\"||You hear his words with horror.">
 

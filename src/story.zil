@@ -661,21 +661,15 @@
 	(CONTINUE STORY063)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT032 "You have made the right choice. Skakshi cannot get past your guard as your blade cuts through the air. He is becoming increasingly desperate. \"Impossible ...\" he gasps, face twisted into a look of fury. \"You must be cheating -- using some Judain sorcery to aid you!\"||You are about to step up the tempo of your attack when he throws down the club and tries to make a run for the door.">
+<CONSTANT CHOICES032 <LTABLE "cut him down" "let him escape">>
+
 <ROOM STORY032
 	(DESC "032")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT032)
+	(CHOICES CHOICES032)
+	(DESTINATIONS <LTABLE STORY036 STORY043>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY033
@@ -712,21 +706,15 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT035 "The cloud of dust is coming closer and when it is no more than a quarter of a mile away you begin to make out the figures of several horsemen. They are moving at a fast trot, faster than merchants or most other travellers. They could be brigands.">
+<CONSTANT CHOICES035 <LTABLE "flee back towards the city of Godorno, hoping to elude them until nightfall" "stand your ground, greet them, and offer to throw in your lot with them">>
+
 <ROOM STORY035
 	(DESC "035")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT035)
+	(CHOICES CHOICES035)
+	(DESTINATIONS <LTABLE STORY044 STORY064>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY036
@@ -740,62 +728,47 @@
 	(TYPES NONE)
 	(CONTINUE NONE)
 	(ITEM NONE)
-	(CODEWORD NONE)
+	(CODEWORD CODEWORD-IMPASSE)
 	(COST 0)
 	(DEATH F)
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT037 "You know from experience that the dust cloud is raised by a group of riders riding at a canter. They will overtake you within half an hour.">
+<CONSTANT CHOICES037 <LTABLE "hide in one of the farms until they pass" "choose a place to ambush them in case they are the Overlord's men">>
 
 <ROOM STORY037
 	(DESC "037")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT037)
+	(CHOICES CHOICES037)
+	(DESTINATIONS <LTABLE STORY069 STORY082>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT038 "People turn to stare as you run past and then take up the hue and cry as they are engulfed by the mob that pursues you. You run on, your lungs beginning to hurt. They are not closing but you don't know how much longer you can keep going like this. Every time you see a likely place to hide there seems to be someone else there. You turn a corner and run on in the direction of the main gate where the trade road enters the city. Behind you can hear the sound of hoofs on the cobbles. A squadron of the Overlord's cavalry is giving chase. Ahead there is a drinking house, outside is a horse tethered to a post.">
+<CONSTANT CHOICES038 <LTABLE "steal the horse" "hide in the drinking house">>
 
 <ROOM STORY038
 	(DESC "038")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT038)
+	(CHOICES CHOICES038)
+	(DESTINATIONS <LTABLE STORY237 STORY255>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT039 "You are not scared of a mere dog. You walk out from hiding nonchalantly enough but the dog is at you in a trice.">
 
 <ROOM STORY039
 	(DESC "039")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT039)
+	(PRECHOICE STORY039-PRECHOICE)
+	(CONTINUE STORY057)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY039-PRECHOICE ()
+	<COND(,RUN-ONCE
+		<ITEM-JUMP ,SWORD ,STORY068>
+	)>>
 
 <ROOM STORY040
 	(DESC "040")
@@ -874,21 +847,15 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT045 "You also manage to free two hundred of the grateful guards who cannot believe their luck. They wipe themselves off along the walls. Most of them look as if they are in shock. They shouldn't give you too much trouble. You are more likely to face trouble from the Judain you have set free. They can see their tormenters among them and they want to take their revenge. \"Now die, dogs, die slowly and in pain!\" they cry. \"Let us see how you like to be put to the torture. Kill them! Heat the irons and warm their vitals.\" The Judain are near hysterical and they begin to slaughter the guards out of hand, while others try to drag some of them back to the torture chambers. The guards are petrified.||In the heat of the moment there is no time for finesse, and your people are behaving no better than savage beasts who have lost all control.">
+<CONSTANT CHOICES045 <LTABLE "stop the slaughter by killing one of your fellow Judain" "let your people take their natural revenge">>
+
 <ROOM STORY045
 	(DESC "045")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT045)
+	(CHOICES CHOICES045)
+	(DESTINATIONS <LTABLE STORY269 STORY348>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT046 "You tap on the door, then kneel and place your ear to the planking to hear what goes on beneath. You can hear men whispering. They must fear you are one of the Overlord's men. You call out quietly your name, and that you are Judain. At last you persuade them to open the trap door. Down in the cellar are three families hiding from the Overlord's butchers. There is a big man whom you recognize as Caiaphas, the rabbi at the synagogue before it was torn down. He carries a rusty old spear which he casts aside as soon as he sees you.||\"Caiaphas, old friend,\" you say in greeting. \"What has come to pass here? Why do all our people cower below ground like rats?\"||Caiaphas looks sombre and one of the women starts to cry as he tells the story in a rumbling basso voice which would be most impressive were he not cowering in a damp cellar.">
@@ -932,21 +899,15 @@
 	(CONTINUE STORY160)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT050 "Walking is better than crawling. On a difficult climb you should keep three holds, using your hands and feet, on what you are climbing at all times. If you do this you will succeed in all but the most difficult of climbs. The wind is whipping around you, however, and the baleful wails of the gargoyles seem destined to make you falter and tumble to your death.||It is slow going and you have to force yourself not to look down, but step by step you edge around to the corner. But what if there is something round there waiting to attack you?">
+<CONSTANT CHOICES050 <LTABLE "return to the ground: you cannot manage the tower" "press on">>
+
 <ROOM STORY050
 	(DESC "050")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT050)
+	(CHOICES CHOICES050)
+	(DESTINATIONS <LTABLE STORY172 STORY304>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY051

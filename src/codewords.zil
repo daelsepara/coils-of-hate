@@ -16,6 +16,10 @@
     (DESC "Hecatomb")
     (SYNONYM HECATOMB)>
 
+<OBJECT CODEWORD-IMPASSE
+    (DESC "Impasse")
+    (SYNONYM IMPASSE)>
+
 <OBJECT CODEWORD-JADE
     (DESC "Jade")
     (SYNONYM JADE)>

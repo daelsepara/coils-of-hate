@@ -1013,7 +1013,7 @@
 	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT060 "You sprint for it, little caring that you will crush the poor snakes you tread on. They writhe underfoot and hiss balefully. You are half-way across the room when you slip as one of the serpents rolls under the ball of your foot. You fall face down in a sea of serpentine coils and the envenomed fangs of the snakes are soon piercing your soft flesh and injecting the deadly venom. The poison of the garter snake is virulent indeed and you are soon dead. There is no one left to save the Judain now.">
+<CONSTANT TEXT060 "You sprint for it, little caring that you will crush the poor snakes you tread on. They writhe underfoot and hiss balefully. You are halfway across the room when you slip as one of the serpents rolls under the ball of your foot. You fall face down in a sea of serpentine coils and the envenomed fangs of the snakes are soon piercing your soft flesh and injecting the deadly venom. The poison of the garter snake is virulent indeed and you are soon dead. There is no one left to save the Judain now.">
 
 <ROOM STORY060
 	(DESC "060")
@@ -1193,21 +1193,15 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT075 "Lucie didn't need your help, she is already halfway to the dubious sanctuary of the Silver Eel tavern. You have lost the ·chance of picking up another sword. The dog-handler has retrieved it and he pulls his dog roughly behind him as he sets out home again">
+<CONSTANT CHOICES075 <LTABLE "follow Lucie to the Silver Eel right now" "bide your time and seek her out later today">>
+
 <ROOM STORY075
 	(DESC "075")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT075)
+	(CHOICES CHOICES075)
+	(DESTINATIONS <LTABLE STORY261 STORY371>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT076 "You can't flee for ever. They are slowly running you down, urging their mounts to greater efforts with the cracks of bullhide whips. At last you are forced to stand your ground, fighting for breath. You are so exhausted you can hardly collect your wits.||\"This one's a Judain!\" one of the brigands shouts. \"Didn't old Samfgash say there was a price on 'em in Godorno? Let's take the Judain to the main gate and claim the blood money.\"||The brigand leader agrees it would be sensible to turn you in for money as you have led them so close to the city in the chase. You try to escape but they will collect their money for your dead body just as they would if they turned you in alive. They cut you down like a hunted doe.">
@@ -1235,21 +1229,15 @@
 	(CODEWORD CODEWORD-SUNSET)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT079 "With a dramatic gesture and a clap ofyour hands you bring forth a cloud of noxious vapours that fills the top room of the Tower of the Sentinel, obscuring the jewel from view. The gigantic spider falters momentarily then leaps towards you, seemingly unaffected by the poison gas. You haven't time to cast another spell.">
+<CONSTANT CHOICES079 <LTABLE "run for it back down the stairs" "make a dash for the Jewel of Sunset Fire">>
+
 <ROOM STORY079
 	(DESC "079")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT079)
+	(CHOICES CHOICES079)
+	(DESTINATIONS <LTABLE STORY146 STORY164>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT080 "Conjuring a magical silver shield from thin air is the work of only a moment and you scoop a writhing interlocked mass of snakes aside, slowly and painstakingly clearing the way across the floor. The serpents hiss balefully, as if outraged to have been disturbed so unceremoniously. As soon as you sweep them aside, so they wriggle back towards you and it is a miracle that you reach the door at the other side of the room without being bitten.">
@@ -1260,21 +1248,15 @@
 	(CONTINUE STORY180)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT081 "\"But, Caiaphas, did no one fight back? Did all our people just surrender themselves to be led away meekly to the slaughter, like sheep? We must fight?\" Caiaphas, a tall man with a black beard and rumbling basso voice replies. \"You are a fine one to criticize us! Where were you? We could not fight. We have no swords nor heavy suits of mail to protect us. There are too few of us.\"||\"Surely there is someone among us who will strike back, someone prepared to stand up to the evil of the accursed Overlord?\"||Caiaphas has not heard of any such resistance group, though he can get messages through to the large number of Judain who are in hiding throughout the city.||\"Who is our leader now?\" you ask. \"Are the elders all dead or gone?\"||Annas, a small man with a quavering, flute-like voice tells you, \"They were taken together, as they met in the synagogue to discuss the Overlord's edict.\"||\"And did all the folk of the city just stand by?\"||\"Yes, they did, or denounced us to the guards.\" There are sounds from the street above. An iron-tyred cart is being pulled past the smashed door to the hovel. You wait for it to pass before lowering your voice to say, \"How safe are we down here?\"||\"As safe as anywhere,\" is Caiaphas's opinion.||\"But do you plan to stay here for the rest of your lives?\" He just shrugs helplessly. \"What do you do for food?\" you go on.||\"We have enough food and water for another two weeks,\" puts in Annas.||\"And what then?\" Again they shrug. \"We must do something. Organize ourselves. Band together for our own protection.\"||\"It would accomplish nothing,\" Caiaphas replies despondently.">
+<CONSTANT CHOICES081 <LTABLE "immediately organize a resistance movement among the Judain" "remain in hiding in the cellar while formulating a plan">>
+
 <ROOM STORY081
 	(DESC "081")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT081)
+	(CHOICES CHOICES081)
+	(DESTINATIONS <LTABLE STORY111 STORY121>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT082 " You choose a place where the road winds beneath copses of trees and wait. The horsemen are wearing the purple and black livery of the Overlord of Godomo and it seems they are tracking you. To attack them would be dangerous, there are too many of them you reluctantly decide, so you let them pass and double back making haste to put distance between yourself and your pursuers before they realize they have been thrown offthe scent.">
@@ -1293,21 +1275,15 @@
 	(CONTINUE STORY185)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT084 "The underside of the monster is lined with wicked barbs oozing amber fluid. They must be poisoned.">
+<CONSTANT CHOICES084 <LTABLE "couch beneath your upheld sword so that the monster impales itself on your blade" "hack at it as it descends to envelop you">>
+
 <ROOM STORY084
 	(DESC "084")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT084)
+	(CHOICES CHOICES084)
+	(DESTINATIONS <LTABLE STORY127 STORY145>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT085 "Your journey back to the city takes no longer than your outward trek. By midday of the third day you are before the battlemented towers and guarded walls of the great city. Carrion crows wheel in great flocks above the city and the wind carries the dismal cries of the poor unfortunates being tortured in the prison fortress of Grond to your unwilling ears. You approach the gates with trepidation.">
@@ -1318,24 +1294,18 @@
 	(CONTINUE STORY188)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT086 "The inside of the Silver Eel is much as you expected. Sawdust covers curdled puddles of vomit or blood on the creaking floor. There are rough trestles for seats, a few with initials carved deep into the dark old wood -- it is amazing that most of these lowlifes even know how to write their initials. The thick green bottle-glass in the lanterns gives the whole of the interior a strange unreal look. A dozen pairs of eyes swivel, assessing you at a glance before returning to drinks or companions.||The tall blond man has walked to the bar and ordered firewater for himself and lemon bitters for Lucie. He is dressed in a suit of the most outlandish leather and mail armour you have ever seen. It is a patchwork quilt of jagged bosses and scales, which altogether make a very striking and rather chilling outfit to look upon.||The landlord, an ex-captain at the duelling school with scars and the tip of an ear missing as testament to the many fights he has been in with unruly customers, is quick to serve this towering figure of a young man. Lucie is quite at ease with him as if she knows him well.||The tall blond man darts a glance at you and looks quizzical. He is very pale of skin and his cheekbones are dusted with freckles. Lucie puts her arm around his waist and whispers something. He replies and you hear the word 'Judain', after which he hawks a gobbet of phlegm into the sawdust. He puts his hand on Lucie's bottom but she smacks it away and takes her drink to a table in a nook at the back of the tavern, followed by the tall stranger. There is a group of four men drinking small beer who could be either artisans or thieves. Two women wearing lace and silks and not much ofeither laugh scurrilously in the alcove beyond, and a single dark figure lurks at the far end of the bar smoking a pipe.">
+<CONSTANT CHOICES086 <LTABLE "order a drink from the bar" "ask the gang offour where you can find Melmelo the master thief" "join Lucie and the tall stranger">>
+
 <ROOM STORY086
 	(DESC "086")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT086)
+	(CHOICES CHOICES086)
+	(DESTINATIONS <LTABLE STORY113 STORY132 STORY227>)
+	(TYPES THREE-NONES)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT087 "You tried to leap too far. You fall with a thump among the writhing garter snakes. The snakes intertwine around your legs and arms, their forked tongues questing for bare flesh. They sink their venomed fangs into your flesh and your body is soon hot with poison. Unconsciousness comes as a blessed release. You are just another would-be thief. There is no one left alive to save theJl1dain now.">
+<CONSTANT TEXT087 "You tried to leap too far. You fall with a thump among the writhing garter snakes. The snakes intertwine around your legs and arms, their forked tongues questing for bare flesh. They sink their venomed fangs into your flesh and your body is soon hot with poison. Unconsciousness comes as a blessed release. You are just another would-be thief. There is no one left alive to save the Judain now.">
 
 <ROOM STORY087
 	(DESC "087")
@@ -1351,21 +1321,17 @@
 	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT089 "You draw Hate's attention by waving your arms as you retreat to the back of the plaza. Two tentacles sweep towards you, but you evade them by ducking into the pillared portico of a church. As the tentacles snake around on either side of the pillar, feeling for you, you slip the chains around the slimy purple flesh and lock them into place.||Hate gives a roar of rage as you stand safely back to survey your handiwork. You have tethered Hate to the portico of the church. If only the chains hold, you may be able to destroy your enemy once and for all.">
+<CONSTANT CHOICES089 <LTABLE "use the" "use the" "you have neither of those items">>
+
 <ROOM STORY089
 	(DESC "089")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT089)
+	(CHOICES CHOICES089)
+	(DESTINATIONS <LTABLE STORY230 STORY349 STORY187>)
+	(REQUIREMENTS <LTABLE JADE-WARRIORS-SWORD JEWEL-OF-SUNSET-FIRE NONE>)
+	(TYPES <LTABLE R-ITEM R-ITEM R-NONE>)
+	(CODEWORD CODEWORD-GORDIAN)
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT090 "You pass a restful night. As the sun slants in through the broken cellar roof, you get ready to set out for your rendezvous with Lucie.">

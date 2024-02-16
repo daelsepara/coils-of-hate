@@ -1142,38 +1142,28 @@
 	(CONTINUE STORY081)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT072 "The cloying smell of crushed roses and honeysuckle makes your senses swim again. The reek of Hate is all about you. You hear a deep voice, cursing bitterly, and the grunts and gasps of a strong man trying to lift a heavy boulder. The noises are coming from just around the next corner. You can't resist seeing who it is.||The strong form of a mulatto beckons you imploringly. He is stuck fast in the coils of Hate. Its gelid form has oozed around his body. He is covered from knees to armpits and will soon succumb. As you get closer you recognize him as your friend Mameluke. You must do something to save him.">
+<CONSTANT CHOICES072 <LTABLE "attack Hate" "pummel Hate with punches and kicks" "use a spell of Rulership" "Miasma" "Thunderflash">>
+
 <ROOM STORY072
 	(DESC "072")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT072)
+	(CHOICES CHOICES072)
+	(DESTINATIONS <LTABLE STORY083 STORY093 STORY122 STORY136 STORY167>)
+	(REQUIREMENTS <LTABLE SKILL-SWORDPLAY NONE SKILL-SPELLS SKILL-SPELLS SKILL-SPELLS>)
+	(TYPES <LTABLE R-SKILL R-NONE R-SKILL R-SKILL R-SKILL>)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT073 "There is a great crash which echoes around the room and seems to shake the whole tower, followed by an explosion of spurting red flame which bathes the black spider in its punishing light. You feel giddy as the tower rocks, and the spider recoils before gathering itself to leap once more. It is badly hurt, but not yet incapacitated, though you have gained time to cast another spell. You cannot cast the same spell twice in a row.">
+<CONSTANT CHOICES073 <LTABLE "cast Miasma" "cast Images to give yourself more time">>
 
 <ROOM STORY073
 	(DESC "073")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT073)
+	(CHOICES CHOICES073)
+	(DESTINATIONS <LTABLE STORY079 STORY208>)
+	(REQUIREMENTS <LTABLE SKILL-SPELLS SKILL-SPELLS>)
+	(TYPES <LTABLE R-SKILL R-SKILL>)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY074
@@ -1229,7 +1219,7 @@
 	(CODEWORD CODEWORD-SUNSET)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT079 "With a dramatic gesture and a clap ofyour hands you bring forth a cloud of noxious vapours that fills the top room of the Tower of the Sentinel, obscuring the jewel from view. The gigantic spider falters momentarily then leaps towards you, seemingly unaffected by the poison gas. You haven't time to cast another spell.">
+<CONSTANT TEXT079 "With a dramatic gesture and a clap of your hands you bring forth a cloud of noxious vapours that fills the top room of the Tower of the Sentinel, obscuring the jewel from view. The gigantic spider falters momentarily then leaps towards you, seemingly unaffected by the poison gas. You haven't time to cast another spell.">
 <CONSTANT CHOICES079 <LTABLE "run for it back down the stairs" "make a dash for the Jewel of Sunset Fire">>
 
 <ROOM STORY079
@@ -1359,21 +1349,15 @@
 	(ITEM KNIFE)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT093 "Your blow is so forceful that your arm sinks into the soft purple flesh ofHate up to the elbow. When you try to withdraw it to strike again the flesh ripples and shudders, pulling you in. Try as you might you can't get free.">
+<CONSTANT CHOICES093 <LTABLE "brace yourself with your foot against the monster's purple flesh" "keep trying to free yourself without touching Hate with any other part of you">>
+
 <ROOM STORY093
 	(DESC "093")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT093)
+	(CHOICES CHOICES093)
+	(DESTINATIONS <LTABLE STORY151 STORY065>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT094 "The heads of each cell have risked coming together at the granary warehouse behind the old army stables on Slipshod Row. There are some two hundred people here, waiting for you to address them. Now that they are standing up to the Overlord, they are regaining their self respect. They report the number of their people dragged off to the Grand by the Overlord's guards is much diminished. Resistance fighters have assassinated over thirty key figures in the bureaucracy. If they continue to act with such success the Overlord will soon have to meet your demands.||\"There is bound to be a backlash,\" you caution.||\"Beware of anyone who is not of our people. They are jealous of us. At the end of this meeting, I am going to give you all new assignments and new safe houses in which to lie low. If we keep moving like this the Overlord's men can never find us all, even if they catch one of us for torture.\"||Your people are cheered to find you have thought about the situation and they look to you increasingly for leadership.">
@@ -1430,22 +1414,44 @@
 	(CONTINUE STORY201)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT100 "What do you want to do next?">
+<CONSTANT CHOICES100 <LTABLE "seek out Melmelo, the master of the Guild of Thieves" "visit the library to look for more information about Hate" "organize the defence of the city" "go to confront Hate itself">>
+
 <ROOM STORY100
 	(DESC "100")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT100)
+	(CHOICES CHOICES100)
+	(DESTINATIONS <LTABLE STORY100-MELMELO STORY100-LIBRARY STORY174 STORY272>)
+	(TYPES FOUR-NONES)
 	(FLAGS LIGHTBIT)>
+
+<ROOM STORY100-MELMELO
+	(DESC "100")
+	(EVENTS STORY100-MELMELO-EVENTS)
+	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY100-MELMELO-EVENTS ()
+	<COND(<CHECK-CODEWORD ,CODEWORD-SUNSET>
+		<RETURN ,STORY117>
+	)(<CHECK-CODEWORD ,CODEWORD-IMPASSE>
+		<RETURN ,STORY026>
+	)(<CHECK-CODEWORD ,CODEWORD-COOL>
+		<RETURN ,STORY334>
+	)(ELSE
+		<RETURN ,STORY153>
+	)>>
+
+<ROOM STORY100-LIBRARY
+	(DESC "100")
+	(EVENTS STORY100-LIBRARY-EVENTS)
+	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY100-LIBRARY-EVENTS ()
+	<COND(<CHECK-CODEWORD ,CODEWORD-CODEX>
+		<RETURN ,STORY049>
+	)(ELSE
+		<RETURN ,STORY110>
+	)>>
 
 <CONSTANT TEXT101 "\"Your money or your life,\" comes the age-old cry from the leader. The horsemen are brigands, disguised as the Overlord\'s men!">
 <CONSTANT CHOICES101 <LTABLE "surrender everything you have to them" "ask to join their merry band and live the next chapter of your life as a brigand">>
@@ -1962,21 +1968,16 @@
 	(CONTINUE STORY029)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT145 "You flourish your sword and swipe at the black monster. It wraps itself around the blade and starts to entwine itself around your arm.">
+<CONSTANT CHOICES145 <LTABLE "throw down the sword" "try to prize your arm free without relinquishing your beloved weapon">>
+
 <ROOM STORY145
 	(DESC "145")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT145)
+	(CHOICES CHOICES145)
+	(DESTINATIONS <LTABLE STORY163 STORY178>)
+	(REQUIREMENTS <LTABLE SWORD NONE>)
+	(TYPES <LTABLE R-LOSE-ITEM R-NONE>)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY146
@@ -1996,22 +1997,17 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT147 "You cleave the great tentacle in two, missing Lucie as though by a miracle. You have done it. Leaping to the top of the parapet of the Bargello, you grab the Jewel of Sunset Fire from inside your jerkin and climb up into the last rays of daylight. As you do so you see the world's most terrifying sight. Rising slowly out of the hole that was once the old quarter of the city is the head of Hate itself. Two baleful green eyes twice the height of a man glare at you as the slow bulk of Hate starts to ooze towards the parapet. The eyes are ringed by the faces of the most depraved lost souls, all beckoning you to join them.||They still live on, crushed side by side and looking out to see what Hate sees. They have quite lost their minds.">
+
 <ROOM STORY147
 	(DESC "147")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT147)
+	(PRECHOICE STORY147-PRECHOICE)
+	(CONTINUE STORY375)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY147-PRECHOICE ()
+	<CODEWORD-JUMP ,CODEWORD-GORDIAN ,STORY107>>
 
 <CONSTANT TEXT148 "What a noble deed you have just done. They let Mameluke go and grasp you instead. They have no regard for the Judain and beat you to a pulp in the street, where they leave you to die. You will perish here and there is no one left to save the Judain.">
 
@@ -2038,39 +2034,28 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT150 "The ceiling of the room is clear crystal. The dome of crystal that tops the tower is supported by huge iron struts from a black boss directly above the jewel. You look up as you start to cross the floor to the casket, just as a flash of lightning illuminates everythin in stark outline. The angled struts are in fact the legs of a giant spider whose eyes seem to follow your every move as you inch slowly beneath the arches ofits legs.||The keening of the gargoyles reaches a new frenzied high and the crystal that protects you from the tower-spinning spider explodes into shards and dust. The wind falls away, the keening drops to a low moan and now you hear for the first time the wheezing susurratioins of the spider's breath. You can see its thorax opening and closing like a bellows.">
+<CONSTANT CHOICES150 <LTABLE "dash beneath it to seize the jewel and casket" "attack it from the doorway">>
+
 <ROOM STORY150
 	(DESC "150")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT150)
+	(CHOICES CHOICES150)
+	(DESTINATIONS <LTABLE STORY164 STORY186>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT151 "As soon as you place your heel against the soft flesh of Hate it disappears from sight and the flesh turns to liquid, engulfing you up to the waist.">
 
 <ROOM STORY151
 	(DESC "151")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT151)
+	(PRECHOICE STORY151-PRECHOICE)
+	(CONTINUE STORY335)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY151-PRECHOICE ()
+	<CODEWORD-JUMP ,CODEWORD-SATORI ,STORY091>>
 
 <CONSTANT TEXT152 "There is nowhere to hide but inside the lime. There is lime dust everywhere, and wherever you go you leave a trail of chalky footsteps. You try to rub the footsteps away and burrow into the lime, leaving a small hole next to your nose to breathe through. As you lie there in the lime you daren't move in case someone sees you. But what if a small part of you is uncovered? Your dark clothes will be spotted against the white lime.||Your uncomfortable wait is ended when someone pokes a boathook into your side. The bargees clear the lime away from your head under the eyes of a group of the Overlord's soldiers.||\"It's a Judain,\" says one of the soldiers. Their captain orders them to knock you out and throw you in the river. Stuck inside the heavy mound of lime you are helpless as they cosh you over the head. You are food for the fishes.">
 
@@ -2080,21 +2065,16 @@
 	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT153 "Caiaphas looks very long-faced at your question. \"If it's the keys to the secret ways beneath the city you want then talk to Melmelo, the Master Thief. But beware. Nameless horrors lurk in the ever-nighted labyrinths... things best left undisturbed.\"||The only way you know of contacting Melmelo is by asking a thief. The only place you can be sure to find a thief when you want one is The Inner Temple, an inn in the middle ofthe oldest part ofthe city.||The streets are being patrolled by the Overlord's men.">
+<CONSTANT CHOICES153 <LTABLE "use" "risk the streets" "try to stow away inside a slaver's cart and pass unseen">>
+
 <ROOM STORY153
 	(DESC "153")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT153)
+	(CHOICES CHOICES153)
+	(DESTINATIONS <LTABLE STORY059 STORY307 STORY031>)
+	(REQUIREMENTS <LTABLE SKILL-STREETWISE NONE NONE>)
+	(TYPES <LTABLE R-SKILL R-NONE R-NONE>)
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT154 "With a word of power you unleash the Baffiement spell. It has no discernible effect on the monster but one of the guards goes glassy-eyed and his head lolls back into the pillow of Hate's body, to be submerged for ever in the orgy of despair. The monster convulses suddenly, throwing a coil out towards you. You decide it is time to flee back to your hidey-hole on Bumble Row.">
@@ -2115,20 +2095,17 @@
 
 <ROOM STORY156
 	(DESC "156")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(EVENTS STORY156-EVENTS)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY156-EVENTS ()
+	<COND(<CHECK-SKILL ,SKILL-CHARMS>
+		<RETURN ,STORY047>
+	)(<CHECK-SKILL ,SKILL-ROGUERY>
+		<RETURN ,STORY028>
+	)(ELSE
+		<RETURN ,STORY019>
+	)>>
 
 <CONSTANT TEXT157 "One of the swords has a halo which shines brighter than the others. You steal up behind the Jade Warrior and throw yourself against its sword arm, wrenching the blade from its grasp.||\"Obey me, Jade Warriors,\" you cry out on impulse. To your reliefand amazement they line up before you and stand to attention. The warrior from whom you took the sword picks up another from behind an awning. The warriors are ready to do your bidding. They whirr and click as they follow you dutifully to the edge of the precincts of the burial chambers, and there they grind to a halt. There is nothing you can do to move them further. Although you cannot command the Jade Warriors to go forth and attack Hate, you tell them that they must attack Hate if it should loop its coils into the burial chambers of the Megiddo dynasty. You leave all doors and traps wide open in the hope that Hate will blunder in and get carved up.||Sure enough, when you return the next day the place shows the signs of an epic battle. Great gouts of translucent flesh hang from lintel and corners. There is a fine green powder in the air, like pulverized glass. The Jade Warriors have been ground to dust by Hate but, judging by the quantity of purple ichor smeared over the walls, they must have given the monster acute indigestion.">
 
@@ -2165,22 +2142,17 @@
 	(CONTINUE STORY006)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT160 "You must decide your next bold stroke to free the city from the grip of hatred and unreason.">
+
 <ROOM STORY160
 	(DESC "160")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT160)
+	(PRECHOICE STORY160-PRECHOICE)
+	(CONTINUE STORY100)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY160-PRECHOICE ()
+	<CODEWORD-JUMP ,CODEWORD-SUNSET ,STORY337>>
 
 <CONSTANT TEXT161 "You slink back into the catacombs, dousing your lantern so you will not be discovered. You are soon under the stables. It is cold and damp down here, but there is a strong breeze, almost a gale. The air should be still here under the city, like the nighted airs of the pyramids of the ancients. Hate has undermined it so much that part of the catacombs have come to light, you guess. That means the monsters that have lurked here since the city was built will be wandering out onto the streets to add to the woes of the poor cityfolk. Since the storm drains prove to be blocked, you enter the burial crypts of the Megiddo dynasty.">
 

@@ -2895,21 +2895,15 @@
 		<RETURN ,STORY396>
 	)>>
 
+<CONSTANT TEXT231 "You gather the girl into your arms; she is as light as a feather pillow and quite limp. Her face is untouched by the blemishes which mar her body and she is quite beautiful, as you would expect of the Overlord's concubine.||Now how are you going to get both her and yourself across the carpet without stepping on it?">
+<CONSTANT CHOICES231 <LTABLE "wrap her in the silk bedspread and drag her from the bed, after leaping clear" "carry her over your shoulder in a fireman's lift and walk quickly across the carpet">>
+
 <ROOM STORY231
 	(DESC "231")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT231)
+	(CHOICES CHOICES231)
+	(DESTINATIONS <LTABLE STORY319 STORY285>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY232

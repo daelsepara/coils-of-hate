@@ -2906,56 +2906,48 @@
 	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT232 "Picking the pocket of one of the guards while you hand him your gold with the other hand is child's play to someone of your accomplishments. You palm his gold to your other hand and let the coins drop one by one into his greedily outstretched palm.||\"Where's my share?\" demands another of the gate guards, holding out his palm, while his other hand rests menacingly on the pommel of his rapier. You clap him on the back and empty his money pouch as you do so, also relieving him of a fine gold chain that hangs at his neck in the process. All four guards are soon happy with their own money newly shared out among them and at last you and the old seller of eggs are allowed to proceed into the city.">
+
 <ROOM STORY232
 	(DESC "232")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT232)
+	(PRECHOICE STORY232-PRECHOICE)
+	(CONTINUE STORY380)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY232-PRECHOICE ()
+	<COND(,RUN-ONCE
+		<GAIN-MONEY 15>
+	)>>
+
+<CONSTANT TEXT233 "How will you lift the hearts of the men and women on the barricade? They are quailing before the presence of Hate. Some start to wail as they recognize loved ones sunk in the cloying purple embrace of the monster.">
+<CONSTANT CHOICES233 <LTABLE "tell them they have nothing to fear for they are of pure heart" "tell them that death on the barricade will lead to eternal salvation">>
 
 <ROOM STORY233
 	(DESC "233")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT233)
+	(CHOICES CHOICES233)
+	(DESTINATIONS <LTABLE STORY408 STORY379>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT234 "The sword leaves your hand like an arrow and buries itself into the bloated gasbag of a body, which is instantly ruptured. Black ichor sprays all over the room and the spider hunches up against the ceiling to die.">
+<CONSTANT TEXT234-CONTINUED "The Jade Warrior's sword is now out of reach high in the dead spider's web.||You step up to the frame and hold the jewel aloft in both hands. Now all you have to do is bring it safely down from the tower">
 
 <ROOM STORY234
 	(DESC "234")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT234)
+	(PRECHOICE STORY234-PRECHOICE)
+	(CONTINUE STORY308)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY234-PRECHOICE ()
+	<COND(<AND ,RUN-ONCE <CHECK-ITEM ,JADE-WARRIORS-SWORD>>
+		<LOSE-ITEM ,JADE-WARRIORS-SWORD>
+		<CRLF>
+		<TELL ,TEXT234-CONTINUED>
+		<TELL ,PERIOD-CR>
+	)>>
 
 <ROOM STORY235
 	(DESC "235")
@@ -2982,22 +2974,22 @@
 	(CONTINUE STORY227)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT237 "The horse looks skittish. Its chestnut flanks are darkened by sweat and its eyes dart about nervously while fr snorts and fidgets. It seems to be afraid of something.">
+
 <ROOM STORY237
 	(DESC "237")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
+	(STORY TEXT237)
+	(PRECHOICE STORY237-PRECHOICE)
+	(CONTINUE STORY289)
 	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY237-PRECHOICE ()
+	<COND(<CHECK-SKILL ,SKILL-AGILITY>
+		<STORY-JUMP ,STORY271>
+	)(<CHECK-SKILL ,SKILL-WILDERNESS-LORE>
+		<STORY-JUMP ,STORY226>
+	)>>
 
 <CONSTANT TEXT238 "You are soon trussed up, helpless, and frogmarched into the prison fortress of Grond to join hundreds more of your people. You will never see the light of day again. There is no one left to save your people now. They will all perish and be wiped from the face of the earth.">
 
@@ -3029,21 +3021,16 @@
 		<DELETE-CODEWORD ,CODEWORD-SATORI>
 	)>>
 
+<CONSTANT TEXT241 "Returning to the cellar, you tell your cronies what you've learned while gathering rumours: \"The talk is of a certain jeweller on Mire Street. Recently he took delivery of a large diamond, which the Overlord himselfis paying to have worked into a sceptre. The diamond in question was seized from a Judain shopkeeper when he was hauled off to Grand.\"||Annas blows out his cheeks. \"Stealing the Overlord's own diamond, eh? You've never been one to do things by halves, I'll say that.\"||\"Still,\" adds Caiaphas, rubbing the long prow of his jaw, \"I'll admit we could use the money. Much of our operations rely on bribes -- and the traders from overseas demand high prices for weapons they're selling us these days.\"||You take a casual stroll down Mire Street to inspect the premises. The jeweller's house comprises an elegant shop with oak-framed bottle glass windows, above which live the jeweller and his family. Seeing a patrol of the city militia ahead, you dodge into cover down a side alley and wait for them to pass. You will return here tonight.">
+<CONSTANT CHOICES241 <LTABLE "use" "rely on" "resort to" "proceed with the attempt" "give up">>
+
 <ROOM STORY241
 	(DESC "241")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT241)
+	(CHOICES CHOICES241)
+	(DESTINATIONS <LTABLE STORY306 STORY327 STORY355 STORY386 STORY190>)
+	(REQUIREMENTS <LTABLE SKILL-ROGUERY SKILL-CHARMS SKILL-CUNNING NONE NONE>)
+	(TYPES <LTABLE R-SKILL R-SKILL R-SKILL R-NONE R-NONE>)
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT242 "It takes too long for you to concentrate your mind on the Rulership spell. You need to marshal every atom of your strength of will for this spell and your preparations are rudely and painfully interrupted by Skakshi's second stiletto dagger which buries its tip in your heart. You fall dead and there is no one left to save the wretched Judain from being wiped out for ever.">
@@ -3079,89 +3066,62 @@
 	(CONTINUE STORY316)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT245 "To your relief the pool is only three feet deep and you step out wet but unharmed on the far side. The moaning of the gargoyles dies away and it is only now it has ceased you realize how oppressive the doleful sound was.">
+<CONSTANT CHOICES245 <LTABLE "explore the sides of this odd-shaped room, around the edges ofthe pool" "waste no time and open the door ahead">>
+
 <ROOM STORY245
 	(DESC "245")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT245)
+	(CHOICES CHOICES245)
+	(DESTINATIONS <LTABLE STORY203 STORY162>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT246 "\"It's the old beast from the catacombs. The ancient wicked heart of the city, claiming the people for its own.\" He hands you the pot of ale, which smells strongly of malt, barley and honey.||\"What is the old beast?\"||\"Some say it is the spirit ofthe Harakadnezzar, the Great Tyrant. It is said that when robbers desecrated his tombs he became absorbed into the bones of the world, gaining strength in the dark places far from the light. Now he has come forth to avenge himself. Others say it is the many-limbed beast, Hate. It attacks the wicked and decadent, carrying people off who have hate in their hearts. One thing I do know, it isn't good for trade.\"">
+<CONSTANT CHOICES246 <LTABLE "use" "use" "quaff the ale he has given" "leave it untouched">>
 
 <ROOM STORY246
 	(DESC "246")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT246)
+	(CHOICES CHOICES246)
+	(DESTINATIONS <LTABLE STORY256 STORY287 STORY267 STORY276>)
+	(REQUIREMENTS <LTABLE SKILL-FOLKLORE SKILL-CHARMS NONE NONE>)
+	(TYPES <LTABLE R-SKILL R-SKILL R-NONE R-NONE>)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT247 "You are still miies from Bagoe and your spirits are lifting as you find the farmers much more friendly than the cityfolk, though you dare not stop to chat. The workers in the fields wave solemn greetings as you pass. You wave back to one and notice he is looking from you back down the road. Turning back you see a cloud of dust or smoke. Perhaps one of the farmers is burning off some old tomato plants.">
 
 <ROOM STORY247
 	(DESC "247")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT247)
+	(PRECHOICE STORY247-PRECHOICE)
+	(CONTINUE STORY055)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY247-PRECHOICE ()
+	<SKILL-JUMP ,SKILL-WILDERNESS-LORE ,STORY037>>
+
+<CONSTANT TEXT248 "Where will you enter the catacombs? There is a new fissure opened up in the sea wall at the old dock. There is also a way into the catacombs beneath th.e Overlord's stables.">
+<CONSTANT CHOICES248 <LTABLE "go to the sea wall" "the Overlord's stables">>
 
 <ROOM STORY248
 	(DESC "248")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT248)
+	(CHOICES CHOICES248)
+	(DESTINATIONS <LTABLE STORY352 STORY262>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT249 "How will you try to free the guards?">
+<CONSTANT CHOICES249 <LTABLE "try to torch the purple flesh of Hate" "ask some of the trapped guards what to do" "attack Hate using Miasma" "Thunderflash" "Bafflement" "Rulership" "use">>
 
 <ROOM STORY249
 	(DESC "249")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT249)
+	(CHOICES CHOICES249)
+	(DESTINATIONS <LTABLE STORY228 STORY215 STORY173 STORY165 STORY154 STORY122 STORY192>)
+	(REQUIREMENTS <LTABLE NONE NONE SKILL-SPELLS SKILL-SPELLS SKILL-SPELLS SKILL-SPELLS SKILL-SWORDPLAY>)
+	(TYPES <LTABLE R-NONE R-NONE R-SKILL R-SKILL R-SKILL R-SKILL R-SKILL>)
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT250 "The guards here on the city gate look bored. You find a piece of straw in the road and walk up chewing this like a milch cow. In your best country yokel accent you ask them if you can try your hand at their job to see if you would like to join the city guard. They are taken in by your country bumpkin act and one of them is only too glad to give up his place on the gate to you so that he can begin the evening's drinking early.||You stay with the guards at the gate and learn much of what has passed since you fled the city. The Judain are hanging dead in iron cages by the hundred. A few managed to flee the city but most have gone to ground in what the guards call 'their lairs and slum pits'. Things have been very bad for your people. The Overlord is trying to wipe you Judain from the face of the earth -- with a large measure of success, by the sound of it. After three hours on the gate you manage to slink unseen into the city while the others are in the gatehouse, brewing a pot of tea.">

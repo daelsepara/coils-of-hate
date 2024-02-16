@@ -2206,7 +2206,7 @@
 	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT167 "The casting of a Thunderflash spell makes the walls of the neighbouring houses reverberate with echoes. There is a flare of spurting red fire which sears and bums the cloying purple softness of the monster. It convulses and expels Mameluke, who rolls onto the floor, then struggling to his feet, wiping the strands of gelid purple slime from his body with the backs ofhis hands.||He thanks you and would embrace you as a friend, but you step back, anxious to avoid contamination by the putrescent slime of Hate.">
+<CONSTANT TEXT167 "The casting of a Thunderflash spell makes the walls of the neighbouring houses reverberate with echoes. There is a flare of spurting red fire which sears and bums the cloying purple softness of the monster. It convulses and expels Mameluke, who rolls onto the floor, then struggling to his feet, wiping the strands of gelid purple slime from his body with the backs of his hands.||He thanks you and would embrace you as a friend, but you step back, anxious to avoid contamination by the putrescent slime of Hate.">
 <CONSTANT CHOICES167 <LTABLE "take him back with you to your hidey-hole on Bumble Row" "lose him in the byways of the city">>
 
 <ROOM STORY167
@@ -2538,7 +2538,7 @@
 	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT197 "You recognize some of those present as senior members of the Thieves' Guild, grown rich on the juicy pickings of the latterday well-to-do of Godorno. They are well dressed, urbane looking men.||\"Skakshi, I see you lurking there. I have a proposition to put to Melmelo -- just the thing for Godorno's master thief.\" You know Skakshi likes to think of himself as the master thief of Godorno. He is no friend to Melmelo the Guildmaster.||\"I can take you to Melmelo for the price I would be given if I turned you over to the city guard: ten gleenars. Do you have ten gleenars, Judain scum?\"||There are chuckles from the other customers at Skakshi's insolence. ">
+<CONSTANT TEXT197 "You recognize some of those present as senior members of the Thieves' Guild, grown rich on the juicy pickings of the latterday well-to-do of Godorno. They are well dressed, urbane looking men.||\"Skakshi, I see you lurking there. I have a proposition to put to Melmelo -- just the thing for Godorno's master thief.\" You know Skakshi likes to think of himself as the master thief of Godorno. He is no friend to Melmelo the Guildmaster.||\"I can take you to Melmelo for the price I would be given if I turned you over to the city guard: ten gleenars. Do you have ten gleenars, Judain scum?\"||There are chuckles from the other customers at Skakshi's insolence.">
 <CONSTANT CHOICES197 <LTABLE "decide to teach him a lesson in how to talk to his betters" "agree to this bargain" "tell Skakshi you will never pay his blood money">>
 
 <ROOM STORY197
@@ -2666,7 +2666,7 @@
 	(CONTINUE STORY227)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT210 "You reach the scene ofthe disaster by late afternoon. There is no sign of Lucie. The shack where she was hiding has been levelled to the ground. A great pit has opened up beneath it and looking down into it you smell the galling purulent stench of corruption that comes from the coils of Hate.||Is Lucie now just another lost soul, forced to live a half-life of torment within the corrupt flesh of Hate itself? You can't ask anyone if they have seen her, for they would not tell you if they had, out of fear of the Overlord's men.">
+<CONSTANT TEXT210 "You reach the scene of the disaster by late afternoon. There is no sign of Lucie. The shack where she was hiding has been levelled to the ground. A great pit has opened up beneath it and looking down into it you smell the galling purulent stench of corruption that comes from the coils of Hate.||Is Lucie now just another lost soul, forced to live a half-life of torment within the corrupt flesh of Hate itself? You can't ask anyone if they have seen her, for they would not tell you if they had, out of fear of the Overlord's men.">
 <CONSTANT CHOICES210 <LTABLE "attempt to search for her down the hole" "abandon her to her grisly fate">>
 
 <ROOM STORY210
@@ -2677,38 +2677,27 @@
 	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT211 "Mameluke doesn't realize how sick you are. His cheerfulness is wearing until he goes on ahead to light the fire and warm his rooms up for you. As soon as his broad back bobs out of sight round the corner you sink, exhausted, to the cobbled ground. The city watchmen are clip-clopping over the cobbles towards you on horseback.">
+<CONSTANT CHOICES211 <LTABLE "use" "use" "use" "you have none of these skills">>
+
 <ROOM STORY211
 	(DESC "211")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT211)
+	(CHOICES CHOICES211)
+	(DESTINATIONS <LTABLE STORY244 STORY264 STORY264 STORY278>)
+	(REQUIREMENTS <LTABLE SKILL-CHARMS SKILL-CUNNING SKILL-STREETWISE NONE>)
+	(TYPES <LTABLE R-SKILL R-SKILL R-SKILL R-NONE>)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT212 "As you walk warily along Last Rites Street you see a captain of the guard, whom you remember is called Tormil, agreeing to help a citizen flee the city in return for most of his worldly weath. Only a rat like Tormil would take advantage of people's helplessness so callously. You stand in front of him and revile him for taking advantage of the oppressed.||\"If I were not due to take over my guard duties at the palace I would slay you on the instant, Judain scum. But I swear I will bring you before the Overlord in chains.\" With that he sets out for the palace.||His victim waits nearby until Tormil has rounded a corner and is safely out of sight before plucking up courage to talk to you.||\"As it is some time before Tormil can fulfil his pledge to help me leave, might I return your kindness?\" he asks.||He barely gives you time to nod your acceptance before continuing in his nasal tones: \"I am, or was until recently, a jeweller's assistant in Mire Street. Alas my own honesty has put me out of a job, and left me in fear of my life. I must leave the city.\"||\"Yet perhaps I may be revenged on my employer, and you may strike a blow for the Judain against the Overlord. A diamond owned by a Judain shopkeeper I once knew, is now at my master's shop being fashioned into a mighty sceptre for the Overlord. Finding out my connection with the previous owner, however, my master went to call the Overlord's guards so that I might be taken away and thrown into Grand to languish there with my Judain friend. It is clear to see my master favours not the Judain, nor those who would be their friends.\"||\"I beg you to reacquire the diamond, if not for my friend, then for the Judain cause. Here is the address.\"||He gives clear directions to the jeweller's shop in Mire Street before making his farewells. He parts company saying, \"Not all are against the Judain. Goodbye.\"">
+<CONSTANT CHOICES212 <LTABLE "your mind to acquiring the diamond to order to finance the resistance effort" "search for a hideout">>
 
 <ROOM STORY212
 	(DESC "212")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT212)
+	(CHOICES CHOICES212)
+	(DESTINATIONS <LTABLE STORY241 STORY190>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT213 "Your search for another amulet is interrupted by the venomed blade of Skakshi the master thief. He has crept up on you unseen and unheard as only a master rogue can. He turns the knife in your vitals and you die at his hands. If only you hadn't lost your charm amulet it might have warned you of the danger. There is no one left to save the Judain now. Hate will subdue all.">
@@ -2719,55 +2708,37 @@
 	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT214 "It is time to spy out the lay of the land. Only by prowling around the streets yourself will you know what is really happening. As you pass towards the foreigners' quarter you are greeted silently by many of your people from their lookout and alarm posts. They melt away at the first sign of soldiers, so you are far from safe on the streets.||Turning a corner you come upon a most distressing sight. A virulent throbbing mass of purple slime presses up through a fissure into the sewers of the city. On a pile of rubble, many figures are caught in the sticky slime like flies on a piece of honey-smeared paper.||You recognize one of the faces staring out mutely, barely submerged under a violet sheen of skin. It is the daughter of Tormil, the captain of the palace guard who has sworn to deliver you to the Overlord in chains. Tormil's own daughter has fallen into the embrace of Hate. She is just another lost soul now. You decide to show her to Tormil; then you can ask him to join you in the resistance or try to trick him into joining his daughter, enmeshed in the coils of Hate.||You find Tormil on his journey home from the sword ·practice halls. You call to him from a dark alleyway and he stops and peers at you. \"Come with me, Captain Tormil. I have something to show you.\"||\"What do you want with me?\"||\"I have found your missing daughter. I want nothing but to bring you to her.\"||\"Lead on. I will follow -- at a distance. No tricks.\" He follows you warily to the fallen wall. You scramble to the top of the pile of rubble and point. He stands beside you and gazes into the dull glassy eyes of his daughter, who tries to reach out a hand towards him, but cannot.||Tormil breaks into tears, then flourishing his sword, he runs down the rubble slope to hack at the bloated form of Hate.">
+<CONSTANT CHOICES214 <LTABLE "let him die, glad to see him meet his doom in Hate's coils" "try to save him">>
+
 <ROOM STORY214
 	(DESC "214")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT214)
+	(CHOICES CHOICES214)
+	(DESTINATIONS <LTABLE STORY095 STORY265>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT215 "The guards crane their heads towards you, desperate for you to save them. They goggle at you comically, as if they have never seen a person free to walk about on the earth before. ||\"Here, grab my hand,\" implores one of the guards, who is standing in Hate up to his knees. He tries to smile at you but it is the smile of a traitor.">
+<CONSTANT CHOICES215 <LTABLE "grab his proferred hand and drag him out" "ignore him and pass on down the line">>
 
 <ROOM STORY215
 	(DESC "215")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT215)
+	(CHOICES CHOICES215)
+	(DESTINATIONS <LTABLE STORY025 STORY013>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT216 "The water of the pool is cloudy and you cannot be sure how deep it is. Touching it cautiously reveals it is cold but not deathly cold and to the taste it is as pure as spring water.">
+<CONSTANT CHOICES216 <LTABLE "step in" "kirt round to the side of the pool">>
 
 <ROOM STORY216
 	(DESC "216")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT216)
+	(CHOICES CHOICES216)
+	(DESTINATIONS <LTABLE STORY245 STORY203>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT217 "Hardly daring even to breathe, you insert a bent pin into the lock and twist it with consummate precision. No surgeon ever operated so carefully upon a patient, no swain ever gave such loving entreaties to his paramour, no artist ever wielded his brush with such fine skill, as you work now upon that tiny lock.||Your diligence is rewarded; the lock abandons its duties with a soft tut. The lid of the coffer yields to your eager touch, and you allow yourself a smile as you lift out the gemstone you came for. Placing it in your mouth for safekeeping -- the sweetest lozenge you ever saw -- you skulk back noiselessly across the room and descend the stairs to emerge moments later into the night air.">
@@ -2786,21 +2757,15 @@
 	(CONTINUE STORY380)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT219 "The potent spell of Visceral Pang should suffice to bring the landlord to his knees and force him to do your bidding. You mouth the arcane words and twirl your fingers in the patterns that bring magic to life. The spell catches and the landlord's face grows pale, then very flushed. He makes a rush for the latrines but the pain pulls him up short and he doubles over m agony.||\"You will serve a Judain, my good man, and be quick about it,\" you say, looking around to gauge the reaction of the other drinkers.||The two women are looking at you in a new light. The pipesmoker is tapping out his pipe. Lucie looks shocked. The eyes of the tall stranger transfix you with a piercing stare. The gang of four are all fingering hidden weapons and checking their escape routes.||\"A pot of your finest ale, landlord,\" you say, letting the spell go. The landlord straightens slowly, holding his stomach, and reaches for an alepot.">
+<CONSTANT CHOICES219 <LTABLE "ask him about Lucie and the tall stranger" "asks if he knows who or what is carrying off the good burghers of Godorno and leaving their hearts bobbing in the Crescent Canal">>
+
 <ROOM STORY219
 	(DESC "219")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT219)
+	(CHOICES CHOICES219)
+	(DESTINATIONS <LTABLE STORY236 STORY240>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT220 "You throw yourselfdown on your bed in the row of crooked houses down Bumble Row and try to sleep. A taint in the air stops your slumber and there is a sound like wet kippers being thrown onto a marble slab. It is getting louder. You roll off your bed in time to see a purple veil close over the door. Hate has sealed you in. Its skin starts to swell into a great blister which slowly expands until it covers the whole room. You are caught up in the coils of Hate and have joined the eternal orgy of despair. You cannot even save yourself now, much less your oppressed people.">
@@ -2811,21 +2776,15 @@
 	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT221 "Mameluke comes back for you when he sees you are struggling to keep up. You rest one arm over his shoulder and stagger on, supported by his strong frame. The Overlord's guard trot round the corner ahead and you pull up, scanning their faces for signs of pity. There are none.||\"Get out of our way,\" says Mameluke. \"I'm taking this poor citizen home -- got mistaken for a Judain and given a pretty savage beating. Known to me for years, I'll vouch for ...\"||\"Get away from the wretched Judain.\"||The captain of the guard means to take you in for questioning.">
+<CONSTANT CHOICES221 <LTABLE "give yourself up and try to save Mameluke" "try to escape">>
+
 <ROOM STORY221
 	(DESC "221")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT221)
+	(CHOICES CHOICES221)
+	(DESTINATIONS <LTABLE STORY148 STORY193>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT222 "You make good progress along the rutted road by the light of the moon. Most goods are carried to Bagoe by river so there are no brigands on this road. As the sun rises you pass farms growing fruit and olives, vines and tomatoes and the great purple hubloe fruit which is so popular in Godomo. Every now and then the sweep of the Palayal river comes into view where road and river run side by side. You press on, hoping to reach Bagoe before the bargees from Godomo.">
@@ -2836,21 +2795,15 @@
 	(CONTINUE STORY247)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT223 "You draw your sword with a flourish and advance steadily on Skakshi. The landlord throws him a spiked club with which to defend himself. You can see by the way he hefts it he knows how to use it to pulp .brains. Your sword gives you the advantage over his rude weapon but you have never trained against a man wielding a spiked club.||How will you fight this battle?">
+<CONSTANT CHOICES223 <LTABLE "move in close so that the smooth edge of the club shaft will fall on you if you are hit" "keep your distance and use looping cutting blows rather than fierce lunges">>
+
 <ROOM STORY223
 	(DESC "223")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT223)
+	(CHOICES CHOICES223)
+	(DESTINATIONS <LTABLE STORY052 STORY032>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY224
@@ -2870,21 +2823,16 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT225 "This street winds down towards the riverfront and the centre of the city. It is crossed by large avenues that lead up to the citadel, lined with tall straight cedars. You hear the ringing ofthe town crier's bell. At the end of the street is Greenbark Plaza. The mob is still chasing you, growing hysterical in its desire for your blood. Ifyou are caught you will surely be stoned to death.">
+<CONSTANT CHOICES225 <LTABLE "use" "run on into Greenbark Plaza" "duck down one of the smaller side streets">>
+
 <ROOM STORY225
 	(DESC "225")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT225)
+	(CHOICES CHOICES225)
+	(DESTINATIONS <LTABLE STORY369 STORY002 STORY385>)
+	(REQUIREMENTS <LTABLE SKILL-ROGUERY NONE NONE>)
+	(TYPES <LTABLE R-SKILL R-NONE R-NONE>)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY226
@@ -2912,56 +2860,40 @@
 	(CONTINUE STORY297)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT228 "You pour oil from your lantern onto the soft cloying purple flesh of Hate but it will not kindle. Hate is inflammable. The bloated purple mass heaves as it breathes and you can make out the tracks of the lost ones' tears, deep inside the translucent body. You will have to try something else.">
+<CONSTANT CHOICES228 <LTABLE "ask some of the trapped guards what to do" "use" "cast Miasma" "Thunderflash" "Bafflement" "Rulership">>
+
 <ROOM STORY228
 	(DESC "228")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT228)
+	(CHOICES CHOICES228)
+	(DESTINATIONS <LTABLE STORY215 STORY192 STORY173 STORY165 STORY154 STORY122>)
+	(REQUIREMENTS <LTABLE NONE SKILL-SWORDPLAY SKILL-SPELLS SKILL-SPELLS SKILL-SPELLS SKILL-SPELLS>)
+	(TYPES <LTABLE R-NONE R-SKILL R-SKILL R-SKILL R-SKILL>)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT229 "\"What do you think of the disguise?\" you say before the gate guards can challenge you. \"Eh? What do you think? What do I look like?\"||You seem utterly confident and they all look at you and smile. \"Reckon you're a spitting image of a Judain,\" says one.||\"Ain't I just? And I'm going to make a lot of friends among the Judain scum of the city and turn them over to the Overlord's men, for the reward. I reckon I'll make a fortune.\"||\"You want to watch out. They're powerful deep people, the Judain. They stick together like... like ...\"||\"Like rats and grain sacks!\" another puts in.||You and the old seller of eggs are allowed to proceed into the city. To your annoyance the old woman has the look of a tittle tattle. She mumbles constantly through toothless gums. \"I heard what you said in there. It ain't right. What have the Judain done to hurt you? Just raising their children as decent and honest as other folk, I'll warrant.\"">
+<CONSTANT CHOICES229 <LTABLE "tell the old woman that you really are Judain" "try and lose her in the streets and hope she does you no harm">>
 
 <ROOM STORY229
 	(DESC "229")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT229)
+	(CHOICES CHOICES229)
+	(DESTINATIONS <LTABLE STORY275 STORY286>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY230
 	(DESC "230")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(EVENTS STORY230-EVENTS)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY230-EVENTS ()
+	<COND(<AND <CHECK-SKILL ,SKILL-SWORDPLAY> <CHECK-CODEWORD ,CODEWORD-SATORI>>
+		<RETURN ,STORY184>
+	)(ELSE
+		<RETURN ,STORY396>
+	)>>
 
 <ROOM STORY231
 	(DESC "231")
@@ -4708,7 +4640,7 @@ power.">
 	(CONTINUE STORY413)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT362 "Speaking the word ofpower and clapping your hands vigorously brings forth a cloud of poisonous gas which smothers the guards and the old egg-seller. You leave them coughing and Tetching and set out into the once bustling city.">
+<CONSTANT TEXT362 "Speaking the word of power and clapping your hands vigorously brings forth a cloud of poisonous gas which smothers the guards and the old egg-seller. You leave them coughing and Tetching and set out into the once bustling city.">
 
 <ROOM STORY362
 	(DESC "362")

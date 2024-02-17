@@ -999,7 +999,7 @@
 	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT082 " You choose a place where the road winds beneath copses of trees and wait. The horsemen are wearing the purple and black livery of the Overlord of Godomo and it seems they are tracking you. To attack them would be dangerous, there are too many of them you reluctantly decide, so you let them pass and double back making haste to put distance between yourself and your pursuers before they realize they have been thrown offthe scent.">
+<CONSTANT TEXT082 " You choose a place where the road winds beneath copses of trees and wait. The horsemen are wearing the purple and black livery of the Overlord of Godomo and it seems they are tracking you. To attack them would be dangerous, there are too many of them you reluctantly decide, so you let them pass and double back making haste to put distance between yourself and your pursuers before they realize they have been thrown off the scent.">
 
 <ROOM STORY082
 	(DESC "082")
@@ -1034,8 +1034,8 @@
 	(CONTINUE STORY188)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT086 "The inside of the Silver Eel is much as you expected. Sawdust covers curdled puddles of vomit or blood on the creaking floor. There are rough trestles for seats, a few with initials carved deep into the dark old wood -- it is amazing that most of these lowlifes even know how to write their initials. The thick green bottle-glass in the lanterns gives the whole of the interior a strange unreal look. A dozen pairs of eyes swivel, assessing you at a glance before returning to drinks or companions.||The tall blond man has walked to the bar and ordered firewater for himself and lemon bitters for Lucie. He is dressed in a suit of the most outlandish leather and mail armour you have ever seen. It is a patchwork quilt of jagged bosses and scales, which altogether make a very striking and rather chilling outfit to look upon.||The landlord, an ex-captain at the duelling school with scars and the tip of an ear missing as testament to the many fights he has been in with unruly customers, is quick to serve this towering figure of a young man. Lucie is quite at ease with him as if she knows him well.||The tall blond man darts a glance at you and looks quizzical. He is very pale of skin and his cheekbones are dusted with freckles. Lucie puts her arm around his waist and whispers something. He replies and you hear the word 'Judain', after which he hawks a gobbet of phlegm into the sawdust. He puts his hand on Lucie's bottom but she smacks it away and takes her drink to a table in a nook at the back of the tavern, followed by the tall stranger. There is a group of four men drinking small beer who could be either artisans or thieves. Two women wearing lace and silks and not much ofeither laugh scurrilously in the alcove beyond, and a single dark figure lurks at the far end of the bar smoking a pipe.">
-<CONSTANT CHOICES086 <LTABLE "order a drink from the bar" "ask the gang offour where you can find Melmelo the master thief" "join Lucie and the tall stranger">>
+<CONSTANT TEXT086 "The inside of the Silver Eel is much as you expected. Sawdust covers curdled puddles of vomit or blood on the creaking floor. There are rough trestles for seats, a few with initials carved deep into the dark old wood -- it is amazing that most of these lowlifes even know how to write their initials. The thick green bottle-glass in the lanterns gives the whole of the interior a strange unreal look. A dozen pairs of eyes swivel, assessing you at a glance before returning to drinks or companions.||The tall blond man has walked to the bar and ordered firewater for himself and lemon bitters for Lucie. He is dressed in a suit of the most outlandish leather and mail armour you have ever seen. It is a patchwork quilt of jagged bosses and scales, which altogether make a very striking and rather chilling outfit to look upon.||The landlord, an ex-captain at the duelling school with scars and the tip of an ear missing as testament to the many fights he has been in with unruly customers, is quick to serve this towering figure of a young man. Lucie is quite at ease with him as if she knows him well.||The tall blond man darts a glance at you and looks quizzical. He is very pale of skin and his cheekbones are dusted with freckles. Lucie puts her arm around his waist and whispers something. He replies and you hear the word 'Judain', after which he hawks a gobbet of phlegm into the sawdust. He puts his hand on Lucie's bottom but she smacks it away and takes her drink to a table in a nook at the back of the tavern, followed by the tall stranger. There is a group of four men drinking small beer who could be either artisans or thieves. Two women wearing lace and silks and not much of either laugh scurrilously in the alcove beyond, and a single dark figure lurks at the far end of the bar smoking a pipe.">
+<CONSTANT CHOICES086 <LTABLE "order a drink from the bar" "ask the gang of four where you can find Melmelo the master thief" "join Lucie and the tall stranger">>
 
 <ROOM STORY086
 	(DESC "086")
@@ -1784,7 +1784,7 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT150 "The ceiling of the room is clear crystal. The dome of crystal that tops the tower is supported by huge iron struts from a black boss directly above the jewel. You look up as you start to cross the floor to the casket, just as a flash of lightning illuminates everythin in stark outline. The angled struts are in fact the legs of a giant spider whose eyes seem to follow your every move as you inch slowly beneath the arches ofits legs.||The keening of the gargoyles reaches a new frenzied high and the crystal that protects you from the tower-spinning spider explodes into shards and dust. The wind falls away, the keening drops to a low moan and now you hear for the first time the wheezing susurratioins of the spider's breath. You can see its thorax opening and closing like a bellows.">
+<CONSTANT TEXT150 "The ceiling of the room is clear crystal. The dome of crystal that tops the tower is supported by huge iron struts from a black boss directly above the jewel. You look up as you start to cross the floor to the casket, just as a flash of lightning illuminates everythin in stark outline. The angled struts are in fact the legs of a giant spider whose eyes seem to follow your every move as you inch slowly beneath the arches of its legs.||The keening of the gargoyles reaches a new frenzied high and the crystal that protects you from the tower-spinning spider explodes into shards and dust. The wind falls away, the keening drops to a low moan and now you hear for the first time the wheezing susurratioins of the spider's breath. You can see its thorax opening and closing like a bellows.">
 <CONSTANT CHOICES150 <LTABLE "dash beneath it to seize the jewel and casket" "attack it from the doorway">>
 
 <ROOM STORY150
@@ -2099,7 +2099,7 @@
 	(CONTINUE STORY150)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT181 "You think to relieve Skakshi ofany weapons lest he attempt to double-cross you. Although he protests he has no more, a quick frisk of his clothing reveals a set of throwing knives. You look grimly at him, but he gives a weak smile, and says: \"I like to keep something up my sleeve for contingencies -- you'd do the same.\"">
+<CONSTANT TEXT181 "You think to relieve Skakshi of any weapons lest he attempt to double-cross you. Although he protests he has no more, a quick frisk of his clothing reveals a set of throwing knives. You look grimly at him, but he gives a weak smile, and says: \"I like to keep something up my sleeve for contingencies -- you'd do the same.\"">
 
 <ROOM STORY181
 	(DESC "181")
@@ -2211,7 +2211,7 @@
 	(COST 3)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT190 "Your allies suggest various places for you to make a hideout and you choose a damp cellar on Medallion Street -- it seems the best option.||You are on your way there when there is a commotion ahead of you. Seeing a group of city guards approaching, you duck into the ruin of an abandoned building. To your dismay, they stop in the street outside and you hear one of them say, \"A Judain went in here, I think. Fetch the dogs -- they'll soon sniff the wretch out!\"||There is a frightened whimper in the darkness behind you. You whirl to see Caiaphas's wife, Ruth -- the one who was reluctant to share the food with you. You remember hearing from Caiaphas that she is with child. She is hidden, trembling, behind a pillar at the back of the hall. You know that the guards will not return to barracks until they have caught their quota ofJudain.">
+<CONSTANT TEXT190 "Your allies suggest various places for you to make a hideout and you choose a damp cellar on Medallion Street -- it seems the best option.||You are on your way there when there is a commotion ahead of you. Seeing a group of city guards approaching, you duck into the ruin of an abandoned building. To your dismay, they stop in the street outside and you hear one of them say, \"A Judain went in here, I think. Fetch the dogs -- they'll soon sniff the wretch out!\"||There is a frightened whimper in the darkness behind you. You whirl to see Caiaphas's wife, Ruth -- the one who was reluctant to share the food with you. You remember hearing from Caiaphas that she is with child. She is hidden, trembling, behind a pillar at the back of the hall. You know that the guards will not return to barracks until they have caught their quota of Judain.">
 <CONSTANT CHOICES190 <LTABLE "use" "use magic" "use" "dash out into the street and fight the guards to buy Ruth time to escape" "push her out into the street to save yourself -- surely they will not harm a pregnant woman">>
 
 <ROOM STORY190
@@ -2576,7 +2576,7 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT225 "This street winds down towards the riverfront and the centre of the city. It is crossed by large avenues that lead up to the citadel, lined with tall straight cedars. You hear the ringing ofthe town crier's bell. At the end of the street is Greenbark Plaza. The mob is still chasing you, growing hysterical in its desire for your blood. Ifyou are caught you will surely be stoned to death.">
+<CONSTANT TEXT225 "This street winds down towards the riverfront and the centre of the city. It is crossed by large avenues that lead up to the citadel, lined with tall straight cedars. You hear the ringing of the town crier's bell. At the end of the street is Greenbark Plaza. The mob is still chasing you, growing hysterical in its desire for your blood. Ifyou are caught you will surely be stoned to death.">
 <CONSTANT CHOICES225 <LTABLE "use" "run on into Greenbark Plaza" "duck down one of the smaller side streets">>
 
 <ROOM STORY225
@@ -2820,7 +2820,7 @@
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT245 "To your relief the pool is only three feet deep and you step out wet but unharmed on the far side. The moaning of the gargoyles dies away and it is only now it has ceased you realize how oppressive the doleful sound was.">
-<CONSTANT CHOICES245 <LTABLE "explore the sides of this odd-shaped room, around the edges ofthe pool" "waste no time and open the door ahead">>
+<CONSTANT CHOICES245 <LTABLE "explore the sides of this odd-shaped room, around the edges of the pool" "waste no time and open the door ahead">>
 
 <ROOM STORY245
 	(DESC "245")
@@ -2830,7 +2830,7 @@
 	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT246 "\"It's the old beast from the catacombs. The ancient wicked heart of the city, claiming the people for its own.\" He hands you the pot of ale, which smells strongly of malt, barley and honey.||\"What is the old beast?\"||\"Some say it is the spirit ofthe Harakadnezzar, the Great Tyrant. It is said that when robbers desecrated his tombs he became absorbed into the bones of the world, gaining strength in the dark places far from the light. Now he has come forth to avenge himself. Others say it is the many-limbed beast, Hate. It attacks the wicked and decadent, carrying people off who have hate in their hearts. One thing I do know, it isn't good for trade.\"">
+<CONSTANT TEXT246 "\"It's the old beast from the catacombs. The ancient wicked heart of the city, claiming the people for its own.\" He hands you the pot of ale, which smells strongly of malt, barley and honey.||\"What is the old beast?\"||\"Some say it is the spirit of the Harakadnezzar, the Great Tyrant. It is said that when robbers desecrated his tombs he became absorbed into the bones of the world, gaining strength in the dark places far from the light. Now he has come forth to avenge himself. Others say it is the many-limbed beast, Hate. It attacks the wicked and decadent, carrying people off who have hate in their hearts. One thing I do know, it isn't good for trade.\"">
 <CONSTANT CHOICES246 <LTABLE "use" "use" "quaff the ale he has given" "leave it untouched">>
 
 <ROOM STORY246
@@ -2854,7 +2854,7 @@
 <ROUTINE STORY247-PRECHOICE ()
 	<SKILL-JUMP ,SKILL-WILDERNESS-LORE ,STORY037>>
 
-<CONSTANT TEXT248 "Where will you enter the catacombs? There is a new fissure opened up in the sea wall at the old dock. There is also a way into the catacombs beneath th.e Overlord's stables.">
+<CONSTANT TEXT248 "Where will you enter the catacombs? There is a new fissure opened up in the sea wall at the old dock. There is also a way into the catacombs beneath the Overlord's stables.">
 <CONSTANT CHOICES248 <LTABLE "go to the sea wall" "the Overlord's stables">>
 
 <ROOM STORY248
@@ -2941,7 +2941,7 @@
 	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT256 "Your own opinion is that the myth of the return of Harakadnezzar is only a story invented to deter would-be grave-robbers from rifling the more recently consecrated tombs. The story ofHate, however, is well known to all folklorists. Hate rises up in the foundations of ancient decadent cities, swallowing the proud, wicked and greedy into its ravening maw. This manifestation of the force of Hate was last heard of in the Old Empire city of Kush, a thousand years ago. There is nothing left of Kush now. The greatest and most powerful city the world has ever seen has become a giant dustbowl in the grasslands.">
+<CONSTANT TEXT256 "Your own opinion is that the myth of the return of Harakadnezzar is only a story invented to deter would-be grave-robbers from rifling the more recently consecrated tombs. The story of Hate, however, is well known to all folklorists. Hate rises up in the foundations of ancient decadent cities, swallowing the proud, wicked and greedy into its ravening maw. This manifestation of the force of Hate was last heard of in the Old Empire city of Kush, a thousand years ago. There is nothing left of Kush now. The greatest and most powerful city the world has ever seen has become a giant dustbowl in the grasslands.">
 <CONSTANT CHOICES256 <LTABLE "enjoy your ale" "spurn it">>
 
 <ROOM STORY256
@@ -3013,7 +3013,7 @@
 	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT262 "Your times spent skulking unseen while casing the houses ofthe well-to-do will stand you in good stead now. One of the things you have learned is to make sure you always know oftwo possible escape routes. One is the storm drain that feeds into the Imperial Basin, where the Crescent Canal and Grand Canal meet. The other is the secret tunnel that leads underground to the burial crypts of the Megiddo dynasty, a family of kings who made great conquests in Godorno's golden age and brought prosperity to the city they ruled.">
+<CONSTANT TEXT262 "Your times spent skulking unseen while casing the houses of the well-to-do will stand you in good stead now. One of the things you have learned is to make sure you always know of two possible escape routes. One is the storm drain that feeds into the Imperial Basin, where the Crescent Canal and Grand Canal meet. The other is the secret tunnel that leads underground to the burial crypts of the Megiddo dynasty, a family of kings who made great conquests in Godorno's golden age and brought prosperity to the city they ruled.">
 
 <ROOM STORY262
 	(DESC "262")
@@ -3129,55 +3129,39 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT272 "As head of the Judain resistance movement in Godorno you are now one of the most powerful people in the city. With power comes responsibility but you comfort yourself that you are doing your best. Y ou wonder how many more Judain will die carrying out your orders. How many innocent people will suffer. Will the Overlord give in to your demands? Or will you all be taken to the prison fortress of Grand and tortured?||The Overlord is no longer the great enemy. It is Hate you must outwit. In order to do so you must know something about its movements. Where does it sleep? Can it be harmed? How long does it take to ingest lost souls? You need the answers to these questions but where will you seek them?">
+<CONSTANT CHOICES272 <LTABLE "take a gondola down Grand Canal and hope Hate comes to you" "explore the catacombs">>
+
 <ROOM STORY272
 	(DESC "272")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT272)
+	(CHOICES CHOICES272)
+	(DESTINATIONS <LTABLE STORY292 STORY248>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT273 "You kneel beside her though her eyes implore you not to. She raises her arm to put it round you, then looks at the other. To your horror you see that a patch of wall has broken away to reveal something purple beneath. Lucie's arm has been drawn inside it. You are about to spring back when two tentacles whip out of the purple mass, twining round your windpipe and one wrist. Lucie is indeed a little lost soul, already being absorbed into the body of Hate. There is no escape for her -- and maybe no escape for you, either.">
 
 <ROOM STORY273
 	(DESC "273")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT273)
+	(PRECHOICE STORY273-PRECHOICE)
+	(CONTINUE STORY335)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY273-PRECHOICE ()
+	<CODEWORD-JUMP ,CODEWORD-SATORI ,STORY343>>
+
+<CONSTANT TEXT274 "Somehow, from the midst of chaos and despair, you must fashion a way that will deliver your people and save the city. But one wrong move will end in disaster.||There are three things you might use against the monster. ">
+<CONSTANT CHOICES274 <LTABLE "use the" "use the" "use the chains retrieved from the prison gates to shackle Hate" "you have none of those items">>
 
 <ROOM STORY274
 	(DESC "274")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT274)
+	(CHOICES CHOICES274)
+	(DESTINATIONS <LTABLE STORY230 STORY349 STORY392 STORY187>)
+	(REQUIREMENTS <LTABLE JADE-WARRIORS-SWORD JEWEL-OF-SUNSET-FIRE CHAINS NONE>)
+	(TYPES <LTABLE R-ITEM R-ITEM R-ITEM R-NONE>)
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT275 "The old woman doesn't betray the least surprise at your revelation. \"Best lie low, these are bad times for Judain and no mistake. Good luck.\"||And with that she is off to find a place on the street to sell her meagre clutch of eggs. You walk on into the once bustling city.">
@@ -3188,21 +3172,15 @@
 	(CONTINUE STORY300)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT276 "You pick up your ale pot, then set it down on the bar again without drinking from it. It would not do to be poisoned when there are so many depending on you for leadership. The landlord's eyes flit from yours to the ale pot and back again. It seems you have guessed aright: the landlord meant to avenge himself by poisoning you.||There is no sense in looking for more trouble here. You give the surly landlord a knowing look and prepare to quit the bar, determined never to darken its doors again.">
+<CONSTANT CHOICES276 <LTABLE "leave the Silver Eel" "ask about Lucie and the tall stranger before you go" "go to talk with her and her strange acquaintance">>
+
 <ROOM STORY276
 	(DESC "276")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT276)
+	(CHOICES CHOICES276)
+	(DESTINATIONS <LTABLE STORY199 STORY236 STORY227>)
+	(TYPES THREE-NONES)
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT277 "The Jade Warriors' swords are the finest you have ever seen. One in particular seems almost to pulse with energy, catching light like droplets of honey along its sharp edge.||With such a sword you might conquer a kingdom. The lure of avarice is too great. Diving forward, you duck under the swipe of the nearest Jade Warrior and leap nimbly over the attack of the second. Jumping behind the Jade Warrior with the finest blade, you throw yourself against its sword arm, wrenching the blade from its strong grasp.||The others close in, and too late you realize your escape route is cut off. By reflex you raise the sword. \"Get away from me!\" you cry as menacingly as you can as they loom over you to slice your vitals.||To your relief and amazement they obey your command, lining up before you to stand at attention. They whirr and click as they follow you dutifully to the edge of the precincts of the burial chambers, and there they grind to a halt. There is nothing you can do to move them further. Although you cannot command the Jade Warriors to go forth and attack Hate, you tell them that they must attack Hate if it should loop its coils into the burial chambers of the Megiddo dynasty. You leave all doors and traps wide open in the hope that Hate will blunder in and get carved up.||Sure enough, when you return the next day the place shows the signs of an epic battle. Great gouts of translucent flesh hang from lintel and corners. There is a fine green powder in the air, like pulverized glass. The Jade Warriors have been ground to dust by Hate but, judging by the quantity of purple ichor smeared over the walls, they must have given the monster acute indigestion.">
@@ -3250,38 +3228,27 @@
 	(CONTINUE STORY030)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT280 "The walls of the prison are purple, pulsating slowly. They are lined with guards, sucked into the tentacles of Hate which have infested the prison. A score of despairing, pleading looks are turned on you, followed by a chorus of low moans. This has been the work of but a single night for all-devouring Hate. Most of the men have been sucked in only as far as both elbows, or knees, but they are all exhausted by their fruitless struggles to break free. When they get tired and lose concentration they have all touched Hate with their other hand or foot and so become deeper enmeshed. Unable any longer to resist the pull of Hate they are being submerged in the purple morass inch by inch; every time Hate takes a breath its flesh advances over them imperceptibly.||Most of the men are wailing out repentance for the atrocities they have committed on the poor prisoners of Grond.">
+<CONSTANT CHOICES280 <LTABLE "try to set them free" "leave them to their harsh but deserved fate and go on to free the Judain">>
+
 <ROOM STORY280
 	(DESC "280")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT280)
+	(CHOICES CHOICES280)
+	(DESTINATIONS <LTABLE STORY249 STORY332>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT281 "How will you teach proud Skakshi a lesson? The thief vaults nimbly over the table and draws a stiletto from his boot. It is a balanced knife, good for throwing. You haven't long in which to do something. You can use magic but be warned that it is difficult to work a spell in such a short time, however.">
+<CONSTANT CHOICES281 <LTABLE "use magic and try for a quick casting of Visceral Pang" "Miasma" "Vanish" "Rulership" "fight" "rely on your wits" "you have none of these skills">>
 
 <ROOM STORY281
 	(DESC "281")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT281)
+	(CHOICES CHOICES281)
+	(DESTINATIONS <LTABLE STORY313 STORY390 STORY263 STORY242 STORY223 STORY067 STORY357>)
+	(REQUIREMENTS <LTABLE SKILL-SPELLS SKILL-SPELLS SKILL-SPELLS SKILL-SPELLS SKILL-SWORDPLAY SKILL-CUNNING NONE>)
+	(TYPES <LTABLE R-SKILL R-SKILL R-SKILL R-SKILL R-SKILL R-SKILL R-NONE>)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY282
@@ -3326,38 +3293,27 @@
 	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT285 "As you prepare to step off the bed, a black monstrous being emerges noiselessly from the canopy of the Overlord's bed and glides down to settle over the girl. It looks like a manta ray or a vampire's cape. You see that the underside of the creature is covered with barbed spines which ooze a yellow venom.">
+<CONSTANT CHOICES285 <LTABLE "drop the girl, who is still limp in your arms, and jump from the bed" "carry her quickly over the carpet before prising the thing off her">>
+
 <ROOM STORY285
 	(DESC "285")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT285)
+	(CHOICES CHOICES285)
+	(DESTINATIONS <LTABLE STORY266 STORY322>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT286 "She is surprisingly sprightly for an aged crone. She scuttles along after you cackling to herselfin a witch-like way. You turn towards Greenbark Plaza when two lines of guards block the road at either end of the narrow short street you are in. They are armed with crossbows which they are pointing at your chest.||\"We're taking you to Grand, Judain. The Overlord's torturers can amuse themselves with you.\"">
+<CONSTANT CHOICES286 <LTABLE "surrender to them and be tortured" "turn invisible" "fight your way out">>
 
 <ROOM STORY286
 	(DESC "286")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT286)
+	(CHOICES CHOICES286)
+	(DESTINATIONS <LTABLE STORY238 STORY282 STORY405>)
+	(REQUIREMENTS <LTABLE NONE SKILL-SPELLS NONE>)
+	(TYPES <LTABLE R-NONE R-SKILL R-NONE>)
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT287 "The amulet gives a flare of violet light in the flickering lamplight of the inn. You know that signal well. It is a warning of poison and deceit, visible only to your own eyes. You look with narrowed eyes at the landlord, then at the alepot on the bar.">
@@ -3368,24 +3324,24 @@
 	(CONTINUE STORY276)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT288 "It is hardly an act of trust to use magic against your own allies, even if the cause is a good one.||Caiaphas pulls a long face at being asked to give up such a large part of the Judain hoard and asks in his rumbling basso voice, \"How many of our fellow Judain remain alive in Grond?\"||\"If there is but one of our kind remaining alive it is worth it,\" you reply glibly.||Caiaphas doesn't look as if he agrees. He turns to little high-voiced Annas, who asks, \"How can we be sure the guard will hand over the keys?\"||\"No keys, no money,\" you say.||\"He might just hand over a set of keys to the Overlord's kitchens!\"||\"There would be no profit in it for him.\"||Annas peers at you, not sure if you understood his objection. \"And why do you suddenly wish to help the prison guards?\" he asks. \"Every day you give us orders to kill the Overlord's men and we obey. Have you lost your mind?\"||\"It is the only course. We must show compassion if we are to avoid being consumed by Hate.\"||Amazingly, Annas looks convinced, but Caiaphas asks, \"What of the murderers, the lunatics, and thieves who will also. be set free?\"||You give a curt wave of your hand. \"What of them? The city cannot fall into any worse state.\" Caiaphas shrugs. You have your gold.">
+
 <ROOM STORY288
 	(DESC "288")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT288)
+	(PRECHOICE STORY288-PRECHOICE)
+	(CONTINUE STORY415)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT289 "Seizing the bridle you vault into the saddle. The chestnut horse bucks and then, arching its back, makes a series of straight-legged jumps that shake you from the saddle before you can settle. You fall to the cobbles, stunned, listening in a detached way as the hoofbeats of your pursuers come closer and stop. Your head is swimming as the soldiers dismount.||\"Judain scum,\" says one of them, plunging a sword in your back, killing you as if you were no more than a dog. \"That's one less to worry about,\" he says.">
+<ROUTINE STORY288-PRECHOICE ()
+	<COND (,RUN-ONCE
+		<COND(<CHECK-CODEWORD ,CODEWORD-SATORI>
+			<DELETE-CODEWORD ,CODEWORD-SATORI>
+		)>
+		<GAIN-MONEY 500>
+	)>>
+
+<CONSTANT TEXT289 "Seizing the bridle you vault into the saddle. The chestnut horse bucks and then, arching its back, makes a series of straight-legged jumps that shake you from the saddle before you can settle. You fall to the cobbles, stunned, listening in a detached way as the hoof beats of your pursuers come closer and stop. Your head is swimming as the soldiers dismount.||\"Judain scum,\" says one of them, plunging a sword in your back, killing you as if you were no more than a dog. \"That's one less to worry about,\" he says.">
 
 <ROOM STORY289
 	(DESC "289")
@@ -3410,38 +3366,26 @@
 	(CONTINUE STORY012)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT292 "Taking the grandest gilded gondola from the tie-ups at Tartars' Quay you begin to pole effortlessly down the Grand Canal. Inside the gondola the benches are covered with black leather, neatly garnished with fine linen cloth, its edges trimmed with lace. The gilded ends of the boat are in the shape of dolphins' tails. There is no other traffic on the water and you are at leisure to notice the cracks developing in the waterfront villas as they begin to subside into the canal. Every now and then a cascade of tiles and chimney pots reminds you Godorno is sinking without trace.||How will you attract the attention of Hate as you pole down the canal?">
+<CONSTANT CHOICES292 <LTABLE "sing a song" "call aloud for Hate to come and make final reckoning with you">>
+
 <ROOM STORY292
 	(DESC "292")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT292)
+	(CHOICES CHOICES292)
+	(DESTINATIONS <LTABLE STORY314 STORY323>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT293 "You find Lucie loitering around the moored gondolas on Circle Canal. In better days she might have had rich pickings from dipping her hand into the purses of the wealthy. In these troubled times, few people dare venture into the streets with money in their pockets.||You explain that you want to get into Grond and free the prisoners there.||\"Help free those vermin?\" she says. \"Why would I want to? Many are murderers, rapists and madmen!\"||\"Many are brave men whose only crime was to speak out against the Overlord. Others are even more blameless. My fellow Judain, for instance, declared criminal simply because of race and creed.\" Lucie seems not even to have heard you. \"Those beasts in Grond -- they are animals! Let Hate take them!\" She looks at you as though you have lost your wits, her pretty face contorted with hatred. The glint in her eyes is frightening. She looks mad.">
+<CONSTANT CHOICES293 <LTABLE "slap her to end this hysterical outburst" "tell her to be calm">>
 
 <ROOM STORY293
 	(DESC "293")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT293)
+	(CHOICES CHOICES293)
+	(DESTINATIONS <LTABLE STORY336 STORY346>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT294 "The burial crypts of the Megiddo dynasty are reputed to be guarded by the Jade Warriors, four enchanted statues of their most trusted and able bodyguards. If you are forced to flee into those crypts you risk disturbing them. It is said they have killed even the most cunning and dangerous grave robbers and defilers of tombs over the centuries.||It is also said that the Jade Warriors. protect not only the ceremented mummies of the Megiddo dynasty but a vast panoply of war gear along with enough treasufe to maintain a large army indefinitely. The swords of the famed Megiddan Palace Guard are reputedly sharper than any ever made in the eastern world.">
@@ -3479,20 +3423,15 @@
 
 <ROOM STORY297
 	(DESC "297")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(EVENTS STORY297-EVENTS)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY297-EVENTS()
+	<COND(<OR <CHECK-ITEM ,SWORD> <CHECK-ITEM ,JADE-WARRIORS-SWORD>>
+		<RETURN ,STORY328>
+	)(ELSE
+		<RETURN ,STORY384>
+	)>>
 
 <CONSTANT TEXT298 "It tears you apart to leave Lucie but she is already a lost soul, lost for ever in despair. With a heavy heart you set out towards your lair on Bumble Row once more to get ready to prepare the Judain for battle.">
 
@@ -3703,7 +3642,7 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT315 "Dodging the Overlord's soldiers turns what would be an easy walk into a nightmarish series of short hops between patrols. You are continually forced to lie low for long periods until the coast is clear. Not until early evening do you reach the row of crooked houses, long since abandoned and ransacked. They do, however, provide a snug hole in which to lie low. You make yourself as comfortable as possible in the dank cellar of one of the houses, using broken crates to make a rough pallet on which to sleep.||You begin to draw up your plans the next morning. It could be worth watching to see ifthe Overlord leaves his palace, as you might be able to spot a weak link in his security arrangements.">
+<CONSTANT TEXT315 "Dodging the Overlord's soldiers turns what would be an easy walk into a nightmarish series of short hops between patrols. You are continually forced to lie low for long periods until the coast is clear. Not until early evening do you reach the row of crooked houses, long since abandoned and ransacked. They do, however, provide a snug hole in which to lie low. You make yourself as comfortable as possible in the dank cellar of one of the houses, using broken crates to make a rough pallet on which to sleep.||You begin to draw up your plans the next morning. It could be worth watching to see if the Overlord leaves his palace, as you might be able to spot a weak link in his security arrangements.">
 
 <ROOM STORY315
 	(DESC "315")
@@ -4232,7 +4171,7 @@ power.">
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT356 "Melmelo's door is opened by his majordomo, a grizzled old man with a wooden leg, who growls, \"Get you gone, vile Skakshi, or you'll not live to see the dawn.\"||\"What's this I hear about Hammer being hired to kill me?\" says Skakshi, ignoring his threat. \"I didn't know Melmelo feared me so strongly.\"||\"You're beneath the notice ofa man with Melmelo's wit and accomplishments. Melmelo wouldn't waste money on that greedy cutthroat Hammer over the likes of you, Skakshi.\"||\"Do I have your word on that, pegleg?\"||The majordomo fixes him with an incandescent stare. \"Be off with you.\"||Skakshi seems satisfied but as he goes he calls back over his shoulder, \"It was a judain scumbag told me Hammer was after me. Look out, you know what slippery customers the Judain are.\" He and the majordomo both hawk and spit into the gutter at the mention of the word Judain.||You wait till Skakshi has turned the corner out of sight before knocking on the door, not too loud and not too timid.">
+<CONSTANT TEXT356 "Melmelo's door is opened by his majordomo, a grizzled old man with a wooden leg, who growls, \"Get you gone, vile Skakshi, or you'll not live to see the dawn.\"||\"What's this I hear about Hammer being hired to kill me?\" says Skakshi, ignoring his threat. \"I didn't know Melmelo feared me so strongly.\"||\"You're beneath the notice of a man with Melmelo's wit and accomplishments. Melmelo wouldn't waste money on that greedy cutthroat Hammer over the likes of you, Skakshi.\"||\"Do I have your word on that, pegleg?\"||The majordomo fixes him with an incandescent stare. \"Be off with you.\"||Skakshi seems satisfied but as he goes he calls back over his shoulder, \"It was a judain scumbag told me Hammer was after me. Look out, you know what slippery customers the Judain are.\" He and the majordomo both hawk and spit into the gutter at the mention of the word Judain.||You wait till Skakshi has turned the corner out of sight before knocking on the door, not too loud and not too timid.">
 
 <ROOM STORY356
 	(DESC "356")
@@ -4873,21 +4812,15 @@ power.">
 	(CONTINUE STORY358)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT407 "Though your instinct is to trust Lucie who seems open and without guile you know it makes no sense to agree to a meeting with a stranger, particularly in a city like Godorno where your people are the victims of genocide. You demand to be told who it is who can help you in your struggle to save your people.||\"He made me promise to keep his identity secret, until you meet. He said he could help you only if you are able to trust. So many good people have fallen into the clutches ofthe coils of Hate. Trust me.\"||\"Is he Judain?\"||\"No, not Judain. Come, we are almost there.\"">
+<CONSTANT CHOICES407 <LTABLE "follow Lucie" "change your mind and tell her you are going back to your hideout">>
+
 <ROOM STORY407
 	(DESC "407")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT407)
+	(CHOICES CHOICES407)
+	(DESTINATIONS <LTABLE STORY411 STORY324>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT408 "Your leadership has so inspired your people that they are prepared to man the barricade against Hate itself. They pelt it with missiles and arrows and hack at it with swords, cleavers and boathooks but all to no avail. Hate dines well today as it rolls over the barricade crushing everything there to a pulp. You could not desert your people now and you too are flattened and drawn in to the eternal orgy of despair. Hate will conquer all.">
@@ -4914,21 +4847,16 @@ power.">
 	(CONTINUE STORY160)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT411 "Of course you trust lovely little Lucie. She takes your hand and leads you into a quiet courtyard that gives out onto the upper end of Fortuny Street. You walk through an arboretum of magnolia trees and hanging baskets of weeping lilies and find yourself surrounded by the Overlord's men with crossbows pointed at your chest. Lucie smiles a wicked little smile.">
+<CONSTANT CHOICES411 <LTABLE "turn invisible" "send a fog of poison gas towards them" "surrender">>
+
 <ROOM STORY411
 	(DESC "411")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT411)
+	(CHOICES CHOICES411)
+	(DESTINATIONS <LTABLE STORY317 STORY381 STORY196>)
+	(REQUIREMENTS <LTABLE SKILL-SPELLS SKILL-SPELLS NONE>)
+	(TYPES <LTABLE R-SKILL R-SKILL R-NONE>)
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT412 "Mameluke comes up with a plan. \"No need to brave the horrors of the catacombs ...\" He will distract the guards while you slip past into the fortress.||You both scurry through the back alleys to the prison. At first it seems as though the plan will fail. When he hammers on the great gates of Grond there is no reply.||He hammers on the door again, saying he is the Overlord's messenger. Fortunately, the Overlord does use a Tartar like Mameluke as a courier. At length there is a great clanking and grinding and the gates start to inch apart. It is a great labour to open them with the iron machinery forged by smiths from the mountains and he calls out hearty thanks, but there is no one to answer his call. It is as if the gate was opened by ghosts. The sweet cloying smell of crushed roses and honeysuckle lingers here. Something is terribly wrong. You decide not to risk Mameluke's life any further and step inside the prison fortress alone, despite the Tartar's protestations.">
@@ -4947,38 +4875,23 @@ power.">
 	(CONTINUE STORY309)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT414 "At last you manage to regain the safety ofthe underground cellars. There is a hole in the ceiling through which you can be spied on from the road unless you move back against the back wall, but the other Judain have taken all the ·best bolt holes. You will find a better hideaway in time.">
+<CONSTANT CHOICES414 <LTABLE " drag the palliasse to the back where you cannot be seen through the hole in the roof" "sleep on the street side near the hole ">>
+
 <ROOM STORY414
 	(DESC "414")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT414)
+	(CHOICES CHOICES414)
+	(DESTINATIONS <LTABLE STORY347 STORY376>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT415 "When the captain of the Eastgate at Grond sees how much gold you have brought him his eyes nearly pop out of his head. He hands you a huge bunch of keys on a belt and directs you by a circuitous route to the torture chambers. There are no other guards to be seen. He must have given orders that are keeping them busy. By the time you find the torture chambers, deep below the towers ofthe Great Keep, the captain of the guard is long gone, knowing full well what his grisly fate would be if he should be caught by those he has tortured.">
 
 <ROOM STORY415
 	(DESC "415")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT415)
+	(CONTINUE STORY413)
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT416 "Then there is a murmuring from the catacombs: a sound that grows and swells from a hum to a roar. The lost souls are free once more and they climb into the streets to hail you as their saviour. You are a hero and you will be feted for a hundred days. Now is the time for the banquet at the Overlord's palace that you have promised your people. Together you will rebuild Godorno and make it once more the jewel of the east. You are carried aloft to the palace and set on the throne despite all your protestations. The city is yours. At last the Judain need have no fear.">

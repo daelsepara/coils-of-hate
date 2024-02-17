@@ -422,39 +422,38 @@
 	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT033 "You spin on your heel. The fierce look of anger on your face makes the boy step back in fear, but he is used to treating your kind with scorn. He recovers himself.||\"Judain scum, your kind aren't wanted here.\"||He pulls a tanner's knife from his pocket. It is long, sharp and menacing. There is no time to cast a spell.">
+<CONSTANT CHOICES033 <LTABLE "break the law of Godorno by unsheathing your sword here in the street" "use" "rely on" "use" "you had better run">>
+
 <ROOM STORY033
 	(DESC "033")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT033)
+	(CHOICES CHOICES033)
+	(DESTINATIONS <LTABLE STORY056 STORY092 STORY099 STORY112 STORY130>)
+	(REQUIREMENTS <LTABLE SKILL-SWORDPLAY SKILL-UNARMED-COMBAT SKILL-STREETWISE SKILL-CHARMS NONE>)
+	(TYPES <LTABLE R-SKILL R-SKILL R-SKILL R-SKILL R-NONE>)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT034 "As soon as they are outside the gates of Grond, the freed guards flee. They are leaving the city taking only what they can grab as they run. This is the most sensible option and a very tempting one for you.">
+<CONSTANT CHOICES034 <LTABLE "return to Bumble Row and ponder what to do next" "return to Grond to free more ofthe guards and prisoners">>
 
 <ROOM STORY034
 	(DESC "034")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT034)
+	(PRECHOICE STORY034-PRECHOICE)
+	(CHOICES CHOICES034)
+	(DESTINATIONS <LTABLE STORY006 STORY311>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY034-PRECHOICE ()
+	<COND(,RUN-ONCE
+		<COND (<CHECK-CODEWORD ,CODEWORD-VENEFIX>
+			<DELETE-CODEWORD ,CODEWORD-VENEFIX>
+		)(ELSE
+			<GAIN-CODEWORD ,CODEWORD-SATORI>
+		)>
+	)>>
 
 <CONSTANT TEXT035 "The cloud of dust is coming closer and when it is no more than a quarter of a mile away you begin to make out the figures of several horsemen. They are moving at a fast trot, faster than merchants or most other travellers. They could be brigands.">
 <CONSTANT CHOICES035 <LTABLE "flee back towards the city of Godorno, hoping to elude them until nightfall" "stand your ground, greet them, and offer to throw in your lot with them">>
@@ -467,22 +466,25 @@
 	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT036 "You cut Skakshi down in a welter ofblood, wipe your blade on a barcloth, and replace it in its scabbard before looking round you once more.||All is quiet in the Inn of the Inner Temple. No one will meet your eye. They stare at Skakshi's corpse, shocked at the sudden violence you have done to one oftheir comrades. You don't expect any trouble from them after that demonstration. Nor will you make many friends here. You feel Skakshi's pockets, quickly finding a concealed flap in which you discover a set of throwing knives.||You look up from the body. One man gives you a narrow glare and spits on the floor. You won't make any friends here so you decide to go back to your lair on Bumble Row.||In your heart you know that you did not have to kill Skakshi. Perhaps you are beginning to succumb to the general hysteria and hatred that seems to be infetting most others in the city?">
+
 <ROOM STORY036
 	(DESC "036")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
+	(STORY TEXT036)
+	(PRECHOICE STORY036-PRECHOICE)
+	(CONTINUE STORY214)
 	(CODEWORD CODEWORD-IMPASSE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY036-PRECHOICE ()
+	<COND (,RUN-ONCE
+		<KEEP-ITEM ,KNIFE>
+		<COND (<CHECK-CODEWORD ,CODEWORD-SATORI>
+			<DELETE-CODEWORD ,CODEWORD-SATORI>
+		)(<NOT <CHECK-CODEWORD ,CODEWORD-VENEFIX>>
+			<GAIN-CODEWORD ,CODEWORD-VENEFIX>
+		)>
+	)>>
 
 <CONSTANT TEXT037 "You know from experience that the dust cloud is raised by a group of riders riding at a canter. They will overtake you within half an hour.">
 <CONSTANT CHOICES037 <LTABLE "hide in one of the farms until they pass" "choose a place to ambush them in case they are the Overlord's men">>
@@ -520,56 +522,48 @@
 		<ITEM-JUMP ,SWORD ,STORY068>
 	)>>
 
+<CONSTANT TEXT040 "As you pad quietly towards the Overlord;s bed the candles flicker in a gust of wind. Far off you can hear the baying of his hunting dogs in their kennels. Farther off still the wind carries the moans and screams of the unfortunates in Grond.||The Overlord's bed is set on a rich ruby-red carpet with intricate patterns ofgold and silver thread woven into it. There are signs and sigils, perhaps magical wards.">
+<CONSTANT CHOICES040 <LTABLE "walk quietly across the carpet to the concubine's side" "jump straight onto the bed so your feet don't touch the carpet">>
+
 <ROOM STORY040
 	(DESC "040")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT040)
+	(PRECHOICE STORY040-PRECHOICE)
+	(CHOICES CHOICES040)
+	(DESTINATIONS <LTABLE STORY024 STORY098>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY040-PRECHOICE ()
+	<COND(<AND ,RUN-ONCE <CHECK-SKILL ,SKILL-CHARMS>>
+		<STORY-JUMP ,STORY135>
+	)>>
+
+<CONSTANT TEXT041 "You pass a troubled night in your lair and wake listening to the chittering of the rats that flourish as the city becomes a slum. You feel better for the rest and wake refreshed. You wash in cold water and plan what to do on this grey morning. There is only one course of action left to you. You will have to attack Hate itself and vanquish it utterly if you are to save your people.">
 
 <ROOM STORY041
 	(DESC "041")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT041)
+	(PRECHOICE STORY041-PRECHOICE)
+	(CONTINUE STORY272)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY041-PRECHOICE ()
+	<COND(,RUN-ONCE
+		<GAIN-LIFE 2>
+	)>>
+
+<CONSTANT TEXT042 "There is a whoof as a thick cloud of smoke explodes around you. You grope your way through the smoke towards the Jade Warriors. One of them looms towards you, the light gleaming dully now off its facets and its sword is working mechanically. You recoil in fright but it lumbers past you making elaborate passes in the air, as if engaged in a display of an ancient style of swordplay. The others are also lurching about at random. The smoke seems to have scrambled their senses. Each is cutting and thrusting at the air around it but they seem oblivious of you.">
 
 <ROOM STORY042
 	(DESC "042")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT042)
+	(PRECHOICE STORY042-PRECHOICE)
+	(CONTINUE STORY133)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY042-PRECHOICE ()
+	<SKILL-JUMP ,SKILL-FOLKLORE ,STORY119>>
 
 <CONSTANT TEXT043 "Skakshi slams the door as he goes and the other drinkers follow without so much as a glance in your direction. They do not dare to share the drinking hall of the Inn of the Inner Temple with you. You have made no friends here and you won't get a meeting with Melmelo now. He will hear everything that has happened here and he is not an easy man to find and get to talk to.||The landlord stoops to pick up the spiked club which still has congealed blood sticking to it from the last time it was used and puts it back behind the bar.">
 
@@ -580,22 +574,28 @@
 	(CODEWORD CODEWORD-COOL)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT044 "Your steady run keeps you out of their clutches but you are already in sight of the city of Godorno once more. They seem intent on chasing you back as far as the city walls. Perhaps they mean to sneak into the city to rob the cityfolk, but they will not find it easy to pass through the city gates.">
+<CONSTANT CHOICES044 <LTABLE "change your mind about fleeing and offer to .throw your lot in with them" "keep running and hide in the city once more">>
+
 <ROOM STORY044
 	(DESC "044")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT044)
+	(CHOICES CHOICES044)
+	(DESTINATIONS <LTABLE STORY064 STORY044-AGILITY>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<ROOM STORY044-AGILITY
+	(DESC "044")
+	(EVENTS STORY044-EVENTS)
+	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY044-EVENTS ()
+	<COND(<CHECK-SKILL ,SKILL-AGILITY>
+		<RETURN ,STORY188>
+	)(ELSE
+		<RETURN ,STORY076>
+	)>>
 
 <CONSTANT TEXT045 "You also manage to free two hundred of the grateful guards who cannot believe their luck. They wipe themselves off along the walls. Most of them look as if they are in shock. They shouldn't give you too much trouble. You are more likely to face trouble from the Judain you have set free. They can see their tormenters among them and they want to take their revenge. \"Now die, dogs, die slowly and in pain!\" they cry. \"Let us see how you like to be put to the torture. Kill them! Heat the irons and warm their vitals.\" The Judain are near hysterical and they begin to slaughter the guards out of hand, while others try to drag some of them back to the torture chambers. The guards are petrified.||In the heat of the moment there is no time for finesse, and your people are behaving no better than savage beasts who have lost all control.">
 <CONSTANT CHOICES045 <LTABLE "stop the slaughter by killing one of your fellow Judain" "let your people take their natural revenge">>
@@ -624,21 +624,16 @@
 	(CONTINUE STORY330)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT048 "The youth is not content to leave it there. He means to draw blood. He closes stealthily and is about to stab you. His shadow falls across you before the blow is struck.">
+<CONSTANT CHOICES048 <LTABLE "use" "use" "there is no time to draw a sword or use sorcery; you run for it">>
+
 <ROOM STORY048
 	(DESC "048")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT048)
+	(CHOICES CHOICES048)
+	(DESTINATIONS <LTABLE STORY099 STORY092 STORY130>)
+	(REQUIREMENTS <LTABLE SKILL-STREETWISE SKILL-UNARMED-COMBAT NONE>)
+	(TYPES <LTABLE R-SKILL R-SKILL R-NONE>)
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT049 "You find the librarian outside the building, staring at a glimmering pile of ashes. As you go closer, you see that someone has piled up the books of the library and torched them. The librarian falls to his knees, overcome with distress. \"They burned my books!\" he groans, tears running into his beard.||\"Who did? And why?\" you ask.||\"The Overlord's men. They said that knowledge was the enemy of law and order. They claimed that lies had been written in the books by Judain authors. Oh, such a waste ...!\"||There is no chance now of finding more about Hate from the writings of ancient scholars; you may not visit the library again should you be given the option. You wonder if the Overlord has truly gone mad.">
@@ -3674,10 +3669,12 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY320-PRECHOICE ()
-	<COND (<CHECK-CODEWORD ,CODEWORD-VENEFIX>
-		<DELETE-CODEWORD ,CODEWORD-VENEFIX>
-	)(ELSE
-		<GAIN-CODEWORD ,CODEWORD-SATORI>
+	<COND(,RUN-ONCE
+		<COND (<CHECK-CODEWORD ,CODEWORD-VENEFIX>
+			<DELETE-CODEWORD ,CODEWORD-VENEFIX>
+		)(ELSE
+			<GAIN-CODEWORD ,CODEWORD-SATORI>
+		)>
 	)>>
 
 <CONSTANT TEXT321 "Tyutchev is leading you by the back alleys towards the foreigners' quarter.">
@@ -4294,22 +4291,19 @@ power.">
 	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT376 "You pass a troubled night but an undisturbed one. You awake feeling heavy headed but rested. This place is cold and, looking at the back wall, you see traces of translucent purple slime. Was a demon questing here in the night for your defenceless soul? Perhaps the very demon that embodies Hate itself?||It is clearly not safe here, however, and it is time to find a new hideaway. You set out for Bumble Row, as you know that most of the shopkeepers there shut up shop long ago and there should be plenty ofhideaways to choose from.">
+
 <ROOM STORY376
 	(DESC "376")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT376)
+	(PRECHOICE STORY376-PRECHOICE)
+	(CONTINUE STORY315)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY376-PRECHOICE ()
+	<COND(,RUN-ONCE
+		<GAIN-LIFE 2>
+	)>>
 
 <CONSTANT TEXT377 "You have taken the wrong course. You have never seen a man so skilled with a sword as the tall pale-faced Tyutchev. He is fast and strong too, and he cuts you down in a welter of blood and iron. Lucie looks on mournfully as he delivers the coup de grace, severing your head from your shoulders. There is no one left to save the Judain now. Hate will subdue all.">
 

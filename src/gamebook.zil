@@ -176,7 +176,7 @@
 <ROUTINE PAUSE-MESSAGE (MSG)
     <EMPHASIZE .MSG T>
     <PRESS-A-KEY>>
-    
+
 ; "print routines (lists/containers)"
 ; ---------------------------------------------------------------------------------------------
 <ROUTINE PRINT-LIST (ITEMS "OPT" LASTFIX "AUX" COUNT)
@@ -837,11 +837,9 @@
                             )>
                         )(ELSE
                             <CRLF><CRLF>
-                            <HLIGHT ,H-BOLD>
-                            <TELL "You do not have the ">
+                            <PRINT-BOLD "You do not have the ">
                             <PRINT-ITALIC <GET .LIST 1>>
-                            <HLIGHT ,H-BOLD>
-                            <TELL " skill or a">
+                            <PRINT-BOLD " skill or a">
                             <COND (<FSET? <GET .LIST 2> ,VOWELBIT> <TELL "n">)>
                             <TELL " ">
                             <PRINT-ITALIC <GET .LIST 2>>

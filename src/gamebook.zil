@@ -613,11 +613,13 @@
 
 ; "Story - Player Events (gain/lose life/items/money)"
 ; ---------------------------------------------------------------------------------------------
-<ROUTINE CHARGE-MONEY (COST)
-    <CRLF>
-    <HLIGHT ,H-BOLD>
-    <TELL "You are charged " N .COST " " D ,CURRENCY ,PERIOD-CR>
-    <HLIGHT 0>
+<ROUTINE CHARGE-MONEY (COST "OPT" (SILENT F))
+    <COND(<NOT .SILENT>
+        <CRLF>
+        <HLIGHT ,H-BOLD>
+        <TELL "You are charged " N .COST " " D ,CURRENCY ,PERIOD-CR>
+        <HLIGHT 0>
+    )>
     <SETG MONEY <- ,MONEY .COST>>
     <COND (<L? ,MONEY 0> <SETG MONEY 0>)>
     <UPDATE-STATUS-LINE>>
@@ -687,8 +689,7 @@
         <TELL "You lost " N .DMG " Life Points">
     )>
     <HLIGHT 0>
-    <TELL ,PERIOD-CR>
-    <RETURN>>
+    <TELL ,PERIOD-CR>>
 
 <ROUTINE REMOVE-ITEM (ITEM REASON "AUX" QUANTITY)
     <SET QUANTITY <GETP .ITEM ,P?QUANTITY>>
@@ -717,8 +718,7 @@
     )>
     <TELL ,PERIOD-CR>
     <HLIGHT 0>
-    <PRESS-A-KEY>
-    <RETURN>>
+    <PRESS-A-KEY>>
 
 <ROUTINE TAKE-ITEM (ITEM "AUX" QUANTITY)
     <COND (.ITEM
@@ -1070,8 +1070,7 @@
                 )>
             )>
         >
-    )>
-    <RETURN>>
+    )>>
 
 <ROUTINE SKILL-SWAP (LIST "AUX" COUNT ITEMS SKILLS MY-SKILLS)
     <COND (<NOT .LIST> <RETURN>)>
@@ -1430,8 +1429,7 @@
                         <SETG MAX-LIFE-POINTS ,LIFE-POINTS>
                         <MOVE ,ALL-MONEY ,PLAYER>
                         <TELL CR "You have selected " CT ,CURRENT-CHARACTER CR>
-                        <TELL CR "[Press a key to begin]" CR>
-                        <INPUT 1>
+                        <PRESS-BEGIN>
                         <RETURN>
                     )>
                 )(ELSE
@@ -1440,8 +1438,7 @@
             )(<EQUAL? .KEY !\C !\c>
                 <CREATE-CHARACTER>
                 <TELL CR "You have created a custom character" ,PERIOD-CR>
-                <TELL CR "[Press a key to begin]" CR>
-                <INPUT 1>
+                <PRESS-BEGIN>
                 <RETURN>
             )(<EQUAL? .KEY !\Q !\q>
                 <CRLF>
@@ -1659,10 +1656,20 @@
     <DO (I <LOWCORE SCRH> 1 -1) <PRINTC !\ >>
     <CURSET .ROW 1>>
 
+<ROUTINE PRESS-BEGIN ()
+    <TELL CR "[Press a key to begin]" CR>
+    <INPUT 1>>
+
 <ROUTINE PRESS-A-KEY ()
     <TELL CR "[Press a key to continue]" CR>
-    <INPUT 1>
-    <RETURN>>
+    <INPUT 1>>
+
+<ROUTINE PAUSE-MESSAGE (MSG)
+    <HLIGHT ,H-BOLD>
+    <TELL .MSG>
+    <TELL ,PERIOD-CR>
+    <HLIGHT 0>
+    <PRESS-A-KEY>>
 
 <ROUTINE UPDATE-STATUS-LINE ("AUX" WIDTH)
     <COND (,HERE

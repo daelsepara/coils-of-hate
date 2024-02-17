@@ -1,23 +1,21 @@
 <INSERT-FILE "numbers">
+<INSERT-FILE "currency">
+<INSERT-FILE "food">
+<INSERT-FILE "vehicle">
+<INSERT-FILE "common">
+<INSERT-FILE "endings">
+;<INSERT-FILE "food-routines">
+;<INSERT-FILE "vehicle-routines">
 
-<GLOBAL CHARACTERS-ENABLED T>
-<GLOBAL STARTING-POINT PROLOGUE>
-
-<CONSTANT BAD-ENDING "Your adventure ends here.|">
-<CONSTANT GOOD-ENDING "You saved your people from annihilation.|">
-
-<OBJECT CURRENCY (DESC "gleenars")>
-<OBJECT VEHICLE (DESC "none")>
+<GLOBAL STARTING-POINT STORY189>
 
 <ROUTINE RESET-OBJECTS ()
-	<PUTP ,KNIFE ,P?QUANTITY 1>
-	<RETURN>>
+	<PUTP ,KNIFE ,P?QUANTITY 1>>
 
 <ROUTINE RESET-STORY ()
 	<RESET-TEMP-LIST>
 	<RESET-GIVEBAG>
 	<RESET-CONTAINER ,LOST-SKILLS>
-	<SETG PROTECT-FROM-HATE F>
 	<PUTP ,STORY003 ,P?DEATH T>
 	<PUTP ,STORY005 ,P?DEATH T>
 	<PUTP ,STORY014 ,P?DEATH T>
@@ -26,26 +24,11 @@
 	<PUTP ,STORY121 ,P?DEATH T>
 	<PUTP ,STORY123 ,P?DEATH T>
 	<PUTP ,STORY130 ,P?DEATH T>
-	<PUTP ,STORY135 ,P?DEATH T>
-	<RETURN>>
-
-<CONSTANT DIED-IN-COMBAT "You died in combat">
-<CONSTANT DIED-OF-HUNGER "You starved to death">
-<CONSTANT DIED-GREW-WEAKER "You grew weaker and eventually died">
-<CONSTANT DIED-FROM-INJURIES "You died from your injuries">
-<CONSTANT DIED-FROM-COLD "You eventually freeze to death">
-<CONSTANT NATURAL-HARDINESS "Your natural hardiness made you cope better with the situation">
+	<PUTP ,STORY135 ,P?DEATH T>>
 
 <CONSTANT HEALING-KEY-CAPS !\U>
+
 <CONSTANT HEALING-KEY !\u>
-
-<GLOBAL PROTECT-FROM-HATE F>
-
-<OBJECT LOST-SKILLS
-	(DESC "skills lost")
-	(SYNONYM SKILLS)
-	(ADJECTIVE LOST)
-	(FLAGS CONTBIT OPENBIT)>
 
 <ROUTINE SPECIAL-INTERRUPT-ROUTINE (KEY)
 	<COND (<AND <EQUAL? .KEY ,HEALING-KEY-CAPS ,HEALING-KEY> <CHECK-ITEM ,HEALING-SALVE> <L? ,LIFE-POINTS ,MAX-LIFE-POINTS>>
@@ -58,233 +41,6 @@
 		<RTRUE>
 	)>
 	<RFALSE>>
-
-<ROUTINE TEST-MORTALITY (DAMAGE MESSAGE "OPT" STORY (AGAINST-HATE F))
-	<COND (<NOT .STORY> <SET .STORY ,HERE>)>
-	<COND (<AND .AGAINST-HATE ,PROTECT-FROM-HATE> <DEC .DAMAGE>)>
-	<COND (<G? .DAMAGE 0>
-		<LOSE-LIFE .DAMAGE .MESSAGE .STORY>
-	)(ELSE
-		<PREVENT-DEATH .STORY>
-	)>>
-
-<ROUTINE PREVENT-DEATH ("OPT" STORY)
-	<COND (<NOT .STORY> <SET STORY ,HERE>)>
-	<COND (<GETP .STORY ,P?DEATH> <PUTP .STORY ,P?DEATH F>)>>
-
-<ROUTINE GET-NUMBER (MESSAGE "OPT" MINIMUM MAXIMUM "AUX" COUNT)
-	<REPEAT ()
-		<CRLF>
-		<TELL .MESSAGE>
-		<COND (<AND <OR <ASSIGNED? MINIMUM> <ASSIGNED? MAXIMUM>> <G? .MAXIMUM .MINIMUM>>
-			<TELL " (" N .MINIMUM "-" N .MAXIMUM ")">
-		)>
-		<TELL "? ">
-		<READLINE>
-		<COND (<EQUAL? <GETB ,LEXBUF 1> 1> <SET COUNT <CONVERT-TO-NUMBER 1 10>>
-			<COND (<OR .MINIMUM .MAXIMUM>
-				<COND (<AND <G=? .COUNT .MINIMUM> <L=? .COUNT .MAXIMUM>> <RETURN>)>
-			)(<G? .COUNT 0>
-				<RETURN>
-			)>
-		)>
-	>
-	<RETURN .COUNT>>
-
-<ROUTINE DELETE-CODEWORD (CODEWORD)
-	<COND (<AND .CODEWORD <CHECK-CODEWORD .CODEWORD>>
-		<CRLF>
-		<TELL "[You lose the codeword ">
-		<HLIGHT ,H-BOLD>
-		<TELL D .CODEWORD "]" CR>
-		<HLIGHT 0>
-		<REMOVE .CODEWORD>
-	)>>
-
-<ROUTINE KEEP-ITEM (ITEM "OPT" JUMP)
-	<CRLF>
-	<TELL "Keep " T .ITEM "?">
-	<COND (<YES?>
-		<COND (<NOT <CHECK-ITEM .ITEM>> <TAKE-ITEM .ITEM>)>
-		<COND (.JUMP <STORY-JUMP .JUMP>)>
-		<RTRUE>
-	)>
-	<COND (<CHECK-ITEM .ITEM> <LOSE-ITEM .ITEM>)>
-	<RFALSE>>
-
-<ROUTINE ADD-QUANTITY (OBJECT "OPT" AMOUNT CONTAINER "AUX" QUANTITY CURRENT)
-	<COND (<NOT .OBJECT> <RETURN>)>
-	<COND (<L=? .AMOUNT 0> <RETURN>)>
-	<COND (<NOT .CONTAINER> <SET CONTAINER ,PLAYER>)>
-	<COND (<EQUAL? .CONTAINER ,PLAYER>
-		<DO (I 1 .AMOUNT)
-			<TAKE-ITEM .OBJECT>
-		>
-	)(ELSE
-		<SET CURRENT <GETP .OBJECT ,P?QUANTITY>>
-		<SET QUANTITY <+ .CURRENT .AMOUNT>>
-		<PUTP .OBJECT ,P?QUANTITY .QUANTITY>
-	)>>
-
-<ROUTINE CHECK-VEHICLE (RIDE)
-	<COND (<OR <IN? .RIDE ,VEHICLES> <AND ,CURRENT-VEHICLE <EQUAL? ,CURRENT-VEHICLE .RIDE>>> <RTRUE>)>
-	<RFALSE>>
-
-<ROUTINE TAKE-VEHICLE (VEHICLE)
-	<COND (.VEHICLE
-		<COND (,CURRENT-VEHICLE <REMOVE ,CURRENT-VEHICLE>)>
-		<MOVE .VEHICLE ,VEHICLES>
-		<SETG CURRENT-VEHICLE .VEHICLE>
-		<UPDATE-STATUS-LINE>
-	)>>
-
-<ROUTINE LOSE-VEHICLE (VEHICLE)
-	<COND (.VEHICLE
-		<COND (<CHECK-VEHICLE .VEHICLE>
-			<REMOVE .VEHICLE>
-			<SETG CURRENT-VEHICLE NONE>
-			<UPDATE-STATUS-LINE>
-		)>
-	)>>
-
-<ROUTINE LOSE-SKILL (SKILL)
-	<COND (<AND .SKILL <CHECK-SKILL .SKILL>>
-		<CRLF>
-		<HLIGHT ,H-BOLD>
-		<TELL "You lost " T .SKILL " skill">
-		<TELL ,PERIOD-CR>
-		<HLIGHT 0>
-		<MOVE .SKILL ,LOST-SKILLS>
-	)>>
-
-<ROUTINE ADD-FOOD ("OPT" AMOUNT)
-	<ADD-QUANTITY ,FOOD .AMOUNT ,PLAYER>>
-
-<ROUTINE BUY-FOOD (PRICE)
-	<BUY-STUFF ,FOOD "food supplies" .PRICE>>
-
-<ROUTINE BUY-STUFF (ITEM PLURAL PRICE "OPT" LIMIT "AUX" QUANTITIES)
-	<COND (<NOT .LIMIT> <SET LIMIT 8>)>
-	<COND (<G=? ,MONEY .PRICE>
-		<CRLF>
-		<TELL "Buy " D .ITEM " for " N .PRICE " " D ,CURRENCY " each?">
-		<COND (<YES?>
-			<REPEAT ()
-				<SET QUANTITIES <GET-NUMBER "How many will you buy" 0 .LIMIT>>
-				<COND (<G? .QUANTITIES 0>
-					<COND (<L=? <* .QUANTITIES .PRICE> ,MONEY>
-						<CRLF>
-						<HLIGHT ,H-BOLD>
-						<TELL "You purchased " N .QUANTITIES " ">
-						<COND (<G? .QUANTITIES 1> <TELL .PLURAL>)(ELSE <TELL D .ITEM>)>
-						<TELL ,PERIOD-CR>
-						<CHARGE-MONEY <* .QUANTITIES .PRICE>>
-						<ADD-QUANTITY .ITEM .QUANTITIES>
-						<COND (<L? ,MONEY .PRICE> <RETURN>)>
-					)(ELSE
-						<EMPHASIZE "You can't afford that!">
-					)>
-				)(ELSE
-					<RETURN>
-				)>
-			>
-		)>
-	)>>
-
-<ROUTINE SELL-STUFF (ITEM PLURAL PRICE "AUX" (ITEMS-SOLD 0) (QUANTITY 0))
-	<COND (<HAS-FOOD>
-		<SET QUANTITY <GETP .ITEM ,P?QUANTITY>>
-		<CRLF>
-		<TELL "Sell " D .ITEM " at " N .PRICE " " D ,CURRENCY " each?">
-		<COND (<YES?>
-			<SET ITEMS-SOLD <GET-NUMBER "How many will you sell" 0 .QUANTITY>>
-			<COND (<G? .ITEMS-SOLD 0>
-				<SETG ,MONEY <+ ,MONEY <* .ITEMS-SOLD .PRICE>>>
-				<SET .QUANTITY <- .QUANTITY .ITEMS-SOLD>>
-				<CRLF>
-				<TELL "You sold " N .ITEMS-SOLD " ">
-				<HLIGHT ,H-BOLD>
-				<COND (<G? .ITEMS-SOLD 1> <TELL .PLURAL>)(ELSE <TELL D .ITEM>)>
-				<HLIGHT 0>
-				<TELL ,PERIOD-CR>
-				<COND (<G? .QUANTITY 0>
-					<PUTP .ITEM ,P?QUANTITY .QUANTITY>
-				)(ELSE
-					<PUTP .ITEM ,P?QUANTITY 1>
-					<REMOVE .ITEM>
-				)>
-			)>
-		)>
-	)>>
-
-<ROUTINE TAKE-FOOD ("OPT" AMOUNT)
-	<RETURN <TAKE-STUFF ,FOOD "food supplies" .AMOUNT>>>
-
-<ROUTINE TAKE-STUFF (ITEM PLURAL "OPT" AMOUNT "AUX" TAKEN)
-	<COND (<NOT .AMOUNT> <SET .AMOUNT 1>)>
-	<CRLF>
-	<TELL "Take the ">
-	<COND (<G? .AMOUNT 1> <TELL .PLURAL>)(<TELL D .ITEM>)>
-	<TELL "?">
-	<COND (<YES?>
-		<COND (<G? .AMOUNT 1>
-			<SET TAKEN <GET-NUMBER "How many will you take" 0 .AMOUNT>>
-			<ADD-QUANTITY .ITEM .AMOUNT ,PLAYER>
-			<RETURN .TAKEN>
-		)(ELSE
-			<TAKE-ITEM .ITEM>
-			<RETURN 1>
-		)>
-	)>
-	<RETURN 0>>
-
-<ROUTINE CONSUME-FOOD ("OPT" AMOUNT JUMP "AUX" QUANTITY (RETURN-VALUE F))
-	<COND (<NOT .AMOUNT> <SET AMOUNT 1>)>
-	<COND (<CHECK-ITEM ,FOOD>
-		<SET QUANTITY <GETP ,FOOD ,P?QUANTITY>>
-		<COND (<G=? .QUANTITY .AMOUNT>
-			<SET QUANTITY <- .QUANTITY .AMOUNT>>
-			<PUTP ,FOOD ,P?QUANTITY .QUANTITY>
-			<COND (<G=? .QUANTITY 1>
-				<CRLF>
-				<HLIGHT ,H-BOLD>
-				<TELL "[Your supply of food decreased by " N .AMOUNT "]" CR>
-				<HLIGHT 0>
-			)(ELSE
-				<EMPHASIZE "[You've exhausted your food supplies]">
-			)>
-			<COND (.JUMP <STORY-JUMP .JUMP>)>
-			<SET RETURN-VALUE T>
-		)>
-		<COND (<L? .QUANTITY 1>
-			<PUTP ,FOOD ,P?QUANTITY 1>
-			<REMOVE ,FOOD>
-		)>
-	)>
-	<RETURN .RETURN-VALUE>>
-
-<ROUTINE HAS-FOOD ("OPT" (THRESHOLD 0) "AUX" (QUANTITY 0))
-	<COND (<CHECK-ITEM ,FOOD>
-		<SET QUANTITY <GETP ,FOOD ,P?QUANTITY>>
-		<COND (<G? .QUANTITY .THRESHOLD> <RTRUE>)>
-	)>
-	<RFALSE>>
-
-<ROUTINE TAKE-QUANTITIES (OBJECT PLURAL MESSAGE "OPT" AMOUNT)
-	<CRLF>
-	<TELL "Take the " .PLURAL "?">
-	<COND (<YES?> <ADD-QUANTITY .OBJECT <GET-NUMBER .MESSAGE 0 .AMOUNT> ,PLAYER>)>>
-
-<ROUTINE SKILL-JUMP (SKILL STORY)
-	<COND (<CHECK-SKILL .SKILL> <STORY-JUMP .STORY>)>>
-
-<ROUTINE ITEM-JUMP (ITEM STORY)
-	<COND (<CHECK-ITEM .ITEM> <STORY-JUMP .STORY>)>>
-
-<ROUTINE CODEWORD-JUMP (CODEWORD STORY)
-	<COND (<CHECK-CODEWORD .CODEWORD> <STORY-JUMP .STORY>)>>
-
-<CONSTANT TEXT "This story has not been written yet.">
 
 <CONSTANT PROLOGUE-TEXT "You are down on your luck, but you will not swallow your pride and look for a job. Every day a throng of hopefuls gathers outside the rich palazzi of the riverfront. Others seek to join a trader's caravan as a guide or guard. Those turned away drift at last to the seaweed-stinking waterfront to become rowers in the fleet and begin a life no better than slavery.||In your heart you know that your destiny, the destiny of a Judain, is greater than this. Not for nothing have you toiled to learn your skills. Now you are without peer among your people. One thing only you lack: a sense of purpose, a quest to show the world your greatness and put your skills to the test.||The city of Godorno is a stinking cesspit. The Judain are not wanted here. Your people are rich but the pale ones of Godorno covet those riches. \"Usurers, thieves,\" they cry as your people walk the streets going about their daily business.||The Overlord stokes the fire of discontent. When those who speak out against his cruel reign disappear, never to be seen again, he blames the Judai,n. When people starve because he sells the harvest to the westerners for jewels and silks, his minions say it is the Judain who profit from his peoples' wretchedness. Now the people hate you and all your kind. Soon it will not be safe to walk the streets. The caravan lines are swelled by tall proud Judain slaves with their glittering black eyes, backs bent under casks of spices and bolts of silk.||In the past two centuries Godorno has become a byword for decadence, luxury and idle pleasure. Everywhere you look you see the insignia of the winged lion, once the proud standard of the city's legions. Now it stands as the very symbol of corruption and evil.">
 
@@ -3148,21 +2904,16 @@
 	(CONTINUE STORY195)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT253 "Your fears were well founded. Put slightly off-balance because of the burden of the chest, you tread too heavily on a loose floorboard. There is an ominous creak. For a single ghastly moment your over-florid imagination likens it to the groan of scaffold timbers when a man is hanged. But the rope is not around your neck just yet -- even though the guards are already whirling, pulling the swords from their scabbards.||\"A thief!\" they cry. \"Right under our very noses! Stop there, thief!\"">
+<CONSTANT CHOICES253 <LTABLE "use" "fight your way out">>
+
 <ROOM STORY253
 	(DESC "253")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT253)
+	(CHOICES CHOICES253)
+	(DESTINATIONS <LTABLE STORY406 STORY283>)
+	(REQUIREMENTS <LTABLE SKILL-AGILITY NONE>)
+	(TYPES <LTABLE R-SKILL R-NONE>)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY254
@@ -3182,39 +2933,33 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT255 "You duck down the steps into the drinking house and find to your horror that it is a haunt of off-duty gate guards and the Overlord's mercenaries. They sit around tables, drinking. Many still wear the purple and black livery of the Overlord. You walk quickly across the room looking for a second way out but there is none. You hear your pursuers rein in outside. There are too many enemies to fight.">
+<CONSTANT CHOICES255 <LTABLE "hide in the privy" "surrender">>
+
 <ROOM STORY255
 	(DESC "255")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT255)
+	(CHOICES CHOICES255)
+	(DESTINATIONS <LTABLE STORY329 STORY342>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT256 "Your own opinion is that the myth of the return of Harakadnezzar is only a story invented to deter would-be grave-robbers from rifling the more recently consecrated tombs. The story ofHate, however, is well known to all folklorists. Hate rises up in the foundations of ancient decadent cities, swallowing the proud, wicked and greedy into its ravening maw. This manifestation of the force of Hate was last heard of in the Old Empire city of Kush, a thousand years ago. There is nothing left of Kush now. The greatest and most powerful city the world has ever seen has become a giant dustbowl in the grasslands.">
+<CONSTANT CHOICES256 <LTABLE "enjoy your ale" "spurn it">>
 
 <ROOM STORY256
 	(DESC "256")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT256)
+	(PRECHOICE STORY256-PRECHOICE)
+	(CHOICES CHOICES256)
+	(DESTINATIONS <LTABLE STORY267 STORY276>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY256-PRECHOICE ()
+	<COND(<AND ,RUN-ONCE <CHECK-SKILL ,SKILL-CHARMS>>
+		<STORY-JUMP ,STORY287>
+	)>>
 
 <CONSTANT TEXT257 "You soon find Lucie, who is sprawled flat on her back in the road. She looks at you as though you have betrayed her and to your dismay you see she is going to cry. \"I only wanted to touch it, just for a moment,\" she cries, already in floods of tears.||\"It is magically attuned to me. Only I can use it,\" you say hurriedly. You retrieve your amulet from the dust, but as you reach out to help Lucie up she shrugs you away, evading your grasp.">
 
@@ -3240,38 +2985,35 @@
 	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT260 "The guards decided that the price the Overlord has put on every Judain's head makes it worth their while to kill you, steal your money, and claim the reward. Perhaps another hero will arise to save your people, but you cannot even save yourself.">
+<CONSTANT TEXT260-CITY "You handed over 10 gleenars and entered the city">
+
 <ROOM STORY260
 	(DESC "260")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT260)
+	(EVENTS STORY260-EVENTS)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY260-EVENTS ()
+	<COND(<CHECK-MONEY 10>
+		<CHARGE-MONEY 10 T>
+		<PAUSE-MESSAGE ,TEXT260-CITY>
+		<CRLF>
+		<RETURN ,STORY300>
+	)(ELSE
+		<RETURN ,STORY260>
+	)>>
+
+<CONSTANT TEXT261 "Lucie's light little feet carry her to the door of the notorious Silver Eel tavern. A long, low, dark grey building without a single window facing out onto the street, it is a notorious haunt of thieves and cutthroats. On the steps Lucie is greeted by a huge man dressed in black quilted leather armour, who has a bush of corn yellow hair in corkscrew spirals.">
+<CONSTANT CHOICES261 <LTABLE "follow onto her turf, inside the Silver Eel" "slink back to your hidey-hole on Bumble Row">>
 
 <ROOM STORY261
 	(DESC "261")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT216)
+	(CHOICES CHOICES261)
+	(DESTINATIONS <LTABLE STORY086 STORY199>)
+	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
 <ROOM STORY262

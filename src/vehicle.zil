@@ -1,0 +1,1 @@
+<OBJECT VEHICLE (DESC "none")>

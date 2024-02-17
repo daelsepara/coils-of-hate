@@ -7,7 +7,7 @@
 ;<INSERT-FILE "food-routines">
 ;<INSERT-FILE "vehicle-routines">
 
-<GLOBAL STARTING-POINT STORY189>
+<GLOBAL STARTING-POINT PROLOGUE>
 
 <ROUTINE RESET-OBJECTS ()
 	<PUTP ,KNIFE ,P?QUANTITY 1>>
@@ -2214,7 +2214,7 @@
 	(COST 3)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT190 "Your allies suggest various places for you to make a hideout and you choose a damp cellar on Medallion Street -- it seems the best option.||You are on your way there when there is a commotion ahead of you. Seeing a group of city guards approaching, you duck into the ruin of an abandoned building. To your dismay, they stop in the street outside and you hear one of them say, \"A Judain went in here, I think. Fetch the dogs -- they'll soon sniff the wretch out!\"||There is a frightened whimper in the darkness behind you. You whirl to see Caiaphas's wife, Ruth -- the one who was reluctant to share the food with you. You remember hearing from Caiaphas that she is with  child. She is hidden, trembling, behind a pillar at the back of the hall. You know that the guards will not return to barracks until they have caught their quota ofJudain.">
+<CONSTANT TEXT190 "Your allies suggest various places for you to make a hideout and you choose a damp cellar on Medallion Street -- it seems the best option.||You are on your way there when there is a commotion ahead of you. Seeing a group of city guards approaching, you duck into the ruin of an abandoned building. To your dismay, they stop in the street outside and you hear one of them say, \"A Judain went in here, I think. Fetch the dogs -- they'll soon sniff the wretch out!\"||There is a frightened whimper in the darkness behind you. You whirl to see Caiaphas's wife, Ruth -- the one who was reluctant to share the food with you. You remember hearing from Caiaphas that she is with child. She is hidden, trembling, behind a pillar at the back of the hall. You know that the guards will not return to barracks until they have caught their quota ofJudain.">
 <CONSTANT CHOICES190 <LTABLE "use" "use magic" "use" "dash out into the street and fight the guards to buy Ruth time to escape" "push her out into the street to save yourself -- surely they will not harm a pregnant woman">>
 
 <ROOM STORY190
@@ -3016,22 +3016,17 @@
 	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT262 "Your times spent skulking unseen while casing the houses ofthe well-to-do will stand you in good stead now. One of the things you have learned is to make sure you always know oftwo possible escape routes. One is the storm drain that feeds into the Imperial Basin, where the Crescent Canal and Grand Canal meet. The other is the secret tunnel that leads underground to the burial crypts of the Megiddo dynasty, a family of kings who made great conquests in Godorno's golden age and brought prosperity to the city they ruled.">
+
 <ROOM STORY262
 	(DESC "262")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT262)
+	(PRECHOICE STORY262-PRECHOICE)
+	(CONTINUE STORY339)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY262-PRECHOICE ()
+	<SKILL-JUMP ,SKILL-FOLKLORE ,STORY294>>
 
 <ROOM STORY263
 	(DESC "263")
@@ -3058,39 +3053,31 @@
 	(CONTINUE STORY316)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT265 "How will you try to save him? You shout a warning but he is heedless of the danger, desperate to save his daughter who is already beyond salvation.">
+<CONSTANT CHOICES265 <LTABLE "use magic: it has a chance of saving him" "grab one of the fishermen's ropes coiled nearby and lasso Tormil with it">>
+
 <ROOM STORY265
 	(DESC "265")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT265)
+	(CHOICES CHOICES265)
+	(DESTINATIONS <LTABLE STORY097 STORY021>)
+	(REQUIREMENTS <LTABLE SKILL-SPELLS NONE>)
+	(TYPES <LTABLE R-SKILL R-NONE>)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT266 "You drop the concubine and the black cape-like monster wraps itself around her like the coils of a serpent. Her body twitches spasmodically as you leap from the bed, just clearing the edge of the carpet in safety.||The Overlord grunts and turns over; his fat form wobbles loosely as he stirs. He is waking up. You must make a run for it before he summons his bodyguards">
 
 <ROOM STORY266
 	(DESC "266")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT266)
+	(PRECHOICE STORY266-PRECHOICE)
+	(CONTINUE STORY161)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY266-PRECHOICE ()
+	<COND(<AND ,RUN-ONCE <CHECK-CODEWORD ,CODEWORD-SATORI>>
+		<DELETE-CODEWORD ,CODEWORD-SATORI>
+	)>>
 
 <CONSTANT TEXT267 "The honeyed ale slips down your gullet, filling your stomach with a heavy warm glow. The amber nectar is thick and almost sticky, yet strangely moreish. You finish the pot with relish, wipe your mouth backhanded and fall suddenly to the floor. The landlord has poisoned you in revenge for the pain you caused with your spell. You will not live to see this day out and there is no one who can save your people from extinction.">
 
@@ -3100,21 +3087,16 @@
 	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT268 "Which enchantment will you use on the heartless prison guards and torturers of Grond?">
+<CONSTANT CHOICES268 <LTABLE "use a spell to make them feel uninterested in worldly affairs" "make them your friends" "terrify them">>
+
 <ROOM STORY268
 	(DESC "268")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT268)
+	(CHOICES CHOICES268)
+	(DESTINATIONS <LTABLE STORY378 STORY361 STORY341>)
+	(REQUIREMENTS <LTABLE SKILL-SPELLS SKILL-SPELLS SKILL-SPELLS>)
+	(TYPES <LTABLE R-SKILL R-SKILL R-SKILL>)
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT269 "Luckily it is enough that the Judain can see by the look in your eyes you would kill them to protect the wretched guards. They fall back.||\"Have mercy on these poor dogs,\" you say. \"Do not fall to the depths of their depravity. Is this not the fate they have reserved for you? Are we not more noble than they? Let us show them our superiority by sparing them, that their very existence may be a testament to our nobility.\"||Your exhortations have appealed to their sense of vanity. They will spare the guards. You wander through the dark bones of the castle foundations, freeing those who are still alive, before returning to your hideout.">

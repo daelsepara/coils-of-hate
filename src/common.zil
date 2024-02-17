@@ -1,5 +1,3 @@
-<GLOBAL CHARACTERS-ENABLED T>
-
 <CONSTANT TEXT "This story has not been written yet.">
 
 <CONSTANT DIED-IN-COMBAT "You died in combat">

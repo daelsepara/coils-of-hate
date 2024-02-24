@@ -1,7 +1,8 @@
-; "Objects for Coils of Hate"
+; "objects for Coils of Hate"
+; ---------------------------------------------------------------------------------------------
 
-; Weapons
-
+; "weapons"
+; ---------------------------------------------------------------------------------------------
 <OBJECT KNIFE
     (DESC "knife")
     (SYNONYM KNIFE)
@@ -29,8 +30,8 @@
     (REQUIRES SKILL-SWORDPLAY)
     (FLAGS TAKEBIT)>
 
-; Objects
-
+; "objects"
+; ---------------------------------------------------------------------------------------------
 <OBJECT DIAMOND
     (DESC "diamond")
     (SYNONYM DIAMOND)

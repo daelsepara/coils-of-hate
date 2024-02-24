@@ -41,10 +41,12 @@
 <CONSTANT SIX-NONES <LTABLE R-NONE R-NONE R-NONE R-NONE R-NONE R-NONE>>
 
 ; "list selection constants"
+; ---------------------------------------------------------------------------------------------
 <CONSTANT SELECT-CHOICES <LTABLE NONE NONE NONE NONE NONE NONE NONE NONE NONE>>
 <CONSTANT TEMP-LIST <LTABLE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE NONE>>
 
 ; "give action constants"
+; ---------------------------------------------------------------------------------------------
 <CONSTANT GIVE-GIVEN 0>
 <CONSTANT GIVE-UNABLE 1>
 <CONSTANT GIVE-UNWILLING 2>
@@ -52,9 +54,11 @@
 <CONSTANT UNABLE-TO-PART "You are unable to part with any.">
 
 ; "temporary skills manipulation"
+; ---------------------------------------------------------------------------------------------
 <CONSTANT TEMP-SKILLS <LTABLE NONE NONE>>
 
 ; "game globals"
+; ---------------------------------------------------------------------------------------------
 <GLOBAL CHARACTERS-ENABLED T>
 <GLOBAL CURRENT-CHARACTER NONE>
 <GLOBAL MONEY 0>
@@ -63,14 +67,17 @@
 <GLOBAL CURRENT-VEHICLE NONE>
 
 ; "story lock(s) globals"
+; ---------------------------------------------------------------------------------------------
 <GLOBAL RUN-ONCE T>
 <GLOBAL CONTINUE-TO-CHOICES T>
 
 ; "TELL globals"
+; ---------------------------------------------------------------------------------------------
 <GLOBAL PERIOD-CR ".|">
 <GLOBAL EXCLAMATION-CR "!|">
 
 ; "player properties"
+; ---------------------------------------------------------------------------------------------
 <PROPDEF LDESC NONE>
 <PROPDEF LIFE-POINTS 0>
 <PROPDEF MONEY 0>
@@ -79,6 +86,7 @@
 <PROPDEF SKILLS NONE>
 
 ; "story properties"
+; ---------------------------------------------------------------------------------------------
 <PROPDEF STORY NONE>
 <PROPDEF CHOICES NONE>
 <PROPDEF DESTINATIONS NONE>
@@ -94,6 +102,7 @@
 <PROPDEF VICTORY F>
 
 ; "object properties"
+; ---------------------------------------------------------------------------------------------
 <PROPDEF QUANTITY -1>
 <PROPDEF CHARGES -1>
 <PROPDEF STARS 0>
@@ -1323,7 +1332,6 @@
 
 ; "print routines (story)"
 ; ---------------------------------------------------------------------------------------------
-
 <ROUTINE PRINT-PAGE ("OPT" PAGE "AUX" TEXT)
     <COND (<NOT .PAGE> <SET PAGE ,HERE>)>
     <SET TEXT <GETP .PAGE ,P?STORY>>

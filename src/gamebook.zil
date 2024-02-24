@@ -251,7 +251,7 @@
         <TELL "None" CR>
     )>>
 
-; "Story - Choice Requirements Validations"
+; "story - choice requirements validations"
 ; ---------------------------------------------------------------------------------------------
 <ROUTINE CHECK-ALL (ITEMS "OPT" CONTAINER "AUX" COUNT)
     <COND (<NOT .CONTAINER> <SET CONTAINER ,PLAYER>)>
@@ -476,7 +476,7 @@
         <HLIGHT 0>
     )>>
 
-; "Player Inventory Manipulation"
+; "player inventory routines"
 ; ---------------------------------------------------------------------------------------------
 <ROUTINE COUNT-POSSESSIONS ()
     <RETURN <COUNT-CONTAINER ,PLAYER>>>
@@ -939,7 +939,7 @@
 <ROUTINE SET-DESTINATION (STORY DESTINATION NEW)
 	<PUT <GETP .STORY ,P?DESTINATIONS> .DESTINATION .NEW>>
 
-; "Story - print ending routnes"
+; "story - print ending routnes"
 ; ---------------------------------------------------------------------------------------------
 <ROUTINE PRINT-ENDING (MESSAGE "OPT" COLOR)
     <COND (<NOT .COLOR> <SET COLOR 1>)>
@@ -951,7 +951,7 @@
     <HLIGHT 0>
     <GAMES-UP>>
 
-; "Story - Event Routines (victory/death/prechoice/transition/codeword/story jump events)"
+; "story - event routines (victory/death/prechoice/transition/codeword/story jump events)"
 ; ---------------------------------------------------------------------------------------------
 <ROUTINE CHECK-DEATH ("AUX" DEATH)
     <SET DEATH <GETP ,HERE ,P?DEATH>>
@@ -1167,7 +1167,7 @@
         <RETURN GIVE-UNABLE>
     )>>
 
-; "Player alive checks"
+; "player alive checks"
 ; ---------------------------------------------------------------------------------------------
 <ROUTINE IS-ALIVE ("OPT" THRESHOLD)
     <COND (<NOT .THRESHOLD> <SET THRESHOLD 0>)>
@@ -1222,7 +1222,7 @@
         <PRINT-CONTAINER ,GIVEBAG>
     )>>
 
-; "Story - Merchant routines (display)"
+; "story - merchant routines (display)"
 ; ---------------------------------------------------------------------------------------------
 <ROUTINE MERCHANT (WARES PRICELIST "OPT" CONTAINER (SELL F) "AUX" ITEM ITEMS KEY)
     <COND (<NOT .CONTAINER> <SET CONTAINER ,PLAYER>)>
@@ -1321,7 +1321,7 @@
         )>
     >>
 
-; "Print routines (story)"
+; "print routines (story)"
 ; ---------------------------------------------------------------------------------------------
 
 <ROUTINE PRINT-PAGE ("OPT" PAGE "AUX" TEXT)
@@ -1345,7 +1345,7 @@
         >
     )>>
 
-; "Player information (display)"
+; "player information (display)"
 ; ---------------------------------------------------------------------------------------------
 <ROUTINE DESCRIBE-INVENTORY ("AUX" COUNT)
     <COND (,CURRENT-CHARACTER
@@ -1406,7 +1406,7 @@
         >
     )>>
 
-; "Character Routines"
+; "character routines"
 ; ---------------------------------------------------------------------------------------------
 <ROUTINE CHOOSE-CHARACTER ("AUX" COUNT KEY CHOICE CHARACTER SKILLS POSSESSIONS)
     <SET COUNT <GET CHARACTERS 0>>
@@ -1579,7 +1579,7 @@
         )>
     )>>
 
-; "Reset Routines"
+; "reset routines"
 ; ---------------------------------------------------------------------------------------------
 <ROUTINE RESET-CONTAINER (CONTAINER "AUX" ITEM NEXT)
     <SET ITEM <FIRST? .CONTAINER>>
@@ -1625,7 +1625,7 @@
     <RESET-SKILLS>
     <RESET-GIVEBAG>>
 
-; "System/Utility/Miscellaneous routines"
+; "system/utility/miscellaneous routines"
 ; ---------------------------------------------------------------------------------------------
 <ROUTINE GAMES-UP ("OPT" TEXT "AUX" W)
     <COND (.TEXT <TELL .TEXT CR>)>
@@ -1651,7 +1651,7 @@
     <TELL CR "Thanks for playing" ,PERIOD-CR>
     <QUIT>>
 
-; "Gamebook loop"
+; "gamebook loop"
 ; ---------------------------------------------------------------------------------------------
 <ROUTINE GAME-BOOK ("AUX" KEY CURRENT-LOC)
     <INSTRUCTIONS>

@@ -1,14 +1,6 @@
 <CONSTANT TEXT "This story has not been written yet.">
 
-<CONSTANT DIED-IN-COMBAT "You died in combat">
-<CONSTANT DIED-OF-HUNGER "You starved to death">
-<CONSTANT DIED-GREW-WEAKER "You grew weaker and eventually died">
-<CONSTANT DIED-FROM-INJURIES "You died from your injuries">
-<CONSTANT DIED-FROM-COLD "You eventually freeze to death">
-
-<CONSTANT NATURAL-HARDINESS "Your natural hardiness made you cope better with the situation">
-
-; "Jump routines (skill/item/codeword)"
+; "jump routines (skill/item/codeword)"
 ; ---------------------------------------------------------------------------------------------
 <ROUTINE SKILL-JUMP (SKILL STORY)
 	<COND (<CHECK-SKILL .SKILL> <STORY-JUMP .STORY>)>>
@@ -19,7 +11,7 @@
 <ROUTINE CODEWORD-JUMP (CODEWORD STORY)
 	<COND (<CHECK-CODEWORD .CODEWORD> <STORY-JUMP .STORY>)>>
 
-; "Lost skills: moves 'lost' skills to LOST-SKILLS container"
+; "lost skills: moves 'lost' skills to LOST-SKILLS container"
 ; ---------------------------------------------------------------------------------------------
 <OBJECT LOST-SKILLS
 	(DESC "skills lost")
@@ -37,7 +29,7 @@
 		<MOVE .SKILL ,LOST-SKILLS>
 	)>>
 
-; "Helper functions/constants when damage is dealt to player"
+; "helper functions/constants when damage is dealt to player"
 ; ---------------------------------------------------------------------------------------------
 <CONSTANT DIED-IN-COMBAT "You died in combat">
 <CONSTANT DIED-OF-HUNGER "You starved to death">

@@ -7,7 +7,7 @@
 <VERSION XZIP>
 
 <INSERT-FILE "minilib">
-<INSERT-FILE "gamebook">
+<INSERT-FILE "story">
 
 <ROUTINE GO ()
     <V-VERSION>

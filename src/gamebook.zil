@@ -2,7 +2,14 @@
 <INSERT-FILE "player">
 <INSERT-FILE "objects">
 <INSERT-FILE "codewords">
-<INSERT-FILE "story">
+<INSERT-FILE "numbers">
+<INSERT-FILE "currency">
+<INSERT-FILE "food">
+<INSERT-FILE "vehicle">
+<INSERT-FILE "common">
+<INSERT-FILE "endings">
+;<INSERT-FILE "food-routines">
+;<INSERT-FILE "vehicle-routines">
 
 <SET REDEFINE T>
 

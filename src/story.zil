@@ -1,11 +1,4 @@
-<INSERT-FILE "numbers">
-<INSERT-FILE "currency">
-<INSERT-FILE "food">
-<INSERT-FILE "vehicle">
-<INSERT-FILE "common">
-<INSERT-FILE "endings">
-;<INSERT-FILE "food-routines">
-;<INSERT-FILE "vehicle-routines">
+<INSERT-FILE "gamebook">
 
 <GLOBAL STARTING-POINT PROLOGUE>
 

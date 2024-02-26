@@ -26,10 +26,15 @@
 	<PUTP ,STORY184 ,P?DEATH T>
 	<PUTP ,STORY224 ,P?DEATH T>
 	<PUTP ,STORY226 ,P?DEATH T>
+	<PUTP ,STORY263 ,P?DEATH T>
 	<PUTP ,STORY271 ,P?DEATH T>
 	<PUTP ,STORY278 ,P?DEATH T>
+	<PUTP ,STORY282 ,P?DEATH T>
 	<PUTP ,STORY283 ,P?DEATH T>
-	<PUTP ,STORY296 ,P?DEATH T>>
+	<PUTP ,STORY296 ,P?DEATH T>
+	<PUTP ,STORY338 ,P?DEATH T>
+	<PUTP ,STORY363 ,P?DEATH T>
+	<PUTP ,STORY389 ,P?DEATH T>>
 
 <CONSTANT HEALING-KEY-CAPS !\U>
 
@@ -2585,7 +2590,7 @@
 				<GAIN-CODEWORD ,CODEWORD-GORDIAN>
 			)>
 		)>
-	)>>	
+	)>>
 
 <CONSTANT TEXT225 "This street winds down towards the riverfront and the centre of the city. It is crossed by large avenues that lead up to the citadel, lined with tall straight cedars. You hear the ringing of the town crier's bell. At the end of the street is Greenbark Plaza. The mob is still chasing you, growing hysterical in its desire for your blood. Ifyou are caught you will surely be stoned to death.">
 <CONSTANT CHOICES225 <LTABLE "use" "run on into Greenbark Plaza" "duck down one of the smaller side streets">>
@@ -2711,22 +2716,23 @@
 		<TELL ,PERIOD-CR>
 	)>>
 
+<CONSTANT TEXT235 "You find several buyers among the captains of the sailing ships moored along Tartars' Quay. Most are keen to return to their homelands before the wave of hatred and persecution engulfs them as it has your own people. No friends of the Overlord who has wrecked their livelihoods, they receive you warmly and consider your wares.||After some deliberation, they announce the price they will pay for each item.">
+<CONSTANT CHOICES235 <LTABLE "bribe the guard at the prison" "otherwise">>
+
 <ROOM STORY235
 	(DESC "235")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT235)
+	(PRECHOICE STORY235-PRECHOICE)
+	(CHOICES CHOICES235)
+	(DESTINATIONS <LTABLE STORY415 STORY006>)
+	(REQUIREMENTS <LTABLE 500 NONE>)
+	(TYPES <LTABLE R-MONEY R-NONE>)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY235-PRECHOICE ()
+	<COND(,RUN-ONCE
+		<MERCHANT <LTABLE JADE-WARRIORS-SWORD JEWEL-OF-SUNSET-FIRE PLUMED-HELMET MAGIC-WAND MAGIC-AMULET HEALING-SALVE KNIFE> <LTABLE 500 1500 50 100 60 100 40> ,PLAYER T>
+	)>>
 
 <CONSTANT TEXT236 "\"She's a ornery girl that one,\" he mutters after casting a look in her direction. \"Knows her own mind and no mistake. Forever taking up with the most disreputable mountebanks and desperadoes. Always twists 'em round her little finger, mind.\"||\"And what about her friend?\"||\"That's Tyutchev, a foreigner. See how pale he is? Doesn't it make you feel ill just to look at hjm? He usually comes in with his doxy, Cassandra -- or is it he is her pretty boy? She's a terrible proud and beautiful woman, wearing gear like a Fury from the Abyss. At any rate, they had a terrible fight in here last week. I never saw a woman wield a sword with such skill and venom. It glowed cold blue, and where it struck the bar I found crystals of ice.\"||\"Who won the fight?\" you ask, although you would hardly expect the loser of a swordfight to be sitting drinking ale a week later.||\"They were both bleeding badly. It was a terrible battle. But they went out together. I do declare I've never had the misfortune to serve two less pleasant and outright perilous characters.\"||\"What do they all want with Lucie?\" you wonder aloud.||He cracks a rancid-toothed smile. \"What does any man want with Lucie?\"||You thank the landlord for his information and, leaving the alepot on the bar, walk over to the couple, who are watching you intently. Lucie smiles as she did when you met her in the street.">
 
@@ -2803,22 +2809,17 @@
 	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT243 "You seek out a foreign trader named Sardis, finally tracking him down in a tavern off Tartars' Quay. He always has a few odd trinkets to sell, brought from distant lands. When you explain your requirements, he gives a wink and pulls something from his pocket. It is an amulet on a silver chain. You recognize the aura at once, and reach to inspect it.||Sardis closes his fingers around it and smiles. \"First, let us discuss the price,\" he says. \"I have braved many dangers to traverse the seas with my wares. First there were the pirates of Far Cathay, then the sirens in the Straits of Nullity. I hardly care even to remember the frightening mist phantoms that beset the ship as we lay becalmed off Hengist Head ...\"||You sigh. \"Enough, Sardis. Spare me this tiresome routine. For once, will you break with the habit of a lifetime and just state the price!\"||\"For this amulet? A mere nine gleenars! And see, here I also have a fine sword of best Moorish steel, for which I ask only six gleenars.\"">
+
 <ROOM STORY243
 	(DESC "243")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT243)
+	(PRECHOICE STORY243-PRECHOICE)
+	(CONTINUE STORY160)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY243-PRECHOICE ()
+	<MERCHANT <LTABLE MAGIC-AMULET SWORD> <LTABLE 9 6>>>
 
 <CONSTANT TEXT244 "This time you pick the charm of Infernal Apparition, which causes you to resemble a nighted fiend from the pits of hell. You walk stiff-legged down the street towards them, screaming in the tongue of the fierce cannibals of the Isles of the Gaels. The troops pass you in two streams on either side of the cobbled street, making the sign of protection of the one god tolerated in Godorno, though you notice one or two fingering charms sacred to their old gods, behind their backs. It is tempting to cause trouble by denouncing them as heretics but you haven't the energy. The guards walk slowly past and out of sight.||Summoning all your strength you skulk through the shadows to the lighthouse garret, where Mameluke is warming some broth.">
 
@@ -3034,22 +3035,26 @@
 <ROUTINE STORY262-PRECHOICE ()
 	<SKILL-JUMP ,SKILL-FOLKLORE ,STORY294>>
 
+<CONSTANT TEXT263 "You speak the word of power and disappear. But Skakshi is not dismayed. He reaches for a pouch at his belt and flings a sparkling dust from it into the air in your general direction. The dust clings to you and sparkles in the ruddy light, limning your outline brightly for all to see, Skakshi sends the knife hurtling across the room at your breast, which it grazes.">
+<CONSTANT TEXT263-CONTINUED "He reaches for another stiletto immediately. What will you do?">
+<CONSTANT CHOICES263 <LTABLE "flee from the inn and bolt for home" "cast the potent spell of the Visceral Pang" "the puissant spell known as Miasma" "humiliate him by seizing his mind using Rulership">>
+
 <ROOM STORY263
 	(DESC "263")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT263)
+	(PRECHOICE STORY263-PRECHOICE)
+	(CHOICES CHOICES263)
+	(DESTINATIONS <LTABLE STORY200 STORY312 STORY390 STORY242>)
+	(REQUIREMENTS <LTABLE NONE SKILL-SPELLS SKILL-SPELLS SKILL-SPELLS>)
+	(TYPES <LTABLE R-NONE R-SKILL R-SKILL R-SKILL>)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY263-PRECHOICE ()
+	<COND(,RUN-ONCE
+		<TEST-MORTALITY 1 ,DIED-FROM-INJURIES ,STORY263>
+		<IF-ALIVE ,TEXT263-CONTINUED>
+	)>>
 
 <CONSTANT TEXT264 " You skulk in the shadows, then roll into the gutter where you play dead. This is an old thief's trick to avoid a hue and cry. The watchguards walk slowly past not giving yet another corpse in the plague-ridden city another glance and soon pass out of sight. Summoning all your strength you skulk through the shadows to the lighthouse-like garret, where Mameluke is warming some broth.">
 
@@ -3256,22 +3261,25 @@
 	(TYPES <LTABLE R-SKILL R-SKILL R-SKILL R-SKILL R-SKILL R-SKILL R-NONE>)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT282 "The word ofpower you speak does its work and you disappear from view. One ofthe guards has the sense to let his crossbow off and the quarrel buries itself joltingly in your chest. You bite your lip to stop yourself moaning in agony.">
+<CONSTANT TEXT282-CONTINUED "You hide in a doorway, satisfied that the guards can't see you yet.">
+<CONSTANT CHOICES282 <LTABLE "bandage yourself up before making your escape" "run for it straight away">>
+
 <ROOM STORY282
 	(DESC "282")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT282)
+	(PRECHOICE STORY282-PRECHOICE)
+	(CHOICES CHOICES282)
+	(DESTINATIONS <LTABLE STORY383 STORY393>)
+	(TYPES TWO-NONES)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY282-PRECHOICE ()
+	<COND(,RUN-ONCE
+		<TEST-MORTALITY 6 ,DIED-FROM-INJURIES ,STORY282>
+		<IF-ALIVE ,TEXT282-CONTINUED>
+	)>>
 
 <CONSTANT TEXT283 "The penalty for fighting with the Overlord's guards is to be hung in chains until the wind dries you out like a raisin. That's if you get caught, of course. But either way -- whether you are killed in this struggle, or arrested and taken to Grond -- it means you are now in a fight to the death. It is a grim battle, fought almost in silence. The only sounds are frantic pants of breath and the scuff of quick footfalls as you manoeuvre back and forth across the room. At least you have one thing in your favour: although outnumbered, you are able to get your back to a comer, making it difficult for the soldiers to press their advantage.">
 <CONSTANT TEXT283-CONTINUED "You survive to gain victory. You step over the soldiers' bodies and snatch up the treasure chest, then hurry offinto the night.">
@@ -3865,22 +3873,26 @@ power.">
 	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT338 "You move in close to seize the initiative. Tyutchev falls back into the comer of the tavern, where he is cramped by the low ceiling. He cannot make a powerful overhead swing without catching his long sword against the rafters. He has fought in these conditions before, however, and you can do no more than hold your own. You might be able to get past his blurred sword tip if you are fast enough, but for a big man he moves very quickly. You wound him but only at the expense of a nasty cut to your side.">
+<CONSTANT TEXT338-CONTINUED "The grimace of pain on Tyutchev's pale face is quickly replaced by one of cold fighting rage. You sense that you cannot best this man unless you can slip your sword point past his guard.">
+<CONSTANT CHOICES338 <LTABLE "use" "use" "fight on" "turn and flee">>
+
 <ROOM STORY338
 	(DESC "338")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT338)
+	(PRECHOICE STORY338-PRECHOICE)
+	(CHOICES CHOICES338)
+	(DESTINATIONS <LTABLE STORY367 STORY367 STORY377 STORY199>)
+	(REQUIREMENTS <LTABLE SKILL-AGILITY SKILL-SWORDPLAY NONE NONE>)
+	(TYPES <LTABLE R-SKILL R-SKILL R-NONE R-NONE>)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY338-PRECHOICE ()
+	<COND(,RUN-ONCE
+		<TEST-MORTALITY 2 ,DIED-FROM-INJURIES ,STORY338>
+		<IF-ALIVE ,TEXT338-CONTINUED>
+	)>>
 
 <CONSTANT TEXT339 "As far as you know no one who has desecrated the tombs of the Megiddo dynasty has ever come back out of the catacombs. You resolve to be very careful. It is said that four tomb robbers of the Savanorola years did escape but that they had been turned into foul-smelling scarab beetles, which were eaten alive by pigs.">
 
@@ -4156,22 +4168,25 @@ power.">
 	(CONTINUE STORY300)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT363 "Tyutchev's sword lashes out, smashing your parry aside. The blade cuts into your breast just above the heart. Luckily yourjerkin absorbs some ofthe impact and the blow does not penetrate the muscle. Even so, it is very painful.">
+<CONSTANT TEXT363-CONTINUED "Lucie suddenly says, \"Spare the Judain, Tyutchev, for me. The Overlord's men will do for the poor wretch soon anyway.\"||\"If it makes you happy.\" Tyutchev shrugs and carefully slides his sword back into the scabbard strapped to his back. \"What's the Judain to you?\"||\"A hero, valiant and true. The one that the Judain have put their faith in to save them.\"||\"I didn't know you had added such undesirables to your list of lovers,\" he says, giving you a sneering sidelong look.||\"We had a meeting arranged but we were disturbed,\" says Lucie. \"I wish to speak with the Judain. Leave us, please, Tyutchev.\"||\"As you wish, girl. Will you come to my abode this evening?\"||\"Will Cassandra be there?\"||\"No. She took ship for Aleppo on the rising tide. We'll be alone.\" So saying he turns on his heel, his black cloak flaring out like a sail, and walks out of the Silver Eel in five great strides.||Lucie touches your sleeve. \"Come, my friend, join me.">
+<CONSTANT CHOICES363 <LTABLE "sit with her" "follow Tyutchev" "bid Lucie farewell and leave">>
+
 <ROOM STORY363
 	(DESC "363")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT363)
+	(PRECHOICE STORY363-PRECHOICE)
+	(CHOICES CHOICES363)
+	(DESTINATIONS <LTABLE STORY403 STORY321 STORY199>)
+	(TYPES THREE-NONES)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY363-PRECHOICE ()
+	<COND(,RUN-ONCE
+		<TEST-MORTALITY 4 ,DIED-FROM-INJURIES ,STORY363>
+		<IF-ALIVE ,TEXT363-CONTINUED>
+	)>>
 
 <CONSTANT TEXT364 "Hate squirms and writhes, shaking the city like an earthquake. The people creep out of hiding to pelt it with every missile they can find, but there seems to be no way of killing the monster. At length it tears itself free and slithers off. Its mighty efforts have undermined the plaza, which now collapses into the river. The facade of the Bargello topples and you plummet to your death in a cascade of falling masonry.||The city crumbles and is lost for ever beneath the waves. Hate has completed its work.">
 
@@ -4442,22 +4457,24 @@ power.">
 	(CONTINUE STORY354)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT389 "You dart in to attack the first of the Jade Warriors. You fight well; your sword is an arcing blaze of light, but though it rings loudly against the jade bodies of your adversaries they are not dinted. Their heavy blows break down your guard and their blades are terribly sharp, as you find to your cost when one bites into your shoulder.">
+<CONSTANT CHOICES389 <LTABLE "make another attempt at the champions of the Megiddo dynasty" "flee">>
+
 <ROOM STORY389
 	(DESC "389")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT389)
+	(PRECHOICE STORY389-PRECHOICE)
+	(CHOICES CHOICES389)
+	(DESTINATIONS <LTABLE STORY296 STORY016>)
+	(REQUIREMENTS <LTABLE SKILL-UNARMED-COMBAT NONE>)
+	(TYPES <LTABLE R-SKILL R-NONE>)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY389-PRECHOICE ()
+	<COND(,RUN-ONCE
+		<TEST-MORTALITY 2 ,DIED-FROM-INJURIES ,STORY389>
+	)>>
 
 <CONSTANT TEXT390 "This is a very confined space in which to let loose the awful spell of the Miasma. The billowing cloud of gas which erupts fills the Inn of the Inner Temple and all inside fall retching helplessly to the floor. You have taken the precaution of winding a damp scarf about your mouth and nose and can still breathe. Grabbing Skakshi you drag him out.||\"You, Skakshi, will take me to meet your guildmaster, Melmelo. I have a proposition for his ears only.\"||\"I'll -- ack! -- do anything you say ... Just release me -- cough! -- from this wracking spell!\"||Skakshi is only too glad to do your bidding as long as he is released from the pit of gas the Inn of the Inner Temple has become.">
 

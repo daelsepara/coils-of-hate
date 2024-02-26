@@ -10,11 +10,19 @@
 	<PUTP ,STORY005 ,P?DEATH T>
 	<PUTP ,STORY014 ,P?DEATH T>
 	<PUTP ,STORY016 ,P?DEATH T>
+	<PUTP ,STORY052 ,P?DEATH T>
+	<PUTP ,STORY061 ,P?DEATH T>
+	<PUTP ,STORY074 ,P?DEATH T>
 	<PUTP ,STORY106 ,P?DEATH T>
 	<PUTP ,STORY121 ,P?DEATH T>
 	<PUTP ,STORY123 ,P?DEATH T>
 	<PUTP ,STORY130 ,P?DEATH T>
-	<PUTP ,STORY135 ,P?DEATH T>>
+	<PUTP ,STORY135 ,P?DEATH T>
+	<PUTP ,STORY143 ,P?DEATH T>
+	<PUTP ,STORY149 ,P?DEATH T>
+	<PUTP ,STORY170 ,P?DEATH T>
+	<PUTP ,STORY176 ,P?DEATH T>
+	<PUTP ,STORY182 ,P?DEATH T>>
 
 <CONSTANT HEALING-KEY-CAPS !\U>
 
@@ -428,7 +436,7 @@
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT034 "As soon as they are outside the gates of Grond, the freed guards flee. They are leaving the city taking only what they can grab as they run. This is the most sensible option and a very tempting one for you.">
-<CONSTANT CHOICES034 <LTABLE "return to Bumble Row and ponder what to do next" "return to Grond to free more ofthe guards and prisoners">>
+<CONSTANT CHOICES034 <LTABLE "return to Bumble Row and ponder what to do next" "return to Grond to free more of the guards and prisoners">>
 
 <ROOM STORY034
 	(DESC "034")
@@ -459,7 +467,7 @@
 	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT036 "You cut Skakshi down in a welter ofblood, wipe your blade on a barcloth, and replace it in its scabbard before looking round you once more.||All is quiet in the Inn of the Inner Temple. No one will meet your eye. They stare at Skakshi's corpse, shocked at the sudden violence you have done to one oftheir comrades. You don't expect any trouble from them after that demonstration. Nor will you make many friends here. You feel Skakshi's pockets, quickly finding a concealed flap in which you discover a set of throwing knives.||You look up from the body. One man gives you a narrow glare and spits on the floor. You won't make any friends here so you decide to go back to your lair on Bumble Row.||In your heart you know that you did not have to kill Skakshi. Perhaps you are beginning to succumb to the general hysteria and hatred that seems to be infetting most others in the city?">
+<CONSTANT TEXT036 "You cut Skakshi down in a welter ofblood, wipe your blade on a barcloth, and replace it in its scabbard before looking round you once more.||All is quiet in the Inn of the Inner Temple. No one will meet your eye. They stare at Skakshi's corpse, shocked at the sudden violence you have done to one of their comrades. You don't expect any trouble from them after that demonstration. Nor will you make many friends here. You feel Skakshi's pockets, quickly finding a concealed flap in which you discover a set of throwing knives.||You look up from the body. One man gives you a narrow glare and spits on the floor. You won't make any friends here so you decide to go back to your lair on Bumble Row.||In your heart you know that you did not have to kill Skakshi. Perhaps you are beginning to succumb to the general hysteria and hatred that seems to be infetting most others in the city?">
 
 <ROOM STORY036
 	(DESC "036")
@@ -665,22 +673,20 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT052 "You advance quickly on Skakshi, getting in close to match your sword against his club. As you lunge forward, the haft of the club catches you a painful blow on the shoulder and you feel the spikes tear your jerkin and bite into the flesh beneath.">
+<CONSTANT TEXT052-CONTINUED "You send the pommel of your sword crashing into Skakshi's jaw with stunning force. He gives a surprised grunt as his knees fold under him. Before he can rise and continue the battle, you have the point of your sword at his throat. \"Take me to Melmelo,\" you say to him as you get your breath back.||He looks at your sword uneasily as he slowly gets to his feet. \"I'll take you,\" he says sullenly.">
+
 <ROOM STORY052
 	(DESC "052")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT052)
+	(PRECHOICE STORY052-PRECHOICE)
+	(CONTINUE STORY181)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY052-PRECHOICE ()
+	<TEST-MORTALITY 3 ,DIED-FROM-INJURIES ,STORY052>
+	<IF-ALIVE ,TEXT052-CONTINUED>>
 
 <CONSTANT TEXT053 "You walk quickly along towards the main gate, hiding your face from strangers. After a time you realize you are being followed by a gang of young street urchins. You turn off the main thoroughfare and duck and dive down back alleys but these orphans seem to know this quarter of the city by heart. They must have explored every inch in their quest to stay alive.||Deciding to ignore them you return to the main street and toward the twin arches of the main gates. As you approach the campanile, its bell sounds a steady doleful ringing. There is a creak as the gate guards push the heavy gate back. There is no way out here for anyone. You will have to try to slip out of the city another way.||The walls are high and well patrolled.">
 <CONSTANT CHOICES053 <LTABLE "explore the river quay to see if you may escape upriver by stowing away on a barge" "try to bribe the guards">>
@@ -759,22 +765,20 @@
 	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT061 "You fling up the door and jump down into the cellar to find yourself surrounded by several men, one of whom jabs you with a rusty old spear before you can regain your balance.">
+<CONSTANT TEXT061-CONTINUED "\"Wait! A fellow Judain!\" realizes one of them. You recognize the tall imposing figure of Caiaphas, rabbi at the synagogue before it was torn down by the mob.||\"I am,\" you reply with a nod. \"As, I see, are all of you.\"||There are three Judain families hiding down here from the Overlord's butchers. The rusty old spear is thrown aside as they welcome you with open arms.">
+
 <ROOM STORY061
 	(DESC "061")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT061)
+	(PRECHOICE STORY061-PRECHOICE)
+	(CONTINUE STORY071)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY061-PRECHOICE ()
+	<TEST-MORTALITY 3 ,DIED-FROM-INJURIES ,STORY061>
+	<IF-ALIVE ,TEXT061-CONTINUED>>
 
 <CONSTANT TEXT062 "Your sixth sense has not failed you. Your instinct for danger leads you to look up into the canopy of the Overlord's four-poster bed, even as the filigree begins to tighten painfully around your ankle. Above you, what looks like a black blanket floats eerily down from beneath the canopy to engulf you.">
 <CONSTANT CHOICES062 <LTABLE "use" "use" "cry for help">>
@@ -856,9 +860,7 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY069-PRECHOICE ()
-	<COND(,RUN-ONCE
-		<GAIN-LIFE 3>
-	)>>
+	<COND(,RUN-ONCE <GAIN-LIFE 3>)>>
 
 <CONSTANT TEXT070 "You creep along side streets, hiding your face from strangers, as you head towards the riverfront. You are plagued by midges but that is the least of your troubles. You can hear shrieks and the cries of hysterical mobs behind you as they rampage back and forth across the city. Making your way carefully to the quay you can see a row of three river barges, two laden with goods and one which has just finished unloading.">
 
@@ -904,22 +906,20 @@
 	(TYPES <LTABLE R-SKILL R-SKILL>)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT074 "The middle platform is a trap. The wood gives way as you land and you fall through, impaling yourself on metal spikes which stick into the soles of your feet.">
+<CONSTANT TEXT074-CONTINUED "You extricate yourself and balance on the outside of the box. The pain is excruciating and it affects your ability to balance but you can't go back now. The heads of the garter snakes are starting to mesmerize you as they sway, as if silently willing you to fall among them. You nerve yourself to go on, you will never give up, and leap for the next rope.||You grab the rope and swing above the snakes, looking down to see their jaws opening wide and venom dribbling from the jaws. You can only hope they do not spit venom like some of the hooded cobras you have heard about that live in the fens around Bagoe. You swing slowly across the room to alight on the last box, which stays firm beneath your feet and from whe!e you can jump down and open the door beyond.">
+
 <ROOM STORY074
 	(DESC "074")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT074)
+	(PRECHOICE STORY074-PRECHOICE)
+	(CONTINUE STORY180)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY074-PRECHOICE ()
+	<TEST-MORTALITY 2 ,DIED-FROM-INJURIES ,STORY074>
+	<IF-ALIVE ,TEXT074-CONTINUED>>
 
 <CONSTANT TEXT075 "Lucie didn't need your help, she is already halfway to the dubious sanctuary of the Silver Eel tavern. You have lost the chance of picking up another sword. The dog-handler has retrieved it and he pulls his dog roughly behind him as he sets out home again">
 <CONSTANT CHOICES075 <LTABLE "follow Lucie to the Silver Eel right now" "bide your time and seek her out later today">>
@@ -1681,22 +1681,32 @@
 	(CODEWORD CODEWORD-SATORI)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT143 "There are four guards, tall heavy-looking men with cold hard eyes. Each has a sword in his right hand and a dirk with a spike for catching blows in the left. You launch yourself into them with a ferocious cry which makes them hesitate. You cannon into the nearest, jabbing him hard in the midriff, and he doubles up in pain. Then another of the guards recovers his wits and lashes out at you. You have to fight your way past them.">
+<CONSTANT TEXT143-CONTINUED "Deciding that you cannot fight them all, you lead the guards off along the street. They cannot keep up with you in their heavy armour and you soon lose them. Doubling back, you meet up with Ruth and escort her back to Copper Street. She promises to tell Caiaphas you have saved her life. You bid her goodbye and return to your hideout.">
+
 <ROOM STORY143
 	(DESC "143")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT143)
+	(PRECHOICE STORY143-PRECHOICE)
+	(CONTINUE STORY414)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY143-PRECHOICE ("AUX" (DAMAGE 3))
+	<COND(,RUN-ONCE
+		<COND(<OR <CHECK-SKILL ,SKILL-SWORDPLAY> <CHECK-SKILL ,SKILL-UNARMED-COMBAT> <CHECK-SKILL ,SKILL-AGILITY>>
+			<SET DAMAGE 1>
+		)>
+		<TEST-MORTALITY .DAMAGE ,DIED-FROM-INJURIES ,STORY143>
+		<IF-ALIVE ,TEXT143-CONTINUED>
+		<COND(<IS-ALIVE>
+			<COND(<CHECK-CODEWORD ,CODEWORD-VENEFIX>
+				<DELETE-CODEWORD ,CODEWORD-VENEFIX>
+			)(ELSE
+				<GAIN-CODEWORD ,CODEWORD-SATORI>
+			)>
+		)>
+	)>>
 
 <CONSTANT TEXT144 "Standing beneath the Tower of the Sentinel, which looms three hundred feet above you against the glowering dusk sky, you feel very small and alone. If the greatest thieves of Godorno have tried to climb this tower and failed what hope is there for this poor Judain?||At the top of the Sentinel's tower, the jewel of Sunset Fire shines like a shooting star. The jewel of Sunset Fire is a so-called eye of power that can vanquish evil. The sheer-sided tower is chequered grey and red mosaic tiles, overlain with the black grime of centuries. It has stood on this spot since before the coming of the corsairs who ravaged the Old Empire. It was the lighthouse for Godorno before the sea level dropped in the great cataclysm. Looking up at the gaunt forbidding tower as it juts against the grey sky you are reminded of the frontispiece of a book you saw once -- The Tale of Nuth, Prince of Thieves -- which tells of the vain attempt to steal the jewel by the greatest thief of the Old Empire.||The black gate is reached under a trellis which is woven thickly with purple kiss-flowers, that smell unpleasantly like honeysuckle. To your surprise it opens at your touch and you walk into the atrium where small trees are growing in tubs. There is a curving marble staircase that leads up into the tower itself and you begin your long and dangerous climb.">
 
@@ -1718,21 +1728,13 @@
 	(TYPES <LTABLE R-LOSE-ITEM R-NONE>)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT146 "Somehow you survive the outside staircase and the other perils of the tower and live to see another day. You are the first to survive the Tower of the Sentinel in a very long time. Disconsolately you return to Bumble Row to hatch another plot.||You cannot return to the Tower of the Sentinel as you dare not face that hideous spider again.">
+
 <ROOM STORY146
 	(DESC "146")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT146)
+	(CONTINUE STORY160)
+	(CODEWORD CODEWORD-TOWER)
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT147 "You cleave the great tentacle in two, missing Lucie as though by a miracle. You have done it. Leaping to the top of the parapet of the Bargello, you grab the Jewel of Sunset Fire from inside your jerkin and climb up into the last rays of daylight. As you do so you see the world's most terrifying sight. Rising slowly out of the hole that was once the old quarter of the city is the head of Hate itself. Two baleful green eyes twice the height of a man glare at you as the slow bulk of Hate starts to ooze towards the parapet. The eyes are ringed by the faces of the most depraved lost souls, all beckoning you to join them.||They still live on, crushed side by side and looking out to see what Hate sees. They have quite lost their minds.">
@@ -1755,22 +1757,20 @@
 	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT149 "With a clap of your hands you cast a Thunderflash spell. There is a blinding light and a whipcrack, then the smell of seared flesh. The living carpet is a writhing, boiling sea of serpentine coils. You have certainly distracted the snakes. You run in boldly. The living carpet writhes beneath the soles of your feet and there is a baleful hissing.||One of the snakes sinks its fangs into the soft flesh of your calf but you make it to the other side and slam the door shut behind you. The venom of the garter snake is virulent indeed and your blood burns while you fight for breath.">
+<CONSTANT TEXT149-CONTINUED "You find yourself looking up another spiral staircase. Once outside the door the snake coils loosen and it glides to the floor and out of sight.">
+
 <ROOM STORY149
 	(DESC "149")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT149)
+	(PRECHOICE STORY149-PRECHOICE)
+	(CONTINUE STORY180)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY149-PRECHOICE ()
+	<TEST-MORTALITY ,DIED-GREW-WEAKER ,STORY149>
+	<IF-ALIVE TEXT149-CONTINUED>>
 
 <CONSTANT TEXT150 "The ceiling of the room is clear crystal. The dome of crystal that tops the tower is supported by huge iron struts from a black boss directly above the jewel. You look up as you start to cross the floor to the casket, just as a flash of lightning illuminates everythin in stark outline. The angled struts are in fact the legs of a giant spider whose eyes seem to follow your every move as you inch slowly beneath the arches of its legs.||The keening of the gargoyles reaches a new frenzied high and the crystal that protects you from the tower-spinning spider explodes into shards and dust. The wind falls away, the keening drops to a low moan and now you hear for the first time the wheezing susurratioins of the spider's breath. You can see its thorax opening and closing like a bellows.">
 <CONSTANT CHOICES150 <LTABLE "dash beneath it to seize the jewel and casket" "attack it from the doorway">>
@@ -1978,22 +1978,20 @@
 	(TYPES <LTABLE R-SKILL R-MONEY R-SKILL R-NONE R-NONE>)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT170 "You steal up behind one of the Jade Warriors and throw yourself against its sword arm, wrenching the blade from its jade grasp.||\"Obey me, Jade Warriors of the Megiddo dynasty!\" you cry on impulse.||Their only response is to swivel towards you and advance with swords aloft. There seems no escape from their deadly flashing blades, and you cry out in agony as your stolen sword is dashed from your grip and you are cut to the bone.">
+<CONSTANT TEXT170-CONTINUED "You flee the tomb chamber.">
+
 <ROOM STORY170
 	(DESC "170")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT170)
+	(PRECHOICE STORY170-PRECHOICE)
+	(CONTINUE STORY016)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY170-PRECHOICE ()
+	<TEST-MORTALITY ,DIED-FROM-INJURIES ,STORY170>
+	<IF-ALIVE TEXT170-CONTINUED>>
 
 <CONSTANT TEXT171 "The return journey takes no longer than the outward trek and you are soon faced with the battlemented towers and guarded walls of Godorno, city of the Forsaken. Carrion crows, habitually solitary scavengers, wheel in great flocks above the city and the wind carries the dismal cries of the unfortunates being tortured in the prison fortress of Grond to your unwilling ears.">
 <CONSTANT CHOICES171 <LTABLE "try to stow away aboard a barge on the Palayal river and re-enter the city that way" "present yourself at the gate and bluff your way through">>
@@ -2038,22 +2036,25 @@
 	(CONTINUE STORY190)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT176 "You must silence the soldier quickly, before his cries bring the neighbours. But even as you race up the stairs towards him, your thoughts are awhirl with the mystery ofwhat went wrong. There was no fault in your magic. However, the plan relied on everyone in the house being asleep at the instant you cast the charm. Evidently this one soldier was awake guarding the diamond, so the charm failed to affect him. You can well imagine his fright and confusion when he heard you moving around downstairs and then discovered that everyone else in the house was in a deathly deep sleep from which he could not rouse them.||The first sweep of his sword is clumsy. You dodge in under his guaidt anxious to end the fight as quickly as possible. You have fought much tougher opponents in your time.">
+<CONSTANT TEXT176-CONTINUED "You conduct a quick search of the upper rooms and leave as soon as you have the diamond.">
+
 <ROOM STORY176
 	(DESC "176")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT176)
+	(PRECHOICE STORY176-PRECHOICE)
+	(CONTINUE STORY358)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY176-PRECHOICE ("AUX" (DAMAGE 2))
+	<COND(<CHECK-SKILL ,SKILL-UNARMED-COMBAT>
+		<SET DAMAGE 1>
+	)(<CHECK-SKILL ,SKILL-SWORDPLAY>
+		<SET DAMAGE 0>
+	)>
+	<TEST-MORTALITY .DAMAGE ,DIED-IN-COMBAT ,STORY176>
+	<IF-ALIVE ,TEXT176-CONTINUED>>
 
 <CONSTANT TEXT177 "Mameluke is glad to accompany you back to your little hidey-hole on Bumble Row. \"I see the toymakers and panderers have shut up shop some time since,\" he remarks. \"It used to be such a gay place, Bumble Row.\"||\"Nothing but a dive for dogs like us in these cursed times,\" you say wryly.||\"Don't be hard on yourself! You saved my life. How can I repay you?\"||\"Forget it. I am happy just to see you free and breathing.\"||\"I will help you in any way I can,\" he tells you. \"Remember, you just have to call on me and I'll be there.\"||\"Thanks, Mameluke. It's good to have at least one true friend when all around are turning to hatred. For a start you can help me plan what to do next.\"||\"I suppose we could flee the city?\"||\"No. My place is here. I want to save my people -- not just my people; all the citizens.\"||\"And you are the one to save all, a youngster like you?\" he asks with affectionate mockery.||\"Who else is there?\" You explain to Mameluke how you have organized the Judain resistance and Mameluke is amazed at what you have done. The word from the palace is that the Overlord's soldiers are deserting in droves rather than patrol the city streets, which they have come to see as a fate worse than death. So your tactics are working.||\"But it's not the Overlord who is our real enemy; it's the monster, Hate.\"||He gives you a frightened look. \"But what can we do against Hate itself?\"||\"We need to find out everything we can about it. I will contact those with an ear inside the palace. Perhaps the Overlord has entered into some God-forsaken compact with the monster.\"||You wish Mameluke farewell and ponder how you can confront your inimical foe.">
 
@@ -2101,22 +2102,20 @@
 		<KEEP-ITEM ,KNIFE>
 	)>>
 
+<CONSTANT TEXT182 "You steal up behind the Jade Warrior and throw yourself against its sword arm, wrenching the blade from its armoured grasp.||\"Obey me, Jade Warriors of the Megiddo dynasty!\" you cry on impulse, but their only response is to advance on you with swords aloft. There seems no escape from their deadly flashing blades, and you cry out in agony as your stolen sword is dashed from your grip and you are cut to the bone.">
+<CONSTANT TEXT182-CONTINUED "You flee from the tomb chamber.">
+
 <ROOM STORY182
 	(DESC "182")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT182)
+	(PRECHOICE STORY182-PRECHOICE)
+	(CONTINUE STORY016)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY182-PRECHOICE ()
+	<TEST-MORTALITY 4 ,DIED-FROM-INJURIES ,STORY182>
+	<IF-ALIVE ,TEXT182-CONTINUED>>
 
 <CONSTANT TEXT183 "An hour before dusk the members of the crew return from whichever wine cellar they have been squandering their money in and prepare to cast off. They look over their cargo briefly but do not notice you huddled under a pile of ropes. They sing as they pole the barge, a sombre song with a pounding beat about how a man may toil his whole life away and at the end have nothing to show for it but the clothes he will die in.||You guess from the movements of the barge it has turned up the Palayal river. You are being borne towards the Great Forest. You guess they are making for the town of Bagoe twenty miles upriver. You lie still, listening to the lapping of water at the bows and feeling the rhythmic surge as the crew drives the barge on, poling in time. After three hours of dirges the crew tie up for the rest of the night against the deserted riverbank. While they snore you leap from barge to shore and walk inland to the Bagoe road.">
 
@@ -3117,7 +3116,7 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT272 "As head of the Judain resistance movement in Godorno you are now one of the most powerful people in the city. With power comes responsibility but you comfort yourself that you are doing your best. Y ou wonder how many more Judain will die carrying out your orders. How many innocent people will suffer. Will the Overlord give in to your demands? Or will you all be taken to the prison fortress of Grand and tortured?||The Overlord is no longer the great enemy. It is Hate you must outwit. In order to do so you must know something about its movements. Where does it sleep? Can it be harmed? How long does it take to ingest lost souls? You need the answers to these questions but where will you seek them?">
+<CONSTANT TEXT272 "As head of the Judain resistance movement in Godorno you are now one of the most powerful people in the city. With power comes responsibility but you comfort yourself that you are doing your best. You wonder how many more Judain will die carrying out your orders. How many innocent people will suffer. Will the Overlord give in to your demands? Or will you all be taken to the prison fortress of Grand and tortured?||The Overlord is no longer the great enemy. It is Hate you must outwit. In order to do so you must know something about its movements. Where does it sleep? Can it be harmed? How long does it take to ingest lost souls? You need the answers to these questions but where will you seek them?">
 <CONSTANT CHOICES272 <LTABLE "take a gondola down Grand Canal and hope Hate comes to you" "explore the catacombs">>
 
 <ROOM STORY272
@@ -3604,7 +3603,7 @@
 	(CONTINUE STORY310)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT316 "Mameluke's garret is hung with silk prints and tapestries depicting the great cities ofthe Archipelago and their rulers. There is thick rush matting on the floor and Mameluke would have lit the fire to warm you both, but the smoking chimney would have given you away.||You don't feel well. The sickness is shaking you like a palsy. Your face burns where the ichor ofHate splashed you. Mameluke looks at you with concern in his eyes.">
+<CONSTANT TEXT316 "Mameluke's garret is hung with silk prints and tapestries depicting the great cities of the Archipelago and their rulers. There is thick rush matting on the floor and Mameluke would have lit the fire to warm you both, but the smoking chimney would have given you away.||You don't feel well. The sickness is shaking you like a palsy. Your face burns where the ichor ofHate splashed you. Mameluke looks at you with concern in his eyes.">
 
 <ROOM STORY316
 	(DESC "316")
@@ -3695,7 +3694,7 @@
 	(CONTINUE STORY305)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT323 "Call as loud as you like for Hate has no ears with which to hears the cries ofthe tormented. Your cries do attract two rowing boats, however, which glide out from the granary wharf and are soon overtaking you. They are probably pirates so you pole rapidly towards the bank and decide to descend into the catacombs to seek Hate there.">
+<CONSTANT TEXT323 "Call as loud as you like for Hate has no ears with which to hears the cries of the tormented. Your cries do attract two rowing boats, however, which glide out from the granary wharf and are soon overtaking you. They are probably pirates so you pole rapidly towards the bank and decide to descend into the catacombs to seek Hate there.">
 <CONSTANT CHOICES323 <LTABLE "enter the crypts of the Megiddo dynasty" "ascend through the cellars of the Overlord's palace">>
 
 <ROOM STORY323
@@ -3734,7 +3733,7 @@
 <ROUTINE STORY326-PRECHOICE ()
 	<CODEWORD-JUMP ,CODEWORD-VENEFIX ,STORY399>>
 
-<CONSTANT TEXT327 "You arrive back at the jeweller's house in the dead of night. Clouds cover the moon like grave soil on the face of a corpse. Underfoot, the cobblestones glisten blackly. A cat prowls in the shadows across the street, making barely less noise than you. You have always prided yourself on your stealth and cool nerve, but more useful than either of these is your mastery of magic. For tonight's work, your normal humdrum repertoire of charms will not suffice; you dredge your memory for a more arcane enchantment. Murmuring an antique rhyme, you work a charm that will keep all the house's occupants asleep by making their dreams more vivid than reality itself. Even an earthquake could not rouse them before dawn. Confident that nothing can go wrong now, you force the front and enter.||The interior of the shop is dark. You see no reason not to light the lamps; it will make your job easier, and any passer-by would just assume the jeweller is working late. A hasty but thorough search of the shop reveals no sign of the diamond, but that is only to be expected. Probably it is kept in a , treasure chest. Stepping over a slumbering guard dog, you start up the stairs.||A floorboard creaks on the landing above. Startled, you look up to see a young soldier in the uniform of the Overlord's troop standing there. His face is ashen with fright, but he musters a brave semblance of self-assurance as he calls: 'Y ou there! Y ou're under arrest!'">
+<CONSTANT TEXT327 "You arrive back at the jeweller's house in the dead of night. Clouds cover the moon like grave soil on the face of a corpse. Underfoot, the cobblestones glisten blackly. A cat prowls in the shadows across the street, making barely less noise than you. You have always prided yourself on your stealth and cool nerve, but more useful than either of these is your mastery of magic. For tonight's work, your normal humdrum repertoire of charms will not suffice; you dredge your memory for a more arcane enchantment. Murmuring an antique rhyme, you work a charm that will keep all the house's occupants asleep by making their dreams more vivid than reality itself. Even an earthquake could not rouse them before dawn. Confident that nothing can go wrong now, you force the front and enter.||The interior of the shop is dark. You see no reason not to light the lamps; it will make your job easier, and any passer-by would just assume the jeweller is working late. A hasty but thorough search of the shop reveals no sign of the diamond, but that is only to be expected. Probably it is kept in a , treasure chest. Stepping over a slumbering guard dog, you start up the stairs.||A floorboard creaks on the landing above. Startled, you look up to see a young soldier in the uniform of the Overlord's troop standing there. His face is ashen with fright, but he musters a brave semblance of self-assurance as he calls: 'You there! You're under arrest!'">
 <CONSTANT CHOICES327 <LTABLE "advance up the stairs to attack him" "run out of the shop and go back to join your friends">>
 
 <ROOM STORY327
@@ -4020,7 +4019,7 @@ power.">
 	(CONTINUE STORY262)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT353 "The barricade is composed of pews from the nearest temple, doors stripped from nearby deserted houses, flagstones and carts. The carts have been laden with mud. Even an elephant could not break through.||The blockage is ten feet high and in places a parapet has been built on the defenders' side from which potshots can be taken at the Overlord's city guards as they advance. You have archers in the windows and on the roofs of the houses on either side of the barricade. Morale is high, the stories of how you killed scores of guards in the prison fortress of Grond have placed you high in the esteem of your people.||You are conferring with the captain ofthe archers stationed in the houses when everyone suddenly goes quiet. They are all staring down the cracked road towards the Grand Canal from which Hate is raising its dripping baleful-eyed face. Its feelers quest in the air for your scent and it rises out of the canal, smashing houses on either side as it comes. The barricade is proof against a stampede of elephants but not against Hate itself">
+<CONSTANT TEXT353 "The barricade is composed of pews from the nearest temple, doors stripped from nearby deserted houses, flagstones and carts. The carts have been laden with mud. Even an elephant could not break through.||The blockage is ten feet high and in places a parapet has been built on the defenders' side from which potshots can be taken at the Overlord's city guards as they advance. You have archers in the windows and on the roofs of the houses on either side of the barricade. Morale is high, the stories of how you killed scores of guards in the prison fortress of Grond have placed you high in the esteem of your people.||You are conferring with the captain of the archers stationed in the houses when everyone suddenly goes quiet. They are all staring down the cracked road towards the Grand Canal from which Hate is raising its dripping baleful-eyed face. Its feelers quest in the air for your scent and it rises out of the canal, smashing houses on either side as it comes. The barricade is proof against a stampede of elephants but not against Hate itself">
 <CONSTANT CHOICES353 <LTABLE "order a tactical withdrawal" "stand at the barricade and defy the monster">>
 
 <ROOM STORY353
@@ -4191,7 +4190,7 @@ power.">
 	(CONTINUE STORY412)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT367 "Only a very agile fighter like yourself could slip past the mesmerizing point of Tyutchev's sword as it whistles through the air in deadly arcs. You crouch and spring forward, then lunge your sword into the gap in his armour, beneath his armpit. There is a satisfying groan from Tyutchev who staggers back and looks on you with new respect. But he is not beaten yet. ">
+<CONSTANT TEXT367 "Only a very agile fighter like yourself could slip past the mesmerizing point of Tyutchev's sword as it whistles through the air in deadly arcs. You crouch and spring forward, then lunge your sword into the gap in his armour, beneath his armpit. There is a satisfying groan from Tyutchev who staggers back and looks on you with new respect. But he is not beaten yet.">
 <CONSTANT CHOICES367 <LTABLE "call on him to put down his sword, saying that senseless slaughter serves no purpose" "fight on">>
 
 <ROOM STORY367
@@ -4452,7 +4451,7 @@ power.">
 	(CONTINUE STORY181)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT391 "Amateur rogues often assume that speed is the important thing in a job like this. Long experience has taught you better. The key to success is to take your time. Luckily patience is your only virtue, so you have had plenty of opportunity to practise it over the years.||Creeping low, pressed hard back into the dingy shadows by the wainscoting, you inch round the room. All the while the three guards go on with their game. Though your eyes remain firmly fixed on the treasure-box you listen to the hisses of breath and grunts and curses that indicate when someone has lost a throw, to the gulps of watered wine taken during respites in the game, to the rattle of dice and the slap ofcopper coins on the wooden tabletop. But still the guards remain oblivious ofthe rogue at their backs who is intent on whisking away a greater fortune in this one night than they will win or lose in their whole lives.||You reach the treasure chest at last and allow yourself a backward glance. One of the guards is now slumped dozily across the table. Another fingers the dice idly, tired of squandering his pay. The third grunts and begins to clean his fingernails with a dagger. \"How much longer are we on duty for?\" he asks.||\"The next watch ought to be here in a few minutes to relieve us,\" replies the man with the dice.||Now you know you must work fast. When the next watch takes over they are bound to check the treasure chest. It isn't very large, but with any load under your arm you would find it harder to move silently.">
+<CONSTANT TEXT391 "Amateur rogues often assume that speed is the important thing in a job like this. Long experience has taught you better. The key to success is to take your time. Luckily patience is your only virtue, so you have had plenty of opportunity to practise it over the years.||Creeping low, pressed hard back into the dingy shadows by the wainscoting, you inch round the room. All the while the three guards go on with their game. Though your eyes remain firmly fixed on the treasure-box you listen to the hisses of breath and grunts and curses that indicate when someone has lost a throw, to the gulps of watered wine taken during respites in the game, to the rattle of dice and the slap ofcopper coins on the wooden tabletop. But still the guards remain oblivious of the rogue at their backs who is intent on whisking away a greater fortune in this one night than they will win or lose in their whole lives.||You reach the treasure chest at last and allow yourself a backward glance. One of the guards is now slumped dozily across the table. Another fingers the dice idly, tired of squandering his pay. The third grunts and begins to clean his fingernails with a dagger. \"How much longer are we on duty for?\" he asks.||\"The next watch ought to be here in a few minutes to relieve us,\" replies the man with the dice.||Now you know you must work fast. When the next watch takes over they are bound to check the treasure chest. It isn't very large, but with any load under your arm you would find it harder to move silently.">
 <CONSTANT CHOICES391 <LTABLE "try picking the lock" "take the chest with you and open it later">>
 
 <ROOM STORY391
@@ -4500,7 +4499,7 @@ power.">
 	)>>
 
 <CONSTANT TEXT395 "This motley crew would follow you anywhere. They shuffie along in your wake, calling out feebly for food and medicine, though there is no magic or medicine that can restore these disfigured unfortunates to health. You are not bothered by city guardsmen, nor thieves and cut-throats while surrounded by your crowd oflepers. The sweet putrefying smell that seeps from their bandages is an antidote to the stench of death that pervades the city.||You must decide where to lead your motley band.">
-<CONSTANT CHOICES395 <LTABLE "take them to the prison fortress of Grand, in the hope of using them to set the prisoners free" "have them sheltered by the cells of the Judain resistance ">>
+<CONSTANT CHOICES395 <LTABLE "take them to the prison fortress of Grand, in the hope of using them to set the prisoners free" "have them sheltered by the cells of the Judain resistance">>
 
 <ROOM STORY395
 	(DESC "395")
@@ -4607,7 +4606,7 @@ power.">
 	(CONTINUE STORY358)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT407 "Though your instinct is to trust Lucie who seems open and without guile you know it makes no sense to agree to a meeting with a stranger, particularly in a city like Godorno where your people are the victims of genocide. You demand to be told who it is who can help you in your struggle to save your people.||\"He made me promise to keep his identity secret, until you meet. He said he could help you only if you are able to trust. So many good people have fallen into the clutches ofthe coils of Hate. Trust me.\"||\"Is he Judain?\"||\"No, not Judain. Come, we are almost there.\"">
+<CONSTANT TEXT407 "Though your instinct is to trust Lucie who seems open and without guile you know it makes no sense to agree to a meeting with a stranger, particularly in a city like Godorno where your people are the victims of genocide. You demand to be told who it is who can help you in your struggle to save your people.||\"He made me promise to keep his identity secret, until you meet. He said he could help you only if you are able to trust. So many good people have fallen into the clutches of the coils of Hate. Trust me.\"||\"Is he Judain?\"||\"No, not Judain. Come, we are almost there.\"">
 <CONSTANT CHOICES407 <LTABLE "follow Lucie" "change your mind and tell her you are going back to your hideout">>
 
 <ROOM STORY407
@@ -4670,8 +4669,8 @@ power.">
 	(CONTINUE STORY309)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT414 "At last you manage to regain the safety ofthe underground cellars. There is a hole in the ceiling through which you can be spied on from the road unless you move back against the back wall, but the other Judain have taken all the best bolt holes. You will find a better hideaway in time.">
-<CONSTANT CHOICES414 <LTABLE " drag the palliasse to the back where you cannot be seen through the hole in the roof" "sleep on the street side near the hole ">>
+<CONSTANT TEXT414 "At last you manage to regain the safety of the underground cellars. There is a hole in the ceiling through which you can be spied on from the road unless you move back against the back wall, but the other Judain have taken all the best bolt holes. You will find a better hideaway in time.">
+<CONSTANT CHOICES414 <LTABLE " drag the palliasse to the back where you cannot be seen through the hole in the roof" "sleep on the street side near the hole">>
 
 <ROOM STORY414
 	(DESC "414")
@@ -4681,7 +4680,7 @@ power.">
 	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT415 "When the captain of the Eastgate at Grond sees how much gold you have brought him his eyes nearly pop out of his head. He hands you a huge bunch of keys on a belt and directs you by a circuitous route to the torture chambers. There are no other guards to be seen. He must have given orders that are keeping them busy. By the time you find the torture chambers, deep below the towers ofthe Great Keep, the captain of the guard is long gone, knowing full well what his grisly fate would be if he should be caught by those he has tortured.">
+<CONSTANT TEXT415 "When the captain of the Eastgate at Grond sees how much gold you have brought him his eyes nearly pop out of his head. He hands you a huge bunch of keys on a belt and directs you by a circuitous route to the torture chambers. There are no other guards to be seen. He must have given orders that are keeping them busy. By the time you find the torture chambers, deep below the towers of the Great Keep, the captain of the guard is long gone, knowing full well what his grisly fate would be if he should be caught by those he has tortured.">
 
 <ROOM STORY415
 	(DESC "415")

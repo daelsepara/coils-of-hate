@@ -28,6 +28,10 @@
     (DESC "Sunset")
     (SYNONYM SUNSET)>
 
+<OBJECT CODEWORD-TOWER
+    (DESC "Tower")
+    (SYNONYM TOWER)>
+
 <OBJECT CODEWORD-VENEFIX
     (DESC "Venefix")
     (SYNONYM VENEFIX)>

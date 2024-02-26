@@ -534,9 +534,7 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY039-PRECHOICE ()
-	<COND(,RUN-ONCE
-		<ITEM-JUMP ,SWORD ,STORY068>
-	)>>
+	<ITEM-JUMP ,SWORD ,STORY068>>
 
 <CONSTANT TEXT040 "As you pad quietly towards the Overlord;s bed the candles flicker in a gust of wind. Far off you can hear the baying of his hunting dogs in their kennels. Farther off still the wind carries the moans and screams of the unfortunates in Grond.||The Overlord's bed is set on a rich ruby-red carpet with intricate patterns ofgold and silver thread woven into it. There are signs and sigils, perhaps magical wards.">
 <CONSTANT CHOICES040 <LTABLE "walk quietly across the carpet to the concubine's side" "jump straight onto the bed so your feet don't touch the carpet">>
@@ -565,9 +563,7 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY041-PRECHOICE ()
-	<COND(,RUN-ONCE
-		<GAIN-LIFE 2>
-	)>>
+	<GAIN-LIFE 2>>
 
 <CONSTANT TEXT042 "There is a whoof as a thick cloud of smoke explodes around you. You grope your way through the smoke towards the Jade Warriors. One of them looms towards you, the light gleaming dully now off its facets and its sword is working mechanically. You recoil in fright but it lumbers past you making elaborate passes in the air, as if engaged in a display of an ancient style of swordplay. The others are also lurching about at random. The smoke seems to have scrambled their senses. Each is cutting and thrusting at the air around it but they seem oblivious of you.">
 
@@ -868,7 +864,7 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY069-PRECHOICE ()
-	<COND(,RUN-ONCE <GAIN-LIFE 3>)>>
+	<GAIN-LIFE 3>>
 
 <CONSTANT TEXT070 "You creep along side streets, hiding your face from strangers, as you head towards the riverfront. You are plagued by midges but that is the least of your troubles. You can hear shrieks and the cries of hysterical mobs behind you as they rampage back and forth across the city. Making your way carefully to the quay you can see a row of three river barges, two laden with goods and one which has just finished unloading.">
 
@@ -1690,18 +1686,16 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY143-PRECHOICE ("AUX" (DAMAGE 3))
-	<COND(,RUN-ONCE
-		<COND(<OR <CHECK-SKILL ,SKILL-SWORDPLAY> <CHECK-SKILL ,SKILL-UNARMED-COMBAT> <CHECK-SKILL ,SKILL-AGILITY>>
-			<SET DAMAGE 1>
-		)>
-		<TEST-MORTALITY .DAMAGE ,DIED-FROM-INJURIES ,STORY143>
-		<IF-ALIVE ,TEXT143-CONTINUED>
-		<COND(<IS-ALIVE>
-			<COND(<CHECK-CODEWORD ,CODEWORD-VENEFIX>
-				<DELETE-CODEWORD ,CODEWORD-VENEFIX>
-			)(ELSE
-				<GAIN-CODEWORD ,CODEWORD-SATORI>
-			)>
+	<COND(<OR <CHECK-SKILL ,SKILL-SWORDPLAY> <CHECK-SKILL ,SKILL-UNARMED-COMBAT> <CHECK-SKILL ,SKILL-AGILITY>>
+		<SET DAMAGE 1>
+	)>
+	<TEST-MORTALITY .DAMAGE ,DIED-FROM-INJURIES ,STORY143>
+	<IF-ALIVE ,TEXT143-CONTINUED>
+	<COND(<IS-ALIVE>
+		<COND(<CHECK-CODEWORD ,CODEWORD-VENEFIX>
+			<DELETE-CODEWORD ,CODEWORD-VENEFIX>
+		)(ELSE
+			<GAIN-CODEWORD ,CODEWORD-SATORI>
 		)>
 	)>>
 
@@ -2095,9 +2089,7 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY181-PRECHOICE ()
-	<COND(,RUN-ONCE
-		<KEEP-ITEM ,KNIFE>
-	)>>
+	<KEEP-ITEM ,KNIFE>>
 
 <CONSTANT TEXT182 "You steal up behind the Jade Warrior and throw yourself against its sword arm, wrenching the blade from its armoured grasp.||\"Obey me, Jade Warriors of the Megiddo dynasty!\" you cry on impulse, but their only response is to advance on you with swords aloft. There seems no escape from their deadly flashing blades, and you cry out in agony as your stolen sword is dashed from your grip and you are cut to the bone.">
 <CONSTANT TEXT182-CONTINUED "You flee from the tomb chamber.">
@@ -2671,9 +2663,7 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY232-PRECHOICE ()
-	<COND(,RUN-ONCE
-		<GAIN-MONEY 15>
-	)>>
+	<GAIN-MONEY 15>>
 
 <CONSTANT TEXT233 "How will you lift the hearts of the men and women on the barricade? They are quailing before the presence of Hate. Some start to wail as they recognize loved ones sunk in the cloying purple embrace of the monster.">
 <CONSTANT CHOICES233 <LTABLE "tell them they have nothing to fear for they are of pure heart" "tell them that death on the barricade will lead to eternal salvation">>
@@ -3297,15 +3287,13 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY283-PRECHOICE ("AUX" (DAMAGE 5))
-	<COND(,RUN-ONCE
-		<COND(<CHECK-SKILL ,SKILL-SWORDPLAY>
-			<SET DAMAGE 1>
-		)(<CHECK-SKILL ,SKILL-UNARMED-COMBAT>
-			<SET DAMAGE 3>
-		)>
-		<TEST-MORTALITY .DAMAGE ,DIED-IN-COMBAT ,STORY283>
-		<IF-ALIVE ,TEXT283-CONTINUED>
-	)>>
+	<COND(<CHECK-SKILL ,SKILL-SWORDPLAY>
+		<SET DAMAGE 1>
+	)(<CHECK-SKILL ,SKILL-UNARMED-COMBAT>
+		<SET DAMAGE 3>
+	)>
+	<TEST-MORTALITY .DAMAGE ,DIED-IN-COMBAT ,STORY283>
+	<IF-ALIVE ,TEXT283-CONTINUED>>
 
 <CONSTANT TEXT284 "The Overlord's soldiers close in on you with drawn swords. You fight for your life valiantly. Your fists and feet are a blur, but you can't keep them off for ever. There are too many foes and they cut you down while the townsfolk howl with glee. Your dying thought is: \"How could I have been so foolish to think I could fight my way out ot this?\"">
 
@@ -3691,12 +3679,10 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY320-PRECHOICE ()
-	<COND(,RUN-ONCE
-		<COND (<CHECK-CODEWORD ,CODEWORD-VENEFIX>
-			<DELETE-CODEWORD ,CODEWORD-VENEFIX>
-		)(ELSE
-			<GAIN-CODEWORD ,CODEWORD-SATORI>
-		)>
+	<COND (<CHECK-CODEWORD ,CODEWORD-VENEFIX>
+		<DELETE-CODEWORD ,CODEWORD-VENEFIX>
+	)(ELSE
+		<GAIN-CODEWORD ,CODEWORD-SATORI>
 	)>>
 
 <CONSTANT TEXT321 "Tyutchev is leading you by the back alleys towards the foreigners' quarter.">
@@ -3913,7 +3899,7 @@ power.">
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY340-PRECHOICE ()
-	<COND(,RUN-ONCE <GAIN-LIFE 2>)>>
+	<GAIN-LIFE 2>>
 
 <CONSTANT TEXT341 "Did you think you could frighten five hundred guards inside a huge fortress with ten-foot thick walls that stand forty feet high into letting you in among them? They have only one reply to such a hideous apparition as you have conjured: they shoot you with their crossbows from the arrow slits on either side and above the gates. You are peppered like a pincushion. As you die and the magic fades there is a low heartless cheer as the guards realize they have slaughtered yet another Judain. There is no hero left now to save the city. Hate will subdue all.">
 
@@ -3995,20 +3981,18 @@ power.">
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY347-PRECHOICE ()
-	<COND(,RUN-ONCE
-		<COND(<CHECK-CODEWORD ,CODEWORD-VENEFIX>
-			<IF-ALIVE ,TEXT347-VENEFIX>
-			<COND (<CHECK-SKILL ,SKILL-AGILITY>
-				<LOSE-SKILL ,SKILL-AGILITY>
-			)>
-			<COND (<CHECK-SKILL ,SKILL-SWORDPLAY>
-				<LOSE-SKILL ,SKILL-SWORDPLAY>
-			)>
-		)(<CHECK-CODEWORD ,CODEWORD-SATORI>
-			<IF-ALIVE ,TEXT347-SATORI>
+	<COND(<CHECK-CODEWORD ,CODEWORD-VENEFIX>
+		<IF-ALIVE ,TEXT347-VENEFIX>
+		<COND (<CHECK-SKILL ,SKILL-AGILITY>
+			<LOSE-SKILL ,SKILL-AGILITY>
 		)>
-		<IF-ALIVE ,TEXT347-CONTINUED>
-	)>>
+		<COND (<CHECK-SKILL ,SKILL-SWORDPLAY>
+			<LOSE-SKILL ,SKILL-SWORDPLAY>
+		)>
+	)(<CHECK-CODEWORD ,CODEWORD-SATORI>
+		<IF-ALIVE ,TEXT347-SATORI>
+	)>
+	<IF-ALIVE ,TEXT347-CONTINUED>>
 
 <CONSTANT TEXT348 "The slaughter is swift and bloody. The look of disgust in the eyes of your fellow Judain when it is over and there are only the moans of the dying is eloquent testimony that revenge is a bitter fruit. How could you have let your people commit such barbaric atrocities? Delete the codeword Satori if you have it.||It is time to return to your secret bolthole and rest.">
 
@@ -4137,10 +4121,8 @@ power.">
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY358-PRECHOICE ()
-	<COND(,RUN-ONCE
-		<GAIN-ITEM ,DIAMOND>
-		<SKILL-JUMP ,SKILL-STREETWISE ,STORY114>
-	)>>
+	<GAIN-ITEM ,DIAMOND>
+	<SKILL-JUMP ,SKILL-STREETWISE ,STORY114>>
 
 <CONSTANT TEXT359 "The Judain are horrified at your suggestion they take the lepers in. Many of the unfortunates are suffering from wet leprosy, which is highly contagious. Your own people shun you for fear of catching the curse.||Those who say the Judain are attracting too much attention to themselves with their campaign of assassinations win the vote in the general council of Judain. The resistance cells are disbanded. This will make it harder to get around the city, as before you could rely on the resistance for help.||It grieves you that you are unable to help the lepers. They go on their way, staggering about town, begging for scraps, fighting the dogs for any scraps of offal they can find in the gutter.">
 
@@ -4364,9 +4346,7 @@ power.">
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY376-PRECHOICE ()
-	<COND(,RUN-ONCE
-		<GAIN-LIFE 2>
-	)>>
+	<GAIN-LIFE 2>>
 
 <CONSTANT TEXT377 "You have taken the wrong course. You have never seen a man so skilled with a sword as the tall pale-faced Tyutchev. He is fast and strong too, and he cuts you down in a welter of blood and iron. Lucie looks on mournfully as he delivers the coup de grace, severing your head from your shoulders. There is no one left to save the Judain now. Hate will subdue all.">
 
@@ -4437,9 +4417,7 @@ power.">
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY383-PRECHOICE ()
-	<COND(,RUN-ONCE
-		<GAIN-LIFE 1>
-	)>>
+	<GAIN-LIFE 1>>
 
 <CONSTANT TEXT384 "Tyutchev orders the landlord to throw you a sword. You catch it. As you stand ready, trying to get the feel of your new weapon, Tyutchev draws his own sword over his shoulder in a single fluid motion full of grace and power. There is a merciless glint in his pale blue eyes as he advances steadily towards you. Lucie looks on with keen interest.">
 <CONSTANT CHOICES384 <LTABLE "rush past him and out of the inn" "stay and fight Tyutchev">>

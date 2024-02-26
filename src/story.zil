@@ -1779,7 +1779,7 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY149-PRECHOICE ()
-	<TEST-MORTALITY ,DIED-GREW-WEAKER ,STORY149>
+	<TEST-MORTALITY 4 ,DIED-GREW-WEAKER ,STORY149>
 	<IF-ALIVE TEXT149-CONTINUED>>
 
 <CONSTANT TEXT150 "The ceiling of the room is clear crystal. The dome of crystal that tops the tower is supported by huge iron struts from a black boss directly above the jewel. You look up as you start to cross the floor to the casket, just as a flash of lightning illuminates everythin in stark outline. The angled struts are in fact the legs of a giant spider whose eyes seem to follow your every move as you inch slowly beneath the arches of its legs.||The keening of the gargoyles reaches a new frenzied high and the crystal that protects you from the tower-spinning spider explodes into shards and dust. The wind falls away, the keening drops to a low moan and now you hear for the first time the wheezing susurratioins of the spider's breath. You can see its thorax opening and closing like a bellows.">
@@ -2000,7 +2000,7 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY170-PRECHOICE ()
-	<TEST-MORTALITY ,DIED-FROM-INJURIES ,STORY170>
+	<TEST-MORTALITY 4 ,DIED-FROM-INJURIES ,STORY170>
 	<IF-ALIVE TEXT170-CONTINUED>>
 
 <CONSTANT TEXT171 "The return journey takes no longer than the outward trek and you are soon faced with the battlemented towers and guarded walls of Godorno, city of the Forsaken. Carrion crows, habitually solitary scavengers, wheel in great flocks above the city and the wind carries the dismal cries of the unfortunates being tortured in the prison fortress of Grond to your unwilling ears.">

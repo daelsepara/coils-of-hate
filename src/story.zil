@@ -4196,22 +4196,35 @@ power.">
 	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT365 "The tunnels take you deeper and deeper into the bones of ancient Godorno. At last you stumble through a rotten tapestry into a chamber filled with gold-plated furniture and funeral biers with sarcophagi atop them. Four glassy green statues stand at the corners of the room.||The four Jade Warriors clank menacingly as they come to life before you. The green swords in their hands cut the beams of light, giving each blade an aura like a rainbow. The light shimmers off the · jagged blades and off the chiselled planes of the huge warriors themselves. When they step towards you, their heavy tread grinds the rubble beneath their armoured feet to powder. The whole room reverberates to their measured advance.">
+<CONSTANT TEXT365-CONTINUED "You realize you must flee.">
+<CONSTANT TEXT365-JADE-WARRIOR "The nearest Jade Warrior slashes you.">
+<CONSTANT CHOICES365 <LTABLE "do battle" "fight them" "cast Encloud" "cast Rulership" "cast Bafflement" "cast Vanish" "fall back on" "use a">>
+
 <ROOM STORY365
 	(DESC "365")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT365)
+	(PRECHOICE STORY365-PRECHOICE)
+	(CHOICES CHOICES365)
+	(DESTINATIONS <LTABLE STORY389 STORY296 STORY042 STORY066 STORY096 STORY102 STORY277 STORY204>)
+	(REQUIREMENTS <LTABLE SKILL-SWORDPLAY SKILL-UNARMED-COMBAT SKILL-SPELLS SKILL-SPELLS SKILL-SPELLS SKILL-SPELLS SKILL-AGILITY CENSER-OF-FRAGRANT-INCENSE>)
+	(TYPES <LTABLE R-SKILL R-SKILL R-SKILL R-SKILL R-SKILL R-SKILL R-SKILL R-ITEM>)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY365-PRECHOICE ()
+	<COND(,RUN-ONCE
+		<COND(<OR <CHECK-SKILL ,SKILL-SWORDPLAY> <CHECK-SKILL ,SKILL-UNARMED-COMBAT> <CHECK-SKILL ,SKILL-SPELLS> <CHECK-SKILL ,SKILL-AGILITY> <CHECK-ITEM ,CENSER-OF-FRAGRANT-INCENSE>>
+			<PREVENT-DEATH ,STORY365>
+		)(ELSE
+			<IF-ALIVE ,TEXT365-JADE-WARRIOR>
+			<TEST-MORTALITY 6 ,DIED-FROM-INJURIES ,STORY365>
+			<COND(<IS-ALIVE>
+				<IF-ALIVE ,TEXT365-CONTINUED>
+				<STORY-JUMP ,STORY016>
+			)>
+		)>
+	)>>
 
 <CONSTANT TEXT366 "You drop in on your friend Mameluke, a man of far-off Tartary. He listens to your plans to enter Grond through the catacombs beneath the city, then shakes his head.">
 

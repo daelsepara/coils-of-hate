@@ -24,6 +24,7 @@
 	<PUTP ,STORY176 ,P?DEATH T>
 	<PUTP ,STORY182 ,P?DEATH T>
 	<PUTP ,STORY184 ,P?DEATH T>
+	<PUTP ,STORY224 ,P?DEATH T>
 	<PUTP ,STORY226 ,P?DEATH T>
 	<PUTP ,STORY271 ,P?DEATH T>
 	<PUTP ,STORY278 ,P?DEATH T>
@@ -2553,22 +2554,38 @@
 	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT224 "You lure the monster to attack, then clamp the shackles of your chains around its tentacles. As you do, another tentacle swipes away the cornice of a building above and you are struck by a shower of falling masonry.">
+<CONSTANT TEXT224-AGILITY "You dodge aside from the brunt of the rubble.">
+<CONSTANT TEXT224-CONTINUED "You survey your handiwork. You have tethered Hate to the columns of the cathedral. Ifonly the chains hold, you may be able to destroy it once and for all.">
+<CONSTANT CHOICES224 <LTABLE "use the Jade Warrior's sword" "use the Jewel of Sunset Fire" "you have none of those items">>
+
 <ROOM STORY224
 	(DESC "224")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT224)
+	(PRECHOICE STORY224-PRECHOICE)
+	(CHOICES CHOICES224)
+	(DESTINATIONS <LTABLE STORY230 STORY349 STORY187>)
+	(REQUIREMENTS <LTABLE JADE-WARRIORS-SWORD JEWEL-OF-SUNSET-FIRE NONE>)
+	(TYPES <LTABLE R-ITEM R-ITEM R-NONE>)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY224-PRECHOICE ("AUX" DAMAGE)
+	<COND(,RUN-ONCE
+		<COND(<CHECK-SKILL ,SKILL-AGILITY>
+			<SET DAMAGE 1>
+		)>
+		<TEST-MORTALITY .DAMAGE ,DIED-FROM-INJURIES ,STORY224>
+		<COND(<IS-ALIVE>
+			<COND(<CHECK-SKILL ,SKILL-AGILITY>
+				<IF-ALIVE ,TEXT224-AGILITY>
+			)>
+			<IF-ALIVE ,TEXT224-CONTINUED>
+			<COND(<NOT <CHECK-CODEWORD ,CODEWORD-GORDIAN>>
+				<GAIN-CODEWORD ,CODEWORD-GORDIAN>
+			)>
+		)>
+	)>>	
 
 <CONSTANT TEXT225 "This street winds down towards the riverfront and the centre of the city. It is crossed by large avenues that lead up to the citadel, lined with tall straight cedars. You hear the ringing of the town crier's bell. At the end of the street is Greenbark Plaza. The mob is still chasing you, growing hysterical in its desire for your blood. Ifyou are caught you will surely be stoned to death.">
 <CONSTANT CHOICES225 <LTABLE "use" "run on into Greenbark Plaza" "duck down one of the smaller side streets">>

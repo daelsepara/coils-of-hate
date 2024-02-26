@@ -26,7 +26,7 @@
 	<PUTP ,STORY184 ,P?DEATH T>
 	<PUTP ,STORY224 ,P?DEATH T>
 	<PUTP ,STORY226 ,P?DEATH T>
-	<PUTP ,STORY254-PELTED-PRECHOICE ,P?DEATH T>
+	<PUTP ,STORY254-PELTED ,P?DEATH T>
 	<PUTP ,STORY263 ,P?DEATH T>
 	<PUTP ,STORY271 ,P?DEATH T>
 	<PUTP ,STORY278 ,P?DEATH T>
@@ -35,7 +35,9 @@
 	<PUTP ,STORY296 ,P?DEATH T>
 	<PUTP ,STORY338 ,P?DEATH T>
 	<PUTP ,STORY363 ,P?DEATH T>
-	<PUTP ,STORY389 ,P?DEATH T>>
+	<PUTP ,STORY365 ,P?DEATH T>
+	<PUTP ,STORY389 ,P?DEATH T>
+	<PUTP ,STORY399 ,P?DEATH T>>
 
 <CONSTANT HEALING-KEY-CAPS !\U>
 
@@ -2136,7 +2138,7 @@
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT184 "You fight a pitched battle face to face with Hate, your blade hacking great quivering chunks out of its loathsome warty mass. The people of the city peer timidly from the cracked facades of their houses, astonished to see such bravery from a single lone Judain. Hate screams and lashes out at you, raining rubble down on your head in its frenzy to stop the punishing blows you are inflicting.">
-<CONSTANT TEXT184-CONTINUED "The reek of camphor and honeysuckle makes your head reel. Staggering under Hate's onslaught, you look up to see the largest of its tentacles smashing down towards you. ">
+<CONSTANT TEXT184-CONTINUED "The reek of camphor and honeysuckle makes your head reel. Staggering under Hate's onslaught, you look up to see the largest of its tentacles smashing down towards you.">
 
 <ROOM STORY184
 	(DESC "184")
@@ -2955,7 +2957,7 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY254-PELTED-PRECHOICE ()
-	<TEST-MORTALITY 4 ,DIED-FROM-INJURIES ,TEXT254-PELTED>>
+	<TEST-MORTALITY 4 ,DIED-FROM-INJURIES ,STORY254-PELTED>>
 
 <CONSTANT TEXT255 "You duck down the steps into the drinking house and find to your horror that it is a haunt of off-duty gate guards and the Overlord's mercenaries. They sit around tables, drinking. Many still wear the purple and black livery of the Overlord. You walk quickly across the room looking for a second way out but there is none. You hear your pursuers rein in outside. There are too many enemies to fight.">
 <CONSTANT CHOICES255 <LTABLE "hide in the privy" "surrender">>
@@ -3963,22 +3965,28 @@ power.">
 	(CONTINUE STORY374)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT345 "Lucie reaches up to touch the amulet that swings around your neck and recoils. \"Ow, it's hot! How can you bear it?\"||\"My leather jerkin protects me. If it is hot that means danger threatens. We must leave here.\"||She reaches up again and snatches at the amulet, grimacing with pain. She rips it from your neck, scattering the links of the fine gold chain across the wbbles and runs quickly away from you. You give chase but she ducks beneath an overturned cart and down a hatch into a cellar. It is dark and you lose sight ofher. Lucie knows the back ways and dives of the city even better than you do; you will never find her.">
+<CONSTANT TEXT345-CONTINUED "You cannot understand Lucie doing such a thing. She is a thief, admittedly, but it is not in her character to steal from friends. Perhaps she has been the victim of a dibbuk. These invisible creatures settle on a person's shoulder and take charge of their thoughts, causing them to do things that would normally be against their nature. Well, in that case it has made a mistake in causing her to take your amulet. The protective magic will soon drive the dibbuk off, leaving Lucie with no memory ofthe event.||Still, you have lost your amulet. There must be one somewhere in the city, so perhaps you should start looking. Alternatively, you could return to your hideout and see if anyone there knows where you might find one; after all, the Judain are famous for their skill in manufacturing magical amulets and luckstones.">
+<CONSTANT CHOICES345 <LTABLE "start scouring the city for a new amulet to buy" "look for Lucie to see ifshe still has it once the dibbuk has released her from its control" "consult your own people first">>
+
 <ROOM STORY345
 	(DESC "345")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT345)
+	(PRECHOICE STORY345-PRECHOICE)
+	(CHOICES CHOICES345)
+	(DESTINATIONS <LTABLE STORY213 STORY257 STORY202>)
+	(TYPES THREE-NONES)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY345-PRECHOICE ()
+	<COND(,RUN-ONCE
+		<COND(<CHECK-ITEM ,MAGIC-AMULET> <LOSE-ITEM ,MAGIC-AMULET>)>
+		<COND(<CHECK-SKILL ,SKILL-STREETWISE>
+			<SET-DESTINATION ,STORY345 1 ,STORY243>
+		)(ELSE
+			<SET-DESTINATION ,STORY345 1 ,STORY213>
+		)>
+	)>>
 
 <CONSTANT TEXT346 "Lucie smirks coquettishly as you tell her offand says, \"Well, it's true. Hate take them all and good riddance to bad rubbish.\"||You sigh, knowing you will never change her. You suspect that at least one of the criminal inmates of Grond must have done something dreadful to her before his imprisonment.||\"Surely there must be something you can do?\" you ask. \"Don't you know any of the guards?\"||\"I suppose I do, one or two. There's Captain Khmer in the east tower. He oversees the towngate and the eastern courtyard. I could smuggle you in there.\"">
 <CONSTANT CHOICES346 <LTABLE "go along with Lucie's plan to smuggle you into the prison fortress of Grond" "thank Lucie but decline her brave offer of help" "consult your amulet">>
@@ -3992,22 +4000,33 @@ power.">
 	(TYPES <LTABLE R-NONE R-NONE R-SKILL>)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT347 "You drag the pallet into the murk beside the back wall and fall into an unnaturally deep slumber. You dream of searching a forest for your lost mother. You awake feeling nauseous. You move to turn over and find a trail of viscous slime across your outstretched arm, like the track of a gigantic slug. Gagging, you feel vomit burn the back of your throat.">
+<CONSTANT TEXT347-VENEFIX "Your arm is permanently withered and you now cannot use the SWORDPLAY or AGILITY skills.">
+<CONSTANT TEXT347-SATORI "You wash off the slime in a barrel of rainwater and find that you are unscathed.">
+<CONSTANT TEXT347-CONTINUED "This is no place to stay -- it is time to find a new hideaway. You set out for Bumble Row, knowing that most of the shopkeepers there shut up shop long ago and it will be largely deserted.">
+
 <ROOM STORY347
 	(DESC "347")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT347)
+	(PRECHOICE STORY347-PRECHOICE)
+	(CONTINUE STORY315)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY347-PRECHOICE ()
+	<COND(,RUN-ONCE
+		<COND(<CHECK-CODEWORD ,CODEWORD-VENEFIX>
+			<IF-ALIVE ,TEXT347-VENEFIX>
+			<COND (<CHECK-SKILL ,SKILL-AGILITY>
+				<LOSE-SKILL ,SKILL-AGILITY>
+			)>
+			<COND (<CHECK-SKILL ,SKILL-SWORDPLAY>
+				<LOSE-SKILL ,SKILL-SWORDPLAY>
+			)>
+		)(<CHECK-CODEWORD ,CODEWORD-SATORI>
+			<IF-ALIVE ,TEXT347-SATORI>
+		)>
+		<IF-ALIVE ,TEXT347-CONTINUED>
+	)>>
 
 <CONSTANT TEXT348 "The slaughter is swift and bloody. The look of disgust in the eyes of your fellow Judain when it is over and there are only the moans of the dying is eloquent testimony that revenge is a bitter fruit. How could you have let your people commit such barbaric atrocities? Delete the codeword Satori if you have it.||It is time to return to your secret bolthole and rest.">
 
@@ -4740,7 +4759,7 @@ power.">
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT414 "At last you manage to regain the safety of the underground cellars. There is a hole in the ceiling through which you can be spied on from the road unless you move back against the back wall, but the other Judain have taken all the best bolt holes. You will find a better hideaway in time.">
-<CONSTANT CHOICES414 <LTABLE " drag the palliasse to the back where you cannot be seen through the hole in the roof" "sleep on the street side near the hole">>
+<CONSTANT CHOICES414 <LTABLE "drag the palliasse to the back where you cannot be seen through the hole in the roof" "sleep on the street side near the hole">>
 
 <ROOM STORY414
 	(DESC "414")

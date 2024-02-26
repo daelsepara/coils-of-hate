@@ -22,7 +22,13 @@
 	<PUTP ,STORY149 ,P?DEATH T>
 	<PUTP ,STORY170 ,P?DEATH T>
 	<PUTP ,STORY176 ,P?DEATH T>
-	<PUTP ,STORY182 ,P?DEATH T>>
+	<PUTP ,STORY182 ,P?DEATH T>
+	<PUTP ,STORY184 ,P?DEATH T>
+	<PUTP ,STORY226 ,P?DEATH T>
+	<PUTP ,STORY271 ,P?DEATH T>
+	<PUTP ,STORY278 ,P?DEATH T>
+	<PUTP ,STORY283 ,P?DEATH T>
+	<PUTP ,STORY296 ,P?DEATH T>>
 
 <CONSTANT HEALING-KEY-CAPS !\U>
 
@@ -2125,22 +2131,26 @@
 	(CONTINUE STORY222)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT184 "You fight a pitched battle face to face with Hate, your blade hacking great quivering chunks out ofits loathsome warty mass. The people of the city peer timidly from the cracked facades of their houses, astonished to see such bravery from a single lone Judain. Hate screams and lashes out at you, raining rubble down on your head in its frenzy to stop the punishing blows you are inflicting.">
+<CONSTANT TEXT184-CONTINUED "The reek of camphor and honeysuckle makes your head reel. Staggering under Hate's onslaught, you look up to see the largest ofits tentacles smashing down towards you. ">
+
 <ROOM STORY184
 	(DESC "184")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT184)
+	(PRECHOICE STORY184-PRECHOICE)
+	(CONTINUE STORY103)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY184-PRECHOICE ("AUX" (DAMAGE 8))
+	<COND (<CHECK-SKILL ,SKILL-CHARMS>
+		<SET DAMAGE 5>
+	)>
+	<TEST-MORTALITY .DAMAGE ,DIED-IN-COMBAT ,STORY184>
+	<IF-ALIVE ,TEXT184-CONTINUED>
+	<COND (<IS-ALIVE>
+		<CODEWORD-JUMP ,CODEWORD-GORDIAN ,STORY054>
+	)>>
 
 <CONSTANT TEXT185 "You are turning the corner into Hanging Gardens-- once one of the wonders of the world, now a tumbledown jungle of rubble and festooned plants rioting over the houses -- when your face starts to itch unpleasantly. You are only half-way to Mameluke's garret and the broad-shouldered black man is striding on ahead, confidently. The pink mucus of Hate is infesting you. Mameluke looks at you with concern as your eyes become vacant and you are assailed by numbing dreams in which you walk open-armed into the embrace of Hate, to join in the orgy of despair. Mameluke is tugging at your arm and pulling you along the road towards Chink Street where his poor garret perches atop a building like a landlocked lighthouse. The cry of the city guard nearby urges Mameluke to greater efforts as the doleful dirge of \"Bring out your dead, bring out your dead,\" tolls mournfully from the nearby Courtyard of Idle Fancies.">
 <CONSTANT CHOICES185 <LTABLE "send Mameluke on alone" "try to keep up with him as the guards approach">>
@@ -2575,22 +2585,20 @@
 	(TYPES <LTABLE R-SKILL R-NONE R-NONE>)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT226 "You know a little bit about horses and can ride tolerably well. Looking at the horse you see it is flinching from its own shadow. Taking its bridle you turn it till it is facing into the sun so it can no longer see its shadow. Mounting safely, you give the horse free rein: it surges into a gallop and you hang on grimly. Luckily for you the road to the main gate is straight. Within a few minutes you can see the wooden arches of the double gate ahead. People jump aside at the last moment from the path of your frothing mount.||The horse is still galloping wildly as you approach the gate and the gate guards tumble out of their guardhouse to stop you. One tries to grab the bridle but misses and falls over. Another is winding his crossbow. As you gallop past he lets fly and the bolt catches you in the side.">
+<CONSTANT TEXT226-CONTINUED "You hang on grimly as the twang of crossbows echoes from behind. Bolts zip past your ears. The horse gallops on, leaving pursuit behind. The towers and minarets ofGodomo are lost to view by the time the horse runs itself out. You dismount and carry on up the trade road on foot.">
+
 <ROOM STORY226
 	(DESC "226")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT226)
+	(PRECHOICE STORY226-PRECHOICE)
+	(CONTINUE STORY302)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY226-PRECHOICE ()
+	<TEST-MORTALITY 3 ,DIED-FROM-INJURIES ,STORY226>
+	<IF-ALIVE ,TEXT226-CONTINUED>>
 
 <CONSTANT TEXT227 "Tyutchev looks at you insolently. His direct stare makes you feel very uncomfortable. He has challenged many a poor fellow with a look like this, and most of them didn't live to tell the tale. Now he says, \"So a Judain comes ready for the slaughter! It's hardly worth the bother of collecting the ten gleenars' reward, but then there is the pleasure of killing you.\"||He speaks as though you were a slimebeast that had crawled out from under a stone. He draws his sword, a great one-and-a-half-hander, which he wields with negligent ease and power, as if it were a toothpick. It thrums through the air as he prepares to slaughter you. With a surprisingly quick movement for so large a man he manages to put himself between you and the only door. It doesn't look as if the latrine here backs onto the outside world so there is no escape that way. Perhaps that is why so many thieves drink here -- they are never bothered by the city guard. You have no choice but to fight.">
 
@@ -3099,22 +3107,20 @@
 	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT271 "You seize the bridle and leap into the saddle. The chestnut horse bucks and then arches its back and makes a series of straight-legged jumps to shake you from the saddle. You decide to give it free rein as you feel the horse's fear, hoping this will stop it bucking. It surges into a gallop and you hang on grimly. Luckily for you the road to the main gate is straight. Within a few minutes you can see the wooden arches of the double gate ahead. People jump aside at the last moment from the path of your frothing mount.||The horse is still galloping wildly as you approach the gate and the gate guards tumble out of their guardhouse to stop you. One tries to grab the bridle but misses and falls over. Another is winding his crossbow. As you gallop past he lets fly and the bolt catches you in the side.">
+<CONSTANT TEXT271-CONTINUED "You hang on grimly. The twangs of crossbow strings ring out behind you. Deadly quarrels go shooting past your ears. The horse gal- lops on, leaving pursuit behind. The towers and minarets of Godorno are lost to view by the time the horse runs itself out. It is lame. You dismount and carry on up the trade road on foot.">
+
 <ROOM STORY271
 	(DESC "271")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT271)
+	(PRECHOICE STORY271-PRECHOICE)
+	(CONTINUE STORY302)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY271-PRECHOICE ()
+	<TEST-MORTALITY 3 ,DIED-FROM-INJURIES ,STORY271>
+	<IF-ALIVE ,TEXT271-CONTINUED>>
 
 <CONSTANT TEXT272 "As head of the Judain resistance movement in Godorno you are now one of the most powerful people in the city. With power comes responsibility but you comfort yourself that you are doing your best. You wonder how many more Judain will die carrying out your orders. How many innocent people will suffer. Will the Overlord give in to your demands? Or will you all be taken to the prison fortress of Grand and tortured?||The Overlord is no longer the great enemy. It is Hate you must outwit. In order to do so you must know something about its movements. Where does it sleep? Can it be harmed? How long does it take to ingest lost souls? You need the answers to these questions but where will you seek them?">
 <CONSTANT CHOICES272 <LTABLE "take a gondola down Grand Canal and hope Hate comes to you" "explore the catacombs">>
@@ -3190,22 +3196,20 @@
 		)>
 	)>>
 
+<CONSTANT TEXT278 "You sit, exhausted, against a ramshackle wall and the city guards rein their horses in around you. You pass out with the sickness, only to come to a moment later as you are roughly hauled to your feet. The guards have dismounted to surround you. You are pushed around between them, then you double up as a knee is driven hard into your solar plexus.||They beat you badly and leave you for dead.">
+<CONSTANT TEXT278-CONTINUED "You drag yourself out of the gutter and manage to stagger to Mameluke's garrett.">
+
 <ROOM STORY278
 	(DESC "278")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT278)
+	(PRECHOICE STORY278-PRECHOICE)
+	(CONTINUE STORY316)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY278-PRECHOICE ()
+	<TEST-MORTALITY 5 ,DIED-FROM-INJURIES ,STORY278>
+	<IF-ALIVE ,TEXT278-CONTINUED>>
 
 <CONSTANT TEXT279 "You are taking a terrible risk, stealing into the Overlord's palace. It is a dark night and you fight to control a blackness of heart which impels you to take revenge on the cruel tyrannical Overlord.||Emerging out of the catacombs beneath the palace stables you make your way in by the postern gate and steal along strangely deserted corridors towards where you guess the Overlord's suite must be.||There are few guards here, though you can hear the sounds of a drunken brawl in the guardhouse itself. How can the Overlord's security be so lax? Is he losing his grip?||After only five minutes inside the palace you are outside the Overlord's bedchamber. Holding your breath you push open the door and step through.">
 
@@ -3255,22 +3259,27 @@
 	(VICTORY F)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT283 "The penalty for fighting with the Overlord's guards is to be hung in chains until the wind dries you out like a raisin. That's if you get caught, of course. But either way -- whether you are killed in this struggle, or arrested and taken to Grond -- it means you are now in a fight to the death. It is a grim battle, fought almost in silence. The only sounds are frantic pants of breath and the scuff of quick footfalls as you manoeuvre back and forth across the room. At least you have one thing in your favour: although outnumbered, you are able to get your back to a comer, making it difficult for the soldiers to press their advantage.">
+<CONSTANT TEXT283-CONTINUED "You survive to gain victory. You step over the soldiers' bodies and snatch up the treasure chest, then hurry offinto the night.">
+
 <ROOM STORY283
 	(DESC "283")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT283)
+	(PRECHOICE STORY283-PRECHOICE)
+	(CONTINUE STORY358)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY283-PRECHOICE ("AUX" (DAMAGE 5))
+	<COND(,RUN-ONCE
+		<COND(<CHECK-SKILL ,SKILL-SWORDPLAY>
+			<SET DAMAGE 1>
+		)(<CHECK-SKILL ,SKILL-UNARMED-COMBAT>
+			<SET DAMAGE 3>
+		)>
+		<TEST-MORTALITY .DAMAGE ,DIED-IN-COMBAT ,STORY283>
+		<IF-ALIVE ,TEXT283-CONTINUED>
+	)>>
 
 <CONSTANT TEXT284 "The Overlord's soldiers close in on you with drawn swords. You fight for your life valiantly. Your fists and feet are a blur, but you can't keep them off for ever. There are too many foes and they cut you down while the townsfolk howl with glee. Your dying thought is: \"How could I have been so foolish to think I could fight my way out ot this?\"">
 
@@ -3391,22 +3400,20 @@
 	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT296 "You take up a martial stance before the first of the Jade Warriors, searching for a weakness to attack. Your fists and feet cannot shatter thejade, which is impervious to your blows. The blades of the Jade Warriors are terribly sharp as you find to your cost when one bites into your thigh.">
+<CONSTANT TEXT296-CONTINUED "You have no choice but to flee.">
+
 <ROOM STORY296
 	(DESC "296")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT296)
+	(PRECHOICE STORY296-PRECHOICE)
+	(CONTINUE STORY016)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY296-PRECHOICE ()
+	<TEST-MORTALITY 4 ,DIED-FROM-INJURIES ,STORY296>
+	<IF-ALIVE ,TEXT296-CONTINUED>>
 
 <ROOM STORY297
 	(DESC "297")
@@ -3869,22 +3876,17 @@ power.">
 	(CONTINUE STORY409)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT340 "Hate is trying to claim you for its own. Your vision blurs and your head aches. You close your eyes and all you can see is the staring green pools of Hate's eyes. Hate is searching your soul for evil thoughts but you pass the te,st. You lie back as Hate leaves you to search for another lost soul and the fever passes.||Mameluke mops your brow with a moist sponge. You gratefully accept his offer of a couch for the night and wake up feeling a little refreshed, though the cries of Grond's tortured damned still sicken.||Thanking Mameluke for his help, you return to your hideout on Bumble Row.">
+
 <ROOM STORY340
 	(DESC "340")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT340)
+	(PRECHOICE STORY340-PRECHOICE)
+	(CONTINUE STORY159)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY340-PRECHOICE ()
+	<COND(,RUN-ONCE <GAIN-LIFE 2>)>>
 
 <CONSTANT TEXT341 "Did you think you could frighten five hundred guards inside a huge fortress with ten-foot thick walls that stand forty feet high into letting you in among them? They have only one reply to such a hideous apparition as you have conjured: they shoot you with their crossbows from the arrow slits on either side and above the gates. You are peppered like a pincushion. As you die and the magic fades there is a low heartless cheer as the guards realize they have slaughtered yet another Judain. There is no hero left now to save the city. Hate will subdue all.">
 
@@ -4533,22 +4535,20 @@ power.">
 	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT399 "You scream in agony as the light seeps into your flesh. A moment later, you are horrified to see purple polyps sprouting from your chest. Hate has awakened the evil in your own heart, forming a cancer that gnaws at you from within.">
+<CONSTANT TEXT399-CONTINUED "You are determined to destroy the monster before it can subvert you to its cause.">
+
 <ROOM STORY399
 	(DESC "399")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT399)
+	(PRECHOICE STORY399-PRECHOICE)
+	(CONTINUE STORY274)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY399-PRECHOICE ()
+	<TEST-MORTALITY 5 ,DIED-GREW-WEAKER ,STORY399>
+	<IF-ALIVE ,TEXT399-CONTINUED>>
 
 <CONSTANT TEXT400 "You disappear through the jaws of Hate. As it absorbs you into its being, it begins to be wracked by spasms of pain. It cannot tolerate the presence of goodness within its very being. Shuddering, Hate tries to flee back to the sewers, but it is rotting away by the moment. The people come out of hiding to watch as it dwindles. They take up rocks and sticks and pelt the dying monster. The Overlord's men stand shoulder to shoulder with Judain resistance fighters, smiting their common enemy. At last Hate gives a forlorn screech and dies, turning to dust which is carried off by the wind.||You lost your life, but you died a martyr's death, bringing salvation to your people and your city.">
 

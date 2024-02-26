@@ -65,3 +65,15 @@
     (DESC "chains")
     (SYNONYM CHAINS)
     (FLAGS TAKEBIT)>
+
+<OBJECT ELFIN-BOOTS
+    (DESC "elfin boots")
+    (SYNONYM BOOTS)
+    (ADJECTIVE ELFIN)
+    (FLAGS TAKEBIT)>
+
+<OBJECT CENSER-OF-FRAGRANT-INCENSE
+    (DESC "cencer of fragrant incense")
+    (SYNONYM INCENSE)
+    (ADJECTIVE FRAGRANT)
+    (FLAGS TAKEBIT)>

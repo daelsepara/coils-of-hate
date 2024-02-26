@@ -662,22 +662,19 @@
 	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT051 "Tarkamandor tells you he has decided to quit the city. \"Matters have gone too far\" he says. \"Each day I fear the guards will come to drag me off to Grond.\"||\"Why should you fear?\" you say with a trace of bitterness. \"You are not Judain.\"||He gives a snort of ironic laughter. \"Do you think that what has been going on is a simple matter of persecution? It goes deeper than that. The Overlord started his attacks on your people to distract attention from his disastrous policies, reasoning that once the populace had a scapegoat to blame they would be easier to control.\"||\"That strategy has worked well, then.\"||\"Now it is out of control! Hate is rife in the city. It extends its influence like a cancer. Today it is you Judain who are marched off to the prison. Tomorrow it may he the aged, or the infirm, or those who dare to speak out against the Overlord. That's why I'm leaving.\" He takes a few more steps, the wheels of his cart sloshing through the rut ofmire in the middle of the street, then pauses and looks back. \"As long as I'm going, I suppose I ought to sell some of my stock. Are you interested?\"||He has a healing salve which can be used once at any time except when in combat; it will restore all lost , Life Points. Another item on the cart is a pair ofelfin boots which grant their wearer one use of the AGILITY skill and must then be discarded. Tarkamandor also offers you a censer offragrant incense which he swears is blessed by the temple, a sword, a set of throwing knives, and a magic wand.">
+<CONSTANT TEXT051-CONTINUED "Bidding Tarkamandor farewell, you set off to the meeting">
+
 <ROOM STORY051
 	(DESC "051")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT051)
+	(PRECHOICE STORY051-PRECHOICE)
+	(CONTINUE STORY094)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY051-PRECHOICE ()
+	<MERCHANT <LTABLE HEALING-SALVE ELFIN-BOOTS CENSER-OF-FRAGRANT-INCENSE SWORD KNIFE MAGIC-WAND> <LTABLE 80 100 100 10 15 60>>
+	<IF-ALIVE ,TEXT051-CONTINUED>>
 
 <CONSTANT TEXT052 "You advance quickly on Skakshi, getting in close to match your sword against his club. As you lunge forward, the haft of the club catches you a painful blow on the shoulder and you feel the spikes tear your jerkin and bite into the flesh beneath.">
 <CONSTANT TEXT052-CONTINUED "You send the pommel of your sword crashing into Skakshi's jaw with stunning force. He gives a surprised grunt as his knees fold under him. Before he can rise and continue the battle, you have the point of your sword at his throat. \"Take me to Melmelo,\" you say to him as you get your breath back.||He looks at your sword uneasily as he slowly gets to his feet. \"I'll take you,\" he says sullenly.">
@@ -2131,8 +2128,8 @@
 	(CONTINUE STORY222)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT184 "You fight a pitched battle face to face with Hate, your blade hacking great quivering chunks out ofits loathsome warty mass. The people of the city peer timidly from the cracked facades of their houses, astonished to see such bravery from a single lone Judain. Hate screams and lashes out at you, raining rubble down on your head in its frenzy to stop the punishing blows you are inflicting.">
-<CONSTANT TEXT184-CONTINUED "The reek of camphor and honeysuckle makes your head reel. Staggering under Hate's onslaught, you look up to see the largest ofits tentacles smashing down towards you. ">
+<CONSTANT TEXT184 "You fight a pitched battle face to face with Hate, your blade hacking great quivering chunks out of its loathsome warty mass. The people of the city peer timidly from the cracked facades of their houses, astonished to see such bravery from a single lone Judain. Hate screams and lashes out at you, raining rubble down on your head in its frenzy to stop the punishing blows you are inflicting.">
+<CONSTANT TEXT184-CONTINUED "The reek of camphor and honeysuckle makes your head reel. Staggering under Hate's onslaught, you look up to see the largest of its tentacles smashing down towards you. ">
 
 <ROOM STORY184
 	(DESC "184")

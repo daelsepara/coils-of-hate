@@ -596,21 +596,17 @@
 <ROOM STORY044
 	(DESC "044")
 	(STORY TEXT044)
+	(PRECHOICE STORY044-PRECHOICE)
 	(CHOICES CHOICES044)
-	(DESTINATIONS <LTABLE STORY064 STORY044-AGILITY>)
+	(DESTINATIONS <LTABLE STORY064 STORY076>)
 	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
-<ROOM STORY044-AGILITY
-	(DESC "044")
-	(EVENTS STORY044-EVENTS)
-	(FLAGS LIGHTBIT)>
-
-<ROUTINE STORY044-EVENTS ()
+<ROUTINE STORY044-PRECHOICE ()
 	<COND(<CHECK-SKILL ,SKILL-AGILITY>
-		<RETURN ,STORY188>
+		<SET-DESTINATION ,STORY044 2 ,STORY188>
 	)(ELSE
-		<RETURN ,STORY076>
+		<SET-DESTINATION ,STORY044 2 ,STORY076>
 	)>>
 
 <CONSTANT TEXT045 "You also manage to free two hundred of the grateful guards who cannot believe their luck. They wipe themselves off along the walls. Most of them look as if they are in shock. They shouldn't give you too much trouble. You are more likely to face trouble from the Judain you have set free. They can see their tormenters among them and they want to take their revenge. \"Now die, dogs, die slowly and in pain!\" they cry. \"Let us see how you like to be put to the torture. Kill them! Heat the irons and warm their vitals.\" The Judain are near hysterical and they begin to slaughter the guards out of hand, while others try to drag some of them back to the torture chambers. The guards are petrified.||In the heat of the moment there is no time for finesse, and your people are behaving no better than savage beasts who have lost all control.">
@@ -1170,37 +1166,26 @@
 <ROOM STORY100
 	(DESC "100")
 	(STORY TEXT100)
+	(PRECHOICE STORY100-PRECHOICE)
 	(CHOICES CHOICES100)
-	(DESTINATIONS <LTABLE STORY100-MELMELO STORY100-LIBRARY STORY174 STORY272>)
+	(DESTINATIONS <LTABLE STORY153 STORY110 STORY174 STORY272>)
 	(TYPES FOUR-NONES)
 	(FLAGS LIGHTBIT)>
 
-<ROOM STORY100-MELMELO
-	(DESC "100")
-	(EVENTS STORY100-MELMELO-EVENTS)
-	(FLAGS LIGHTBIT)>
-
-<ROUTINE STORY100-MELMELO-EVENTS ()
+<ROUTINE STORY100-PRECHOICE ()
 	<COND(<CHECK-CODEWORD ,CODEWORD-SUNSET>
-		<RETURN ,STORY117>
+		<SET-DESTINATION ,STORY100 1 ,STORY117>
 	)(<CHECK-CODEWORD ,CODEWORD-IMPASSE>
-		<RETURN ,STORY026>
+		<SET-DESTINATION ,STORY100 1 ,STORY026>
 	)(<CHECK-CODEWORD ,CODEWORD-COOL>
-		<RETURN ,STORY334>
+		<SET-DESTINATION ,STORY100 1 ,STORY334>
 	)(ELSE
-		<RETURN ,STORY153>
-	)>>
-
-<ROOM STORY100-LIBRARY
-	(DESC "100")
-	(EVENTS STORY100-LIBRARY-EVENTS)
-	(FLAGS LIGHTBIT)>
-
-<ROUTINE STORY100-LIBRARY-EVENTS ()
+		<SET-DESTINATION ,STORY100 1 ,STORY153>
+	)>
 	<COND(<CHECK-CODEWORD ,CODEWORD-CODEX>
-		<RETURN ,STORY049>
+		<SET-DESTINATION ,STORY100 2 ,STORY049>
 	)(ELSE
-		<RETURN ,STORY110>
+		<SET-DESTINATION ,STORY100 2 ,STORY110>
 	)>>
 
 <CONSTANT TEXT101 "\"Your money or your life,\" comes the age-old cry from the leader. The horsemen are brigands, disguised as the Overlord\'s men!">
@@ -3626,21 +3611,18 @@
 <ROOM STORY314
 	(DESC "314")
 	(STORY TEXT314)
+	(PRECHOICE STORY314-PRECHOICE)
 	(CHOICES CHOICES314)
-	(DESTINATIONS <LTABLE STORY314-SWIM STORY205 STORY251>)
+	(DESTINATIONS <LTABLE STORY331 STORY205 STORY251>)
 	(TYPES THREE-NONES)
 	(FLAGS LIGHTBIT)>
 
-<ROOM STORY314-SWIM
-	(DESC "314")
-	(EVENTS STORY314-EVENTS)
-	(FLAGS LIGHTBIT)>
-
-<ROUTINE STORY314-EVENTS ()
+<ROUTINE STORY314-PRECHOICE ()
 	<COND(<CHECK-SKILL ,SKILL-SEAFARING>
+		<SET-DESTINATION ,STORY314 1 ,STORY344>
 		<RETURN ,STORY344>
 	)(ELSE
-		<RETURN ,STORY331>
+		<SET-DESTINATION ,STORY314 1 ,STORY331>
 	)>>
 
 <CONSTANT TEXT315 "Dodging the Overlord's soldiers turns what would be an easy walk into a nightmarish series of short hops between patrols. You are continually forced to lie low for long periods until the coast is clear. Not until early evening do you reach the row of crooked houses, long since abandoned and ransacked. They do, however, provide a snug hole in which to lie low. You make yourself as comfortable as possible in the dank cellar of one of the houses, using broken crates to make a rough pallet on which to sleep.||You begin to draw up your plans the next morning. It could be worth watching to see if the Overlord leaves his palace, as you might be able to spot a weak link in his security arrangements.">

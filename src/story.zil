@@ -26,6 +26,7 @@
 	<PUTP ,STORY184 ,P?DEATH T>
 	<PUTP ,STORY224 ,P?DEATH T>
 	<PUTP ,STORY226 ,P?DEATH T>
+	<PUTP ,STORY254-PELTED-PRECHOICE ,P?DEATH T>
 	<PUTP ,STORY263 ,P?DEATH T>
 	<PUTP ,STORY271 ,P?DEATH T>
 	<PUTP ,STORY278 ,P?DEATH T>
@@ -90,7 +91,7 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY003-PRECHOICE ()
-	<TEST-MORTALITY ,DIED-GREW-WEAKER ,STORY003>>
+	<TEST-MORTALITY 2 ,DIED-GREW-WEAKER ,STORY003>>
 
 <CONSTANT TEXT004 "The road leading up to Greenbank Plaza has been renamed the Avenue of Skulls. At regular intervals posts have been erected from which iron cages swing. Inside the cages are executed Judain. Hundreds have been slain. The smell of rank corruption has drawn clouds of flies. Nearby you hear the clang of a bell and a dolorous voice calling, \"Bring out your dead. Bring out your dead.\"||The plague has struck Godorno like a ravaging scourge. No respecter of a man's station, it has carried off nobleman and beggar alike. The streets have not been swept for what must have been weeks. Refuse is piling up in drifts in the wind. There is a blank look of despair on the faces of the people you pass and even the guards seem too preoccupied to notice a Judain. The sun is drawing the humours from the city like the fumes from a witch's kettle by the time you turn the corner into Copper Street.||You return to the hovel which you used to call home. You can use it as a base to see if you can contact some of your fellow Judain and learn what has taken place in the city. The old door has been broken up and used for firewood. There is nobody and nothing in the hovel -- but did you hear voices from beneath the trap door that leads to the hidden cellar?">
 <CONSTANT CHOICES004 <LTABLE "fling the trap door open" "knock first">>
@@ -2923,22 +2924,38 @@
 	(TYPES <LTABLE R-SKILL R-NONE>)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT254 "\"Now hear the will of the Overlord. The salt tax will be doubled forthwith.\" The crier's voice rings out confidently but there are growls of discontent all around.||A man turns to you and says, \"Doubled! Do they intend to squeeze us till we are nought but dried husks lying in the dust?\"||\"Ssh,\" you say, wanting to hear what else the town crier is saying.||\"The amnesty for those who worship false gods is at an end,\" he declaims to the crowd. \"The punishment for heresy is death.\"||There is a wail from somewhere in the crowd and two of the soldiers barge their way towards the poor unfortunate. Townsfolk are knocked to the ground but no one lays hand on the soldieres. A woman dressed in a blue robe runs away up the street with the soldiers in hot pursuit.||The crier affects not to have noticed the disturbance. \"Now hear this. The Overlord decrees the Judain outcast. The life of a Judain is of no worth. The keeping of Judain as slaves within the precincts of the city may continue. It is the wish of the Overlord that all good citizens of Godorno shall not rest until the Judain have been driven out or enslaved.\"||You listen in horror. This means that none of your people is safe within the city. The crowds start to chant: \"Kill the Judain, kill the Judain.\" The man who spoke out with such indignation about the salt tax now looks at you and then points, shouting \"Judain!\" The mob will soon be baying for blood.">
+<CONSTANT CHOICES254 <LTABLE "use" "cast as spell of disguise" "disappear in a puff of smoke" "use" "fight" "use" "do not use any of your skills: it could get you killed">>
+
 <ROOM STORY254
 	(DESC "254")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT254)
+	(PRECHOICE STORY254-PRECHOICE)
+	(CHOICES CHOICES254)
+	(DESTINATIONS <LTABLE STORY301 STORY088 STORY104 STORY333 STORY270 STORY284 STORY254-PELTED>)
+	(REQUIREMENTS <LTABLE SKILL-CUNNING SKILL-SPELLS SKILL-SPELLS SKILL-STREETWISE SKILL-SWORDPLAY SKILL-UNARMED-COMBAT NONE>)
+	(TYPES <LTABLE R-SKILL R-SKILL R-SKILL R-SKILL R-SKILL R-SKILL R-NONE>)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY254-PRECHOICE ()
+	<COND(,RUN-ONCE
+		<COND(<NOT <OR <CHECK-SKILL ,SKILL-CUNNING> <CHECK-SKILL ,SKILL-SPELLS> <CHECK-SKILL ,SKILL-STREETWISE> <CHECK-SKILL ,SKILL-SWORDPLAY> <CHECK-SKILL ,SKILL-UNARMED-COMBAT>>>
+			<STORY-JUMP ,STORY254-PELTED>
+		)>
+	)>>
+
+<CONSTANT TEXT254-PELTED "You are pelted with loose cobblestones as you run off.">
+
+<ROOM STORY254-PELTED
+	(DESC "254")
+	(STORY TEXT254-PELTED)
+	(PRECHOICE STORY254-PELTED-PRECHOICE)
+	(CONTINUE STORY070)
+	(DEATH T)
+	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY254-PELTED-PRECHOICE ()
+	<TEST-MORTALITY 4 ,DIED-FROM-INJURIES ,TEXT254-PELTED>>
 
 <CONSTANT TEXT255 "You duck down the steps into the drinking house and find to your horror that it is a haunt of off-duty gate guards and the Overlord's mercenaries. They sit around tables, drinking. Many still wear the purple and black livery of the Overlord. You walk quickly across the room looking for a second way out but there is none. You hear your pursuers rein in outside. There are too many enemies to fight.">
 <CONSTANT CHOICES255 <LTABLE "hide in the privy" "surrender">>
@@ -3261,7 +3278,7 @@
 	(TYPES <LTABLE R-SKILL R-SKILL R-SKILL R-SKILL R-SKILL R-SKILL R-NONE>)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT282 "The word ofpower you speak does its work and you disappear from view. One ofthe guards has the sense to let his crossbow off and the quarrel buries itself joltingly in your chest. You bite your lip to stop yourself moaning in agony.">
+<CONSTANT TEXT282 "The word ofpower you speak does its work and you disappear from view. One of the guards has the sense to let his crossbow off and the quarrel buries itself joltingly in your chest. You bite your lip to stop yourself moaning in agony.">
 <CONSTANT TEXT282-CONTINUED "You hide in a doorway, satisfied that the guards can't see you yet.">
 <CONSTANT CHOICES282 <LTABLE "bandage yourself up before making your escape" "run for it straight away">>
 
@@ -4006,22 +4023,31 @@ power.">
 		<DELETE-CODEWORD ,CODEWORD-SATORI>
 	)>>
 
+<CONSTANT TEXT349 "There is no sunlight to power the Jewel down here in the street. Your gaze is drawn up to the towers and parapets of the city, where the sunset yet flickers like a golden flame against the blue-grey of the sky. You must scale the crumbling wall to reach the daylight. As you start to climb a pile of rubble, Hate lashes out at you.">
+<CONSTANT TEXT349-CONTINUED "At last you reach the parapet with just a few steps left to climb. Sunset bathes the stone wall just above where you stand. A huge bloated tentacle, the largest of all, rises up out of the canal and looms over the rampart at the top of the parapet. It is blocking your way but you only have to drive this last tentacle aside and you will be able to reach the sunlight. You prepare to smite the tentacle but looking out of it at you is Lucie! Her face and body are embedded in the purple mass which you must rend and smash if you are to reach the top.">
+<CONSTANT TEXT349-AGILITY "You effortlessly dodge the attack and continue climbing unscathed.">
+<CONSTANT CHOICES349 <LTABLE "forget about Lucie and smash the tentacle to pulp" "will you hesitate">>
+
 <ROOM STORY349
 	(DESC "349")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT349)
+	(PRECHOICE STORY349-PRECHOICE)
+	(CHOICES CHOICES349)
+	(DESTINATIONS <LTABLE STORY147 STORY103>)
+	(TYPES TWO-NONES)
+	(DEATH T)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY349-PRECHOICE ()
+	<COND(,RUN-ONCE
+		<COND(<CHECK-SKILL ,SKILL-AGILITY>
+			<IF-ALIVE ,TEXT349-AGILITY>
+			<PREVENT-DEATH ,STORY349>
+		)(ELSE
+			<TEST-MORTALITY 5 ,DIED-FROM-INJURIES ,STORY349>
+		)>
+		<IF-ALIVE ,TEXT349-CONTINUED>
+	)>>
 
 <CONSTANT TEXT350 "You have dared to wait in the lion's den for too long. The Overlord's personal bodyguard are led by a magician who binds your feet to the spot as soon as he sets eyes on you. You are borne away to be tormented in the fortress of Grond. You will not survive. There is no one left now to save the Judain. Hate will conquer all.">
 
@@ -4168,7 +4194,7 @@ power.">
 	(CONTINUE STORY300)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT363 "Tyutchev's sword lashes out, smashing your parry aside. The blade cuts into your breast just above the heart. Luckily yourjerkin absorbs some ofthe impact and the blow does not penetrate the muscle. Even so, it is very painful.">
+<CONSTANT TEXT363 "Tyutchev's sword lashes out, smashing your parry aside. The blade cuts into your breast just above the heart. Luckily yourjerkin absorbs some of the impact and the blow does not penetrate the muscle. Even so, it is very painful.">
 <CONSTANT TEXT363-CONTINUED "Lucie suddenly says, \"Spare the Judain, Tyutchev, for me. The Overlord's men will do for the poor wretch soon anyway.\"||\"If it makes you happy.\" Tyutchev shrugs and carefully slides his sword back into the scabbard strapped to his back. \"What's the Judain to you?\"||\"A hero, valiant and true. The one that the Judain have put their faith in to save them.\"||\"I didn't know you had added such undesirables to your list of lovers,\" he says, giving you a sneering sidelong look.||\"We had a meeting arranged but we were disturbed,\" says Lucie. \"I wish to speak with the Judain. Leave us, please, Tyutchev.\"||\"As you wish, girl. Will you come to my abode this evening?\"||\"Will Cassandra be there?\"||\"No. She took ship for Aleppo on the rising tide. We'll be alone.\" So saying he turns on his heel, his black cloak flaring out like a sail, and walks out of the Silver Eel in five great strides.||Lucie touches your sleeve. \"Come, my friend, join me.">
 <CONSTANT CHOICES363 <LTABLE "sit with her" "follow Tyutchev" "bid Lucie farewell and leave">>
 
@@ -4196,7 +4222,7 @@ power.">
 	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT365 "The tunnels take you deeper and deeper into the bones of ancient Godorno. At last you stumble through a rotten tapestry into a chamber filled with gold-plated furniture and funeral biers with sarcophagi atop them. Four glassy green statues stand at the corners of the room.||The four Jade Warriors clank menacingly as they come to life before you. The green swords in their hands cut the beams of light, giving each blade an aura like a rainbow. The light shimmers off the · jagged blades and off the chiselled planes of the huge warriors themselves. When they step towards you, their heavy tread grinds the rubble beneath their armoured feet to powder. The whole room reverberates to their measured advance.">
+<CONSTANT TEXT365 "The tunnels take you deeper and deeper into the bones of ancient Godorno. At last you stumble through a rotten tapestry into a chamber filled with gold-plated furniture and funeral biers with sarcophagi atop them. Four glassy green statues stand at the corners of the room.||The four Jade Warriors clank menacingly as they come to life before you. The green swords in their hands cut the beams of light, giving each blade an aura like a rainbow. The light shimmers off the jagged blades and off the chiselled planes of the huge warriors themselves. When they step towards you, their heavy tread grinds the rubble beneath their armoured feet to powder. The whole room reverberates to their measured advance.">
 <CONSTANT TEXT365-CONTINUED "You realize you must flee.">
 <CONSTANT TEXT365-JADE-WARRIOR "The nearest Jade Warrior slashes you.">
 <CONSTANT CHOICES365 <LTABLE "do battle" "fight them" "cast Encloud" "cast Rulership" "cast Bafflement" "cast Vanish" "fall back on" "use a">>

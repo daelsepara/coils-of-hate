@@ -71,7 +71,14 @@
 		<PREVENT-DEATH .STORY>
 	)>>
 
-<ROUTINE RETURN-FALSE (JUMP DESTINATION)
+<ROUTINE RT-JUMP (JUMP DESTINATION)
+	<COND(.JUMP
+		<RETURN .DESTINATION>
+	)(ELSE
+		<RTRUE>
+	)>>
+
+<ROUTINE RF-JUMP (JUMP DESTINATION)
 	<COND(.JUMP
 		<RETURN .DESTINATION>
 	)(ELSE
@@ -84,16 +91,12 @@
 		<TELL CR "Use " T ,ELFIN-BOOTS "?">
 		<COND (<YES?>
 			<LOSE-ITEM ,ELFIN-BOOTS>
-			<COND(.JUMP
-				<RETURN .DESTINATION>
-			)(ELSE
-				<RTRUE>
-			)>
+			<RETURN <RT-JUMP .JUMP .DESTINATION>>
 		)(ELSE
-			<RETURN <RETURN-FALSE .JUMP .SOURCE>>
+			<RETURN <RF-JUMP .JUMP .SOURCE>>
 		)>
 	)(ELSE
-		<RETURN <RETURN-FALSE .JUMP .SOURCE>>
+		<RETURN <RF-JUMP .JUMP .SOURCE>>
 	)>>
 
 <CONSTANT PROLOGUE-TEXT "You are down on your luck, but you will not swallow your pride and look for a job. Every day a throng of hopefuls gathers outside the rich palazzi of the riverfront. Others seek to join a trader's caravan as a guide or guard. Those turned away drift at last to the seaweed-stinking waterfront to become rowers in the fleet and begin a life no better than slavery.||In your heart you know that your destiny, the destiny of a Judain, is greater than this. Not for nothing have you toiled to learn your skills. Now you are without peer among your people. One thing only you lack: a sense of purpose, a quest to show the world your greatness and put your skills to the test.||The city of Godorno is a stinking cesspit. The Judain are not wanted here. Your people are rich but the pale ones of Godorno covet those riches. \"Usurers, thieves,\" they cry as your people walk the streets going about their daily business.||The Overlord stokes the fire of discontent. When those who speak out against his cruel reign disappear, never to be seen again, he blames the Judai,n. When people starve because he sells the harvest to the westerners for jewels and silks, his minions say it is the Judain who profit from his peoples' wretchedness. Now the people hate you and all your kind. Soon it will not be safe to walk the streets. The caravan lines are swelled by tall proud Judain slaves with their glittering black eyes, backs bent under casks of spices and bolts of silk.||In the past two centuries Godorno has become a byword for decadence, luxury and idle pleasure. Everywhere you look you see the insignia of the winged lion, once the proud standard of the city's legions. Now it stands as the very symbol of corruption and evil.">

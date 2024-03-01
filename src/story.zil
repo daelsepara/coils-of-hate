@@ -46,9 +46,9 @@
 <ROUTINE SPECIAL-INTERRUPT-ROUTINE (KEY)
 	<COND (<AND <EQUAL? .KEY ,HEALING-KEY-CAPS ,HEALING-KEY> <CHECK-ITEM ,HEALING-SALVE> <L? ,LIFE-POINTS ,MAX-LIFE-POINTS>>
 		<CRLF>
-		<TELL CR "Use " T ,HEALING-SALVE " to restore 1 life point?">
+		<TELL CR "Use " T ,HEALING-SALVE " to restore all life point?">
 		<COND (<YES?>
-			<GAIN-LIFE 1>
+			<GAIN-LIFE <- ,MAX-LIFE-POINTS ,LIFE-POINTS>>
 			<LOSE-ITEM ,HEALING-SALVE>
 		)>
 		<RTRUE>
@@ -683,7 +683,7 @@
 	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT051 "Tarkamandor tells you he has decided to quit the city. \"Matters have gone too far\" he says. \"Each day I fear the guards will come to drag me off to Grond.\"||\"Why should you fear?\" you say with a trace of bitterness. \"You are not Judain.\"||He gives a snort of ironic laughter. \"Do you think that what has been going on is a simple matter of persecution? It goes deeper than that. The Overlord started his attacks on your people to distract attention from his disastrous policies, reasoning that once the populace had a scapegoat to blame they would be easier to control.\"||\"That strategy has worked well, then.\"||\"Now it is out of control! Hate is rife in the city. It extends its influence like a cancer. Today it is you Judain who are marched off to the prison. Tomorrow it may he the aged, or the infirm, or those who dare to speak out against the Overlord. That's why I'm leaving.\" He takes a few more steps, the wheels of his cart sloshing through the rut ofmire in the middle of the street, then pauses and looks back. \"As long as I'm going, I suppose I ought to sell some of my stock. Are you interested?\"||He has a healing salve which can be used once at any time except when in combat; it will restore all lost , Life Points. Another item on the cart is a pair ofelfin boots which grant their wearer one use of the AGILITY skill and must then be discarded. Tarkamandor also offers you a censer offragrant incense which he swears is blessed by the temple, a sword, a set of throwing knives, and a magic wand.">
+<CONSTANT TEXT051 "Tarkamandor tells you he has decided to quit the city. \"Matters have gone too far\" he says. \"Each day I fear the guards will come to drag me off to Grond.\"||\"Why should you fear?\" you say with a trace of bitterness. \"You are not Judain.\"||He gives a snort of ironic laughter. \"Do you think that what has been going on is a simple matter of persecution? It goes deeper than that. The Overlord started his attacks on your people to distract attention from his disastrous policies, reasoning that once the populace had a scapegoat to blame they would be easier to control.\"||\"That strategy has worked well, then.\"||\"Now it is out of control! Hate is rife in the city. It extends its influence like a cancer. Today it is you Judain who are marched off to the prison. Tomorrow it may he the aged, or the infirm, or those who dare to speak out against the Overlord. That's why I'm leaving.\" He takes a few more steps, the wheels of his cart sloshing through the rut ofmire in the middle of the street, then pauses and looks back. \"As long as I'm going, I suppose I ought to sell some of my stock. Are you interested?\"||He has a healing salve which can be used once at any time except when in combat; it will restore all lost , Life Points. Another item on the cart is a pair of elfin boots which grant their wearer one use of the AGILITY skill and must then be discarded. Tarkamandor also offers you a censer of fragrant incense which he swears is blessed by the temple, a sword, a set of throwing knives, and a magic wand.">
 <CONSTANT TEXT051-CONTINUED "Bidding Tarkamandor farewell, you set off to the meeting">
 
 <ROOM STORY051
@@ -3342,7 +3342,7 @@
 	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT286 "She is surprisingly sprightly for an aged crone. She scuttles along after you cackling to herselfin a witch-like way. You turn towards Greenbark Plaza when two lines of guards block the road at either end of the narrow short street you are in. They are armed with crossbows which they are pointing at your chest.||\"We're taking you to Grand, Judain. The Overlord's torturers can amuse themselves with you.\"">
+<CONSTANT TEXT286 "She is surprisingly sprightly for an aged crone. She scuttles along after you cackling to her self in a witch-like way. You turn towards Greenbark Plaza when two lines of guards block the road at either end of the narrow short street you are in. They are armed with crossbows which they are pointing at your chest.||\"We're taking you to Grand, Judain. The Overlord's torturers can amuse themselves with you.\"">
 <CONSTANT CHOICES286 <LTABLE "surrender to them and be tortured" "turn invisible" "fight your way out">>
 
 <ROOM STORY286

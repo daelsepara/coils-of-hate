@@ -3468,7 +3468,7 @@
 	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT296 "You take up a martial stance before the first of the Jade Warriors, searching for a weakness to attack. Your fists and feet cannot shatter thejade, which is impervious to your blows. The blades of the Jade Warriors are terribly sharp as you find to your cost when one bites into your thigh.">
+<CONSTANT TEXT296 "You take up a martial stance before the first of the Jade Warriors, searching for a weakness to attack. Your fists and feet cannot shatter the jade, which is impervious to your blows. The blades of the Jade Warriors are terribly sharp as you find to your cost when one bites into your thigh.">
 <CONSTANT TEXT296-CONTINUED "You have no choice but to flee.">
 
 <ROOM STORY296
@@ -4255,7 +4255,7 @@ power.">
 	(CONTINUE STORY300)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT363 "Tyutchev's sword lashes out, smashing your parry aside. The blade cuts into your breast just above the heart. Luckily yourjerkin absorbs some of the impact and the blow does not penetrate the muscle. Even so, it is very painful.">
+<CONSTANT TEXT363 "Tyutchev's sword lashes out, smashing your parry aside. The blade cuts into your breast just above the heart. Luckily your jerkin absorbs some of the impact and the blow does not penetrate the muscle. Even so, it is very painful.">
 <CONSTANT TEXT363-CONTINUED "Lucie suddenly says, \"Spare the Judain, Tyutchev, for me. The Overlord's men will do for the poor wretch soon anyway.\"||\"If it makes you happy.\" Tyutchev shrugs and carefully slides his sword back into the scabbard strapped to his back. \"What's the Judain to you?\"||\"A hero, valiant and true. The one that the Judain have put their faith in to save them.\"||\"I didn't know you had added such undesirables to your list of lovers,\" he says, giving you a sneering sidelong look.||\"We had a meeting arranged but we were disturbed,\" says Lucie. \"I wish to speak with the Judain. Leave us, please, Tyutchev.\"||\"As you wish, girl. Will you come to my abode this evening?\"||\"Will Cassandra be there?\"||\"No. She took ship for Aleppo on the rising tide. We'll be alone.\" So saying he turns on his heel, his black cloak flaring out like a sail, and walks out of the Silver Eel in five great strides.||Lucie touches your sleeve. \"Come, my friend, join me.">
 <CONSTANT CHOICES363 <LTABLE "sit with her" "follow Tyutchev" "bid Lucie farewell and leave">>
 

@@ -3911,9 +3911,25 @@ power.">
 	(DESC "337")
 	(STORY TEXT337)
 	(CHOICES CHOICES337)
-	(DESTINATIONS <LTABLE STORY144 STORY100>)
+	(DESTINATIONS <LTABLE STORY337-TOWER STORY100>)
 	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
+
+<CONSTANT TEXT337-TOWER "You dare not return to the Tower of the Sentinel. You do not want to face that hideous spider again.">
+
+<ROOM STORY337-TOWER
+	(DESC "337")
+	(EVENTS STORY337-EVENTS)
+	(FALGS LIGHTBIT)>
+
+<ROUTINE STORY337-EVENTS ()
+	<COND(<CHECK-CODEWORD ,CODEWORD-TOWER>
+		<PAUSE-MESSAGE ,TEXT337-TOWER>
+		<CRLF>
+		<RETURN ,STORY100>
+	)(ELSE
+		<RETURN ,STORY144>
+	)>>
 
 <CONSTANT TEXT338 "You move in close to seize the initiative. Tyutchev falls back into the comer of the tavern, where he is cramped by the low ceiling. He cannot make a powerful overhead swing without catching his long sword against the rafters. He has fought in these conditions before, however, and you can do no more than hold your own. You might be able to get past his blurred sword tip if you are fast enough, but for a big man he moves very quickly. You wound him but only at the expense of a nasty cut to your side.">
 <CONSTANT TEXT338-CONTINUED "The grimace of pain on Tyutchev's pale face is quickly replaced by one of cold fighting rage. You sense that you cannot best this man unless you can slip your sword point past his guard.">

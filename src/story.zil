@@ -55,6 +55,22 @@
 	)>
 	<RFALSE>>
 
+<ROUTINE TEST-MORTALITY-IN-BATTLE (DAMAGE "OPT" STORY)
+	<COND (<NOT .STORY> <SET .STORY ,HERE>)>
+	<COND(<CHECK-ITEM ,SHIELD>
+		<CRLF>
+		<TELL CR "Use " T ,SHIELD " to prevent 6 life points loss?">
+		<COND (<YES?>
+			<SET .DAMAGE <- .DAMAGE 6>>
+			<LOSE-ITEM ,SHIELD>
+		)>
+	)>
+	<COND (<G? .DAMAGE 0>		
+		<LOSE-LIFE .DAMAGE ,DIED-IN-COMBAT .STORY>
+	)(ELSE
+		<PREVENT-DEATH .STORY>
+	)>>
+
 <CONSTANT PROLOGUE-TEXT "You are down on your luck, but you will not swallow your pride and look for a job. Every day a throng of hopefuls gathers outside the rich palazzi of the riverfront. Others seek to join a trader's caravan as a guide or guard. Those turned away drift at last to the seaweed-stinking waterfront to become rowers in the fleet and begin a life no better than slavery.||In your heart you know that your destiny, the destiny of a Judain, is greater than this. Not for nothing have you toiled to learn your skills. Now you are without peer among your people. One thing only you lack: a sense of purpose, a quest to show the world your greatness and put your skills to the test.||The city of Godorno is a stinking cesspit. The Judain are not wanted here. Your people are rich but the pale ones of Godorno covet those riches. \"Usurers, thieves,\" they cry as your people walk the streets going about their daily business.||The Overlord stokes the fire of discontent. When those who speak out against his cruel reign disappear, never to be seen again, he blames the Judai,n. When people starve because he sells the harvest to the westerners for jewels and silks, his minions say it is the Judain who profit from his peoples' wretchedness. Now the people hate you and all your kind. Soon it will not be safe to walk the streets. The caravan lines are swelled by tall proud Judain slaves with their glittering black eyes, backs bent under casks of spices and bolts of silk.||In the past two centuries Godorno has become a byword for decadence, luxury and idle pleasure. Everywhere you look you see the insignia of the winged lion, once the proud standard of the city's legions. Now it stands as the very symbol of corruption and evil.">
 
 <ROOM PROLOGUE
@@ -120,7 +136,7 @@
 	<COND (<CHECK-SKILL ,SKILL-CHARMS>
 		<SET DAMAGE 6>
 	)>
-	<TEST-MORTALITY .DAMAGE ,DIED-IN-COMBAT ,STORY005>
+	<TEST-MORTALITY-IN-BATTLE .DAMAGE ,STORY005>
 	<COND (<NOT <IS-ALIVE>>
 		<STORY-JUMP ,STORY017>
 	)>>
@@ -575,7 +591,11 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY042-PRECHOICE ()
-	<SKILL-JUMP ,SKILL-FOLKLORE ,STORY119>>
+	<COND(<CHECK-SKILL ,SKILL-FOLKLORE>
+		<SKILL-JUMP ,SKILL-FOLKLORE ,STORY119>
+	)(<CHECK-ITEM ,BOOK-OF-MYTHS-LEGENDS>
+		<ITEM-JUMP ,BOOK-OF-MYTHS-LEGENDS ,STORY119>
+	)>>
 
 <CONSTANT TEXT043 "Skakshi slams the door as he goes and the other drinkers follow without so much as a glance in your direction. They do not dare to share the drinking hall of the Inn of the Inner Temple with you. You have made no friends here and you won't get a meeting with Melmelo now. He will hear everything that has happened here and he is not an easy man to find and get to talk to.||The landlord stoops to pick up the spiked club which still has congealed blood sticking to it from the last time it was used and puts it back behind the bar.">
 
@@ -1429,7 +1449,7 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY123-PRECHOICE ()
-	<TEST-MORTALITY 4 ,DIED-IN-COMBAT ,STORY123>
+	<TEST-MORTALITY-IN-BATTLE 4 ,STORY123>
 	<IF-ALIVE ,TEXT123-CONTINUED>>
 
 <CONSTANT TEXT124 "You dart across the street and snatch up the sword before the dog-handler can stop you. The dog starts to run forward, but you prod it with the point of the sword and it goes skulking back to its master with its tail between its legs.||You look around for Lucie. She is heading towards the Old Quarter, probably to the Silver Eel tavern which is one of her haunts. You know it as a dubious drinking-house whose customers have a dangerous reputation.">
@@ -2044,7 +2064,7 @@
 	)(<CHECK-SKILL ,SKILL-SWORDPLAY>
 		<SET DAMAGE 0>
 	)>
-	<TEST-MORTALITY .DAMAGE ,DIED-IN-COMBAT ,STORY176>
+	<TEST-MORTALITY-IN-BATTLE .DAMAGE ,STORY176>
 	<IF-ALIVE ,TEXT176-CONTINUED>>
 
 <CONSTANT TEXT177 "Mameluke is glad to accompany you back to your little hidey-hole on Bumble Row. \"I see the toymakers and panderers have shut up shop some time since,\" he remarks. \"It used to be such a gay place, Bumble Row.\"||\"Nothing but a dive for dogs like us in these cursed times,\" you say wryly.||\"Don't be hard on yourself! You saved my life. How can I repay you?\"||\"Forget it. I am happy just to see you free and breathing.\"||\"I will help you in any way I can,\" he tells you. \"Remember, you just have to call on me and I'll be there.\"||\"Thanks, Mameluke. It's good to have at least one true friend when all around are turning to hatred. For a start you can help me plan what to do next.\"||\"I suppose we could flee the city?\"||\"No. My place is here. I want to save my people -- not just my people; all the citizens.\"||\"And you are the one to save all, a youngster like you?\" he asks with affectionate mockery.||\"Who else is there?\" You explain to Mameluke how you have organized the Judain resistance and Mameluke is amazed at what you have done. The word from the palace is that the Overlord's soldiers are deserting in droves rather than patrol the city streets, which they have come to see as a fate worse than death. So your tactics are working.||\"But it's not the Overlord who is our real enemy; it's the monster, Hate.\"||He gives you a frightened look. \"But what can we do against Hate itself?\"||\"We need to find out everything we can about it. I will contact those with an ear inside the palace. Perhaps the Overlord has entered into some God-forsaken compact with the monster.\"||You wish Mameluke farewell and ponder how you can confront your inimical foe.">
@@ -2129,7 +2149,7 @@
 	<COND (<CHECK-SKILL ,SKILL-CHARMS>
 		<SET DAMAGE 5>
 	)>
-	<TEST-MORTALITY .DAMAGE ,DIED-IN-COMBAT ,STORY184>
+	<TEST-MORTALITY-IN-BATTLE .DAMAGE ,STORY184>
 	<IF-ALIVE ,TEXT184-CONTINUED>
 	<COND (<IS-ALIVE>
 		<CODEWORD-JUMP ,CODEWORD-GORDIAN ,STORY054>
@@ -2345,7 +2365,11 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY204-PRECHOICE ()
-	<SKILL-JUMP ,SKILL-FOLKLORE ,STORY119>>
+	<COND(<CHECK-SKILL ,SKILL-FOLKLORE>
+		<SKILL-JUMP ,SKILL-FOLKLORE ,STORY119>
+	)(<CHECK-ITEM ,BOOK-OF-MYTHS-LEGENDS>
+		<ITEM-JUMP ,BOOK-OF-MYTHS-LEGENDS ,STORY119>
+	)>>
 
 <CONSTANT TEXT205 "You pole the boat as fast as you can to the nearest bank. Behind you there is a splash and a snort as an ugly but harmless sea cow breaks the surface of the water. You are exhausted from your attempt at flight, however, and step from the boat to rest at the edge of the murky canal, sitting on the road and basking in the midday sun.||Soon you have the uneasy feeling of being watched.">
 
@@ -2825,9 +2849,9 @@
 	(DESC "246")
 	(STORY TEXT246)
 	(CHOICES CHOICES246)
-	(DESTINATIONS <LTABLE STORY256 STORY287 STORY267 STORY276>)
-	(REQUIREMENTS <LTABLE SKILL-FOLKLORE SKILL-CHARMS NONE NONE>)
-	(TYPES <LTABLE R-SKILL R-SKILL R-NONE R-NONE>)
+	(DESTINATIONS <LTABLE STORY256 STORY287 STORY267 STORY276 STORY256>)
+	(REQUIREMENTS <LTABLE SKILL-FOLKLORE SKILL-CHARMS NONE NONE BOOK-OF-MYTHS-LEGENDS>)
+	(TYPES <LTABLE R-SKILL R-SKILL R-NONE R-NONE R-ITEM>)
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT247 "You are still miies from Bagoe and your spirits are lifting as you find the farmers much more friendly than the cityfolk, though you dare not stop to chat. The workers in the fields wave solemn greetings as you pass. You wave back to one and notice he is looking from you back down the road. Turning back you see a cloud of dust or smoke. Perhaps one of the farmers is burning off some old tomato plants.">
@@ -3027,7 +3051,11 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY262-PRECHOICE ()
-	<SKILL-JUMP ,SKILL-FOLKLORE ,STORY294>>
+	<COND(<CHECK-SKILL ,SKILL-FOLKLORE>
+		<SKILL-JUMP ,SKILL-FOLKLORE ,STORY294>
+	)(<CHECK-ITEM ,BOOK-OF-MYTHS-LEGENDS>
+		<ITEM-JUMP ,BOOK-OF-MYTHS-LEGENDS ,STORY294>
+	)>>
 
 <CONSTANT TEXT263 "You speak the word of power and disappear. But Skakshi is not dismayed. He reaches for a pouch at his belt and flings a sparkling dust from it into the air in your general direction. The dust clings to you and sparkles in the ruddy light, limning your outline brightly for all to see, Skakshi sends the knife hurtling across the room at your breast, which it grazes.">
 <CONSTANT TEXT263-CONTINUED "He reaches for another stiletto immediately. What will you do?">
@@ -3292,7 +3320,7 @@
 	)(<CHECK-SKILL ,SKILL-UNARMED-COMBAT>
 		<SET DAMAGE 3>
 	)>
-	<TEST-MORTALITY .DAMAGE ,DIED-IN-COMBAT ,STORY283>
+	<TEST-MORTALITY-IN-BATTLE .DAMAGE ,STORY283>
 	<IF-ALIVE ,TEXT283-CONTINUED>>
 
 <CONSTANT TEXT284 "The Overlord's soldiers close in on you with drawn swords. You fight for your life valiantly. Your fists and feet are a blur, but you can't keep them off for ever. There are too many foes and they cut you down while the townsfolk howl with glee. Your dying thought is: \"How could I have been so foolish to think I could fight my way out ot this?\"">
@@ -3641,22 +3669,19 @@
 	(CONTINUE STORY160)
 	(FLAGS LIGHTBIT)>
 
+<CONSTANT TEXT318 "Tarkamandor peeks out into the dusk, then hurriedly waves you in. \"I heard you'd fled the city,\" he says in a hushed voice as he closes the shutters.||You drop into a chair by the hearth without waiting for an invitation. \"Decided I don't much care for the countryside,\" you reply. \"Got anything for me?\"||He sighs. \"You're not thinking of fighting back against the Overlord?\"||\"Why not?\" you say with a smile.||\"The odds are stacked against you -- more than a hundred to one!\"||\"That's why I need some gear off you, isn't it?\" you tell him.||At last he brings out a casket of special items which he is prepared to sell you. The first item on offer is a salve of healing; you can use this once at any time except when in combat to restore all lost Life Points. The second item is a shield which is only useful if you have SWORDPLAY; the shield has 6 Life Points which it can lose instead of you in battle, but must then be discarded. The: third item is a book of myths and legends; if you buy this you can choose options for FOLKLORE even if you do not have that skill.||Buy what you wish.">
+<CONSTANT TEXT318-CONTINUED "You realize the others will be getting worried. Bidding Tarkamandor good evening, you hurry back to join them.">
+
 <ROOM STORY318
 	(DESC "318")
-	(STORY TEXT)
-	(EVENTS NONE)
-	(PRECHOICE NONE)
-	(CHOICES NONE)
-	(DESTINATIONS NONE)
-	(REQUIREMENTS NONE)
-	(TYPES NONE)
-	(CONTINUE NONE)
-	(ITEM NONE)
-	(CODEWORD NONE)
-	(COST 0)
-	(DEATH F)
-	(VICTORY F)
+	(STORY TEXT318)
+	(PRECHOICE STORY318-PRECHOICE)
+	(CONTINUE STORY190)
 	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY318-PRECHOICE ()
+	<MERCHANT <LTABLE HEALING-SALVE SHIELD BOOK-OF-MYTHS-LEGENDS> <LTABLE 100 200 150>>
+	<IF-ALIVE ,TEXT318-CONTINUED>>
 
 <CONSTANT TEXT319 "You jump to safety, holding one corner of the bedspread, then tug it hard so that the girl slips from the bed and is dragged across the carpet. As soon as the swaddled form touches the filigreed carpet the wires spring forth to entangle themselves in the counterpane. Try as you might you cannot drag her any further.||A large black form, like a manta ray or a vampire's cloak, detaches itself from the underside of the canopy of the Overlord's bed and drifts down through the air towards your head.">
 <CONSTANT CHOICES319 <LTABLE "make a run for it and leave the girl" "go back onto the carpet to cut the concubine free">>

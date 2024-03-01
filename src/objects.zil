@@ -43,6 +43,16 @@
     (ADJECTIVE HEALING)
     (FLAGS TAKEBIT)>
 
+<OBJECT SHIELD
+    (DESC "shield")
+    (SYNONYM SHIELD)
+    (FLAGS TAKEBIT)>
+
+<OBJECT BOOK-OF-MYTHS-LEGENDS
+    (DESC "book of myths and legends")
+    (SYNONYM BOOK MYTHS LEGENDS)
+    (FLAGS TAKEBIT)>
+
 <OBJECT JADE-WARRIORS-SWORD
     (DESC "Jade Warrior's sword")
     (SYNONYM SWORD)

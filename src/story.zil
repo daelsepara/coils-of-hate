@@ -71,33 +71,16 @@
 		<PREVENT-DEATH .STORY>
 	)>>
 
-<ROUTINE RT-JUMP (JUMP DESTINATION)
-	<COND(.JUMP
-		<RETURN .DESTINATION>
-	)(ELSE
-		<RTRUE>
-	)>>
-
-<ROUTINE RF-JUMP (JUMP DESTINATION)
-	<COND(.JUMP
-		<RETURN .DESTINATION>
-	)(ELSE
-		<RFALSE>
-	)>>
-
-<ROUTINE USE-ELFIN-BOOTS (DESTINATION SOURCE "OPT" (JUMP F))
+<ROUTINE USE-ELFIN-BOOTS ()
 	<COND(<CHECK-ITEM ,ELFIN-BOOTS>
 		<CRLF>
 		<TELL CR "Use " T ,ELFIN-BOOTS "?">
 		<COND (<YES?>
 			<LOSE-ITEM ,ELFIN-BOOTS>
-			<RETURN <RT-JUMP .JUMP .DESTINATION>>
-		)(ELSE
-			<RETURN <RF-JUMP .JUMP .SOURCE>>
+			<RTRUE>
 		)>
-	)(ELSE
-		<RETURN <RF-JUMP .JUMP .SOURCE>>
-	)>>
+	)>
+	<RFALSE>>
 
 <CONSTANT PROLOGUE-TEXT "You are down on your luck, but you will not swallow your pride and look for a job. Every day a throng of hopefuls gathers outside the rich palazzi of the riverfront. Others seek to join a trader's caravan as a guide or guard. Those turned away drift at last to the seaweed-stinking waterfront to become rowers in the fleet and begin a life no better than slavery.||In your heart you know that your destiny, the destiny of a Judain, is greater than this. Not for nothing have you toiled to learn your skills. Now you are without peer among your people. One thing only you lack: a sense of purpose, a quest to show the world your greatness and put your skills to the test.||The city of Godorno is a stinking cesspit. The Judain are not wanted here. Your people are rich but the pale ones of Godorno covet those riches. \"Usurers, thieves,\" they cry as your people walk the streets going about their daily business.||The Overlord stokes the fire of discontent. When those who speak out against his cruel reign disappear, never to be seen again, he blames the Judai,n. When people starve because he sells the harvest to the westerners for jewels and silks, his minions say it is the Judain who profit from his peoples' wretchedness. Now the people hate you and all your kind. Soon it will not be safe to walk the streets. The caravan lines are swelled by tall proud Judain slaves with their glittering black eyes, backs bent under casks of spices and bolts of silk.||In the past two centuries Godorno has become a byword for decadence, luxury and idle pleasure. Everywhere you look you see the insignia of the winged lion, once the proud standard of the city's legions. Now it stands as the very symbol of corruption and evil.">
 
@@ -396,7 +379,11 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY023-PRECHOICE ()
-	<SKILL-JUMP ,SKILL-AGILITY ,STORY050>>
+	<COND(<CHECK-SKILL ,SKILL-AGILITY>
+		<STORY-JUMP ,STORY050>
+	)(<USE-ELFIN-BOOTS>
+		<STORY-JUMP ,STORY050>
+	)>>
 
 <CONSTANT TEXT024 "You step gingerly onto the carpet and the gold and silver filigree threads seem to bunch and tighten beneath the balls of your feet. The Overlord stops breathing for a moment and you copy him. Then he rolls over and the stertorous noise starts again. In his sleep his hand caresses the girl's flank, but she doesn't wake. You take another step and then struggle to make another, but the wires have snared around your ankle. The slender metal thread is cutting into your skin like a cheesewire. Cursing, you bend to free yourself. It should be easy enough to get free before the wire cuts through your leg.||Your sixth sense alerts you to a louring presence somewhere above, a presence that broods, heavy with hate. You dart a look upwards at the canopy of the Overlord's bed.">
 
@@ -635,7 +622,7 @@
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT044 "Your steady run keeps you out of their clutches but you are already in sight of the city of Godorno once more. They seem intent on chasing you back as far as the city walls. Perhaps they mean to sneak into the city to rob the cityfolk, but they will not find it easy to pass through the city gates.">
-<CONSTANT CHOICES044 <LTABLE "change your mind about fleeing and offer to .throw your lot in with them" "keep running and hide in the city once more">>
+<CONSTANT CHOICES044 <LTABLE "change your mind about fleeing and offer to throw your lot in with them" "keep running and hide in the city once more">>
 
 <ROOM STORY044
 	(DESC "044")
@@ -798,7 +785,7 @@
 	(CONTINUE STORY181)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT059 "You are thoroughly versed in the criminal haunts and goings-on of the city. You make your way along twisting alleys until you stand before an ornamental villa with a hot bubbling fountain in front of it. The grandeur of the house is at odds with the ramshackle district in which it is located. This is the home of Melmelo, head of what is jocularly known as the Thieves' Guild -- a loose alliance of crooks and shady merchants who between them have most crime in the city sewn up.| You pause before knocking at the door. You have always resisted getting drawn into Melmelo's organization, and he has let it be known that he is not pleased by your disdain .for his activities. On the other hand, he is a man who adheres to his own code of honour. You cannot imagine him stooping so low as handing you to the authorities for a reward.">
+<CONSTANT TEXT059 "You are thoroughly versed in the criminal haunts and goings-on of the city. You make your way along twisting alleys until you stand before an ornamental villa with a hot bubbling fountain in front of it. The grandeur of the house is at odds with the ramshackle district in which it is located. This is the home of Melmelo, head of what is jocularly known as the Thieves' Guild -- a loose alliance of crooks and shady merchants who between them have most crime in the city sewn up.| You pause before knocking at the door. You have always resisted getting drawn into Melmelo's organization, and he has let it be known that he is not pleased by your disdain for his activities. On the other hand, he is a man who adheres to his own code of honour. You cannot imagine him stooping so low as handing you to the authorities for a reward.">
 <CONSTANT CHOICES059 <LTABLE "knock at the door" "retrace your steps, abandoning your plan to consult Melmelo">>
 
 <ROOM STORY059
@@ -1567,13 +1554,16 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY130-PRECHOICE()
+	<CRLF>
 	<COND (<CHECK-SKILL ,SKILL-AGILITY>
-		<CRLF>
+		<TELL ,TEXT130-AGILITY>
+		<TELL ,PERIOD-CR>
+		<PREVENT-DEATH ,STORY130>
+	)(<USE-ELFIN-BOOTS>
 		<TELL ,TEXT130-AGILITY>
 		<TELL ,PERIOD-CR>
 		<PREVENT-DEATH ,STORY130>
 	)(ELSE
-		<CRLF>
 		<TELL ,TEXT130-INJURED>
 		<TELL ,PERIOD-CR>
 		<TEST-MORTALITY 1 ,DIED-FROM-INJURIES ,STORY131>
@@ -1735,6 +1725,8 @@
 
 <ROUTINE STORY143-PRECHOICE ("AUX" (DAMAGE 3))
 	<COND(<OR <CHECK-SKILL ,SKILL-SWORDPLAY> <CHECK-SKILL ,SKILL-UNARMED-COMBAT> <CHECK-SKILL ,SKILL-AGILITY>>
+		<SET DAMAGE 1>
+	)(<USE-ELFIN-BOOTS>
 		<SET DAMAGE 1>
 	)>
 	<TEST-MORTALITY .DAMAGE ,DIED-FROM-INJURIES ,STORY143>
@@ -2580,7 +2572,7 @@
 	(CONTINUE STORY247)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT223 "You draw your sword with a flourish and advance steadily on Skakshi. The landlord throws him a spiked club with which to defend himself. You can see by the way he hefts it he knows how to use it to pulp .brains. Your sword gives you the advantage over his rude weapon but you have never trained against a man wielding a spiked club.||How will you fight this battle?">
+<CONSTANT TEXT223 "You draw your sword with a flourish and advance steadily on Skakshi. The landlord throws him a spiked club with which to defend himself. You can see by the way he hefts it he knows how to use it to pulp brains. Your sword gives you the advantage over his rude weapon but you have never trained against a man wielding a spiked club.||How will you fight this battle?">
 <CONSTANT CHOICES223 <LTABLE "move in close so that the smooth edge of the club shaft will fall on you if you are hit" "keep your distance and use looping cutting blows rather than fierce lunges">>
 
 <ROOM STORY223
@@ -2607,14 +2599,18 @@
 	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
-<ROUTINE STORY224-PRECHOICE ("AUX" DAMAGE)
+<ROUTINE STORY224-PRECHOICE ("AUX" DAMAGE (USED-AGILITY F))
 	<COND(,RUN-ONCE
 		<COND(<CHECK-SKILL ,SKILL-AGILITY>
+			<SET DAMAGE 1>
+			<SET .USED-AGILITY T>
+		)(<USE-ELFIN-BOOTS>
+			<SET .USED-AGILITY T>
 			<SET DAMAGE 1>
 		)>
 		<TEST-MORTALITY .DAMAGE ,DIED-FROM-INJURIES ,STORY224>
 		<COND(<IS-ALIVE>
-			<COND(<CHECK-SKILL ,SKILL-AGILITY>
+			<COND(.USED-AGILITY
 				<IF-ALIVE ,TEXT224-AGILITY>
 			)>
 			<IF-ALIVE ,TEXT224-CONTINUED>
@@ -2787,6 +2783,8 @@
 		<STORY-JUMP ,STORY271>
 	)(<CHECK-SKILL ,SKILL-WILDERNESS-LORE>
 		<STORY-JUMP ,STORY226>
+	)(<USE-ELFIN-BOOTS>
+		<STORY-JUMP ,STORY271>
 	)>>
 
 <CONSTANT TEXT238 "You are soon trussed up, helpless, and frogmarched into the prison fortress of Grond to join hundreds more of your people. You will never see the light of day again. There is no one left to save your people now. They will all perish and be wiped from the face of the earth.">
@@ -3834,7 +3832,11 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY329-PRECHOICE ()
-	<SKILL-JUMP ,SKILL-AGILITY ,STORY368>>
+	<COND(<CHECK-SKILL ,SKILL-AGILITY>
+		<STORY-JUMP ,STORY368>
+	)(<USE-ELFIN-BOOTS>
+		<STORY-JUMP ,STORY368>
+	)>>
 
 <CONSTANT TEXT330 "You manage to find a few hours' sleep, balm to your troubled spirit though you awake cold and stiff, at dawn. There is a weariness which numbs your soul but then adversity is said to bring out the best in people. The sun is shining and reflected off the millpond calm surface of the canals. You slink carefully along back alleyways to the rendezvous. By the time you are nearing Fortuny Street the wind has picked up, whipping the stench of death away from the city and bringing with it hope for renewal. Small waves lap at the canal walls.||Lucie is waiting just as she said she would, under the eaves of the tax collector's offices on Rackman Row. She smiles to see you, looking well, her cheeks are rosy red and she is as pretty as ever. She links her arm in yours and says she has something to show you. You walk beside her, enjoying a moment's peace from the burden of trying to save your people. She does have news for you.||\"All is not well with the Overlord. He is being consumed by Hate like so many of his subjects. His concubine, Venus, has the marks of Hate on her body, yet still he lies with her. He has become morose and listless. Venus's handmaid told me all this. There is something terrible amiss at the palace. What will become of us if our leaders are falling into the embrace of the coils of Hate. How shall we be saved?\"||\"I will save you, Lucie. Does the concubine's handmaid know why the Overlord ordered the purging of my people?\"||\"He needed scapegoats so the wrath of the people could be deflected from him and his corrupt courtiers. The Judain have always made good scapegoats. Sorry, I didn't mean ...\" She puts her hand on your shoulder to show she likes you.||\"It doesn't matter, we Judain brave the slings and arrows of outrageous fortune by habit. We are inured to the hatred of others.\"||Lucie runs her hand over your chest.">
 
@@ -4081,6 +4083,9 @@ power.">
 		<COND(<CHECK-SKILL ,SKILL-AGILITY>
 			<IF-ALIVE ,TEXT349-AGILITY>
 			<PREVENT-DEATH ,STORY349>
+		)(<USE-ELFIN-BOOTS>
+			<IF-ALIVE ,TEXT349-AGILITY>
+			<PREVENT-DEATH ,STORY349>
 		)(ELSE
 			<TEST-MORTALITY 5 ,DIED-FROM-INJURIES ,STORY349>
 		)>
@@ -4122,7 +4127,7 @@ power.">
 	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT354 "You wait in the bakery adjacent to the prison while Lucie goes in search of Captain Khmer. It is a long wait, but at least there is fresh bread to eat and the bakers and scullions will not give you away. They seem to be firm friends with Lucie. You have plenty of time to wonder how she binds people to her. These peasants are taking a terrible risk sheltering you under their roof.||At last Lucie comes back. She looks troubled.but says, \"I've arranged things for you. Walk up to the towngate in five minutes' time. They will open up and let you through. They won't harm you, but from then on you are on your own. I think something has gone terribly wrong in there. It wasn't easy to arrange. Don't waste my efforts in failure, Judain.\" She looks at you reproachfully. Mameluke is purple with embarrassment.||\"I'm going to the Silver Eel. Come to me there and tell me how you fared.\" With that and a little squeeze of the shoulder she is gone.">
+<CONSTANT TEXT354 "You wait in the bakery adjacent to the prison while Lucie goes in search of Captain Khmer. It is a long wait, but at least there is fresh bread to eat and the bakers and scullions will not give you away. They seem to be firm friends with Lucie. You have plenty of time to wonder how she binds people to her. These peasants are taking a terrible risk sheltering you under their roof.||At last Lucie comes back. She looks troubled but says, \"I've arranged things for you. Walk up to the towngate in five minutes' time. They will open up and let you through. They won't harm you, but from then on you are on your own. I think something has gone terribly wrong in there. It wasn't easy to arrange. Don't waste my efforts in failure, Judain.\" She looks at you reproachfully. Mameluke is purple with embarrassment.||\"I'm going to the Silver Eel. Come to me there and tell me how you fared.\" With that and a little squeeze of the shoulder she is gone.">
 <CONSTANT CHOICES354 <LTABLE "wait five minutes and then knock at the towngate of the prison fortress of Grond" "slink off back to Bumble Row">>
 
 <ROOM STORY354
@@ -4133,7 +4138,7 @@ power.">
 	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT355 "You arrive back at the jeweller's house later that night and stand surveying it in the moonlight. Your overwhelming impression is that this has all the hallmarks of a trap. The Overlord would hardly leave a priceless diamond unguarded -- and he must be aware that his security measures, while enough to deter the casual thieves of the town, are simply an enticement to the pride of any true professional. So without a doubt there will be soldiers stationed in the house.||Climbing up to the first floor, you prise open a window and tiptoe along the landing, listening at each door in turn. Sure enough, from behind one of the doors comes the rattle of gaming dice and the unmistakable banter of bored soldiers. You pause. This is where the diamond must be kept.||Continuing along the landing .to the next door, you hear the sound ofthundering snores. The jeweller's bedroom. Quietly inching the door open, you go to a cupboard and extract a nightshirt and cap, which you put on over your clothes. Then, darting swiftly along the landing, you fling open the first door and cry: \"Thief! There's a thief downstairs!\"||The three soldiers leap up in amazement and grab their weapons, rushing past you along the anding with excited shouts. They are so intent on catching the thief -- and thereby earning a bonus -- that they don't even glance at your face.||You tear off the nightshirt and look around the room. A small locked chest catches yo.ur eye. Surely that is where the diamond is. The lock looks pretty secure, but you can break it at your leisure once you are safely away from here. You pick up the chest, tucking it under your arm for a hasty getaway, but then an unpleasant shadow of doubt clouds your elation: what if the chest is only a decoy, and the diamond is really kept somewhere else?">
+<CONSTANT TEXT355 "You arrive back at the jeweller's house later that night and stand surveying it in the moonlight. Your overwhelming impression is that this has all the hallmarks of a trap. The Overlord would hardly leave a priceless diamond unguarded -- and he must be aware that his security measures, while enough to deter the casual thieves of the town, are simply an enticement to the pride of any true professional. So without a doubt there will be soldiers stationed in the house.||Climbing up to the first floor, you prise open a window and tiptoe along the landing, listening at each door in turn. Sure enough, from behind one of the doors comes the rattle of gaming dice and the unmistakable banter of bored soldiers. You pause. This is where the diamond must be kept.||Continuing along the landing to the next door, you hear the sound ofthundering snores. The jeweller's bedroom. Quietly inching the door open, you go to a cupboard and extract a nightshirt and cap, which you put on over your clothes. Then, darting swiftly along the landing, you fling open the first door and cry: \"Thief! There's a thief downstairs!\"||The three soldiers leap up in amazement and grab their weapons, rushing past you along the anding with excited shouts. They are so intent on catching the thief -- and thereby earning a bonus -- that they don't even glance at your face.||You tear off the nightshirt and look around the room. A small locked chest catches your eye. Surely that is where the diamond is. The lock looks pretty secure, but you can break it at your leisure once you are safely away from here. You pick up the chest, tucking it under your arm for a hasty getaway, but then an unpleasant shadow of doubt clouds your elation: what if the chest is only a decoy, and the diamond is really kept somewhere else?">
 <CONSTANT CHOICES355 <LTABLE "leave at once with the chest" "first open it and make sure you have the diamond">>
 
 <ROOM STORY355
@@ -4162,7 +4167,11 @@ power.">
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY357-PRECHOICE ()
-	<SKILL-JUMP ,SKILL-AGILITY ,STORY058>>
+	<COND(<CHECK-SKILL ,SKILL-AGILITY>
+		<STORY-JUMP ,STORY058>
+	)(<USE-ELFIN-BOOTS>
+		<STORY-JUMP ,STORY058>
+	)>>
 
 <CONSTANT TEXT358 "Only when you have put a safe distance between you and Mire Street do you pause to inspect the diamond. It is as large as a walnut, and sparkles like a drop of crystallized starlight. The beauty takes your breath away and you have seen some excellent gems in your time. It would have made a fine sceptre for the Overlord, but you'll put it to more practical use. Dropping the diamond into your pocket you go to fence it.">
 
@@ -4276,7 +4285,7 @@ power.">
 
 <ROUTINE STORY365-PRECHOICE ()
 	<COND(,RUN-ONCE
-		<COND(<OR <CHECK-SKILL ,SKILL-SWORDPLAY> <CHECK-SKILL ,SKILL-UNARMED-COMBAT> <CHECK-SKILL ,SKILL-SPELLS> <CHECK-SKILL ,SKILL-AGILITY> <CHECK-ITEM ,CENSER-OF-FRAGRANT-INCENSE>>
+		<COND(<OR <CHECK-SKILL ,SKILL-SWORDPLAY> <CHECK-SKILL ,SKILL-UNARMED-COMBAT> <CHECK-SKILL ,SKILL-SPELLS> <CHECK-SKILL ,SKILL-AGILITY> <CHECK-ITEM ,CENSER-OF-FRAGRANT-INCENSE> <CHECK-ITEM ,ELFIN-BOOTS>>
 			<PREVENT-DEATH ,STORY365>
 		)(ELSE
 			<IF-ALIVE ,TEXT365-JADE-WARRIOR>
@@ -4507,6 +4516,8 @@ power.">
 <ROUTINE STORY386-PRECHOICE ()
 	<COND(<CHECK-SKILL ,SKILL-AGILITY>
 		<STORY-JUMP ,STORY406>
+	)(<USE-ELFIN-BOOTS>
+		<STORY-JUMP ,STORY406>
 	)>>
 
 <CONSTANT TEXT387 "The sound of Lucie crying gives you a pang of remorse as you climb the steps into the evening light. She sounds utterly desolate. Breathing the fresher air outside makes you realize there is a cloying odour of putrefaction down in the cavern.">
@@ -4599,6 +4610,8 @@ power.">
 
 <ROUTINE STORY394-PRECHOICE ()
 	<COND(<CHECK-SKILL ,SKILL-AGILITY>
+		<STORY-JUMP ,STORY406>
+	)(<USE-ELFIN-BOOTS>
 		<STORY-JUMP ,STORY406>
 	)>>
 

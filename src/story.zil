@@ -629,7 +629,7 @@
 	(STORY TEXT044)
 	(PRECHOICE STORY044-PRECHOICE)
 	(CHOICES CHOICES044)
-	(DESTINATIONS <LTABLE STORY064 STORY076>)
+	(DESTINATIONS <LTABLE STORY064 STORY044-BOOTS>)
 	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
@@ -637,7 +637,19 @@
 	<COND(<CHECK-SKILL ,SKILL-AGILITY>
 		<SET-DESTINATION ,STORY044 2 ,STORY188>
 	)(ELSE
-		<SET-DESTINATION ,STORY044 2 ,STORY076>
+		<SET-DESTINATION ,STORY044 2 ,STORY044-BOOTS>
+	)>>
+
+<ROOM STORY044-BOOTS
+	(DESC "044")
+	(EVENTS STORY044-EVENTS)
+	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY044-EVENTS ()
+	<COND(<USE-ELFIN-BOOTS>
+		<RETURN ,STORY188>
+	)(ELSE
+		<RETURN ,STORY076>
 	)>>
 
 <CONSTANT TEXT045 "You also manage to free two hundred of the grateful guards who cannot believe their luck. They wipe themselves off along the walls. Most of them look as if they are in shock. They shouldn't give you too much trouble. You are more likely to face trouble from the Judain you have set free. They can see their tormenters among them and they want to take their revenge. \"Now die, dogs, die slowly and in pain!\" they cry. \"Let us see how you like to be put to the torture. Kill them! Heat the irons and warm their vitals.\" The Judain are near hysterical and they begin to slaughter the guards out of hand, while others try to drag some of them back to the torture chambers. The guards are petrified.||In the heat of the moment there is no time for finesse, and your people are behaving no better than savage beasts who have lost all control.">
@@ -820,15 +832,15 @@
 	<IF-ALIVE ,TEXT061-CONTINUED>>
 
 <CONSTANT TEXT062 "Your sixth sense has not failed you. Your instinct for danger leads you to look up into the canopy of the Overlord's four-poster bed, even as the filigree begins to tighten painfully around your ankle. Above you, what looks like a black blanket floats eerily down from beneath the canopy to engulf you.">
-<CONSTANT CHOICES062 <LTABLE "use" "use" "cry for help">>
+<CONSTANT CHOICES062 <LTABLE "use" "use" "use" "cry for help">>
 
 <ROOM STORY062
 	(DESC "062")
 	(STORY TEXT062)
 	(CHOICES CHOICES062)
-	(DESTINATIONS <LTABLE STORY118 STORY084 STORY109>)
-	(REQUIREMENTS <LTABLE SKILL-AGILITY SKILL-SWORDPLAY NONE>)
-	(TYPES <LTABLE R-SKILL R-SKILL R-NONE>)
+	(DESTINATIONS <LTABLE STORY118 STORY118 STORY084 STORY109>)
+	(REQUIREMENTS <LTABLE SKILL-AGILITY ELFIN-BOOTS SKILL-SWORDPLAY NONE>)
+	(TYPES <LTABLE R-SKILL R-LOSE-ITEM R-SKILL R-NONE>)
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT063 "The Inn of the Inner Temple has fake columns along its front and amusing and irreverent cartoons of many gods and goddesses painted above its lintel. Inside it is no more than a low seedy hall divided into cubicles. The drinkers all have their backs to you. There is a board near the door to which several notices have been stuck. Some are reward posters, offering money in return for help arresting some of the inn's regulars. They have been defaced and scrawled on. One of the posters offers a reward of ten gleenars for any Judain, dead or alive. You tear it down as you walk past, dropping the crumpled paper into the spittoon beside the bar.||Most of those drinking in the cubicles would happily kill you for even a miserable sum like ten gleenars.">
@@ -1624,7 +1636,7 @@
 	(STORY TEXT135)
 	(PRECHOICE STORY135-PRECHOICE)
 	(CHOICES CHOICES135)
-	(DESTINATIONS <LTABLE STORY140 STORY062>)
+	(DESTINATIONS <LTABLE STORY135-BOOTS STORY062>)
 	(TYPES TWO-NONES)
 	(DEATH T)
 	(FLAGS LIGHTBIT)>
@@ -1639,8 +1651,20 @@
 		<COND (<CHECK-SKILL ,SKILL-AGILITY>
 			<SET-DESTINATION ,STORY135 1 ,STORY098>
 		)(ELSE
-			<SET-DESTINATION ,STORY135 1 ,STORY140>
+			<SET-DESTINATION ,STORY135 1 ,STORY135-BOOTS>
 		)>
+	)>>
+
+<ROOM STORY135-BOOTS
+	(DESC "044")
+	(EVENTS STORY135-EVENTS)
+	(FLAGS LIGHTBIT)>
+
+<ROUTINE STORY135-EVENTS ()
+	<COND(<USE-ELFIN-BOOTS>
+		<RETURN ,STORY098>
+	)(ELSE
+		<RETURN ,STORY140>
 	)>>
 
 <CONSTANT TEXT136 "With a word of power and a clap of your hands you bring forth a great fog of noxious gas. Mameluke succumbs immediately; when the fog clears you can see he has sunk completely under the purple shimmering translucent surface of the monster. Hate doesn't seem to have suffered any ill effects from the spell, though its body convulses as it throws out a purple coil to envelop you. You turn tail and flee back to Bumble Row as quickly as you can, mourning the loss of a brave dear friend.">
@@ -2940,15 +2964,15 @@
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT253 "Your fears were well founded. Put slightly off-balance because of the burden of the chest, you tread too heavily on a loose floorboard. There is an ominous creak. For a single ghastly moment your over-florid imagination likens it to the groan of scaffold timbers when a man is hanged. But the rope is not around your neck just yet -- even though the guards are already whirling, pulling the swords from their scabbards.||\"A thief!\" they cry. \"Right under our very noses! Stop there, thief!\"">
-<CONSTANT CHOICES253 <LTABLE "use" "fight your way out">>
+<CONSTANT CHOICES253 <LTABLE "use" "use" "fight your way out">>
 
 <ROOM STORY253
 	(DESC "253")
 	(STORY TEXT253)
 	(CHOICES CHOICES253)
-	(DESTINATIONS <LTABLE STORY406 STORY283>)
-	(REQUIREMENTS <LTABLE SKILL-AGILITY NONE>)
-	(TYPES <LTABLE R-SKILL R-NONE>)
+	(DESTINATIONS <LTABLE STORY406 STORY406 STORY283>)
+	(REQUIREMENTS <LTABLE SKILL-AGILITY ELFIN-BOOTS NONE>)
+	(TYPES <LTABLE R-SKILL R-LOSE-ITEM R-NONE>)
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT254 "\"Now hear the will of the Overlord. The salt tax will be doubled forthwith.\" The crier's voice rings out confidently but there are growls of discontent all around.||A man turns to you and says, \"Doubled! Do they intend to squeeze us till we are nought but dried husks lying in the dust?\"||\"Ssh,\" you say, wanting to hear what else the town crier is saying.||\"The amnesty for those who worship false gods is at an end,\" he declaims to the crowd. \"The punishment for heresy is death.\"||There is a wail from somewhere in the crowd and two of the soldiers barge their way towards the poor unfortunate. Townsfolk are knocked to the ground but no one lays hand on the soldieres. A woman dressed in a blue robe runs away up the street with the soldiers in hot pursuit.||The crier affects not to have noticed the disturbance. \"Now hear this. The Overlord decrees the Judain outcast. The life of a Judain is of no worth. The keeping of Judain as slaves within the precincts of the city may continue. It is the wish of the Overlord that all good citizens of Godorno shall not rest until the Judain have been driven out or enslaved.\"||You listen in horror. This means that none of your people is safe within the city. The crowds start to chant: \"Kill the Judain, kill the Judain.\" The man who spoke out with such indignation about the salt tax now looks at you and then points, shouting \"Judain!\" The mob will soon be baying for blood.">
@@ -3933,16 +3957,16 @@ power.">
 
 <CONSTANT TEXT338 "You move in close to seize the initiative. Tyutchev falls back into the comer of the tavern, where he is cramped by the low ceiling. He cannot make a powerful overhead swing without catching his long sword against the rafters. He has fought in these conditions before, however, and you can do no more than hold your own. You might be able to get past his blurred sword tip if you are fast enough, but for a big man he moves very quickly. You wound him but only at the expense of a nasty cut to your side.">
 <CONSTANT TEXT338-CONTINUED "The grimace of pain on Tyutchev's pale face is quickly replaced by one of cold fighting rage. You sense that you cannot best this man unless you can slip your sword point past his guard.">
-<CONSTANT CHOICES338 <LTABLE "use" "use" "fight on" "turn and flee">>
+<CONSTANT CHOICES338 <LTABLE "use" "use" "use" "fight on" "turn and flee">>
 
 <ROOM STORY338
 	(DESC "338")
 	(STORY TEXT338)
 	(PRECHOICE STORY338-PRECHOICE)
 	(CHOICES CHOICES338)
-	(DESTINATIONS <LTABLE STORY367 STORY367 STORY377 STORY199>)
-	(REQUIREMENTS <LTABLE SKILL-AGILITY SKILL-SWORDPLAY NONE NONE>)
-	(TYPES <LTABLE R-SKILL R-SKILL R-NONE R-NONE>)
+	(DESTINATIONS <LTABLE STORY367 STORY367 STORY367 STORY377 STORY199>)
+	(REQUIREMENTS <LTABLE SKILL-AGILITY ELFIN-BOOTS SKILL-SWORDPLAY NONE NONE>)
+	(TYPES <LTABLE R-SKILL R-LOSE-ITEM R-SKILL R-NONE R-NONE>)
 	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
@@ -4286,16 +4310,16 @@ power.">
 <CONSTANT TEXT365 "The tunnels take you deeper and deeper into the bones of ancient Godorno. At last you stumble through a rotten tapestry into a chamber filled with gold-plated furniture and funeral biers with sarcophagi atop them. Four glassy green statues stand at the corners of the room.||The four Jade Warriors clank menacingly as they come to life before you. The green swords in their hands cut the beams of light, giving each blade an aura like a rainbow. The light shimmers off the jagged blades and off the chiselled planes of the huge warriors themselves. When they step towards you, their heavy tread grinds the rubble beneath their armoured feet to powder. The whole room reverberates to their measured advance.">
 <CONSTANT TEXT365-CONTINUED "You realize you must flee.">
 <CONSTANT TEXT365-JADE-WARRIOR "The nearest Jade Warrior slashes you.">
-<CONSTANT CHOICES365 <LTABLE "do battle" "fight them" "cast Encloud" "cast Rulership" "cast Bafflement" "cast Vanish" "fall back on" "use a">>
+<CONSTANT CHOICES365 <LTABLE "do battle" "fight them" "cast Encloud" "cast Rulership" "cast Bafflement" "cast Vanish" "fall back on" "use" "use a">>
 
 <ROOM STORY365
 	(DESC "365")
 	(STORY TEXT365)
 	(PRECHOICE STORY365-PRECHOICE)
 	(CHOICES CHOICES365)
-	(DESTINATIONS <LTABLE STORY389 STORY296 STORY042 STORY066 STORY096 STORY102 STORY277 STORY204>)
-	(REQUIREMENTS <LTABLE SKILL-SWORDPLAY SKILL-UNARMED-COMBAT SKILL-SPELLS SKILL-SPELLS SKILL-SPELLS SKILL-SPELLS SKILL-AGILITY CENSER-OF-FRAGRANT-INCENSE>)
-	(TYPES <LTABLE R-SKILL R-SKILL R-SKILL R-SKILL R-SKILL R-SKILL R-SKILL R-ITEM>)
+	(DESTINATIONS <LTABLE STORY389 STORY296 STORY042 STORY066 STORY096 STORY102 STORY277 STORY277 STORY204>)
+	(REQUIREMENTS <LTABLE SKILL-SWORDPLAY SKILL-UNARMED-COMBAT SKILL-SPELLS SKILL-SPELLS SKILL-SPELLS SKILL-SPELLS SKILL-AGILITY ELFIN-BOOTS CENSER-OF-FRAGRANT-INCENSE>)
+	(TYPES <LTABLE R-SKILL R-SKILL R-SKILL R-SKILL R-SKILL R-SKILL R-SKILL R-LOSE-ITEM R-ITEM>)
 	(DEATH T)
 	(FLAGS LIGHTBIT)>
 

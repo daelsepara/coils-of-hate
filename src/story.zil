@@ -214,9 +214,7 @@
 <ROUTINE STORY011-PRECHOICE ()
 	<COND (<NOT <CHECK-ITEM ,PLUMED-HELMET>>
 		<TELL CR "Take a plumed helmet?">
-		<COND (<YES?>
-			<TAKE-ITEM ,PLUMED-HELMET>
-		)>
+		<COND (<YES?> <TAKE-ITEM ,PLUMED-HELMET>)>
 	)>>
 
 <CONSTANT TEXT012 "Melmelo has his majordomo, a tall, stooping man with a wooden leg, show you into his snug. Doubtless this man lost his leg doing a job for Melmelo and has been rewarded by the sinecure of becoming the guildmaster's senior servant. The snug is a comfortable little wood-panelled room lined with bookcases and trophies picked up from the villas of the nobility. It is one of the smallest rooms in what must be one of the grandest villas in the city. Melmelo is very rich.||He is a small shrewd-looking man, missing his left little finger and just beginning to lose his greying hair. He is dressed simply and you are reasonably sure he is not armed. You can hear the majordomo working in the garden; the stub of his wooden leg thumps on the flagstones of the garden path. He is too far away to help Melmelo should you attack him. Melmelo looks quite relaxed. He doesn't seem either prepared for or worried about trouble.">
@@ -272,9 +270,7 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY015-PRECHOICE()
-	<COND (<CHECK-SKILL ,SKILL-AGILITY>
-		<LOSE-SKILL ,SKILL-AGILITY>
-	)>
+	<COND (<CHECK-SKILL ,SKILL-AGILITY> <LOSE-SKILL ,SKILL-AGILITY>)>
 	<TELL ,TEXT015-CONTINUED>
 	<TELL ,PERIOD-CR>
 	<SKILL-JUMP ,SKILL-WILDERNESS-LORE, STORY022>>
@@ -324,9 +320,7 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY019-PRECHOICE ()
-	<COND (<AND <CHECK-ITEM ,SWORD> ,RUN-ONCE>
-		<LOSE-ITEM ,SWORD>
-	)>>
+	<COND (<AND <CHECK-ITEM ,SWORD> ,RUN-ONCE> <LOSE-ITEM ,SWORD>)>>
 
 <CONSTANT TEXT020 "You resolve to enter the prison fortress of Grond. Once there, you can free the captured Judain and other political prisoners detained to await the mercy of the Overlord's torturers. But you cannot succeed at such an ambitious mission alone, and you are unwilling to put your fellow Judain at further risk. They are brave enough, but to get inside the prison you will need the help of an expert rogue.">
 <CONSTANT CHOICES020 <LTABLE "pay a visit to your mulatto friend, Mameluke, who has been useful to you in the past" "call on the little gamine Lucie">>
@@ -1164,9 +1158,7 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY095-PRECHOICE ()
-	<COND (<CHECK-CODEWORD ,CODEWORD-SATORI>
-		<DELETE-CODEWORD ,CODEWORD-SATORI>
-	)>>
+	<COND (<CHECK-CODEWORD ,CODEWORD-SATORI> <DELETE-CODEWORD ,CODEWORD-SATORI>)>>
 
 <CONSTANT TEXT096 "Bafflement is a powerful spell to use against a single dire opponent. But even if you succeeded in confusing one of the Jade Warriors, the others would still cut you down.||As it is they have no mind as we understand it. They are automata, immune to your spell. The Jade Warriors whirr and click menacingly as they advance to surround you with swords aloft. There is no time to cast another spell: Their sharp blades lance your vitals and rob you of life. The burial vaults of the Megiddo dynasty remain inviolate. Your last thought is that, now you are slain, there is no one who can save the Judain and Hate will conquer all.||Vanity of vanities ...">
 
@@ -1368,7 +1360,7 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY114-PRECHOICE ()
-	<COND (<AND <CHECK-ITEM ,DIAMOND> ,RUN-ONCE>
+	<COND (<AND ,RUN-ONCE <CHECK-ITEM ,DIAMOND>>
 		<TELL CR "Sell him the diamond?">
 		<COND (<YES?>
 			<GAIN-MONEY 1000>
@@ -1911,9 +1903,7 @@
 <ROUTINE STORY157-PRECHOICE ()
 	<COND (<NOT <CHECK-ITEM ,PLUMED-HELMET>>
 		<TELL CR "Take a plumed helmet?">
-		<COND (<YES?>
-			<TAKE-ITEM ,PLUMED-HELMET>
-		)>
+		<COND (<YES?> <TAKE-ITEM ,PLUMED-HELMET>)>
 	)>>
 
 <CONSTANT TEXT158 "As a Judain in Godorno you have become used to being treated with disdain. You didn't want to drink anyway. The two women favour you with glances dripping with disdain, as if you were something someone had scraped off the heels of their boots. Try as you can to keep calm, this kind of prejudice is really upsetting. They are street sluts, no better, perhaps worse than slaves, yet here they are treating you like a worm. Still if you are to be tolerant then you must apply that understanding to members of their ancient profession just as you would wish them to extend it to all Judain.||Determined to find out what Lucie is up to you walk over to the couple, who are watching you intently. Lucie smiles as she did when you met her in the Garden of Statues.">
@@ -2245,7 +2235,6 @@
 	(DESC "189")
 	(STORY TEXT189)
 	(CONTINUE STORY227)
-	(COST 3)
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT190 "Your allies suggest various places for you to make a hideout and you choose a damp cellar on Medallion Street -- it seems the best option.||You are on your way there when there is a commotion ahead of you. Seeing a group of city guards approaching, you duck into the ruin of an abandoned building. To your dismay, they stop in the street outside and you hear one of them say, \"A Judain went in here, I think. Fetch the dogs -- they'll soon sniff the wretch out!\"||There is a frightened whimper in the darkness behind you. You whirl to see Caiaphas's wife, Ruth -- the one who was reluctant to share the food with you. You remember hearing from Caiaphas that she is with child. She is hidden, trembling, behind a pillar at the back of the hall. You know that the guards will not return to barracks until they have caught their quota of Judain.">
@@ -2375,7 +2364,7 @@
 	(CONTINUE STORY254)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT202 "Being among friends has its advantages. An old moneylender, Sekritt the Blind, has just such a pendant as you might use as a magical amulet. It was pawned to him by an itinerant sorcerer many years ago. You are lucky. He was about to sell it to a young sorceress who had decided to risk trying to escape from the city down the catacombs -- an unwise move ifever there was one.">
+<CONSTANT TEXT202 "Being among friends has its advantages. An old moneylender, Sekritt the Blind, has just such a pendant as you might use as a magical amulet. It was pawned to him by an itinerant sorcerer many years ago. You are lucky. He was about to sell it to a young sorceress who had decided to risk trying to escape from the city down the catacombs -- an unwise move if ever there was one.">
 
 <ROOM STORY202
 	(DESC "202")
@@ -2392,7 +2381,7 @@
 	(DEATH T)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT204 "You quickly ignite the incense, and smoke billows forth from the censer. The Jade Warriors are soon swathed in the roiling white clouds, and you grope your way through the smoke towards them. One of the warriors looms towards you, the light gleaming dully now off its facets and its sword is working mechanically. You recoil in fright but it lumbers past making elaborate passes in the air, as if engaged in a display of an ancient style of swordplay. The others are also lurching about at random. The smoke seems to have scrambled their senses. Each is cutting and thrusting at the air around it -but they seem oblivious of you.">
+<CONSTANT TEXT204 "You quickly ignite the incense, and smoke billows forth from the censer. The Jade Warriors are soon swathed in the roiling white clouds, and you grope your way through the smoke towards them. One of the warriors looms towards you, the light gleaming dully now off its facets and its sword is working mechanically. You recoil in fright but it lumbers past making elaborate passes in the air, as if engaged in a display of an ancient style of swordplay. The others are also lurching about at random. The smoke seems to have scrambled their senses. Each is cutting and thrusting at the air around it but they seem oblivious of you.">
 
 <ROOM STORY204
 	(DESC "204")
@@ -2558,7 +2547,7 @@
 	(DESC "219")
 	(STORY TEXT219)
 	(CHOICES CHOICES219)
-	(DESTINATIONS <LTABLE STORY236 STORY240>)
+	(DESTINATIONS <LTABLE STORY236 STORY246>)
 	(TYPES TWO-NONES)
 	(FLAGS LIGHTBIT)>
 
@@ -2880,7 +2869,7 @@
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT246 "\"It's the old beast from the catacombs. The ancient wicked heart of the city, claiming the people for its own.\" He hands you the pot of ale, which smells strongly of malt, barley and honey.||\"What is the old beast?\"||\"Some say it is the spirit of the Harakadnezzar, the Great Tyrant. It is said that when robbers desecrated his tombs he became absorbed into the bones of the world, gaining strength in the dark places far from the light. Now he has come forth to avenge himself. Others say it is the many-limbed beast, Hate. It attacks the wicked and decadent, carrying people off who have hate in their hearts. One thing I do know, it isn't good for trade.\"">
-<CONSTANT CHOICES246 <LTABLE "use" "use" "quaff the ale he has given" "leave it untouched">>
+<CONSTANT CHOICES246 <LTABLE "use" "use" "quaff the ale he has given" "leave it untouched" "use">>
 
 <ROOM STORY246
 	(DESC "246")
@@ -3017,9 +3006,7 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY256-PRECHOICE ()
-	<COND(<AND ,RUN-ONCE <CHECK-SKILL ,SKILL-CHARMS>>
-		<STORY-JUMP ,STORY287>
-	)>>
+	<COND(<AND ,RUN-ONCE <CHECK-SKILL ,SKILL-CHARMS>> <STORY-JUMP ,STORY287>)>>
 
 <CONSTANT TEXT257 "You soon find Lucie, who is sprawled flat on her back in the road. She looks at you as though you have betrayed her and to your dismay you see she is going to cry. \"I only wanted to touch it, just for a moment,\" she cries, already in floods of tears.||\"It is magically attuned to me. Only I can use it,\" you say hurriedly. You retrieve your amulet from the dust, but as you reach out to help Lucie up she shrugs you away, evading your grasp.">
 
@@ -3403,12 +3390,8 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY288-PRECHOICE ()
-	<COND (,RUN-ONCE
-		<COND(<CHECK-CODEWORD ,CODEWORD-SATORI>
-			<DELETE-CODEWORD ,CODEWORD-SATORI>
-		)>
-		<GAIN-MONEY 500>
-	)>>
+	<COND(<CHECK-CODEWORD ,CODEWORD-SATORI> <DELETE-CODEWORD ,CODEWORD-SATORI>)>
+	<GAIN-MONEY 500>>
 
 <CONSTANT TEXT289 "Seizing the bridle you vault into the saddle. The chestnut horse bucks and then, arching its back, makes a series of straight-legged jumps that shake you from the saddle before you can settle. You fall to the cobbles, stunned, listening in a detached way as the hoof beats of your pursuers come closer and stop. Your head is swimming as the soldiers dismount.||\"Judain scum,\" says one of them, plunging a sword in your back, killing you as if you were no more than a dog. \"That's one less to worry about,\" he says.">
 
@@ -3603,9 +3586,7 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY308-PRECHOICE ()
-	<COND (<CHECK-CODEWORD ,CODEWORD-SUNSET>
-		<DELETE-CODEWORD ,CODEWORD-SUNSET>
-	)>>
+	<COND (<CHECK-CODEWORD ,CODEWORD-SUNSET> <DELETE-CODEWORD ,CODEWORD-SUNSET>)>>
 
 <CONSTANT TEXT309 "You are looking out over the eastern courtyard where the prisoners are brought daily to exercise but there is no one in sight. The barred windows of the towers at each corner of the quadrangle are all shut. There is no sign of Captain Khmer, the commandant of the prison, or his men. You decide to go deeper into the prison and walk carefully to the opposite tower.||The door creaks open and the familiar cloying smell of Hate assails your nostrils. The silence is oppressive but you wonder why you can't hear the screams of the tormented prisoners. Screwing up your courage you walk on into the inner ring of the fortress. Piles of masonry and strange holes in the ground that lead to lightless pits among the old fortress foundations do nothing to calm your fears.">
 
@@ -3616,7 +3597,7 @@
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT310 "You are in luck. He emerges from the palace about noon, borne in his gilded litter by eight slaves in silk tabards. The escort of heavily armed soldiers would deter any assassin. As the litter progresses slowly down the Avenue ofSilent Glory towards the Greenbark Plaza, some of the soldiers hurry ahead with halberds raised, urging the onlookers to raise a feeble cheer.||Inside the litter, the Overlord is reclining rather more than usual. When he twitches the curtain aside to wave less fulsomely than is his wont his face has the purplish hue of a man stricken by gout and a disease of the blood. His eyes are hooded and lacklustre.||You make your way back to your hidey-hole on Bumble Row and find a messenger waiting for you there, a Judain nipper with big brown eyes. He hands you a note. It is from a girl you used to know, called Lucie. Her name means 'rays of the dawn'. She wants to meet you tomorrow morning. You tell the little messenger you will be at the appointed place at the appointed hour and he scampers off.||It is not worth venturing out again. The streets are deserted as the curfew hour approaches. You settle down to sleep.">
-<CONSTANT CHOICES310 <LTABLE "sleep with a sword ready by your side" "tucked the sword under your mattress" "you have no swords">>
+<CONSTANT CHOICES310 <LTABLE "sleep with a sword ready by your side" "tucked under your mattress" "you have no swords">>
 
 <ROOM STORY310
 	(DESC "310")
@@ -3627,7 +3608,7 @@
 	(TYPES <LTABLE R-ANY R-ANY R-NONE>)
 	(FLAGS LIGHTBIT)>
 
-<CONSTANT TEXT311 "Grand is as you left it. There are still prisoners clamouring to be set free. You open as many doors as you can, prising the shackles off the poor prisoners, some of whom are too far gone even to be grateful.||Soon you have released a multitude from the prison fortress. A mob of escaped convicts and their cruel guards start fighting outside the fortress walls. You leave them to it. They probably deserve each other. The city has sunk into a desperate state. You could almost imagine you were in hell.||A moment of inspiration lightens your mood, however, as you decide to have the massive chains which support the portcullis of the prison taken out. A sorcerer of ancient times forged those metal links. Perhaps you can use them to tether Hate.">
+<CONSTANT TEXT311 "Grond is as you left it. There are still prisoners clamouring to be set free. You open as many doors as you can, prising the shackles off the poor prisoners, some of whom are too far gone even to be grateful.||Soon you have released a multitude from the prison fortress. A mob of escaped convicts and their cruel guards start fighting outside the fortress walls. You leave them to it. They probably deserve each other. The city has sunk into a desperate state. You could almost imagine you were in hell.||A moment of inspiration lightens your mood, however, as you decide to have the massive chains which support the portcullis of the prison taken out. A sorcerer of ancient times forged those metal links. Perhaps you can use them to tether Hate.">
 
 <ROOM STORY311
 	(DESC "311")
@@ -3667,7 +3648,6 @@
 <ROUTINE STORY314-PRECHOICE ()
 	<COND(<CHECK-SKILL ,SKILL-SEAFARING>
 		<SET-DESTINATION ,STORY314 1 ,STORY344>
-		<RETURN ,STORY344>
 	)(ELSE
 		<SET-DESTINATION ,STORY314 1 ,STORY331>
 	)>>
@@ -3754,9 +3734,7 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY321-PRECHOICE ()
-	<COND(<AND ,RUN-ONCE <CHECK-SKILL ,SKILL-ROGUERY>>
-		<STORY-JUMP ,STORY410>
-	)>>
+	<COND(<AND ,RUN-ONCE <CHECK-SKILL ,SKILL-ROGUERY>> <STORY-JUMP ,STORY410>)>>
 
 <CONSTANT TEXT322 "As soon as you step onto the carpet the gold and silver filigree threads seem to bunch and tighten beneath the balls of your feet. You take another step and then struggle to make another, but the wires have snared around your ankle. The slender metal thread is cutting into your skin like a cheesewire. Cursing, you drop the concubine and bend to free yourself. It should be easy enough to get free before the wire cuts through your leg.">
 
@@ -3889,9 +3867,7 @@ power.">
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY334-PRECHOICE ()
-	<COND (<CHECK-CODEWORD ,CODEWORD-COOL>
-		<DELETE-CODEWORD ,CODEWORD-VENEFIX>
-	)>>
+	<COND (<CHECK-CODEWORD ,CODEWORD-COOL> <DELETE-CODEWORD ,CODEWORD-VENEFIX>)>>
 
 <CONSTANT TEXT335 "Your mighty struggles are in vain. You are not ready for this untimely death. There is no one left now to save your people.||Memories of the times you have felt Hate smoulder in your breast come unbidden into your mind and the strength seems to drain out of your muscles. The warm wet embrace of Hate welcomes you and your body is slowly and inexorably drawn inch by inch into the seething mass of the monster. Soon your head too is being drawn in. Your arms and legs have gone numb and you start to fight for breath as your nostrils and lips are sealed over by the soft purple flesh of Hate. You drown in the body of Hate and the city has lost its only saviour. Your tormented half-life has begun.">
 
@@ -4009,7 +3985,7 @@ power.">
 
 <CONSTANT TEXT345 "Lucie reaches up to touch the amulet that swings around your neck and recoils. \"Ow, it's hot! How can you bear it?\"||\"My leather jerkin protects me. If it is hot that means danger threatens. We must leave here.\"||She reaches up again and snatches at the amulet, grimacing with pain. She rips it from your neck, scattering the links of the fine gold chain across the wbbles and runs quickly away from you. You give chase but she ducks beneath an overturned cart and down a hatch into a cellar. It is dark and you lose sight of her. Lucie knows the back ways and dives of the city even better than you do; you will never find her.">
 <CONSTANT TEXT345-CONTINUED "You cannot understand Lucie doing such a thing. She is a thief, admittedly, but it is not in her character to steal from friends. Perhaps she has been the victim of a dibbuk. These invisible creatures settle on a person's shoulder and take charge of their thoughts, causing them to do things that would normally be against their nature. Well, in that case it has made a mistake in causing her to take your amulet. The protective magic will soon drive the dibbuk off, leaving Lucie with no memory of the event.||Still, you have lost your amulet. There must be one somewhere in the city, so perhaps you should start looking. Alternatively, you could return to your hideout and see if anyone there knows where you might find one; after all, the Judain are famous for their skill in manufacturing magical amulets and luckstones.">
-<CONSTANT CHOICES345 <LTABLE "start scouring the city for a new amulet to buy" "look for Lucie to see ifshe still has it once the dibbuk has released her from its control" "consult your own people first">>
+<CONSTANT CHOICES345 <LTABLE "start scouring the city for a new amulet to buy" "look for Lucie to see if she still has it once the dibbuk has released her from its control" "consult your own people first">>
 
 <ROOM STORY345
 	(DESC "345")
@@ -4021,13 +3997,11 @@ power.">
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY345-PRECHOICE ()
-	<COND(,RUN-ONCE
-		<COND(<CHECK-ITEM ,MAGIC-AMULET> <LOSE-ITEM ,MAGIC-AMULET>)>
-		<COND(<CHECK-SKILL ,SKILL-STREETWISE>
-			<SET-DESTINATION ,STORY345 1 ,STORY243>
-		)(ELSE
-			<SET-DESTINATION ,STORY345 1 ,STORY213>
-		)>
+	<COND(,RUN-ONCE <COND(<CHECK-ITEM ,MAGIC-AMULET> <LOSE-ITEM ,MAGIC-AMULET>)>)>
+	<COND(<CHECK-SKILL ,SKILL-STREETWISE>
+		<SET-DESTINATION ,STORY345 1 ,STORY243>
+	)(ELSE
+		<SET-DESTINATION ,STORY345 1 ,STORY213>
 	)>>
 
 <CONSTANT TEXT346 "Lucie smirks coquettishly as you tell her off and says, \"Well, it's true. Hate take them all and good riddance to bad rubbish.\"||You sigh, knowing you will never change her. You suspect that at least one of the criminal inmates of Grond must have done something dreadful to her before his imprisonment.||\"Surely there must be something you can do?\" you ask. \"Don't you know any of the guards?\"||\"I suppose I do, one or two. There's Captain Khmer in the east tower. He oversees the towngate and the eastern courtyard. I could smuggle you in there.\"">
@@ -4057,12 +4031,8 @@ power.">
 <ROUTINE STORY347-PRECHOICE ()
 	<COND(<CHECK-CODEWORD ,CODEWORD-VENEFIX>
 		<IF-ALIVE ,TEXT347-VENEFIX>
-		<COND (<CHECK-SKILL ,SKILL-AGILITY>
-			<LOSE-SKILL ,SKILL-AGILITY>
-		)>
-		<COND (<CHECK-SKILL ,SKILL-SWORDPLAY>
-			<LOSE-SKILL ,SKILL-SWORDPLAY>
-		)>
+		<COND (<CHECK-SKILL ,SKILL-AGILITY> <LOSE-SKILL ,SKILL-AGILITY>)>
+		<COND (<CHECK-SKILL ,SKILL-SWORDPLAY> <LOSE-SKILL ,SKILL-SWORDPLAY>)>
 	)(<CHECK-CODEWORD ,CODEWORD-SATORI>
 		<IF-ALIVE ,TEXT347-SATORI>
 	)>
@@ -4078,9 +4048,7 @@ power.">
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY348-PRECHOICE ()
-	<COND (<CHECK-CODEWORD ,CODEWORD-SATORI>
-		<DELETE-CODEWORD ,CODEWORD-SATORI>
-	)>>
+	<COND (<CHECK-CODEWORD ,CODEWORD-SATORI> <DELETE-CODEWORD ,CODEWORD-SATORI>)>>
 
 <CONSTANT TEXT349 "There is no sunlight to power the Jewel down here in the street. Your gaze is drawn up to the towers and parapets of the city, where the sunset yet flickers like a golden flame against the blue-grey of the sky. You must scale the crumbling wall to reach the daylight. As you start to climb a pile of rubble, Hate lashes out at you.">
 <CONSTANT TEXT349-CONTINUED "At last you reach the parapet with just a few steps left to climb. Sunset bathes the stone wall just above where you stand. A huge bloated tentacle, the largest of all, rises up out of the canal and looms over the rampart at the top of the parapet. It is blocking your way but you only have to drive this last tentacle aside and you will be able to reach the sunlight. You prepare to smite the tentacle but looking out of it at you is Lucie! Her face and body are embedded in the purple mass which you must rend and smash if you are to reach the top.">
@@ -4397,7 +4365,7 @@ power.">
 	(FLAGS LIGHTBIT)>
 
 <CONSTANT TEXT374 "You manage to hide in a doorway just as a band of lepers turns into sight. They are coming on up the street in a slow-moving throng, a parody of a dance troupe that shuffies from house to house striking guilt into the hearts of those who see it. They are starving and emaciated, many have lost fingers, toes and their noses. Some are missing a foot or a hand. A few are heaving themselves along on trolleys, with no legs left on which to walk. They have escaped from the sanatorium. No one has fed them for days.">
-<CONSTANT CHOICES374 <LTABLE "leave your hiding place and lead them to safety" "let them wander on until Hate swallows them into its qmvermg grey-green maw">>
+<CONSTANT CHOICES374 <LTABLE "leave your hiding place and lead them to safety" "let them wander on until Hate swallows them into its quivering grey-green maw">>
 
 <ROOM STORY374
 	(DESC "374")
@@ -4442,7 +4410,7 @@ power.">
 	(DESC "378")
 	(STORY TEXT378)
 	(CHOICES CHOICES378)
-	(DESTINATIONS <LTABLE STORY206 STORY341 STORY316 STORY020>)
+	(DESTINATIONS <LTABLE STORY206 STORY341 STORY361 STORY020>)
 	(REQUIREMENTS <LTABLE NONE SKILL-SPELLS NONE NONE>)
 	(TYPES <LTABLE R-NONE R-SKILL R-NONE R-NONE>)
 	(FLAGS LIGHTBIT)>

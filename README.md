@@ -4,7 +4,7 @@ This is a ZIL Implementation of Coils of Hate game book (Virtual Reality Adventu
 
 | **Cover art** | **Back cover blurb**|
 |:-:|:-:|
-|![Cover Art](/images/coils-of-hate.jpg)|Alone in the labyrinthine streets of the ancient city of Godorno, you frantically attempt to save your people -- the Judain -- from their tyrannical ruler, the Overlord. Terriefied of being hunted down, the Judain have gone to ground. But now there is an even greater menace: Hate, the very embodiment of all that is sinister, has invaded the city. Its tentacles emerge from the sewers beneath the city, destroying everything. No one is safe. Will you be able to vanquish Hate and prevent the annihilation of your People?|
+|![Cover Art](/images/coils-of-hate.jpg)|Alone in the labyrinthine streets of the ancient city of Godorno, you frantically attempt to save your people -- the Judain -- from their tyrannical ruler, the Overlord. Terrified of being hunted down, the Judain have gone to ground. But now there is an even greater menace: Hate, the very embodiment of all that is sinister, has invaded the city. Its tentacles emerge from the sewers beneath the city, destroying everything. No one is safe. Will you be able to vanquish Hate and prevent the annihilation of your People?|
 | |Not luck but judgement!|
 | |*Virtual Reality Adventure Books are a new generation of interactive fiction. This unique non-random game system makes the choices all yours. There are no dice to roll, no lengthy rules to learn. All you need is the spark of your own imagination!*|
 | |*Cover illustration by Mark Salwowski|

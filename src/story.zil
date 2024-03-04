@@ -34,6 +34,7 @@
 	<PUTP ,STORY283 ,P?DEATH T>
 	<PUTP ,STORY296 ,P?DEATH T>
 	<PUTP ,STORY338 ,P?DEATH T>
+	<PUTP ,STORY349 ,P?DEATH T>
 	<PUTP ,STORY363 ,P?DEATH T>
 	<PUTP ,STORY365 ,P?DEATH T>
 	<PUTP ,STORY389 ,P?DEATH T>
@@ -144,13 +145,9 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY005-PRECHOICE ("AUX" (DAMAGE 9))
-	<COND (<CHECK-SKILL ,SKILL-CHARMS>
-		<SET DAMAGE 6>
-	)>
+	<COND (<CHECK-SKILL ,SKILL-CHARMS> <SET DAMAGE 6>)>
 	<TEST-MORTALITY-IN-BATTLE .DAMAGE ,STORY005>
-	<COND (<NOT <IS-ALIVE>>
-		<STORY-JUMP ,STORY017>
-	)>>
+	<COND (<NOT <IS-ALIVE>> <STORY-JUMP ,STORY017>)>>
 
 <CONSTANT TEXT006 "You spend much of the day poring over your battle plans with the heads of the resistance. Not only other Judain have rallied to your cause. Now you have many people who have equally good cause to fight the Overlord -- those whose families have been starved by his harsh taxes or abused by his brutish soldiers.|| Some time after noon, as you are explaining the tactics for the final pitched battle to decide the fate of the city, a little street urchin brings news that Lucie's house has collapsed. She is feared dead.">
 <CONSTANT CHOICES006 <LTABLE "go to see if you can do anything" "carry on making your plans for the battle">>
@@ -256,7 +253,7 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY014-PRECHOICE ()
-	<TEST-MORTALITY 1 ,DIED-GREW-WEAKER ,STORY014>
+	<COND(,RUN-ONCE <TEST-MORTALITY 1 ,DIED-GREW-WEAKER ,STORY014>)>
 	<COND (<IS-ALIVE>
 		<CRLF>
 		<TELL ,TEXT014-CONTINUED>
@@ -1642,7 +1639,7 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY135-PRECHOICE ()
-	<TEST-MORTALITY 1 ,DIED-FROM-INJURIES ,STORY135>
+	<COND(,RUN-ONCE <TEST-MORTALITY 1 ,DIED-FROM-INJURIES ,STORY135>)>
 	<COND (<IS-ALIVE>
 		<CRLF>
 		<TELL ,TEXT135-CONTINUED>
@@ -2190,14 +2187,10 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY184-PRECHOICE ("AUX" (DAMAGE 8))
-	<COND (<CHECK-SKILL ,SKILL-CHARMS>
-		<SET DAMAGE 5>
-	)>
+	<COND (<CHECK-SKILL ,SKILL-CHARMS> <SET DAMAGE 5>)>
 	<TEST-MORTALITY-IN-BATTLE .DAMAGE ,STORY184>
 	<IF-ALIVE ,TEXT184-CONTINUED>
-	<COND (<IS-ALIVE>
-		<CODEWORD-JUMP ,CODEWORD-GORDIAN ,STORY054>
-	)>>
+	<COND (<IS-ALIVE> <CODEWORD-JUMP ,CODEWORD-GORDIAN ,STORY054>)>>
 
 <CONSTANT TEXT185 "You are turning the corner into Hanging Gardens-- once one of the wonders of the world, now a tumbledown jungle of rubble and festooned plants rioting over the houses -- when your face starts to itch unpleasantly. You are only half-way to Mameluke's garret and the broad-shouldered black man is striding on ahead, confidently. The pink mucus of Hate is infesting you. Mameluke looks at you with concern as your eyes become vacant and you are assailed by numbing dreams in which you walk open-armed into the embrace of Hate, to join in the orgy of despair. Mameluke is tugging at your arm and pulling you along the road towards Chink Street where his poor garret perches atop a building like a landlocked lighthouse. The cry of the city guard nearby urges Mameluke to greater efforts as the doleful dirge of \"Bring out your dead, bring out your dead,\" tolls mournfully from the nearby Courtyard of Idle Fancies.">
 <CONSTANT CHOICES185 <LTABLE "send Mameluke on alone" "try to keep up with him as the guards approach">>
@@ -2633,16 +2626,10 @@
 			<SET DAMAGE 1>
 		)>
 		<TEST-MORTALITY .DAMAGE ,DIED-FROM-INJURIES ,STORY224>
-		<COND(<IS-ALIVE>
-			<COND(.USED-AGILITY
-				<IF-ALIVE ,TEXT224-AGILITY>
-			)>
-			<IF-ALIVE ,TEXT224-CONTINUED>
-			<COND(<NOT <CHECK-CODEWORD ,CODEWORD-GORDIAN>>
-				<GAIN-CODEWORD ,CODEWORD-GORDIAN>
-			)>
-		)>
-	)>>
+		<COND(<AND <IS-ALIVE> .USED-AGILITY> <IF-ALIVE ,TEXT224-AGILITY>)>
+	)>
+	<IF-ALIVE ,TEXT224-CONTINUED>
+	<COND(<NOT <CHECK-CODEWORD ,CODEWORD-GORDIAN>><GAIN-CODEWORD ,CODEWORD-GORDIAN>)>>
 
 <CONSTANT TEXT225 "This street winds down towards the riverfront and the centre of the city. It is crossed by large avenues that lead up to the citadel, lined with tall straight cedars. You hear the ringing of the town crier's bell. At the end of the street is Greenbark Plaza. The mob is still chasing you, growing hysterical in its desire for your blood. Ifyou are caught you will surely be stoned to death.">
 <CONSTANT CHOICES225 <LTABLE "use" "run on into Greenbark Plaza" "duck down one of the smaller side streets">>
@@ -2989,10 +2976,8 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY254-PRECHOICE ()
-	<COND(,RUN-ONCE
-		<COND(<NOT <OR <CHECK-SKILL ,SKILL-CUNNING> <CHECK-SKILL ,SKILL-SPELLS> <CHECK-SKILL ,SKILL-STREETWISE> <CHECK-SKILL ,SKILL-SWORDPLAY> <CHECK-SKILL ,SKILL-UNARMED-COMBAT>>>
-			<STORY-JUMP ,STORY254-PELTED>
-		)>
+	<COND(<NOT <OR <CHECK-SKILL ,SKILL-CUNNING> <CHECK-SKILL ,SKILL-SPELLS> <CHECK-SKILL ,SKILL-STREETWISE> <CHECK-SKILL ,SKILL-SWORDPLAY> <CHECK-SKILL ,SKILL-UNARMED-COMBAT>>>
+		<STORY-JUMP ,STORY254-PELTED>
 	)>>
 
 <CONSTANT TEXT254-PELTED "You are pelted with loose cobblestones as you run off.">
@@ -3123,10 +3108,8 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY263-PRECHOICE ()
-	<COND(,RUN-ONCE
-		<TEST-MORTALITY 1 ,DIED-FROM-INJURIES ,STORY263>
-		<IF-ALIVE ,TEXT263-CONTINUED>
-	)>>
+	<COND(,RUN-ONCE <TEST-MORTALITY 1 ,DIED-FROM-INJURIES ,STORY263>)>
+	<IF-ALIVE ,TEXT263-CONTINUED>>
 
 <CONSTANT TEXT264 " You skulk in the shadows, then roll into the gutter where you play dead. This is an old thief's trick to avoid a hue and cry. The watchguards walk slowly past not giving yet another corpse in the plague-ridden city another glance and soon pass out of sight. Summoning all your strength you skulk through the shadows to the lighthouse-like garret, where Mameluke is warming some broth.">
 
@@ -3348,10 +3331,8 @@
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY282-PRECHOICE ()
-	<COND(,RUN-ONCE
-		<TEST-MORTALITY 6 ,DIED-FROM-INJURIES ,STORY282>
-		<IF-ALIVE ,TEXT282-CONTINUED>
-	)>>
+	<COND(,RUN-ONCE <TEST-MORTALITY 6 ,DIED-FROM-INJURIES ,STORY282>)>
+	<IF-ALIVE ,TEXT282-CONTINUED>>
 
 <CONSTANT TEXT283 "The penalty for fighting with the Overlord's guards is to be hung in chains until the wind dries you out like a raisin. That's if you get caught, of course. But either way -- whether you are killed in this struggle, or arrested and taken to Grond -- it means you are now in a fight to the death. It is a grim battle, fought almost in silence. The only sounds are frantic pants of breath and the scuff of quick footfalls as you manoeuvre back and forth across the room. At least you have one thing in your favour: although outnumbered, you are able to get your back to a comer, making it difficult for the soldiers to press their advantage.">
 <CONSTANT TEXT283-CONTINUED "You survive to gain victory. You step over the soldiers' bodies and snatch up the treasure chest, then hurry off into the night.">
@@ -3971,10 +3952,8 @@ power.">
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY338-PRECHOICE ()
-	<COND(,RUN-ONCE
-		<TEST-MORTALITY 2 ,DIED-FROM-INJURIES ,STORY338>
-		<IF-ALIVE ,TEXT338-CONTINUED>
-	)>>
+	<COND(,RUN-ONCE <TEST-MORTALITY 2 ,DIED-FROM-INJURIES ,STORY338>)>
+	<IF-ALIVE ,TEXT338-CONTINUED>>
 
 <CONSTANT TEXT339 "As far as you know no one who has desecrated the tombs of the Megiddo dynasty has ever come back out of the catacombs. You resolve to be very careful. It is said that four tomb robbers of the Savanorola years did escape but that they had been turned into foul-smelling scarab beetles, which were eaten alive by pigs.">
 
@@ -4129,8 +4108,8 @@ power.">
 		)(ELSE
 			<TEST-MORTALITY 5 ,DIED-FROM-INJURIES ,STORY349>
 		)>
-		<IF-ALIVE ,TEXT349-CONTINUED>
-	)>>
+	)>
+	<IF-ALIVE ,TEXT349-CONTINUED>>
 
 <CONSTANT TEXT350 "You have dared to wait in the lion's den for too long. The Overlord's personal bodyguard are led by a magician who binds your feet to the spot as soon as he sets eyes on you. You are borne away to be tormented in the fortress of Grond. You will not survive. There is no one left now to save the Judain. Hate will conquer all.">
 
@@ -4294,10 +4273,8 @@ power.">
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY363-PRECHOICE ()
-	<COND(,RUN-ONCE
-		<TEST-MORTALITY 4 ,DIED-FROM-INJURIES ,STORY363>
-		<IF-ALIVE ,TEXT363-CONTINUED>
-	)>>
+	<COND(,RUN-ONCE <TEST-MORTALITY 4 ,DIED-FROM-INJURIES ,STORY363>)>
+	<IF-ALIVE ,TEXT363-CONTINUED>>
 
 <CONSTANT TEXT364 "Hate squirms and writhes, shaking the city like an earthquake. The people creep out of hiding to pelt it with every missile they can find, but there seems to be no way of killing the monster. At length it tears itself free and slithers off. Its mighty efforts have undermined the plaza, which now collapses into the river. The facade of the Bargello topples and you plummet to your death in a cascade of falling masonry.||The city crumbles and is lost for ever beneath the waves. Hate has completed its work.">
 
@@ -4594,9 +4571,7 @@ power.">
 	(FLAGS LIGHTBIT)>
 
 <ROUTINE STORY389-PRECHOICE ()
-	<COND(,RUN-ONCE
-		<TEST-MORTALITY 2 ,DIED-FROM-INJURIES ,STORY389>
-	)>>
+	<COND(,RUN-ONCE <TEST-MORTALITY 2 ,DIED-FROM-INJURIES ,STORY389>)>>
 
 <CONSTANT TEXT390 "This is a very confined space in which to let loose the awful spell of the Miasma. The billowing cloud of gas which erupts fills the Inn of the Inner Temple and all inside fall retching helplessly to the floor. You have taken the precaution of winding a damp scarf about your mouth and nose and can still breathe. Grabbing Skakshi you drag him out.||\"You, Skakshi, will take me to meet your guildmaster, Melmelo. I have a proposition for his ears only.\"||\"I'll -- ack! -- do anything you say ... Just release me -- cough! -- from this wracking spell!\"||Skakshi is only too glad to do your bidding as long as he is released from the pit of gas the Inn of the Inner Temple has become.">
 

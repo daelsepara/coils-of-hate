@@ -4,12 +4,8 @@
 <INSERT-FILE "codewords">
 <INSERT-FILE "numbers">
 <INSERT-FILE "currency">
-<INSERT-FILE "food">
-<INSERT-FILE "vehicle">
 <INSERT-FILE "common">
 <INSERT-FILE "endings">
-;<INSERT-FILE "food-routines">
-;<INSERT-FILE "vehicle-routines">
 
 <SET REDEFINE T>
 
@@ -128,6 +124,12 @@
     (SYNONYM BAG)
     (ADJECTIVE GIVE)
     (FLAGS CONTBIT OPENBIT)>
+
+<OBJECT LOST-BAG
+	(DESC "stuff lost")
+	(SYNONYM BAG)
+	(ADJECTIVE LOST)
+	(FLAGS CONTBIT OPENBIT)>
 
 ; "pause routines"
 ; ---------------------------------------------------------------------------------------------
@@ -641,6 +643,77 @@
         )>
     )>>
 
+; "charged items"
+; ---------------------------------------------------------------------------------------------
+<ROUTINE DISCHARGE-ITEM (ITEM "OPT" AMOUNT "AUX" (CHARGES 0))
+	<SET CHARGES <GETP .ITEM ,P?CHARGES>>
+	<COND (<G? .CHARGES 0>
+        <COND (<NOT .AMOUNT> <SET AMOUNT 1>)>
+		<SET CHARGES <- .CHARGES .AMOUNT>>
+		<COND (<L? .CHARGES 1> <SET CHARGES 0>)>
+		<PUTP .ITEM ,P?CHARGES .CHARGES>
+	)>>
+
+<ROUTINE CHARGE-ITEM (ITEM MAX-CHARGE "OPT" AMOUNT "AUX" CHARGES)
+	<COND (<NOT .AMOUNT> <SET AMOUNT 1>)>
+	<SET CHARGES <GETP .ITEM ,P?CHARGES>>
+	<SET CHARGES <+ .CHARGES .AMOUNT>>
+	<COND (<G? .CHARGES .MAX-CHARGE> <SET CHARGES .MAX-CHARGE>)>
+	<PUTP .ITEM ,P?CHARGES .CHARGES>>
+
+<ROUTINE TAKE-CHARGED-ITEM (ITEM "OPT" AMOUNT)
+	<COND (<NOT .AMOUNT> <SET AMOUNT 1>)>
+	<PUTP .ITEM ,P?CHARGES .AMOUNT>
+	<TAKE-ITEM .ITEM>>
+
+<ROUTINE TAKE-OR-CHARGE (ITEM MAX-CHARGE "OPT" AMOUNT PROMPT PLURAL "AUX" TAKEN)
+	<COND (<NOT .AMOUNT> <SET AMOUNT 1>)>
+	<COND (<NOT .PLURAL> <SET PLURAL 1>)>
+	<COND (<AND .PROMPT <G? .PLURAL 1>>
+		<SET TAKEN <GET-NUMBER "You many will you take?" 0 .PLURAL>>
+		<COND (<L=? .TAKEN 0>
+			<RETURN 0>
+		)(ELSE
+			<SET PROMPT F>
+			<SET AMOUNT <* .TAKEN .AMOUNT>>
+			<SET PLURAL .TAKEN>
+		)>
+	)>
+	<COND (.PROMPT <CRLF>)>
+	<COND (<CHECK-ITEM .ITEM>
+		<COND (.PROMPT
+			<TELL "Take " T .ITEM>
+			<COND (<G? .PLURAL 1> <TELL "s' (" N .PLURAL ")">)(ELSE <TELL "'s">)>
+			<TELL " remaining ">
+			<COND (<G? .AMOUNT 1> <TELL N .AMOUNT " charges">)(ELSE <TELL "charge">)>
+			<TELL "?">
+			<COND (<YES?>
+				<CHARGE-ITEM .ITEM .MAX-CHARGE .AMOUNT>
+				<RETURN .PLURAL>
+			)>
+		)(ELSE
+			<CHARGE-ITEM .ITEM .MAX-CHARGE .AMOUNT>
+			<RETURN .PLURAL>
+		)>
+	)(ELSE
+		<COND (.PROMPT
+			<TELL "Take " T .ITEM>
+			<COND (<G? .PLURAL 1> <TELL "s (" N .PLURAL ")">)>
+			<TELL " (" N .AMOUNT " charge">
+			<COND (<G? .AMOUNT 1> <TELL "s">)>
+			<TELL " left)?">
+			<COND (<YES?>
+				<TAKE-CHARGED-ITEM .ITEM .AMOUNT>
+				<RETURN .PLURAL>
+			)>
+		)(ELSE
+			<TAKE-CHARGED-ITEM .ITEM .AMOUNT>
+			<RETURN .PLURAL>
+		)>
+	)>
+	<RETURN 0>>
+
+
 ; "story routines - actions/events"
 ; ---------------------------------------------------------------------------------------------
 <ROUTINE GAIN-CODEWORD ("OPT" CODEWORD LOCATION)
@@ -701,15 +774,6 @@
     <SETG MONEY <- ,MONEY .COST>>
     <COND (<L? ,MONEY 0> <SETG MONEY 0>)>
     <UPDATE-STATUS-LINE>>
-
-<ROUTINE DISCHARGE-ITEM (ITEM "OPT" AMOUNT "AUX" (CHARGES 0))
-	<SET CHARGES <GETP .ITEM ,P?CHARGES>>
-	<COND (<G? .CHARGES 0>
-        <COND (<NOT .AMOUNT> <SET AMOUNT 1>)>
-		<SET CHARGES <- .CHARGES .AMOUNT>>
-		<COND (<L? .CHARGES 1> <SET CHARGES 0>)>
-		<PUTP .ITEM ,P?CHARGES .CHARGES>
-	)>>
 
 <ROUTINE GAIN-ITEM ("OPT" LOCATION "AUX" ITEM)
     <COND (<NOT .LOCATION> <SET LOCATION ,HERE>)>
@@ -1387,14 +1451,6 @@
         <CRLF>
         <PRINT-BOLD "Codewords: ">
         <PRINT-CONTAINER ,CODEWORDS>
-        <COND (<FIRST? VEHICLES>
-            <CRLF>
-            <HLIGHT ,H-BOLD>
-            <PRINT-CAP-OBJ ,VEHICLE>
-            <TELL ": ">
-            <HLIGHT 0>
-            <PRINT-CONTAINER ,VEHICLES>
-        )>
         <CRLF>
         <HLIGHT ,H-BOLD>
         <PRINT-CAP-OBJ ,CURRENCY>

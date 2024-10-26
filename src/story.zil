@@ -1,3 +1,6 @@
+; "Coils of Hate"
+; ---------------------------------------------------------------------------------------------
+
 <INSERT-FILE "gamebook">
 
 <GLOBAL STARTING-POINT PROLOGUE>

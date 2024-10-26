@@ -1,4 +1,5 @@
-; "Codewords for Coils of Hate"
+; "codewords for Coils of Hate"
+; ---------------------------------------------------------------------------------------------
 
 <OBJECT CODEWORD-CODEX
     (DESC "Codex")

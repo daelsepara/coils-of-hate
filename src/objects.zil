@@ -30,7 +30,7 @@
     (REQUIRES SKILL-SWORDPLAY)
     (FLAGS TAKEBIT)>
 
-; "objects"
+; "story objects"
 ; ---------------------------------------------------------------------------------------------
 <OBJECT DIAMOND
     (DESC "diamond")

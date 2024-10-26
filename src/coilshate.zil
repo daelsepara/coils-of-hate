@@ -1,4 +1,5 @@
-"Coils of Hate (ZIL)"
+; "Coils of Hate (ZIL)"
+; ---------------------------------------------------------------------------------------------
 
 <CONSTANT GAME-TITLE "||Coils of Hate">
 <CONSTANT GAME-DESCRIPTION "|Mark Smith (1993)||Implemented in ZIL by SD Separa (2024)|">

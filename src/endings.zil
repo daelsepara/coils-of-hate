@@ -1,5 +1,5 @@
-; "story endings"
+; "story endings for Coils of Hate"
 ; ---------------------------------------------------------------------------------------------
-<CONSTANT BAD-ENDING "Your adventure ends here.|">
 
+<CONSTANT BAD-ENDING "Your adventure ends here.|">
 <CONSTANT GOOD-ENDING "You saved your people from annihilation.|">
